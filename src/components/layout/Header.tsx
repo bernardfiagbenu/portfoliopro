@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { CodeXmlIcon } from 'lucide-react';
 
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 export default function Header() {
   return (
     <header className="bg-primary text-primary-foreground shadow-md">
@@ -21,6 +22,7 @@ export default function Header() {
             <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
           </ul>
         </nav>
+        <ThemeToggle />
       </div>
     </header>
   );

@@ -48,7 +48,7 @@ export default function HomePage() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
-        poster="https://placehold.co/1280x720.png" 
+        poster="https://placehold.co/1280x720.png"
         data-ai-hint="tech motion"
       >
         {/*
@@ -57,8 +57,7 @@ export default function HomePage() {
           the src would be "/videos/your-video.mp4".
           Alternatively, you can use a URL to an externally hosted video.
         */}
-        <source src="/videos/placeholder-tech-background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+ <source src="https://video-previews.elements.envatousercontent.com/files/c54cae60-22ba-4497-aac7-6c7c9ca48ed4/video_preview_h264.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>        Your browser does not support the video tag.
       </video>
 
       {/* Overlay for text readability */}
@@ -67,8 +66,7 @@ export default function HomePage() {
       {/* Content Layer - must be relative and have higher z-index */}
       <div className="relative z-20 p-4"> {/* Added padding to content layer to prevent touching edges if needed */}
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-white animate-fadeInUp">
-          Welcome to Portfolio Pro
-        </h1>
+ Welcome to Portfolio Pro        </h1>
         <p 
           className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl animate-fadeInUp" 
           style={{ animationDelay: '0.2s' }}
