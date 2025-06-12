@@ -1,0 +1,132 @@
+# Cursor AI Rules for Portfolio Pro (Bernard Fiagbenu Portfolio)
+
+## Project Overview
+This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js. It highlights the skills and creativity of Bernard Fiagbenu, a UI software engineer and computer scientist.
+
+## Project Context
+This document defines the rules and guidelines for Cursor AI when working with Portfolio Pro.
+
+### Technical Stack
+- Platform: Web (Desktop & Mobile Responsive)
+- Framework: Next.js (React)
+- Language: TypeScript
+- Styling: Tailwind CSS, ShadCN UI Components
+- Key Dependencies: `lucide-react`, `react-hook-form`, `zod`
+
+## Code Generation Rules
+
+### 1. Project Structure
+Follow these directory and file organization rules:
+- Maintain the established project structure (`src/app`, `src/components`, `src/lib`, etc.).
+- Place new components in `src/components/[feature]` or `src/components/ui` (for generic UI, though ShadCN is preferred).
+- Follow file naming conventions: PascalCase for components (`MyComponent.tsx`), `page.tsx` for routes.
+- Respect module boundaries: Import using absolute paths (`@/components/...`).
+- Keep related files together (e.g., component + its styles if not solely Tailwind + its tests).
+
+### 2. Code Style
+Adhere to these formatting rules:
+- Use 2 spaces for indentation.
+- Follow line length limits (approx. 100-120 chars).
+- Apply Prettier for automatic formatting (single quotes, semicolons, trailing commas).
+- Maintain consistent naming conventions (camelCase for functions/variables, PascalCase for types/components).
+- Follow TypeScript best practices (strong typing, avoid `any`).
+
+### 3. Component Guidelines
+When generating components:
+- Create functional components with TypeScript and Hooks.
+- Define props using `interface` or `type` (PascalCase), placed near the component. Props should be `Readonly` where applicable.
+- Use ShadCN UI components (`@/components/ui/*`) as building blocks whenever possible.
+- Ensure components are responsive using Tailwind CSS.
+- Implement accessibility (ARIA attributes, semantic HTML).
+- For new UI elements not covered by ShadCN, create them in `src/components/custom-ui/` or similar.
+- Default to Next.js Server Components. Use "use client" directive only when necessary (event handlers, state, browser APIs).
+
+### 4. Type System (TypeScript)
+For TypeScript implementation:
+- Use strict type checking (`"strict": true` is enabled).
+- Create clear and descriptive `interface` or `type` definitions for data structures and props.
+- Implement generics correctly when creating reusable functions or components.
+- Handle `null` and `undefined` explicitly; use optional chaining (`?.`) and nullish coalescing (`??`).
+- Avoid using `any` type. Use `unknown` if type is truly unknown and then perform type checking.
+- Document complex types with JSDoc comments.
+
+### 5. API Integration & Data Fetching
+- Server Components should fetch data directly in their async function body.
+- Client Components can use `useEffect` for fetching, or preferably libraries like `SWR` or `React Query` if complex data fetching/caching is introduced later.
+- For form submissions and mutations, use Next.js Server Actions.
+    - Define Server Actions in `src/app/actions.ts` or co-located with routes if specific.
+    - Validate input data in Server Actions using Zod.
+    - Return structured responses (e.g., `{ success: boolean, data?: T, error?: string }`).
+- Handle API errors gracefully and provide user feedback.
+
+### 6. State Management
+- For local component state, use `useState` or `useReducer`.
+- For cross-component state or global state (if needed), prefer React Context API for simple cases. For more complex scenarios, consider Zustand or Jotai.
+- Avoid prop drilling.
+- Server Actions manage server-side state changes; client-side state should react to their responses.
+
+### 7. Testing Requirements
+Generate tests following these rules:
+- For utility functions and critical logic, write unit tests using Jest/Vitest and React Testing Library.
+- Place test files (`*.test.tsx` or `*.spec.tsx`) alongside the files they test.
+- Follow Arrange-Act-Assert pattern.
+- Mock dependencies and API calls.
+- Test for expected outcomes, edge cases, and error handling.
+- Aim for meaningful test coverage.
+
+### 8. Security Guidelines
+Enforce security practices:
+- Validate and sanitize all user inputs (e.g., in contact form, Server Actions) using Zod.
+- Prevent XSS by properly rendering data (React handles much of this, but be mindful with `dangerouslySetInnerHTML`).
+- Protect Server Actions from misuse (e.g., ensure they can only be called from your domain if applicable).
+- Use environment variables for sensitive information (API keys, etc.). Do not hardcode secrets.
+- Keep dependencies updated.
+
+### 9. Performance Rules
+- Optimize for performance:
+    - Use Next.js `Image` component for image optimization. Add `data-ai-hint` attributes to placeholder images.
+    - Leverage Server Components to reduce client-side JavaScript.
+    - Use `next/dynamic` for client components or libraries that are large or not immediately needed.
+    - Write efficient Tailwind CSS; avoid overly complex or redundant classes.
+    - Ensure animations are smooth and GPU-accelerated where possible (use `transform` and `opacity`).
+
+### 10. Documentation
+Generate documentation that:
+- Is clear and concise.
+- Includes JSDoc comments for functions, components, and types, especially for props and return values.
+- Provides usage examples for reusable components.
+- Explains complex logic or non-obvious decisions.
+- Follows existing documentation standards in the project.
+
+## Best Practices
+
+### 1. Code Quality
+- Write self-documenting code through clear naming and structure.
+- Keep functions and components small and focused (Single Responsibility Principle).
+- Follow DRY (Don't Repeat Yourself) principles.
+- Use meaningful names for variables, functions, and components.
+- Implement proper error handling and provide user feedback.
+- Write maintainable, readable, and understandable code.
+- Ensure generated code is type-safe and leverages TypeScript features.
+
+### 2. Performance
+- Prioritize loading performance (LCP, TBT).
+- Minimize client-side JavaScript bundle size.
+- Use Server Components by default.
+- Optimize images and other assets.
+- Ensure smooth animations and interactions.
+
+### 3. Security
+- Always validate user input on the server-side (Server Actions).
+- Be mindful of common web vulnerabilities (OWASP).
+- Handle secrets and API keys securely.
+- Use Next.js security features appropriately.
+
+## Specific Instructions for This Project
+- When adding new UI elements, prefer using or composing existing ShadCN UI components from `@/components/ui`.
+- Follow the color scheme defined in `src/app/globals.css` (Primary: Deep Indigo, Background: Light Lavender, Accent: Soft Amethyst).
+- Use `lucide-react` for icons.
+- Body font is 'PT Sans', Headline font is 'Space Grotesk'. Apply these using Tailwind `font-body` and `font-headline` classes.
+- Animations should be subtle and professional, enhancing UX without being distracting. Use Tailwind animation/transition utilities or CSS keyframes.
+- Maintain responsiveness across mobile, tablet, and desktop.
+- Add `data-ai-hint` attributes to `next/image` components using placeholder images (`https://placehold.co/...`).
