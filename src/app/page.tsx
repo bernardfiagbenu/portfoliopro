@@ -57,7 +57,7 @@ export default function HomePage() {
           the src would be "/videos/your-video.mp4".
           Alternatively, you can use a URL to an externally hosted video.
         */}
- <source src="https://video-previews.elements.envatousercontent.com/files/c54cae60-22ba-4497-aac7-6c7c9ca48ed4/video_preview_h264.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>        Your browser does not support the video tag.
+ <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>        Your browser does not support the video tag.
       </video>
 
       {/* Overlay for text readability */}
@@ -89,3 +89,4 @@ export default function HomePage() {
     </div>
   );
 }
+
