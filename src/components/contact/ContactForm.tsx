@@ -35,7 +35,7 @@ export default function ContactForm() {
   const { toast } = useToast();
   
   const initialState: ContactFormState = { message: '', status: 'idle' };
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
  
   const {
     register,
