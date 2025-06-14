@@ -12,7 +12,7 @@ const researchItems = [
     tags: ['AI', 'AGI', 'Future Tech'],
     imageUrl: 'https://placehold.co/600x300.png',
     link: '#',
-    aiHint: 'general intelligence'
+    aiHint: 'ai brain'
   },
   {
     title: 'Quantum Computing',
@@ -120,7 +120,7 @@ const researchItems = [
     tags: ['Robotics', 'Biology', 'AI', 'Future Tech'],
     imageUrl: 'https://placehold.co/600x300.png',
     link: '#',
-    aiHint: 'living robot'
+    aiHint: 'cell robot'
   },
   {
     title: 'Lab-Grown Meat & Cellular Agriculture',
@@ -156,7 +156,7 @@ const researchItems = [
     tags: ['Climate', 'Carbon Capture', 'Future Tech'],
     imageUrl: 'https://placehold.co/600x300.png',
     link: '#',
-    aiHint: 'air capture'
+    aiHint: 'carbon capture'
   },
   {
     title: 'Programmable Matter',
@@ -183,7 +183,7 @@ const researchItems = [
     tags: ['Energy', 'Batteries', 'Future Tech'],
     imageUrl: 'https://placehold.co/600x300.png',
     link: '#',
-    aiHint: 'energy storage'
+    aiHint: 'solid state battery'
   },
   {
     title: 'AI Teachers and Personalized Education',
@@ -328,4 +328,3 @@ export default function ResearchPage() {
     </SectionContainer>
   );
 }
-
