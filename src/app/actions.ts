@@ -1,63 +1,8 @@
 'use server';
 
-import { z } from 'zod';
+// This file is currently not in use as the contact form
+// has been updated to use a mailto: link to open the user's email client.
+// Server actions for form submission are no longer needed for that functionality.
 
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
-
-export type ContactFormState = {
-  message: string;
-  status: 'success' | 'error' | 'idle';
-  errors?: {
-    name?: string[];
-    email?: string[];
-    message?: string[];
-  };
-};
-
-export async function submitContactForm(
-  prevState: ContactFormState,
-  formData: FormData
-): Promise<ContactFormState> {
-  const validatedFields = contactFormSchema.safeParse({
-    name: formData.get('name'),
-    email: formData.get('email'),
-    message: formData.get('message'),
-  });
-
-  if (!validatedFields.success) {
-    return {
-      message: 'Form submission failed. Please check the errors.',
-      status: 'error',
-      errors: validatedFields.error.flatten().fieldErrors,
-    };
-  }
-
-  const { name, email, message } = validatedFields.data;
-
-  // In a real application, you would send an email or save to a database here.
-  // For example, using Nodemailer, Resend, or an API endpoint.
-  console.log('Contact Form Submission:');
-  console.log('Name:', name);
-  console.log('Email:', email);
-  console.log('Message:', message);
-
-  // Simulate sending email
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  // Check for a simulated error condition (e.g. if email is test@error.com)
-  if (email === 'test@error.com') {
-    return {
-      message: 'Simulated error: Could not send message. Please try again later.',
-      status: 'error',
-    };
-  }
-  
-  return {
-    message: 'Thank you for your message! I will get back to you soon.',
-    status: 'success',
-  };
-}
+// If you re-implement server-side form handling in the future,
+// you can define your Zod schemas and server actions here.
