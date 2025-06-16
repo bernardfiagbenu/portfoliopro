@@ -1,3 +1,4 @@
+
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import Image from 'next/image';
@@ -6,40 +7,13 @@ import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Project Alpha',
-    description: 'A cutting-edge mobile application built with Flutter, focusing on intuitive user interactions and real-time data synchronization. Features a dynamic UI and robust backend integration.',
+    title: 'Stress Manager App',
+    description: 'A web application designed to help users manage stress through various techniques and resources. Built with modern web technologies to promote well-being.',
     imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Flutter', 'Firebase', 'UI/UX'],
-    githubUrl: '#',
-    liveUrl: '#',
-    aiHint: 'mobile app'
-  },
-  {
-    title: 'EcoDash Dashboard',
-    description: 'A web-based analytics dashboard for environmental data monitoring. Built with React and Chart.js, providing insightful visualizations and reporting tools.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['React', 'Node.js', 'Data Visualization'],
-    githubUrl: '#',
-    liveUrl: '#',
-    aiHint: 'dashboard interface'
-  },
-  {
-    title: 'Portfolio Pro (This Site)',
-    description: 'My personal portfolio website, showcasing my skills and projects. Built with Next.js, Tailwind CSS, and TypeScript for a modern, responsive, and animated experience.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-    githubUrl: '#',
-    liveUrl: '#',
-    aiHint: 'website design'
-  },
-   {
-    title: 'ConnectSphere Social App',
-    description: 'A social networking platform concept focusing on privacy and meaningful connections. Designed with a user-centric approach and interactive UI elements.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['UI Design', 'Flutter', 'Concept'],
-    githubUrl: '#',
-    liveUrl: null,
-    aiHint: 'social media'
+    tags: ['React', 'JavaScript', 'HTML', 'CSS', 'Web App', 'Health', 'Wellness'],
+    githubUrl: 'https://github.com/bernardfiagbenu/stressmanager',
+    liveUrl: 'https://bernardfiagbenu.github.io/stressmanager/',
+    aiHint: 'wellness app'
   }
 ];
 
