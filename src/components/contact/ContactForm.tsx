@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-// Removed useToast and Loader2 as they are not needed for mailto
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -22,14 +21,14 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting }, // isSubmitting can be used for button state
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
   const handleMailtoSubmit = (data: ContactFormData) => {
-    const recipientEmail = 'bernard.fiagbenu@example.com'; // As per contact page
+    const recipientEmail = 'bernardfiagbenu1@gmail.com';
     const subject = encodeURIComponent(`Message from ${data.name} via Portfolio`);
     const body = encodeURIComponent(
       `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
@@ -37,8 +36,6 @@ export default function ContactForm() {
     
     window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
     
-    // Optionally reset the form after attempting to open the mail client
-    // Adding a small delay can help ensure the mailto link is processed
     setTimeout(() => {
       reset();
     }, 500);

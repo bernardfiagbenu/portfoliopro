@@ -14,11 +14,11 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div className="flex items-center">
               <MailIcon className="w-6 h-6 text-accent mr-3" />
-              <a href="mailto:bernard.fiagbenu@example.com" className="font-body text-foreground hover:text-primary">bernard.fiagbenu@example.com</a>
+              <a href="mailto:bernardfiagbenu1@gmail.com" className="font-body text-foreground hover:text-primary">bernardfiagbenu1@gmail.com</a>
             </div>
             <div className="flex items-center">
               <PhoneIcon className="w-6 h-6 text-accent mr-3" />
-              <span className="font-body text-foreground">+1 (555) 123-4567</span>
+              <span className="font-body text-foreground">0598914553</span>
             </div>
             <div className="flex items-center">
               <MapPinIcon className="w-6 h-6 text-accent mr-3" />
