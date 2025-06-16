@@ -9,7 +9,7 @@ export default function AboutPage() {
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
         <div className="flex-shrink-0">
           <Avatar className="w-40 h-40 border-4 border-primary shadow-lg">
-            <AvatarImage src="https://media.licdn.com/dms/image/v2/D4E03AQH25Hhju6pDQQ/profile-displayphoto-shrink_800_800/B4EZd4EI9CGwAc-/0/1750066041960?e=1755734400&v=beta&t=AsSpGl8pDm5D6YJHB8iPhIPw1DeR1V6Zxal7Vx1DpEQ" alt="Bernard Fiagbenu" data-ai-hint="professional portrait" />
+            <AvatarImage src="https://media.licdn.com/dms/image/v2/D4E03AQFd3EIOVA1ofg/profile-displayphoto-shrink_800_800/B4EZd4UoFpHsAk-/0/1750070363504?e=1755734400&v=beta&t=eiS0PVsFAzLrCmjuA-tK2EjyzWXeydrFo5v46E3ezG4" alt="Bernard Fiagbenu" data-ai-hint="professional portrait" />
             <AvatarFallback>BF</AvatarFallback>
           </Avatar>
         </div>
