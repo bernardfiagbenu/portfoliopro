@@ -14,6 +14,15 @@ const projects = [
     githubUrl: 'https://github.com/bernardfiagbenu/stressmanager',
     liveUrl: 'https://bernardfiagbenu.github.io/stressmanager/',
     aiHint: 'wellness app'
+  },
+  {
+    title: 'Inspiring Moxie App',
+    description: 'A dynamic web application deployed on Netlify, showcasing modern frontend development skills.',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQEwfd6DQ_ORwA/feedshare-shrink_800/B4EZd5vE3BHgAk-/0/1750094074334?e=1752710400&v=beta&t=lUJX6c9UXSeBkX4YNClxV6z-7BXHSko6GZyKxA5SuyI',
+    tags: ['Netlify', 'Web App', 'Frontend', 'Responsive Design'],
+    githubUrl: null, // No GitHub URL provided
+    liveUrl: 'https://inspiring-moxie-f3674a.netlify.app/',
+    aiHint: 'app interface'
   }
 ];
 
