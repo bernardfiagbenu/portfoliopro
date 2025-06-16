@@ -1,6 +1,21 @@
+
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CodeIcon, SmartphoneIcon, DatabaseIcon, CloudIcon, PaletteIcon, SettingsIcon, ZapIcon, UsersIcon } from 'lucide-react';
+import { 
+  CodeIcon, 
+  GlobeIcon, 
+  BriefcaseIcon, 
+  BinaryIcon, 
+  ServerIcon, 
+  DatabaseIcon, 
+  BrainIcon, 
+  SmartphoneIcon, 
+  ShieldCheckIcon, 
+  CloudIcon, 
+  PaletteIcon, 
+  CalculatorIcon, 
+  UsersIcon 
+} from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface SkillCategory {
@@ -13,59 +28,87 @@ const skillCategories: SkillCategory[] = [
   {
     name: 'Programming Languages',
     icon: CodeIcon,
-    skills: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'Dart', 'Java', 'C#'],
+    skills: ['Python', 'Java', 'C++', 'JavaScript (ES6+)', 'TypeScript', 'SQL', 'Go', 'Swift', 'Kotlin'],
   },
   {
-    name: 'Frontend Development',
-    icon: PaletteIcon,
-    skills: ['React', 'Next.js', 'Vue.js', 'Angular', 'HTML5', 'CSS3', 'Sass/SCSS', 'Tailwind CSS'],
+    name: 'Web Development',
+    icon: GlobeIcon,
+    skills: ['HTML5', 'CSS3', 'Tailwind CSS', 'React', 'Next.js', 'Angular', 'Vue.js', 'Node.js', 'Express.js', 'RESTful APIs', 'Client-Side & Server-Side Development', 'Web Security (XSS, CSRF)'],
   },
   {
-    name: 'Mobile Development',
-    icon: SmartphoneIcon,
-    skills: ['Flutter', 'React Native', 'Swift (iOS)', 'Kotlin (Android)'],
+    name: 'Software Engineering & Architecture',
+    icon: BriefcaseIcon,
+    skills: ['SDLC (Software Development Life Cycle)', 'Agile & Scrum Methodologies', 'Version Control (Git, GitHub)', 'Software Design Patterns', 'UML (Unified Modeling Language)', 'Testing (Unit, Integration, System)', 'Computer Architecture Principles'],
   },
   {
-    name: 'Backend Development',
-    icon: SettingsIcon,
-    skills: ['Node.js', 'Express.js', 'Django', 'Flask', 'Spring Boot', 'ASP.NET Core'],
+    name: 'Data Structures & Algorithms',
+    icon: BinaryIcon,
+    skills: ['Arrays, Linked Lists, Stacks, Queues', 'Trees (Binary, AVL, B-Trees), Graphs', 'Hash Tables', 'Sorting & Searching Algorithms', 'Algorithm Analysis (Big O Notation)', 'Problem Solving with Algorithms'],
+  },
+  {
+    name: 'Operating Systems & Networking',
+    icon: ServerIcon,
+    skills: ['OS Concepts (Processes, Threads, Scheduling)', 'Memory Management, File Systems', 'Concurrency & Synchronization', 'Computer Networks (TCP/IP, HTTP, DNS)', 'Network Protocols & Security'],
   },
   {
     name: 'Databases',
     icon: DatabaseIcon,
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firebase Firestore', 'SQLite'],
+    skills: ['Relational Databases (MySQL, PostgreSQL)', 'NoSQL Databases (MongoDB)', 'Database Design & Modeling (ERDs)', 'SQL & Data Manipulation', 'Data Normalization', 'Firebase Firestore'],
   },
   {
-    name: 'DevOps & Cloud',
+    name: 'Artificial Intelligence & Machine Learning',
+    icon: BrainIcon,
+    skills: ['Core AI Concepts', 'Machine Learning Algorithms (Supervised, Unsupervised)', 'Natural Language Processing (NLP)', 'Computer Vision Basics', 'Data Mining & Analysis'],
+  },
+  {
+    name: 'Mobile Development',
+    icon: SmartphoneIcon,
+    skills: ['Android (Kotlin/Java)', 'iOS (Swift)', 'Cross-Platform Concepts (e.g., Flutter, React Native)', 'Mobile UI/UX Principles', 'Mobile Application Lifecycle'],
+  },
+  {
+    name: 'Cybersecurity',
+    icon: ShieldCheckIcon,
+    skills: ['Information Security Fundamentals', 'Cryptography Basics', 'Network Security Concepts', 'Web Application Security', 'Ethical Hacking Awareness'],
+  },
+  {
+    name: 'Cloud Computing & DevOps',
     icon: CloudIcon,
-    skills: ['Docker', 'Kubernetes', 'AWS', 'Google Cloud Platform', 'Azure', 'CI/CD (Jenkins, GitHub Actions)'],
+    skills: ['Cloud Platforms (AWS, Azure, GCP concepts)', 'Virtualization & Containers (Docker)', 'CI/CD Principles & Tools (e.g., GitHub Actions)', 'Deployment Strategies', 'Infrastructure as Code (IaC) concepts'],
   },
   {
-    name: 'UI/UX Design',
-    icon: ZapIcon,
-    skills: ['Figma', 'Adobe XD', 'Sketch', 'User Research', 'Wireframing', 'Prototyping', 'Usability Testing'],
+    name: 'Design & User Experience',
+    icon: PaletteIcon,
+    skills: ['UI/UX Principles', 'Interaction Design', 'Wireframing & Prototyping', 'Usability & Accessibility Concepts', 'Responsive Design Principles'],
   },
   {
-    name: 'Soft Skills',
+    name: 'Mathematical Foundations',
+    icon: CalculatorIcon,
+    skills: ['Discrete Mathematics', 'Calculus', 'Linear Algebra', 'Statistics & Probability'],
+  },
+  {
+    name: 'Soft Skills & Project Management',
     icon: UsersIcon,
-    skills: ['Problem Solving', 'Communication', 'Teamwork', 'Agile Methodologies', 'Project Management', 'Creativity'],
+    skills: ['Problem Solving & Critical Thinking', 'Communication (Technical & General)', 'Teamwork & Collaboration', 'Project Management Fundamentals', 'Ethical Conduct in Computing', 'Adaptability & Continuous Learning'],
   },
 ];
 
 export default function SkillsPage() {
   return (
-    <SectionContainer title="My Skills" subtitle="Technologies and Tools I Work With">
+    <SectionContainer title="My Skills" subtitle="A Showcase of My Computer Science Expertise">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((category) => (
-          <Card key={category.name} className="hover:shadow-lg transition-shadow duration-300">
-            <CardHeader className="flex flex-row items-center space-x-3 pb-2">
+          <Card key={category.name} className="hover:shadow-lg transition-shadow duration-300 flex flex-col">
+            <CardHeader className="flex flex-row items-center space-x-3 pb-3">
               <category.icon className="w-8 h-8 text-primary" />
               <CardTitle className="font-headline text-xl text-primary">{category.name}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="space-y-1 font-body">
+            <CardContent className="flex-grow pt-0">
+              <ul className="space-y-1.5 font-body">
                 {category.skills.map((skill) => (
-                  <li key={skill} className="text-muted-foreground text-sm list-disc list-inside ml-2">{skill}</li>
+                  <li key={skill} className="text-muted-foreground text-sm flex items-start">
+                    <span className="text-primary mr-2 mt-1">&#8227;</span> {/* Bullet point */}
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </CardContent>
