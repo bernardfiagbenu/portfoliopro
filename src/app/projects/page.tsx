@@ -28,9 +28,18 @@ const projects = [
     description: 'A user-friendly web application that helps users quickly generate favicon files for their websites. Deployed on Netlify for easy access.',
     imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQEwfd6DQ_ORwA/feedshare-shrink_800/B4EZd5vE3BHgAk-/0/1750094074334?e=1752710400&v=beta&t=lUJX6c9UXSeBkX4YNClxV6z-7BXHSko6GZyKxA5SuyI',
     tags: ['Netlify', 'Web App', 'Frontend', 'Favicon', 'Tool', 'JavaScript'],
-    githubUrl: null, 
+    githubUrl: null,
     liveUrl: 'https://inspiring-moxie-f3674a.netlify.app/',
     aiHint: 'favicon generator app interface'
+  },
+  {
+    title: 'Google Play Console Image Formatter',
+    description: 'A tool to quickly and easily format developer icons and header images to meet Google Play Store requirements.',
+    imageUrl: 'https://placehold.co/600x400.png', // Using placeholder as per guidelines
+    tags: ['Web App', 'Frontend', 'Image Tool', 'Utility', 'Google Play'],
+    githubUrl: null,
+    liveUrl: 'https://ubiquitous-speculoos-d2e478.netlify.app/',
+    aiHint: 'image formatter tool'
   }
 ];
 
@@ -61,13 +70,13 @@ export default function ProjectsPage() {
               />
               <CardHeader>
                 <div className="aspect-video relative w-full rounded-t-md overflow-hidden">
-                  <Image 
-                    src={project.imageUrl} 
-                    alt={`${project.title} - Project Screenshot`} 
-                    layout="fill" 
-                    objectFit="cover" 
+                  <Image
+                    src={project.imageUrl}
+                    alt={`${project.title} - Project Screenshot`}
+                    layout="fill"
+                    objectFit="cover"
                     data-ai-hint={project.aiHint}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority={index < 2}
                   />
                 </div>
