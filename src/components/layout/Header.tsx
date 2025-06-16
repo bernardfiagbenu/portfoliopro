@@ -10,7 +10,7 @@ export default function Header() {
           <CodeXmlIcon className="w-8 h-8 text-accent" />
           <div>
             <span className="font-bold">Bernard Fiagbenu</span>
-            <p className="text-xs text-primary-foreground/80 font-body">UI Engineer & Computer Scientist</p>
+            <p className="text-xs text-primary-foreground/80 font-body">Computer Scientist</p>
           </div>
         </Link>
         <nav className="mt-4 sm:mt-0">

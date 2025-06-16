@@ -9,17 +9,17 @@ export default function AboutPage() {
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
         <div className="flex-shrink-0">
           <Avatar className="w-40 h-40 border-4 border-primary shadow-lg">
-            <AvatarImage src="https://placehold.co/200x200.png" alt="Bernard Fiagbenu" data-ai-hint="professional portrait" />
+            <AvatarImage src="/images/bernard_professional.jpg" alt="Bernard Fiagbenu" data-ai-hint="professional portrait" />
             <AvatarFallback>BF</AvatarFallback>
           </Avatar>
         </div>
         <div className="text-left md:text-left">
           <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
           <p className="font-body text-lg mb-4">
-            Hello! I'm a passionate UI Software Engineer and Computer Scientist with a knack for crafting elegant and user-friendly digital solutions. My journey into the world of technology began with a deep curiosity for how things work, which quickly evolved into a passion for building innovative software.
+            Hello! I'm a passionate Computer Scientist with a deep interest in the theoretical underpinnings of computing and future technology. My journey into the world of technology began with a profound curiosity for how complex systems operate, which quickly evolved into a passion for building innovative software solutions.
           </p>
           <p className="font-body text-lg mb-4">
-            I thrive in collaborative environments, leveraging my skills in modern front-end frameworks and design principles to bring ideas to life. My focus is on creating seamless user experiences that are not only functional but also aesthetically pleasing and accessible to all.
+            I thrive in collaborative environments, leveraging my understanding of core computer science concepts and my software development skills to bring ideas to life. My focus is on creating robust and efficient systems built on a solid foundation of computer science principles. I am particularly fascinated by the intersection of theoretical computer science and practical application in shaping the future of technology.
           </p>
           <p className="font-body text-lg mb-6">
             When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and continuously learning to stay at the forefront of this ever-evolving field.
@@ -30,12 +30,12 @@ export default function AboutPage() {
         <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-md">
           <GraduationCap className="w-12 h-12 text-accent mb-3" />
           <h3 className="text-xl font-headline font-semibold text-primary mb-2">Education</h3>
-          <p className="font-body text-center text-muted-foreground">M.Sc. in Computer Science, University of Tech<br/>B.Sc. in Software Engineering, Institute of Code</p>
+          <p className="font-body text-center text-muted-foreground">Bachelor of Science in Computer Science, University of the People<br/>Graduation: 2025</p>
         </div>
         <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-md">
           <Briefcase className="w-12 h-12 text-accent mb-3" />
           <h3 className="text-xl font-headline font-semibold text-primary mb-2">Experience</h3>
-          <p className="font-body text-center text-muted-foreground">5+ years in UI/UX Development<br/>Lead Engineer at Creative Solutions Inc.</p>
+          <p className="font-body text-center text-muted-foreground">5+ years in Software Development<br/>Experienced in various software engineering roles.</p>
         </div>
         <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-md">
           <Lightbulb className="w-12 h-12 text-accent mb-3" />
