@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Stress Manager App',
     description: 'A web application designed to help users manage stress through various techniques and resources. Built with modern web technologies to promote well-being.',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQH126FO3mF1zA/feedshare-shrink_800/B4EZd44JvtHcAo-/0/1750079675928?e=1752710400&v=beta&t=YTjNgUHYnVdxCbVSTYlPxvuAgLgy5LHcXbiF8AS5PLI',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQEiE7nA8hp7mA/feedshare-shrink_1280/B4EZd4bzOmHsAs-/0/1750072245158?e=1752710400&v=beta&t=veC12f_-nY1Dx122nf-xkvyED_iC4H6wUQ-AF57RNlk',
     tags: ['React', 'JavaScript', 'HTML', 'CSS', 'Web App', 'Health', 'Wellness'],
     githubUrl: 'https://github.com/bernardfiagbenu/stressmanager',
     liveUrl: 'https://bernardfiagbenu.github.io/stressmanager/',
