@@ -16,11 +16,11 @@ const projects = [
     aiHint: 'wellness app'
   },
   {
-    title: 'Inspiring Moxie App',
-    description: 'A dynamic web application deployed on Netlify, showcasing modern frontend development skills.',
+    title: 'Fav ico Generator',
+    description: 'A web application that helps users generate favicon files for their websites. Deployed on Netlify.',
     imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQEwfd6DQ_ORwA/feedshare-shrink_800/B4EZd5vE3BHgAk-/0/1750094074334?e=1752710400&v=beta&t=lUJX6c9UXSeBkX4YNClxV6z-7BXHSko6GZyKxA5SuyI',
-    tags: ['Netlify', 'Web App', 'Frontend', 'Responsive Design'],
-    githubUrl: null, // No GitHub URL provided
+    tags: ['Netlify', 'Web App', 'Frontend', 'Favicon', 'Tool'],
+    githubUrl: null, 
     liveUrl: 'https://inspiring-moxie-f3674a.netlify.app/',
     aiHint: 'app interface'
   }
