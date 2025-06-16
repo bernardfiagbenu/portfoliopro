@@ -1,7 +1,7 @@
 # Portfolio Pro (Bernard Fiagbenu Portfolio) - Project Progress Tracker
 
 ## Project Overview
-This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js that highlights the skills and creativity of Bernard Fiagbenu, a UI software engineer and computer scientist. It boasts a sleek design with smooth animations for an optimal user experience across devices.
+This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js that highlights the skills and creativity of Bernard Fiagbenu, a Computer Scientist. It boasts a sleek design with smooth animations for an optimal user experience across devices.
 
 ### Technical Stack
 - Platform: Web (Desktop & Mobile Responsive)

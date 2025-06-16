@@ -5,13 +5,13 @@ import { UserCircle, Briefcase, FlaskConical, Wrench, Mail } from 'lucide-react'
 const sections = [
   {
     title: 'About Me',
-    description: 'Discover my background, passion for technology, and journey as a software engineer.',
+    description: 'Discover my background, passion for technology, and journey as a computer scientist.',
     icon: UserCircle,
     href: '/about',
   },
   {
     title: 'Projects',
-    description: 'Explore a selection of my work, showcasing my skills in UI development and problem-solving.',
+    description: 'Explore a selection of my work, showcasing my skills in software development and problem-solving.',
     icon: Briefcase,
     href: '/projects',
   },
@@ -57,7 +57,8 @@ export default function HomePage() {
           the src would be "/videos/your-video.mp4".
           Alternatively, you can use a URL to an externally hosted video.
         */}
- <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>        Your browser does not support the video tag.
+ <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>
+        Your browser does not support the video tag.
       </video>
 
       {/* Overlay for text readability */}
@@ -66,12 +67,13 @@ export default function HomePage() {
       {/* Content Layer - must be relative and have higher z-index */}
       <div className="relative z-20 p-4"> {/* Added padding to content layer to prevent touching edges if needed */}
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-white animate-fadeInUp">
- Welcome to Portfolio Pro        </h1>
-        <p 
-          className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl animate-fadeInUp" 
+ Welcome to Portfolio Pro
+        </h1>
+        <p
+          className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl animate-fadeInUp"
           style={{ animationDelay: '0.2s' }}
         >
-          I'm Bernard Fiagbenu, a UI Software Engineer and Computer Scientist. Explore my work and get to know my passion for creating intuitive and dynamic digital experiences.
+          I'm Bernard Fiagbenu, a Computer Scientist. Explore my work and get to know my passion for technology and building innovative software solutions.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl">
           {sections.map((section, index) => (
@@ -89,4 +91,3 @@ export default function HomePage() {
     </div>
   );
 }
-

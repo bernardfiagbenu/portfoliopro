@@ -1,7 +1,7 @@
 # Bernard Fiagbenu Portfolio - Product Requirements Document
 
 ## Project Overview
-This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js that highlights the skills and creativity of Bernard Fiagbenu, a UI software engineer and computer scientist. It boasts a sleek design with smooth animations for an optimal user experience across devices. The home screen features a minimalist layout with subtle motion cues. Each section—About, Projects, Research, Skills, and Contact—is accessible via animated navigation cards and presents content with depth effects. The Projects section offers interactive previews and animations.
+This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js that highlights the skills and creativity of Bernard Fiagbenu, a Computer Scientist. It boasts a sleek design with smooth animations for an optimal user experience across devices. The home screen features a minimalist layout with subtle motion cues. Each section—About, Projects, Research, Skills, and Contact—is accessible via animated navigation cards and presents content with depth effects. The Projects section offers interactive previews and animations.
 
 ## Project Context
 - Platform: Web (Desktop & Mobile Responsive)
@@ -36,7 +36,7 @@ This portfolio app, "Portfolio Pro," is a contemporary, interactive digital plat
     - Total Estimated Time: 7 weeks.
 
 ### 2. Problem Statement
-- **Current Pain Points and Challenges**: Lack of a centralized, modern, and interactive platform to showcase Bernard's full range of skills and projects. Existing resume formats or static websites may not fully capture his UI/UX expertise and dynamic capabilities.
+- **Current Pain Points and Challenges**: Lack of a centralized, modern, and interactive platform to showcase Bernard's full range of skills and projects. Existing resume formats or static websites may not fully capture his software development expertise and dynamic capabilities.
 - **Market Opportunity**: A well-designed portfolio can significantly differentiate a candidate in a competitive job market. It serves as a dynamic resume and a testament to practical skills.
 - **User Needs and Feedback**: Target users (recruiters, hiring managers) need a quick and effective way to assess a candidate's skills, experience, and quality of work. An interactive portfolio provides this.
 - **Business Impact and Goals**: Increase visibility, attract better job opportunities, establish a strong personal brand, and facilitate networking.
@@ -46,7 +46,7 @@ This portfolio app, "Portfolio Pro," is a contemporary, interactive digital plat
 - **Core Features and Capabilities**:
     - Home Page: Minimalist layout with an introduction and animated navigation cards.
     - Animated Card Navigation: Cards for About, Projects, Research, Skills, and Contact sections with hover effects and smooth transitions.
-    - About Section: Detailed information about Bernard, his background, and passion.
+    - About Section: Detailed information about Bernard, his background (including Computer Science degree from University of the People, 2025, GPA 3.06), and passion.
     - Projects Section: Interactive showcase of key projects with descriptions, technologies used, images/videos, and links (GitHub, live demo).
     - Skills Section: Categorized list of technical and soft skills.
     - Research Section: Area for articles, publications, or tech explorations.
@@ -55,7 +55,7 @@ This portfolio app, "Portfolio Pro," is a contemporary, interactive digital plat
     - Subtle Animations & Transitions: Throughout the app to enhance UX.
 - **User Personas and Journey Maps**:
     - *Persona 1: Tech Recruiter (Sarah)*
-        - Goal: Quickly assess if Bernard is a good fit for an open UI Engineer role.
+        - Goal: Quickly assess if Bernard is a good fit for an open Computer Science/Software role.
         - Journey: Lands on Home -> Clicks Projects card -> Scans project quality & tech stack -> Clicks Skills card -> Checks relevant skills -> Clicks Contact card if interested.
     - *Persona 2: Hiring Manager (David)*
         - Goal: Deep dive into Bernard's experience and problem-solving abilities.

@@ -30,12 +30,18 @@ export default function AboutPage() {
         <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-md">
           <GraduationCap className="w-12 h-12 text-accent mb-3" />
           <h3 className="text-xl font-headline font-semibold text-primary mb-2">Education</h3>
-          <p className="font-body text-center text-muted-foreground">Bachelor of Science in Computer Science, University of the People<br/>Graduation: 2025</p>
+          <p className="font-body text-center text-muted-foreground">
+            Bachelor of Science in Computer Science
+            <br />
+            University of the People (Pasadena, California)
+            <br />
+            Expected Graduation: 2025 | GPA: 3.06
+          </p>
         </div>
         <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-md">
           <Briefcase className="w-12 h-12 text-accent mb-3" />
           <h3 className="text-xl font-headline font-semibold text-primary mb-2">Experience</h3>
-          <p className="font-body text-center text-muted-foreground">5+ years in Software Development<br/>Experienced in various software engineering roles.</p>
+          <p className="font-body text-center text-muted-foreground">5+ years in Software Development<br/>Experienced in various computer science and software engineering roles.</p>
         </div>
         <div className="flex flex-col items-center p-6 bg-background rounded-lg shadow-md">
           <Lightbulb className="w-12 h-12 text-accent mb-3" />

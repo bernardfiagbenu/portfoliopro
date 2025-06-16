@@ -1,7 +1,7 @@
 # Code Style Guidelines for Portfolio Pro (Bernard Fiagbenu Portfolio)
 
 ## Project Overview
-This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js. It highlights the skills and creativity of Bernard Fiagbenu, a UI software engineer and computer scientist.
+This portfolio app, "Portfolio Pro," is a contemporary, interactive digital platform built with Next.js. It highlights the skills and creativity of Bernard Fiagbenu, a Computer Scientist.
 
 This document defines the coding standards and style guidelines for Portfolio Pro, ensuring consistency and maintainability across the codebase.
 
