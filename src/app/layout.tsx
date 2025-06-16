@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -5,7 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app'; // Fallback, ideally set NEXT_PUBLIC_SITE_URL
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app';
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU";
 const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E22AQH126FO3mF1zA/feedshare-shrink_800/B4EZd44JvtHcAo-/0/1750079675928?e=1752710400&v=beta&t=YTjNgUHYnVdxCbVSTYlPxvuAgLgy5LHcXbiF8AS5PLI";
 
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
     siteName: 'Portfolio Pro',
     images: [
       {
-        url: profileImageUrl, 
-        width: 800, // Adjust if actual dimensions are different and critical
-        height: 800, // Adjust if actual dimensions are different and critical
+        url: profileImageUrl,
+        width: 800,
+        height: 800,
         alt: 'Bernard Fiagbenu - Profile Picture',
       },
     ],
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Portfolio Pro - Bernard Fiagbenu',
     description: 'Digital portfolio of Bernard Fiagbenu, Computer Scientist.',
-    creator: '@FiagbenuBe14283', 
-    images: [profileImageUrl], 
+    creator: '@FiagbenuBe14283',
+    images: [profileImageUrl],
   },
   robots: {
     index: true,
@@ -86,16 +87,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-        <link rel="icon" href={faviconUrl} type="image/png" /> {/* Assuming the linked image can be used as png, adjust type if needed */}
-        <script async dangerouslySetInnerHTML={{
-          __html: `
+        <link rel="icon" href={faviconUrl} type="image/png" />
+        <script
+          async
+          dangerouslySetInnerHTML={{
+            __html: `
             (function() {
               const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
               document.documentElement.classList.add(theme);
             })();
           `,
-        }}
-        suppressHydrationWarning
+          }}
+          suppressHydrationWarning
         />
         <script
           type="application/ld+json"
