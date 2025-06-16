@@ -6,13 +6,13 @@ export default function Footer() {
     <footer className="bg-card text-card-foreground py-8 border-t">
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center space-x-6 mb-4">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">
+          <a href="https://github.com/bernardfiagbenu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">
             <GithubIcon className="w-6 h-6" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors">
+          <a href="https://www.linkedin.com/in/bernard-fiagbenu-26b50b19a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors">
             <LinkedinIcon className="w-6 h-6" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-primary transition-colors">
+          <a href="https://x.com/FiagbenuBe14283" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-primary transition-colors">
             <TwitterIcon className="w-6 h-6" />
           </a>
         </div>
