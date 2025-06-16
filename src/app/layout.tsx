@@ -5,9 +5,55 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app'; // Fallback, ideally set NEXT_PUBLIC_SITE_URL
+
 export const metadata: Metadata = {
-  title: 'Portfolio Pro - Bernard Fiagbenu',
-  description: 'Digital portfolio of Bernard Fiagbenu, UI Software Engineer and Computer Scientist.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Portfolio Pro - Bernard Fiagbenu | Computer Scientist',
+    template: '%s | Bernard Fiagbenu',
+  },
+  description: 'The digital portfolio of Bernard Fiagbenu, a Computer Scientist specializing in software development, web technologies, and innovative tech solutions. Explore projects, skills, and research insights.',
+  keywords: ['Bernard Fiagbenu', 'Computer Scientist', 'Software Developer', 'Web Developer', 'Next.js Developer', 'React Developer', 'Portfolio', 'Tech Projects', 'Software Engineering', 'Full-Stack Developer'],
+  authors: [{ name: 'Bernard Fiagbenu', url: siteUrl }],
+  creator: 'Bernard Fiagbenu',
+  openGraph: {
+    title: 'Portfolio Pro - Bernard Fiagbenu',
+    description: 'Digital portfolio of Bernard Fiagbenu, UI Software Engineer and Computer Scientist.',
+    url: siteUrl,
+    siteName: 'Portfolio Pro',
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`, // Replace with an actual OG image URL if you have one, or use a project image
+        width: 1200,
+        height: 630,
+        alt: 'Bernard Fiagbenu - Portfolio Pro',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio Pro - Bernard Fiagbenu',
+    description: 'Digital portfolio of Bernard Fiagbenu, Computer Scientist.',
+    creator: '@FiagbenuBe14283', // Replace with actual Twitter handle if different
+    images: [`${siteUrl}/twitter-image.png`], // Replace with an actual Twitter image URL
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google9d77f6db261420fa', // From your HTML file
+  },
 };
 
 export default function RootLayout({
@@ -15,6 +61,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portfolio Pro - Bernard Fiagbenu",
+    "url": siteUrl,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${siteUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Bernard Fiagbenu"
+    }
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -22,7 +84,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-        {/* Script to prevent FOUC */}
+        <link rel="icon" href="https://media.licdn.com/dms/image/v2/D4E22AQH126FO3mF1zA/feedshare-shrink_800/B4EZd44JvtHcAo-/0/1750079675928?e=1752710400&v=beta&t=YTjNgUHYnVdxCbVSTYlPxvuAgLgy5LHcXbiF8AS5PLI" type="image/x-icon" />
         <script async dangerouslySetInnerHTML={{
           __html: `
             (function() {
@@ -32,6 +94,10 @@ export default function RootLayout({
           `,
         }}
         suppressHydrationWarning
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="font-body flex flex-col min-h-screen">
