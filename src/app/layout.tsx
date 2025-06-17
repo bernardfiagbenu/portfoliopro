@@ -104,6 +104,25 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <script type="module" dangerouslySetInnerHTML={{ __html: `
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDuyGZC4i_tZcqJBgu5Wq5heplvk1p3bpc",
+    authDomain: "portfolio-pro-39cd8.firebaseapp.com",
+    projectId: "portfolio-pro-39cd8",
+    storageBucket: "portfolio-pro-39cd8.firebasestorage.app",
+    messagingSenderId: "700775517479",
+    appId: "1:700775517479:web:95771512e2a740d6546d02"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+`}} />
       </head>
       <body className="font-body flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
