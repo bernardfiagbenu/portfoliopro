@@ -35,7 +35,7 @@ const projects = [
   {
     title: 'Google Play Console Image Formatter',
     description: 'A tool to quickly and easily format developer icons and header images to meet Google Play Store requirements.',
-    imageUrl: 'https://placehold.co/600x400.png', // Using placeholder as per guidelines
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQHLceGzsddiVg/feedshare-shrink_800/B4EZd7LfkBGwAg-/0/1750118300730?e=1752710400&v=beta&t=kAxXndPg9KxTh_7vM6CpRzO7SswVkBXlpeGBZL7s5rs',
     tags: ['Web App', 'Frontend', 'Image Tool', 'Utility', 'Google Play'],
     githubUrl: null,
     liveUrl: 'https://ubiquitous-speculoos-d2e478.netlify.app/',
