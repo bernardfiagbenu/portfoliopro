@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Explore Bernard Fiagbenu\'s research interests in cutting-edge technologies like AGI, Quantum Computing, BCIs, Nanotechnology, and more.',
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 const researchItems = [
   {
@@ -335,7 +336,7 @@ export default function ResearchPage() {
               "name": "Bernard Fiagbenu Portfolio",
               "logo": {
                 "@type": "ImageObject",
-                "url": `${siteUrl}/icon.png` // Placeholder for a logo
+                "url": siteUrl ? `${siteUrl}/icon.png` : '/icon.png' // Placeholder for a logo
               }
             },
             "datePublished": new Date().toISOString(), // Use actual date if available

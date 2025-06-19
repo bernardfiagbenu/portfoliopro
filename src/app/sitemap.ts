@@ -2,7 +2,14 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+  if (!siteUrl) {
+    throw new Error(
+      'NEXT_PUBLIC_SITE_URL environment variable is not set. Sitemap cannot be generated without it. Please set this in your hosting environment.'
+    );
+  }
+
   const today = new Date().toISOString();
 
   const pages: Array<{ path: string; priority: number; changeFrequency: 'yearly' | 'monthly' | 'weekly' | 'daily' | 'hourly' | 'always' | 'never' }> = [

@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: 'Explore a collection of software development projects by Bernard Fiagbenu, showcasing skills in web applications, tools, and various technologies.',
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app';
-
 const projects = [
   {
     title: 'Stress Manager App',

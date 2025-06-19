@@ -6,24 +6,24 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU";
 const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E22AQH126FO3mF1zA/feedshare-shrink_800/B4EZd44JvtHcAo-/0/1750079675928?e=1752710400&v=beta&t=YTjNgUHYnVdxCbVSTYlPxvuAgLgy5LHcXbiF8AS5PLI";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: siteUrl ? new URL(siteUrl) : null,
   title: {
     default: 'Portfolio Pro - Bernard Fiagbenu | Computer Scientist',
     template: '%s | Bernard Fiagbenu',
   },
   description: 'The digital portfolio of Bernard Fiagbenu, a Computer Scientist specializing in software development, web technologies, and innovative tech solutions. Explore projects, skills, and research insights.',
   keywords: ['Bernard Fiagbenu', 'Computer Scientist', 'Software Developer', 'Web Developer', 'Next.js Developer', 'React Developer', 'Portfolio', 'Tech Projects', 'Software Engineering', 'Full-Stack Developer'],
-  authors: [{ name: 'Bernard Fiagbenu', url: siteUrl }],
+  authors: [{ name: 'Bernard Fiagbenu', url: siteUrl || undefined }],
   creator: 'Bernard Fiagbenu',
   openGraph: {
     title: 'Portfolio Pro - Bernard Fiagbenu',
     description: 'Digital portfolio of Bernard Fiagbenu, UI Software Engineer and Computer Scientist.',
-    url: siteUrl,
+    url: siteUrl || undefined,
     siteName: 'Portfolio Pro',
     images: [
       {
@@ -68,12 +68,12 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Portfolio Pro - Bernard Fiagbenu",
-    "url": siteUrl,
-    "potentialAction": {
+    "url": siteUrl || undefined, // Use undefined if siteUrl is not set, or a relative path like '/'
+    "potentialAction": siteUrl ? {
       "@type": "SearchAction",
       "target": `${siteUrl}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string"
-    },
+    } : undefined,
     "creator": {
       "@type": "Person",
       "name": "Bernard Fiagbenu"

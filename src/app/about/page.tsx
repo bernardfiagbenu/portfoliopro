@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import Image from 'next/image';
@@ -14,14 +15,14 @@ export const metadata: Metadata = {
   },
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://studio--portfolio-pro-39cd8.us-central1.hosted.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export default function AboutPage() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Bernard Fiagbenu",
-    "url": `${siteUrl}/about`,
+    "url": siteUrl ? `${siteUrl}/about` : '/about',
     "image": "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU",
     "jobTitle": "Computer Scientist",
     "description": "Passionate Computer Scientist with a deep interest in theoretical computing and future technology. Focuses on creating robust and efficient systems.",
