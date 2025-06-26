@@ -13,6 +13,16 @@ export const metadata: Metadata = {
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 const researchItems = [
+   {
+    id: 'quantum-computing-use-cases',
+    title: 'Quantum Computing: Future Use Cases',
+    description: 'A comprehensive analysis of future quantum computing use cases across major industries, including healthcare, finance, logistics, and cybersecurity. Read the full article.',
+    date: 'Deep Dive Article',
+    tags: ['Quantum', 'Computing', 'Future Tech', 'Industry'],
+    imageUrl: 'https://placehold.co/600x300.png',
+    link: '/research/quantum-computing-use-cases',
+    aiHint: 'quantum computer chip'
+  },
   {
     id: 'agi',
     title: 'Artificial General Intelligence (AGI)',
