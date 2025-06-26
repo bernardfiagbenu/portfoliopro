@@ -5,9 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   if (!siteUrl) {
-    throw new Error(
-      'NEXT_PUBLIC_SITE_URL environment variable is not set. Sitemap cannot be generated without it. Please set this in your hosting environment.'
+    // Log a warning during the build process
+    console.warn(
+      'Warning: NEXT_PUBLIC_SITE_URL environment variable is not set. Sitemap will be empty. Please set this in your hosting environment for a valid sitemap.'
     );
+    // Return an empty sitemap to prevent the build from failing
+    return [];
   }
 
   const today = new Date().toISOString();
