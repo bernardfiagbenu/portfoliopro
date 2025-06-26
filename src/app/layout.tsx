@@ -8,7 +8,7 @@ import { ThemeProvider } from 'next-themes';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU";
-const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E22AQH126FO3mF1zA/feedshare-shrink_800/B4EZd44JvtHcAo-/0/1750079675928?e=1752710400&v=beta&t=YTjNgUHYnVdxCbVSTYlPxvuAgLgy5LHcXbiF8AS5PLI";
+const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_100_100/B4EZd4ueUsHgAU-/0/1750077138969?e=1756339200&v=beta&t=l4tefxyXzJlzKvv4CB8bLoezjQlv2kb_mweWekSNEe0";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
@@ -68,7 +68,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Portfolio Pro - Bernard Fiagbenu",
-    "url": siteUrl || undefined, // Use undefined if siteUrl is not set, or a relative path like '/'
+    "url": siteUrl || undefined,
     "potentialAction": siteUrl ? {
       "@type": "SearchAction",
       "target": `${siteUrl}/search?q={search_term_string}`,
@@ -87,9 +87,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-        <link rel="icon" href={faviconUrl} type="image/png" />
+        <link rel="icon" href={faviconUrl} type="image/png" sizes="any" />
         <script
-          async
           dangerouslySetInnerHTML={{
             __html: `
             (function() {
@@ -99,18 +98,13 @@ export default function RootLayout({
           `,
           }}
           suppressHydrationWarning
-        />
+        ></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
+        ></script>
         <script type="module" dangerouslySetInnerHTML={{ __html: `
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyDuyGZC4i_tZcqJBgu5Wq5heplvk1p3bpc",
     authDomain: "portfolio-pro-39cd8.firebaseapp.com",
@@ -119,10 +113,8 @@ export default function RootLayout({
     messagingSenderId: "700775517479",
     appId: "1:700775517479:web:95771512e2a740d6546d02"
   };
-
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-`}} />
+`}}></script>
       </head>
       <body className="font-body flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

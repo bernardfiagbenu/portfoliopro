@@ -38,6 +38,15 @@ const projects = [
     githubUrl: null,
     liveUrl: 'https://ubiquitous-speculoos-d2e478.netlify.app/',
     aiHint: 'image formatter tool'
+  },
+  {
+    title: 'Modern Quiz App',
+    description: 'An interactive and modern quiz application to test your knowledge on various subjects. Features a clean UI and engaging user experience.',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQHa5XJpX7b-2g/feedshare-shrink_800/B4EZep0aORHIAg-/0/1750900778472?e=1753920000&v=beta&t=-RjjrDLJC2WU2mjbCa1_Xu9diNICNxRGeRP0eWWYolQ',
+    tags: ['React', 'Quiz App', 'JavaScript', 'Netlify', 'Frontend'],
+    githubUrl: 'https://github.com/bernardfiagbenu/mordern-quiz-app',
+    liveUrl: 'https://effulgent-mousse-1d069d.netlify.app/',
+    aiHint: 'quiz app interface'
   }
 ];
 
