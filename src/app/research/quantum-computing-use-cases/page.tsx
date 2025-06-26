@@ -76,7 +76,7 @@ export default function QuantumComputingPage() {
             <li><strong>Clinical trial optimization:</strong> Quantum optimization (e.g. QAOA) can select trial cohorts and sites to improve trial efficiency. Recent studies show QAOA-based algorithms can optimize trial design, site selection, and patient stratification, potentially reducing trial cost and duration.</li>
             <li><strong>Protein and vaccine research:</strong> QC could simulate viral proteins or antibodies at scale, aiding vaccine design. Hybrid algorithms (VQE) might predict protein dynamics for diseases like cancer or infectious diseases, shortening R&amp;D cycles.</li>
             <li><strong>Diagnostics &amp; imaging:</strong> Quantum ML approaches may eventually improve medical image analysis (e.g. MRI, CT scans) and bioinformatics. Early research suggests quantum neural nets and support-vector-machine algorithms could process complex biomedical data more efficiently.</li>
-            <li><strong>Industry initiatives:</strong> IBM’s Q Network includes pharma partners (Roche, Boehringer Ingelheim) exploring QC for drug R&amp;D. Startups like ProteinQure design proteins with QC, and national labs (e.g. Argonne, Oak Ridge) have “quantum chemistry” programs. Governments (NIH, EU Quantum Flagship) fund QC health research.</li>
+            <li><strong>Industry initiatives:</strong> IBM’s Q Network includes pharma partners (Roche, Boehringer Ingelheim) exploring QC for drug R\&D. Startups like ProteinQure design proteins with QC, and national labs (e.g. Argonne, Oak Ridge) have “quantum chemistry” programs. Governments (NIH, EU Quantum Flagship) fund QC health research.</li>
         </ul>
 
         <h3>Finance &amp; Banking</h3>
@@ -87,7 +87,7 @@ export default function QuantumComputingPage() {
           <li><strong>Credit risk analysis:</strong> Hybrid quantum-classical deep learning can tailor credit-scoring models for different loan categories. A recent study showed a quantum neural network architecture improved credit risk predictions for diverse portfolios.</li>
           <li><strong>Blockchain and cryptocurrencies:</strong> Large-scale QC could threaten blockchain (e.g. breaking elliptic curve signatures). In response, financial institutions are preparing by researching <strong>post-quantum cryptography</strong> and quantum-secure ledgers.</li>
           <li><strong>Algorithmic trading:</strong> In theory, QC could speed up pricing models (via HHL) and solve optimization problems faster, potentially informing high-frequency trading strategies (speculative long-term).</li>
-          <li><strong>Industry efforts:</strong> Goldman Sachs, JP Morgan, Barclays, and Citigroup have QC R&amp;D groups. Startup QC Ware provides quantum-as-a-service to hedge funds. Exchanges explore QC for optimization and backtesting. Central banks and regulators (Bank of Canada, ECB) are also evaluating quantum impacts on finance.</li>
+          <li><strong>Industry efforts:</strong> Goldman Sachs, JP Morgan, Barclays, and Citigroup have QC R\&D groups. Startup QC Ware provides quantum-as-a-service to hedge funds. Exchanges explore QC for optimization and backtesting. Central banks and regulators (Bank of Canada, ECB) are also evaluating quantum impacts on finance.</li>
         </ul>
 
         <h3>Supply Chain &amp; Logistics</h3>
@@ -102,11 +102,11 @@ export default function QuantumComputingPage() {
         <h3>Energy &amp; Materials Science</h3>
         <ul>
           <li><strong>Battery and catalyst design:</strong> QC simulates new energy materials. IBM and Daimler used an IBM quantum computer to model molecules in lithium-sulfur battery chemistry, calculating ground-state energies and dipole moments of key compounds. This aids design of higher-capacity, fast-charging batteries.</li>
-          <li><strong>Chemical catalysis:</strong> DOE’s ARPA-E launched the $30M QC3 program to develop QC algorithms for catalysts and materials (e.g. ammonia synthesis, carbon capture). The goal is breakthroughs in industrial catalysts, superconductors, and battery chemistries.</li>
+          <li><strong>Chemical catalysis:</strong> DOE’s ARPA-E launched the \$30M QC3 program to develop QC algorithms for catalysts and materials (e.g. ammonia synthesis, carbon capture). The goal is breakthroughs in industrial catalysts, superconductors, and battery chemistries.</li>
           <li><strong>Power grid optimization:</strong> Quantum algorithms (QAOA) could balance loads and integrate renewables on smart grids. Initial studies suggest QC can handle the many variables in generation/distribution planning more efficiently than classical solvers.</li>
           <li><strong>Renewable energy materials:</strong> QC can model solar cell and fuel cell chemistry. Airbus/BMW/Quantinuum simulated hydrogen fuel-cell reactions to design better materials. Similar QC efforts target perovskite solar cells and superconducting materials.</li>
-          <li><strong>Oil &amp; gas/chemicals:</strong> QC could optimize drilling operations and model reservoir flows (via PDE solvers like HHL). In chemicals, QC may improve catalyst R&amp;D, yielding efficiency gains (McKinsey estimates 5–10% gains in $800B chemical industry from better catalysts).</li>
-          <li><strong>Research and projects:</strong> DOE’s QC3 invites projects on sustainable energy. ExxonMobil, BASF, and Total have QC partnerships for material R&amp;D. Utilities (e.g. NREL, SGI) are testing QC for grid management. IBM Research, Google AI, and DOE labs publish on energy-related QC applications.</li>
+          <li><strong>Oil &amp; gas/chemicals:</strong> QC could optimize drilling operations and model reservoir flows (via PDE solvers like HHL). In chemicals, QC may improve catalyst R\&D, yielding efficiency gains (McKinsey estimates 5–10% gains in \$800B chemical industry from better catalysts).</li>
+          <li><strong>Research and projects:</strong> DOE’s QC3 invites projects on sustainable energy. ExxonMobil, BASF, and Total have QC partnerships for material R\&D. Utilities (e.g. NREL, SGI) are testing QC for grid management. IBM Research, Google AI, and DOE labs publish on energy-related QC applications.</li>
         </ul>
 
         <h3>Artificial Intelligence &amp; Machine Learning</h3>
@@ -135,23 +135,23 @@ export default function QuantumComputingPage() {
           <li><strong>Quantum-enhanced devices:</strong> Lab prototypes of <strong>quantum receivers</strong> (using, e.g., squeezed light) have demonstrated higher data throughput and lower error rates than classical optics. These could ease the bandwidth crunch in 5G/6G networks.</li>
           <li><strong>Signal processing:</strong> Quantum algorithms (like HHL) could accelerate Fourier transforms and filtering, aiding real-time signal processing in base stations or satellites.</li>
           <li><strong>Post-quantum standards:</strong> Telecom companies (Vodafone, Cisco) are part of GSMA’s post-quantum task force. They are preparing to upgrade core network encryption to PQC before large-scale QC arrives.</li>
-          <li><strong>Industry examples:</strong> British Telecom and Toshiba ran London’s first quantum-secured metro network. Telefónica opened a “Quantum Center” for future communications. Equipment vendors (Ericsson, Huawei) have quantum R&amp;D labs exploring these technologies.</li>
+          <li><strong>Industry examples:</strong> British Telecom and Toshiba ran London’s first quantum-secured metro network. Telefónica opened a “Quantum Center” for future communications. Equipment vendors (Ericsson, Huawei) have quantum R\&D labs exploring these technologies.</li>
         </ul>
         
         <h3>Aerospace &amp; Defense</h3>
         <ul>
           <li><strong>Aircraft and spacecraft design:</strong> QC helps optimize complex engineering problems. For example, Boeing and IBM solved the largest quantum optimization at the time to plan fiber orientations in composite aircraft parts. Airbus collaborates with IonQ on optimization algorithms (e.g. aerodynamics, fuel-cell materials).</li>
-          <li><strong>Navigation &amp; sensing:</strong> <strong>Quantum sensors</strong> (atomic clocks, inertial sensors, magnetometers) promise unprecedented navigation accuracy. DARPA’s new <em>RoQS</em> program aims to integrate quantum sensors onto moving platforms, enabling GPS-independent navigation. Such sensors could detect submarines (via magnetic anomaly) or underground structures.</li>
+          <li><strong>Navigation &amp; sensing:</strong> <strong>Quantum sensors</strong> (atomic clocks, inertial sensors, magnetometers) promise unprecedented navigation accuracy. DARPA’s new *RoQS* program aims to integrate quantum sensors onto moving platforms, enabling GPS-independent navigation. Such sensors could detect submarines (via magnetic anomaly) or underground structures.</li>
           <li><strong>Military communications:</strong> QKD satellites and mobile QKD terminals could secure battlefield networks. Many defense agencies are piloting QKD (e.g. U.S. Air Force’s DARPA QKD program, China’s Micius). Quantum radar (imaging using entangled photons) is under theoretical study for detecting stealth targets (long-term speculative).</li>
           <li><strong>Simulation &amp; wargaming:</strong> Quantum simulation could model complex defense problems (e.g. nuclear reaction networks, materials under stress, or optimization of logistics in operations). Lockheed Martin and IBM, for instance, applied a sample-based quantum diagonalization technique to simulate open-shell molecular systems relevant to aerospace and materials design.</li>
           <li><strong>Cyber defense:</strong> Militaries are concerned about QC breaking adversary encryption and are migrating to quantum-safe algorithms. Conversely, intelligence agencies invest in QC for codebreaking.</li>
-          <li><strong>Organizations:</strong> U.S. DoD (DARPA, ARO) and allied programs fund quantum R&amp;D. Defense contractors (Lockheed Martin, BAE, Northrop Grumman) have quantum teams. NASA studies QC for space communication and material research.</li>
+          <li><strong>Organizations:</strong> U.S. DoD (DARPA, ARO) and allied programs fund quantum R\&D. Defense contractors (Lockheed Martin, BAE, Northrop Grumman) have quantum teams. NASA studies QC for space communication and material research.</li>
         </ul>
 
         <h3>Climate Science &amp; Environment</h3>
         <ul>
-          <li><strong>Climate modeling:</strong> Quantum computing could dramatically accelerate complex climate simulations. QC’s ability to process vast interactions means more accurate models of atmosphere/ocean systems. As one review notes, QC may generate <em>“more sophisticated models with greater predictive capabilities”</em> than classical computers.</li>
-          <li><strong>Weather forecasting:</strong> By simulating atmospheric dynamics in parallel, QC can provide hyper-local forecasts. This helps agriculture (crop planning), disaster preparedness (hurricanes, floods), and energy management. The VivaTech review highlights QC for <em>“improved weather models”</em> and <em>“advanced climate simulations”</em>.</li>
+          <li><strong>Climate modeling:</strong> Quantum computing could dramatically accelerate complex climate simulations. QC’s ability to process vast interactions means more accurate models of atmosphere/ocean systems. As one review notes, QC may generate *“more sophisticated models with greater predictive capabilities”* than classical computers.</li>
+          <li><strong>Weather forecasting:</strong> By simulating atmospheric dynamics in parallel, QC can provide hyper-local forecasts. This helps agriculture (crop planning), disaster preparedness (hurricanes, floods), and energy management. The VivaTech review highlights QC for *“improved weather models”* and *“advanced climate simulations”*.</li>
           <li><strong>Carbon cycle and chemistry:</strong> QC can simulate chemical processes related to greenhouse gases and pollution. For example, modeling CO₂ conversion catalysts or ozone chemistry at molecular level exceeds classical reach.</li>
           <li><strong>Resource optimization:</strong> QC aids environmental engineering (e.g. optimizing renewable power grids, efficient water distribution, or reforestation planning via combinatorial algorithms).</li>
           <li><strong>Environmental sensing:</strong> Quantum-enhanced sensors (e.g. gravimeters, photonic detectors) can monitor climate variables more precisely. Satellites with quantum sensors could track atmospheric composition or climate parameters in real time.</li>
@@ -175,7 +175,7 @@ export default function QuantumComputingPage() {
           <li><strong>Autonomous vehicles:</strong> QC-assisted perception could improve LIDAR/RADAR data analysis. QC decision algorithms (e.g. Grover/HHL) might help self-driving cars weigh many scenarios simultaneously.</li>
           <li><strong>Manufacturing:</strong> QC can optimize car production (assembly-line scheduling, robot paths). McKinsey notes QC can shorten manufacturing cycle times by optimizing multirobot processes (welding/painting paths).</li>
           <li><strong>Logistics:</strong> The automotive supply chain (parts procurement, distribution) benefits from QC optimization (inventory, routing). Ford, GM and suppliers have shown interest in QC for logistics.</li>
-          <li><strong>Testing &amp; design:</strong> Firms like BMW have QC R&amp;D (e.g. BMW Group’s quantum computing initiatives) to simulate crashworthiness and component design.</li>
+          <li><strong>Testing &amp; design:</strong> Firms like BMW have QC R\&D (e.g. BMW Group’s quantum computing initiatives) to simulate crashworthiness and component design.</li>
           <li><strong>Collaborations:</strong> Airbus–BMW–Quantinuum jointly tackled hydrogen fuel cell chemistry, reflecting auto–aero cross-industry quantum efforts. Startups (e.g. Xanadu’s photonic QC) pitch to mobility companies.</li>
         </ul>
 
@@ -187,7 +187,7 @@ export default function QuantumComputingPage() {
           <li><strong>Signal Intelligence (SIGINT):</strong> QC could decrypt adversary communications (eliminate modern encryption) or analyze massive signal datasets via quantum pattern recognition.</li>
           <li><strong>Military logistics and planning:</strong> Large-scale optimization (troop movements, asset allocation) could one day use QAOA/annealing. Wargaming simulations with QC AI opponents is speculative but possible.</li>
           <li><strong>Biosecurity &amp; medical:</strong> QC modeling of pathogens could aid biodefense. Also, QC ML for cyber defense (pattern detection of attacks).</li>
-          <li><strong>Projects:</strong> Governments worldwide have quantum initiatives (US National Quantum Initiative, European Quantum Flagship) that include security applications. Defense R&amp;D (DARPA, ONR) explicitly fund quantum computing and sensing projects.</li>
+          <li><strong>Projects:</strong> Governments worldwide have quantum initiatives (US National Quantum Initiative, European Quantum Flagship) that include security applications. Defense R\&D (DARPA, ONR) explicitly fund quantum computing and sensing projects.</li>
         </ul>
 
         <h3>Agriculture &amp; Food</h3>

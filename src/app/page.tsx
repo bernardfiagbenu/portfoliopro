@@ -64,7 +64,7 @@ export default function HomePage() {
       {/* Overlay for text readability */}
       <div className="absolute inset-0 bg-black/60 z-10"></div>
 
-      {/* Content Layer - must be relative and have higher z-index */}
+      {/* Content Layer - must be relative and have a higher z-index */}
       <div className="relative z-20 p-4"> {/* Added padding to content layer to prevent touching edges if needed */}
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-white animate-fadeInUp">
  Welcome to Portfolio Pro
