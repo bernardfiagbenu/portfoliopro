@@ -8,7 +8,7 @@ import { ThemeProvider } from 'next-themes';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4";
-const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_100_100/B4EZd4ueUsHgAU-/0/1750077138969?e=1756339200&v=beta&t=l4tefxyXzJlzKvv4CB8bLoezjQlv2kb_mweWekSNEe0";
+const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
@@ -89,17 +89,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
         <link rel="icon" href={faviconUrl} type="image/png" sizes="any" />
         <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            (function() {
-              const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-              document.documentElement.classList.add(theme);
-            })();
-          `,
-          }}
-          suppressHydrationWarning
-        ></script>
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         ></script>
@@ -117,7 +106,7 @@ export default function RootLayout({
 `}}></script>
       </head>
       <body className="font-body flex flex-col min-h-screen">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Header />
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
