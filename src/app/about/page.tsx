@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Bernard Fiagbenu',
     description: 'Discover Bernard Fiagbenu\'s background, skills, and aspirations as a Computer Scientist.',
-    images: [{ url: 'https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU', alt: 'Bernard Fiagbenu' }],
+    images: [{ url: 'https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4', alt: 'Bernard Fiagbenu' }],
   },
 };
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
     "@type": "Person",
     "name": "Bernard Fiagbenu",
     "url": siteUrl ? `${siteUrl}/about` : '/about',
-    "image": "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4",
     "jobTitle": "Computer Scientist",
     "description": "Passionate Computer Scientist with a deep interest in theoretical computing and future technology. Focuses on creating robust and efficient systems.",
     "alumniOf": {
@@ -55,7 +55,7 @@ export default function AboutPage() {
           <div className="flex-shrink-0">
             <Avatar className="w-40 h-40 border-4 border-primary shadow-lg">
               <AvatarImage 
-                src="https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU" 
+                src="https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4" 
                 alt="Bernard Fiagbenu - Profile Photo" 
                 data-ai-hint="professional portrait" 
               />

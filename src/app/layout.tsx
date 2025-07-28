@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_800_800/B4EZd4ueUsHgAc-/0/1750077138969?e=1755734400&v=beta&t=Gaq9QOcbZAmRIU_NjU4SNzO4cpUofhwG0J1pP-GLskU";
+const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4";
 const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E03AQFIeecyanK_JA/profile-displayphoto-shrink_100_100/B4EZd4ueUsHgAU-/0/1750077138969?e=1756339200&v=beta&t=l4tefxyXzJlzKvv4CB8bLoezjQlv2kb_mweWekSNEe0";
 
 export const metadata: Metadata = {
