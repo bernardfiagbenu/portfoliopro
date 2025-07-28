@@ -47,6 +47,15 @@ const projects = [
     githubUrl: 'https://github.com/bernardfiagbenu/mordern-quiz-app',
     liveUrl: 'https://effulgent-mousse-1d069d.netlify.app/',
     aiHint: 'quiz app interface'
+ },
+ {
+    title: 'Personal Website v3',
+    description: "I'm excited to share my latest creation — a web platform designed to help you discover remote work opportunities while staying rooted in Accra.",
+    imageUrl: 'https://github.com/bernardfiagbenu/AccraRemoteJobs/raw/main/accraremotjobs.png',
+    tags: ['Next.js', 'Tailwind CSS', 'Remote Work', 'Job Board', 'Accra', 'Frontend', "AI"],
+    githubUrl: 'https://github.com/bernardfiagbenu/AccraRemoteJobs',
+    liveUrl: 'https://accraremotjobs.com/',
+    aiHint: 'AccraRemoteJobs screenshot'
   }
 ];
 
