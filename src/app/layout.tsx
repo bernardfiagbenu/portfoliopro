@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
+import ScrollProgressBar from '@/components/ui/ScrollProgressBar';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4";
@@ -108,6 +109,7 @@ export default function RootLayout({
       <body className="font-body flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Header />
+          <ScrollProgressBar />
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
           </main>

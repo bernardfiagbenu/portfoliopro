@@ -4,7 +4,7 @@ import { CodeXmlIcon } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 export default function Header() {
   return (
-    <header className="bg-primary text-primary-foreground shadow-md">
+    <header className="bg-primary text-primary-foreground shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
         <Link href="/" className="flex items-center gap-2 text-2xl font-headline hover:text-accent transition-colors">
           <CodeXmlIcon className="w-8 h-8 text-accent" />
