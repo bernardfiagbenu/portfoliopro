@@ -17,7 +17,7 @@ import { PortfolioChatInputSchema, type PortfolioChatInput } from './chat-types'
 
 // The main function that will be called from the frontend.
 export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
-  const {stream, response} = portfolioChatFlow(input);
+  const {stream, response} = await portfolioChatFlow(input);
 
   // For this implementation, we will consume the stream on the server
   // and return the full response at once.
