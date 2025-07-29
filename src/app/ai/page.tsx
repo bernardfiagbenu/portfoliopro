@@ -49,8 +49,8 @@ export default function AiPage() {
                 <Image
                   src={project.imageUrl}
                   alt={`${project.title} - Project Screenshot`}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  className="object-cover"
                   data-ai-hint={project.aiHint}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={index < 2}

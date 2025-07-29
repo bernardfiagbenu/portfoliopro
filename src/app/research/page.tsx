@@ -365,8 +365,8 @@ export default function ResearchPage() {
                   <Image 
                     src={item.imageUrl} 
                     alt={`${item.title} - Research Visual`} 
-                    layout="fill" 
-                    objectFit="cover" 
+                    fill 
+                    className="object-cover" 
                     data-ai-hint={item.aiHint}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                     priority={index < 3} // Prioritize loading images for the first few items

@@ -99,8 +99,8 @@ export default function ImageCaptioner() {
              <Image 
                 src={imagePreview} 
                 alt="Uploaded preview" 
-                layout="fill"
-                objectFit="contain"
+                fill
+                className="object-contain"
             />
           </div>
         )}
