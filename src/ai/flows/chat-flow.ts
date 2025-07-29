@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview A portfolio chatbot AI flow using Genkit.
@@ -7,28 +8,25 @@
  * projects, and professional background based on a provided context.
  *
  * - portfolioChat - The main function that processes user messages.
- * - PortfolioChatInput - The Zod schema for the chat input.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'zod';
+import { PortfolioChatInputSchema, type PortfolioChatInput } from './chat-types';
 
-export const PortfolioChatInputSchema = z.object({
-  message: z.string().describe('The user\'s message or question.'),
-});
-export type PortfolioChatInput = z.infer<typeof PortfolioChatInputSchema>;
 
 // The main function that will be called from the frontend.
 export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
-  const stream = await portfolioChatFlow(input);
+  const {stream, response} = portfolioChatFlow(input);
 
   // For this implementation, we will consume the stream on the server
   // and return the full response at once.
-  let response = '';
+  let fullResponse = '';
   for await (const chunk of stream) {
-    response += chunk;
+    fullResponse += chunk;
   }
-  return response;
+  await response;
+  return fullResponse;
 }
 
 const prompt = ai.definePrompt({
@@ -79,12 +77,12 @@ const portfolioChatFlow = ai.defineFlow(
     outputSchema: z.string(),
     stream: true,
   },
-  async input => {
+  async (input) => {
     const {stream} = await ai.generate({
       prompt: prompt.prompt,
       input: input,
       stream: true,
     });
-    return stream;
+    return { stream, response: Promise.resolve() };
   }
 );

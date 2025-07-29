@@ -1,7 +1,7 @@
+
 'use client';
 
 import { useState, useRef, useEffect, type FormEvent } from 'react';
-import { useActions, useUIState } from 'ai/rsc';
 import { nanoid } from 'nanoid';
 import { User, Bot } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -67,12 +67,12 @@ export default function Chatbot() {
   };
 
   return (
-    <Card className="flex flex-col h-[600px] w-full max-w-3xl mx-auto">
-      <CardHeader className="text-center">
-        <CardTitle className="font-headline text-2xl text-primary">Portfolio Assistant</CardTitle>
-        <CardDescription>Ask me about Bernard's skills, projects, and more.</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow overflow-y-auto p-4 space-y-4">
+    <div className="flex flex-col h-[600px] w-full max-w-3xl mx-auto rounded-lg border shadow-lg">
+      <div className="p-4 border-b text-center">
+        <h2 className="font-headline text-2xl text-primary">Portfolio Assistant</h2>
+        <p className="text-sm text-muted-foreground">Ask me about Bernard's skills, projects, and more.</p>
+      </div>
+      <div className="flex-grow overflow-y-auto p-4 space-y-4">
         {messages.map(m => (
           <div
             key={m.id}
@@ -109,13 +109,13 @@ export default function Chatbot() {
               <Bot className="w-5 h-5" />
             </div>
             <div className="rounded-lg px-4 py-2 bg-muted text-muted-foreground flex items-center">
-              <span className="animate-pulse-fast">...</span>
+              <span className="animate-pulse">...</span>
             </div>
           </div>
         )}
         <div ref={messagesEndRef} />
-      </CardContent>
-      <CardFooter className="p-4 border-t">
+      </div>
+      <div className="p-4 border-t">
         <form onSubmit={handleSubmit} className="w-full flex items-center gap-2">
           <Textarea
             value={input}
@@ -135,7 +135,7 @@ export default function Chatbot() {
             Send
           </Button>
         </form>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }
