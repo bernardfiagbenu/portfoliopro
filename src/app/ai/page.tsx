@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { GithubIcon, ExternalLinkIcon, BrainCircuit } from 'lucide-react';
 import Chatbot from '@/components/ai/Chatbot';
+import ImageCaptioner from '@/components/ai/ImageCaptioner';
 
 export const metadata: Metadata = {
   title: 'A.I. Playground by Bernard Fiagbenu',
@@ -13,15 +14,6 @@ export const metadata: Metadata = {
 };
 
 const aiProjects = [
-  {
-    title: 'AI Image Caption Generator',
-    description: 'Upload an image and have an AI model generate a descriptive caption. A fun way to explore computer vision.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Genkit', 'Next.js', 'Computer Vision', 'Image Generation'],
-    githubUrl: '#',
-    liveUrl: '#',
-    aiHint: 'image analysis tool'
-  },
   {
     title: 'Text-to-Speech Article Reader',
     description: 'Converts my research articles into natural-sounding audio. An experiment in accessibility and AI voice generation.',
@@ -36,15 +28,22 @@ const aiProjects = [
 export default function AiPage() {
   return (
     <SectionContainer title="A.I. Playground" subtitle="Experiments with Generative AI">
-      {/* Chatbot takes the full width on top */}
       <div className="mb-12">
         <Chatbot />
       </div>
 
-      {/* Other AI projects below */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="mb-12">
+        <ImageCaptioner />
+      </div>
+      
+      <div className="mt-12 text-center">
+        <h3 className="text-3xl font-headline font-bold text-primary mb-2">More Experiments Coming Soon</h3>
+        <p className="text-lg text-muted-foreground">I'm actively working on other AI projects. Here's a preview of what's next.</p>
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         {aiProjects.map((project, index) => (
-          <Card key={index} className="flex flex-col overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
+          <Card key={index} className="flex flex-col overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-muted/20">
             <CardHeader>
               <div className="aspect-video relative w-full rounded-t-md overflow-hidden">
                 <Image

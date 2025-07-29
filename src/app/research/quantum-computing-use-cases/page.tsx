@@ -1,16 +1,41 @@
 
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleReader from '@/components/ai/ArticleReader';
 
 export const metadata: Metadata = {
   title: 'Quantum Computing: Future Use Cases Across Industries',
   description: 'A comprehensive list of all potential future use cases for quantum computers—covering both near-term practical applications and long-term speculative ones.',
 };
 
+const articleText = `
+Overview
+Quantum computers promise breakthroughs in simulation, optimization, and secure communication. In the 5–10 year horizon, hybrid quantum-classical applications (e.g. variational algorithms, quantum annealing) will begin delivering advantage in specific niches. Beyond that, fault-tolerant quantum computers could enable entirely new capabilities. Below we survey use cases by sector, noting relevant quantum algorithms (e.g. Shor, Grover, VQE, QAOA, quantum annealing) and citing current research and pilot projects.
+Healthcare & Pharmaceuticals
+Molecular simulation (Drug discovery): Quantum computers (using VQE, QPE, etc.) can model complex molecules and reactions directly. For example, QC pipelines have been used to compute Gibbs free energies and bond interactions of drug-like molecules, demonstrating integration into drug-design workflows. By accurately predicting protein folding and ligand binding, QC could dramatically accelerate lead identification and ADME/Tox prediction.
+Personalized medicine & genomics: QC can analyze huge genomic datasets and model biomolecular interactions for precision medicine. IBM has noted potential for linking genome data to patient outcomes for precision therapies. Quantum ML could detect subtle patterns in imaging or genetic data for early disease diagnosis.
+Clinical trial optimization: Quantum optimization (e.g. QAOA) can select trial cohorts and sites to improve trial efficiency. Recent studies show QAOA-based algorithms can optimize trial design, site selection, and patient stratification, potentially reducing trial cost and duration.
+Protein and vaccine research: QC could simulate viral proteins or antibodies at scale, aiding vaccine design. Hybrid algorithms (VQE) might predict protein dynamics for diseases like cancer or infectious diseases, shortening R&D cycles.
+Diagnostics & imaging: Quantum ML approaches may eventually improve medical image analysis (e.g. MRI, CT scans) and bioinformatics. Early research suggests quantum neural nets and support-vector-machine algorithms could process complex biomedical data more efficiently.
+Industry initiatives: IBM’s Q Network includes pharma partners (Roche, Boehringer Ingelheim) exploring QC for drug R&D. Startups like ProteinQure design proteins with QC, and national labs (e.g. Argonne, Oak Ridge) have “quantum chemistry” programs. Governments (NIH, EU Quantum Flagship) fund QC health research.
+Finance & Banking
+Portfolio and risk optimization: Banks use quantum optimization for portfolio selection and risk management. For example, JPMorgan applied a hybrid HHL algorithm to a small portfolio optimization problem on Quantinuum hardware. QAOA is another candidate for optimizing asset allocations under constraints.
+Derivative pricing and Monte Carlo: Quantum amplitude estimation can accelerate Monte Carlo simulations (e.g. option pricing, VaR) by quadratic speedup. This reduces sampling complexity for high-dimensional risk models.
+Fraud and anomaly detection: Quantum machine learning may improve fraud detection. Research suggests quantum neural networks could identify patterns of fraudulent transactions more effectively than classical methods.
+Credit risk analysis: Hybrid quantum-classical deep learning can tailor credit-scoring models for different loan categories. A recent study showed a quantum neural network architecture improved credit risk predictions for diverse portfolios.
+Blockchain and cryptocurrencies: Large-scale QC could threaten blockchain (e.g. breaking elliptic curve signatures). In response, financial institutions are preparing by researching post-quantum cryptography and quantum-secure ledgers.
+Algorithmic trading: In theory, QC could speed up pricing models (via HHL) and solve optimization problems faster, potentially informing high-frequency trading strategies (speculative long-term).
+Industry efforts: Goldman Sachs, JP Morgan, Barclays, and Citigroup have QC R&D groups. Startup QC Ware provides quantum-as-a-service to hedge funds. Exchanges explore QC for optimization and backtesting. Central banks and regulators (Bank of Canada, ECB) are also evaluating quantum impacts on finance.
+`;
+
+
 export default function QuantumComputingPage() {
   return (
     <SectionContainer title="Quantum Computing: Future Use Cases" subtitle="A Deep Dive into Cross-Industry Applications">
       <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
+        
+        <ArticleReader textToRead={articleText} />
+        
         <h2>Overview</h2>
         <p>
           Quantum computers promise breakthroughs in simulation, optimization, and secure communication. In the 5–10 year horizon, <em>hybrid quantum-classical</em> applications (e.g. variational algorithms, quantum annealing) will begin delivering advantage in specific niches. Beyond that, fault-tolerant quantum computers could enable entirely new capabilities. Below we survey use cases by sector, noting relevant quantum algorithms (e.g. <strong>Shor</strong>, <strong>Grover</strong>, <strong>VQE</strong>, <strong>QAOA</strong>, quantum annealing) and citing current research and pilot projects.
@@ -74,7 +99,7 @@ export default function QuantumComputingPage() {
             <li><strong>Molecular simulation (Drug discovery):</strong> Quantum computers (using VQE, QPE, <em>etc.</em>) can model complex molecules and reactions directly. For example, QC pipelines have been used to compute <strong>Gibbs free energies</strong> and bond interactions of drug-like molecules, demonstrating integration into drug-design workflows. By accurately predicting protein folding and ligand binding, QC could dramatically accelerate lead identification and ADME/Tox prediction.</li>
             <li><strong>Personalized medicine &amp; genomics:</strong> QC can analyze huge genomic datasets and model biomolecular interactions for precision medicine. IBM has noted potential for linking genome data to patient outcomes for <strong>precision therapies</strong>. Quantum ML could detect subtle patterns in imaging or genetic data for early disease diagnosis.</li>
             <li><strong>Clinical trial optimization:</strong> Quantum optimization (e.g. QAOA) can select trial cohorts and sites to improve trial efficiency. Recent studies show QAOA-based algorithms can optimize trial design, site selection, and patient stratification, potentially reducing trial cost and duration.</li>
-            <li><strong>Protein and vaccine research:</strong> QC could simulate viral proteins or antibodies at scale, aiding vaccine design. Hybrid algorithms (VQE) might predict protein dynamics for diseases like cancer or infectious diseases, shortening R&amp;D cycles.</li>
+            <li><strong>Protein and vaccine research:</strong> QC could simulate viral proteins or antibodies at scale, aiding vaccine design. Hybrid algorithms (VQE) might predict protein dynamics for diseases like cancer or infectious diseases, shortening R&D cycles.</li>
             <li><strong>Diagnostics &amp; imaging:</strong> Quantum ML approaches may eventually improve medical image analysis (e.g. MRI, CT scans) and bioinformatics. Early research suggests quantum neural nets and support-vector-machine algorithms could process complex biomedical data more efficiently.</li>
             <li><strong>Industry initiatives:</strong> IBM’s Q Network includes pharma partners (Roche, Boehringer Ingelheim) exploring QC for drug R\&D. Startups like ProteinQure design proteins with QC, and national labs (e.g. Argonne, Oak Ridge) have “quantum chemistry” programs. Governments (NIH, EU Quantum Flagship) fund QC health research.</li>
         </ul>
@@ -112,7 +137,7 @@ export default function QuantumComputingPage() {
         <h3>Artificial Intelligence &amp; Machine Learning</h3>
         <ul>
           <li><strong>Accelerated model training:</strong> QC can process high-dimensional data faster for some ML tasks. Quantum algorithms (e.g. quantum neural networks, support vector machines) theoretically train faster on complex datasets. In practice, hybrid QC/ML frameworks (e.g. QC-assisted layers) may reduce training times for deep networks.</li>
-          <li><strong>Feature extraction and pattern recognition:</strong> Quantum circuits can encode data in superposition, potentially finding patterns invisible to classical methods. Applications include medical image analysis, fraud detection, and genomic classification. Early work shows promise in QC-aided diagnostics and anomaly detection.</li>
+          <li><strong>Feature extraction and pattern recognition:</strong> Quantum circuits can encode data in superposition, aotentially finding patterns invisible to classical methods. Applications include medical image analysis, fraud detection, and genomic classification. Early work shows promise in QC-aided diagnostics and anomaly detection.</li>
           <li><strong>Reinforcement learning &amp; decision making:</strong> QC could improve reinforcement learning by evaluating many action paths in parallel. For example, QC decision models might help autonomous vehicles predict other drivers’ behavior faster.</li>
           <li><strong>Hybrid AI pipelines:</strong> In the short term, <em>quantum-inspired</em> algorithms (classical algorithms inspired by QC) are already used. Over 5–10 years, hybrid pipelines may use QC for the most compute-intensive sub-tasks (e.g. solving linear systems with HHL, or using amplitude amplification in GANs).</li>
           <li><strong>Industry efforts:</strong> Google, IBM, and Microsoft are exploring quantum ML toolkits. Startups like Xanadu (PennyLane) and Rigetti (Forest) offer quantum ML libraries. Research labs (Purdue QML group, Perimeter Institute) are active in quantum AI research.</li>
