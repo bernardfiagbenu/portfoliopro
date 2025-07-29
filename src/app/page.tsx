@@ -1,6 +1,6 @@
 
 import AnimatedCard from '@/components/ui/AnimatedCard';
-import { UserCircle, Briefcase, FlaskConical, Wrench, Mail } from 'lucide-react';
+import { UserCircle, Briefcase, FlaskConical, Wrench, Mail, BrainCircuit } from 'lucide-react';
 
 const sections = [
   {
@@ -14,6 +14,12 @@ const sections = [
     description: 'Explore a selection of my work, showcasing my skills in software development and problem-solving.',
     icon: Briefcase,
     href: '/projects',
+  },
+   {
+    title: 'A.I. Playground',
+    description: 'Interact with AI-powered tools and see my experiments with generative models.',
+    icon: BrainCircuit,
+    href: '/ai',
   },
   {
     title: 'Skills',
