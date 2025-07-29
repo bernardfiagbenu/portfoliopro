@@ -5,22 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { GithubIcon, ExternalLinkIcon, BrainCircuit } from 'lucide-react';
+import Chatbot from '@/components/ai/Chatbot';
 
 export const metadata: Metadata = {
-  title: 'A.I. Projects by Bernard Fiagbenu',
+  title: 'A.I. Playground by Bernard Fiagbenu',
   description: 'A collection of A.I. projects by Bernard Fiagbenu, showcasing experiments with large language models, computer vision, and other AI technologies.',
 };
 
 const aiProjects = [
-  {
-    title: 'Portfolio Assistant Chatbot',
-    description: 'An AI-powered chatbot trained on my portfolio data. Ask it about my skills, projects, or experience!',
-    imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Genkit', 'Next.js', 'LLM', 'RAG', 'Chatbot'],
-    githubUrl: '#',
-    liveUrl: '#',
-    aiHint: 'chatbot interface'
-  },
   {
     title: 'AI Image Caption Generator',
     description: 'Upload an image and have an AI model generate a descriptive caption. A fun way to explore computer vision.',
@@ -44,6 +36,12 @@ const aiProjects = [
 export default function AiPage() {
   return (
     <SectionContainer title="A.I. Playground" subtitle="Experiments with Generative AI">
+      {/* Chatbot takes the full width on top */}
+      <div className="mb-12">
+        <Chatbot />
+      </div>
+
+      {/* Other AI projects below */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {aiProjects.map((project, index) => (
           <Card key={index} className="flex flex-col overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105">

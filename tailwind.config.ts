@@ -95,6 +95,10 @@ export default {
         scaleUp: {
           '0%': { transform: 'scale(0.95)', opacity: '0.7' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'pulse-fast': {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '1' },
         }
       },
       animation: {
@@ -102,6 +106,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
         'scale-up': 'scaleUp 0.3s ease-out forwards',
+        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },
