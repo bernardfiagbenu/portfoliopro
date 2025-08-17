@@ -7,10 +7,9 @@ import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-// Using a placeholder for the main profile/og image
-const profileImageUrl = "https://placehold.co/800x800/4B0082/E6E6FA.png?text=BF"; 
-// Using a placeholder for the favicon
-const faviconUrl = "https://placehold.co/32x32/4B0082/E6E6FA.png?text=B";
+// Using the LinkedIn profile picture for both OG image and favicon for consistency
+const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4"; 
+const faviconUrl = profileImageUrl;
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
@@ -30,8 +29,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: profileImageUrl,
-        width: 800,
-        height: 800,
+        width: 200,
+        height: 200,
         alt: 'Bernard Fiagbenu - Profile Picture',
       },
     ],
