@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, type ChangeEvent } from 'react';
@@ -55,22 +56,10 @@ export default function ImageCaptioner() {
         return;
     }
 
-    setIsLoading(true);
-    setCaption('');
-    
-    try {
-      const generatedCaption = await generateCaption({ photoDataUri: imageData });
-      setCaption(generatedCaption);
-    } catch (error) {
-      console.error('Error generating caption:', error);
-      toast({
-            variant: "destructive",
-            title: "Caption Failed",
-            description: "Something went wrong while generating the caption. Please try again.",
-        });
-    } finally {
-      setIsLoading(false);
-    }
+     toast({
+        title: "Coming Soon!",
+        description: "This feature is under development. Kindly wait.",
+    });
   };
 
   return (

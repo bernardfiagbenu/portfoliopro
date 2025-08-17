@@ -9,6 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Balancer from 'react-wrap-balancer';
 import { portfolioChat } from '@/ai/flows/chat-flow';
+import { useToast } from "@/hooks/use-toast";
+
 
 interface Message {
   id: string;
@@ -21,6 +23,8 @@ export default function Chatbot() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
+
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -44,26 +48,10 @@ export default function Chatbot() {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    const userMessage: Message = { id: nanoid(), role: 'user', content: input };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
-    try {
-      const response = await portfolioChat({ message: input });
-      const assistantMessage: Message = { id: nanoid(), role: 'assistant', content: response };
-      setMessages(prev => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error('Error fetching AI response:', error);
-      const errorMessage: Message = {
-        id: nanoid(),
-        role: 'assistant',
-        content: "Sorry, I'm having a little trouble connecting right now. Please try again in a moment.",
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
+    toast({
+        title: "Coming Soon!",
+        description: "This feature is under development. Kindly wait.",
+    });
   };
 
   return (
