@@ -13,7 +13,25 @@ export const metadata: Metadata = {
   description: 'A collection of A.I. projects by Bernard Fiagbenu, showcasing experiments with large language models, computer vision, and other AI technologies.',
 };
 
-const aiProjects: any[] = [
+const aiProjects = [
+  {
+    title: 'AI-Powered Story Generator',
+    description: 'A web application that uses a large language model to generate short stories based on user prompts. Features customizable genres and characters.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    tags: ['Genkit', 'Next.js', 'AI', 'LLM', 'Storytelling'],
+    githubUrl: '#',
+    liveUrl: '#',
+    aiHint: 'ai storytelling interface'
+  },
+  {
+    title: 'Image Recognition API',
+    description: 'A backend service that identifies objects in images. Built with a computer vision model and exposed via a REST API for easy integration.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    tags: ['Computer Vision', 'Genkit', 'API', 'Node.js', 'Cloud Run'],
+    githubUrl: '#',
+    liveUrl: null,
+    aiHint: 'image recognition api'
+  },
 ];
 
 export default function AiPage() {
@@ -30,8 +48,8 @@ export default function AiPage() {
       {aiProjects.length > 0 && (
         <>
           <div className="mt-12 text-center">
-            <h3 className="text-3xl font-headline font-bold text-primary mb-2">More Experiments Coming Soon</h3>
-            <p className="text-lg text-muted-foreground">I'm actively working on other AI projects. Here's a preview of what's next.</p>
+            <h3 className="text-3xl font-headline font-bold text-primary mb-2">My AI Experiments</h3>
+            <p className="text-lg text-muted-foreground">Here are some of the AI projects I've been working on.</p>
           </div>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">

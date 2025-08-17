@@ -7,8 +7,10 @@ import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4";
-const faviconUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4";
+// Using a placeholder for the main profile/og image
+const profileImageUrl = "https://placehold.co/800x800/4B0082/E6E6FA.png?text=BF"; 
+// Using a placeholder for the favicon
+const faviconUrl = "https://placehold.co/32x32/4B0082/E6E6FA.png?text=B";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
@@ -92,21 +94,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         ></script>
-        <script type="module" dangerouslySetInnerHTML={{ __html: `
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  const firebaseConfig = {
-    apiKey: "AIzaSyDuyGZC4i_tZcqJBgu5Wq5heplvk1p3bpc",
-    authDomain: "portfolio-pro-39cd8.firebaseapp.com",
-    projectId: "portfolio-pro-39cd8",
-    storageBucket: "portfolio-pro-39cd8.firebasestorage.app",
-    messagingSenderId: "700775517479",
-    appId: "1:700775517479:web:95771512e2a740d6546d02"
-  };
-  const app = initializeApp(firebaseConfig);
-`}}></script>
       </head>
       <body className="font-body flex flex-col min-h-screen">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+          >
           <Header />
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
