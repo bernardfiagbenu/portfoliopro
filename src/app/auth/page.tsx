@@ -1,6 +1,6 @@
 
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -10,9 +10,12 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { auth, googleProvider, signInWithPopup } from '@/lib/firebase';
-import { RecaptchaVerifier, signInWithPhoneNumber, type AuthProvider } from 'firebase/auth';
+import { auth, googleProvider, signInWithPopup, RecaptchaVerifier, signInWithPhoneNumber, type AuthProvider } from '@/lib/firebase';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useRouter } from 'next/navigation';
+import { useUser } from '@/context/UserContext';
+import { updateProfile } from 'firebase/auth';
+
 
 // Zod Schemas
 const signUpSchema = z.object({
@@ -62,12 +65,21 @@ const AppleIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function AuthPage() {
   const { toast } = useToast();
   const [isVerifying, setIsVerifying] = useState(false);
+  const [userName, setUserName] = useState('');
   const isMobile = useIsMobile();
+  const router = useRouter();
+  const { user } = useUser();
 
   const signUpForm = useForm<SignUpValues>({ resolver: zodResolver(signUpSchema) });
   const loginForm = useForm<LoginValues>({ resolver: zodResolver(loginSchema) });
   const verifyCodeForm = useForm<VerifyCodeValues>({ resolver: zodResolver(verifyCodeSchema) });
   
+  useEffect(() => {
+    if (user) {
+        router.push('/profile');
+    }
+  }, [user, router]);
+
   const setupRecaptcha = () => {
     // Check if recaptchaVerifier is already initialized on the window object
     if (!window.recaptchaVerifier) {
@@ -84,6 +96,7 @@ export default function AuthPage() {
 
   const onSignUp: SubmitHandler<SignUpValues> = async (data) => {
     try {
+        setUserName(data.name);
         const appVerifier = setupRecaptcha();
         const confirmationResult = await signInWithPhoneNumber(auth, data.phone, appVerifier);
         // Store the confirmation result on the window object to use in the verification step
@@ -101,7 +114,9 @@ export default function AuthPage() {
         if (window.recaptchaVerifier) {
             window.recaptchaVerifier.render().then((widgetId) => {
                 // @ts-ignore
-                grecaptcha.reset(widgetId);
+                if(typeof grecaptcha !== 'undefined') {
+                    grecaptcha.reset(widgetId);
+                }
             });
         }
     }
@@ -111,17 +126,21 @@ export default function AuthPage() {
     // Implement login logic here
      toast({
         title: "Coming Soon!",
-        description: "Login functionality is under development. Kindly wait.",
+        description: "Login functionality is under development. Please use Sign Up with Phone or Google.",
     });
   };
 
   const onVerifyCode: SubmitHandler<VerifyCodeValues> = async (data) => {
     try {
-        // Use the confirmationResult from the window object
-        await window.confirmationResult.confirm(data.code);
+        const result = await window.confirmationResult.confirm(data.code);
+        const user = result.user;
+        if(user && userName){
+            await updateProfile(user, { displayName: userName });
+        }
         toast({ title: 'Success!', description: 'Your phone number has been verified.' });
         setIsVerifying(false);
         signUpForm.reset();
+        router.push('/profile');
     } catch (error: any) {
          console.error("Error during verification:", error);
          toast({
@@ -140,6 +159,7 @@ export default function AuthPage() {
         title: 'Sign In Successful!',
         description: `Welcome, ${user.displayName || user.email}!`,
       });
+       router.push('/profile');
     } catch (error: any) {
       console.error("Error during social login:", error);
       toast({
@@ -168,7 +188,7 @@ export default function AuthPage() {
                                 {verifyCodeForm.formState.errors.code && <p className="text-destructive text-sm mt-1">{verifyCodeForm.formState.errors.code.message}</p>}
                             </div>
                             <Button type="submit" className="w-full" disabled={verifyCodeForm.formState.isSubmitting}>
-                                {verifyCodeForm.formState.isSubmitting ? 'Verifying...' : 'Verify'}
+                                {verifyCodeForm.formState.isSubmitting ? 'Verifying...' : 'Verify & Sign Up'}
                             </Button>
                         </form>
                     </CardContent>

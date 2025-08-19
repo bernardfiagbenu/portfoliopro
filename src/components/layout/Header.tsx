@@ -1,9 +1,15 @@
+
+'use client';
 import Link from 'next/link';
-import { CodeXmlIcon } from 'lucide-react';
+import { CodeXmlIcon, User, LogIn } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Button } from '../ui/button';
+import { useUser } from '@/context/UserContext';
+
+
 export default function Header() {
+  const { user } = useUser();
   return (
     <header className="bg-background text-foreground shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
@@ -24,8 +30,11 @@ export default function Header() {
             <li><Link href="/contact" className="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary/50 pb-1">Contact</Link></li>
           </ul>
           <div className="flex items-center gap-2">
-             <Link href="/auth">
-                <Button variant="outline" size="sm">Login</Button>
+             <Link href={user ? "/profile" : "/auth"}>
+                <Button variant="outline" size="sm">
+                  {user ? <User className="mr-2 h-4 w-4" /> : <LogIn className="mr-2 h-4 w-4" />}
+                  {user ? 'Profile' : 'Login'}
+                </Button>
               </Link>
           </div>
           <ThemeToggle />
@@ -34,3 +43,4 @@ export default function Header() {
     </header>
   );
 }
+

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from 'next-themes';
+import { UserProvider } from '@/context/UserContext';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 // Using the LinkedIn profile picture for both OG image and favicon for consistency
@@ -95,19 +96,22 @@ export default function RootLayout({
         ></script>
       </head>
       <body className="font-body flex flex-col min-h-screen">
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-          >
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+        <UserProvider>
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="light"
+                enableSystem={false}
+            >
+            <Header />
+            <main className="flex-grow">
+                {children}
+            </main>
+            <Footer />
+            <Toaster />
+            </ThemeProvider>
+        </UserProvider>
       </body>
     </html>
   );
 }
+
