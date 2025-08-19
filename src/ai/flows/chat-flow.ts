@@ -41,7 +41,7 @@ Here is the context about Bernard Fiagbenu. Use it to answer the user's question
 **CONTEXT**
 
 **Name:** Bernard Fiagbenu
-**Role:** Computer Scientist
+**Role:** Computer Science
 **Education:** Bachelor of Science in Computer Science from University of the People (Expected Graduation: 2025, GPA: 3.06).
 **Experience:** Over 5 years in Software Development.
 **Philosophy:** "Simplicity is the ultimate sophistication." - Strives for clarity and impact.

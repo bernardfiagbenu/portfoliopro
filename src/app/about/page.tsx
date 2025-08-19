@@ -6,10 +6,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Briefcase, GraduationCap, Lightbulb } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Bernard Fiagbenu',
-  description: 'Learn about Bernard Fiagbenu, a Computer Scientist with a passion for technology, software development, and his academic journey at the University of the People.',
+  title: 'About Bernard Fiagbenu - Computer Science',
+  description: 'Learn about Bernard Fiagbenu, with a passion for technology, software development, and his academic journey in Computer Science at the University of the People.',
   openGraph: {
-    title: 'About Bernard Fiagbenu',
+    title: 'About Bernard Fiagbenu - Computer Science',
     description: 'Discover Bernard Fiagbenu\'s background, skills, and aspirations as a Computer Scientist.',
     images: [{ url: 'https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4', alt: 'Bernard Fiagbenu' }],
   },
@@ -24,8 +24,8 @@ export default function AboutPage() {
     "name": "Bernard Fiagbenu",
     "url": siteUrl ? `${siteUrl}/about` : '/about',
     "image": "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4",
-    "jobTitle": "Computer Scientist",
-    "description": "Passionate Computer Scientist with a deep interest in theoretical computing and future technology. Focuses on creating robust and efficient systems.",
+    "jobTitle": "Computer Science Graduate",
+    "description": "Passionate about Computer Science with a deep interest in theoretical computing and future technology. Focuses on creating robust and efficient systems.",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "University of the People",
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </div>
           <article className="text-left md:text-left">
             <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
-            <p className="font-body text-lg mb-4">
+            <p className="font-body text-lg mb-4 text-pretty">
               Hello! I'm a passionate Computer Scientist with a deep interest in the theoretical underpinnings of computing and future technology. My journey into the world of technology began with a profound curiosity for how complex systems operate, which quickly evolved into a passion for building innovative software solutions.
             </p>
             <p className="font-body text-lg mb-4">

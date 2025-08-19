@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { CodeXmlIcon } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { Button } from '../ui/button';
 export default function Header() {
   return (
     <header className="bg-primary text-primary-foreground shadow-md sticky top-0 z-50">
@@ -13,8 +14,8 @@ export default function Header() {
             <p className="text-xs text-primary-foreground/80 font-body">Computer Scientist</p>
           </div>
         </Link>
-        <nav className="mt-4 sm:mt-0">
-          <ul className="flex space-x-4 sm:space-x-6 font-body">
+        <nav className="mt-4 sm:mt-0 flex items-center space-x-4 sm:space-x-6 font-body">
+          <ul className="flex space-x-4 sm:space-x-6">
             <li><Link href="/about" className="hover:text-accent transition-colors">About</Link></li>
             <li><Link href="/projects" className="hover:text-accent transition-colors">Projects</Link></li>
             <li><Link href="/skills" className="hover:text-accent transition-colors">Skills</Link></li>
@@ -22,8 +23,16 @@ export default function Header() {
             <li><Link href="/ai" className="hover:text-accent transition-colors">A.I.</Link></li>
             <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
           </ul>
+          <div className="flex items-center gap-2">
+             <Link href="/auth">
+                <Button variant="secondary" size="sm">Login</Button>
+              </Link>
+              <Link href="/auth">
+                <Button variant="default" size="sm">Sign Up</Button>
+              </Link>
+          </div>
+          <ThemeToggle />
         </nav>
-        <ThemeToggle />
       </div>
     </header>
   );

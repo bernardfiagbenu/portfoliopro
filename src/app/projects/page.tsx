@@ -76,17 +76,6 @@ export default function ProjectsPage() {
                 key={`project-schema-${index}`}
               />
               <CardHeader>
-                <div className="aspect-video relative w-full rounded-t-md overflow-hidden">
-                  <Image
-                    src={project.imageUrl}
-                    alt={`${project.title} - Project Screenshot`}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={project.aiHint}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={index < 2}
-                  />
-                </div>
               </CardHeader>
               <CardContent className="flex-grow">
                 <CardTitle className="font-headline text-2xl text-primary mb-2">{project.title}</CardTitle>
