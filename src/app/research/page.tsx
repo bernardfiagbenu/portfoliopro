@@ -328,83 +328,85 @@ const researchItems = [
 
 export default function ResearchPage() {
   return (
-    <SectionContainer title="Research & Insights" subtitle="Exploring the Frontiers of Technology and Design">
-      <div className="space-y-8">
-        {researchItems.map((item, index) => {
-          const articleSchema = {
-            "@context": "https://schema.org",
-            "@type": "TechArticle", // Or "Article" if more general
-            "headline": item.title,
-            "description": item.description,
-            "image": item.imageUrl,
-            "author": {
-              "@type": "Person",
-              "name": "Bernard Fiagbenu"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Bernard Fiagbenu Portfolio",
-              "logo": {
-                "@type": "ImageObject",
-                "url": siteUrl ? `${siteUrl}/icon.png` : '/icon.png' // Placeholder for a logo
-              }
-            },
-            "datePublished": new Date().toISOString(), // Use actual date if available
-            "keywords": item.tags.join(', ')
-            // "url": item.link (if it's a real link to the article)
-          };
-          return (
-            <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-               <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-                key={`research-schema-${item.id}`}
-              />
-              <article className="md:flex">
-                <div className="md:w-1/3 relative h-48 md:h-auto">
-                  <Image 
-                    src={item.imageUrl} 
-                    alt={`${item.title} - Research Visual`} 
-                    fill 
-                    className="object-cover" 
-                    data-ai-hint={item.aiHint}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                    priority={index < 3} // Prioritize loading images for the first few items
-                  />
-                </div>
-                <div className="md:w-2/3">
-                  <CardHeader>
-                    <div className="flex items-center mb-2">
-                      <LightbulbIcon className="w-6 h-6 text-accent mr-3" aria-hidden="true" />
-                      <CardTitle className="font-headline text-2xl text-primary">{item.title}</CardTitle>
-                    </div>
-                    <CardDescription className="font-body text-sm text-muted-foreground">{item.date}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-body text-foreground mb-4">{item.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.tags.map(tag => (
-                        <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
-                      ))}
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-semibold font-body flex items-center" aria-label={`Learn more about ${item.title}`}>
-                      Explore Topic <LinkIcon className="ml-2 w-4 h-4" />
-                    </a>
-                  </CardFooter>
-                </div>
-              </article>
-            </Card>
-          );
-        })}
-      </div>
-      <div className="mt-12 text-center">
-        <div className="flex items-center justify-center text-lg text-muted-foreground">
-          <BookOpenIcon className="w-6 h-6 mr-2 text-accent" aria-hidden="true" />
-          <p className="font-body">Continuously learning and exploring new ideas. These topics represent areas of significant interest and potential future impact.</p>
+    <div className="container mx-auto px-4 py-8">
+      <SectionContainer title="Research & Insights" subtitle="Exploring the Frontiers of Technology and Design">
+        <div className="space-y-8">
+          {researchItems.map((item, index) => {
+            const articleSchema = {
+              "@context": "https://schema.org",
+              "@type": "TechArticle", // Or "Article" if more general
+              "headline": item.title,
+              "description": item.description,
+              "image": item.imageUrl,
+              "author": {
+                "@type": "Person",
+                "name": "Bernard Fiagbenu"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Bernard Fiagbenu Portfolio",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": siteUrl ? `${siteUrl}/icon.png` : '/icon.png' // Placeholder for a logo
+                }
+              },
+              "datePublished": new Date().toISOString(), // Use actual date if available
+              "keywords": item.tags.join(', ')
+              // "url": item.link (if it's a real link to the article)
+            };
+            return (
+              <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+                  key={`research-schema-${item.id}`}
+                />
+                <article className="md:flex">
+                  <div className="md:w-1/3 relative h-48 md:h-auto">
+                    <Image 
+                      src={item.imageUrl} 
+                      alt={`${item.title} - Research Visual`} 
+                      fill 
+                      className="object-cover" 
+                      data-ai-hint={item.aiHint}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                      priority={index < 3} // Prioritize loading images for the first few items
+                    />
+                  </div>
+                  <div className="md:w-2/3">
+                    <CardHeader>
+                      <div className="flex items-center mb-2">
+                        <LightbulbIcon className="w-6 h-6 text-accent mr-3" aria-hidden="true" />
+                        <CardTitle className="font-headline text-2xl text-primary">{item.title}</CardTitle>
+                      </div>
+                      <CardDescription className="font-body text-sm text-muted-foreground">{item.date}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-body text-foreground mb-4">{item.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {item.tags.map(tag => (
+                          <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter>
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent font-semibold font-body flex items-center" aria-label={`Learn more about ${item.title}`}>
+                        Explore Topic <LinkIcon className="ml-2 w-4 h-4" />
+                      </a>
+                    </CardFooter>
+                  </div>
+                </article>
+              </Card>
+            );
+          })}
         </div>
-      </div>
-    </SectionContainer>
+        <div className="mt-12 text-center">
+          <div className="flex items-center justify-center text-lg text-muted-foreground">
+            <BookOpenIcon className="w-6 h-6 mr-2 text-accent" aria-hidden="true" />
+            <p className="font-body">Continuously learning and exploring new ideas. These topics represent areas of significant interest and potential future impact.</p>
+          </div>
+        </div>
+      </SectionContainer>
+    </div>
   );
 }

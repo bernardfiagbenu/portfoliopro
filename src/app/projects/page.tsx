@@ -52,60 +52,62 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <SectionContainer title="My Projects" subtitle="A Glimpse into My Work">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, index) => {
-          const projectSchema = {
-            "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            "name": project.title,
-            "description": project.description,
-            "image": project.imageUrl,
-            "url": project.liveUrl || project.githubUrl,
-            "author": {
-              "@type": "Person",
-              "name": "Bernard Fiagbenu"
-            },
-            "keywords": project.tags.join(', ')
-          };
-          return (
-            <Card key={index} className="flex flex-col overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
-                key={`project-schema-${index}`}
-              />
-              <CardHeader>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardTitle className="font-headline text-2xl text-primary mb-2">{project.title}</CardTitle>
-                <CardDescription className="font-body text-muted-foreground mb-4">{project.description}</CardDescription>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded-full font-body">{tag}</span>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-end space-x-2 p-4 bg-muted/30">
-                {project.githubUrl && (
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>
-                      <GithubIcon className="mr-2 h-4 w-4" /> GitHub
-                    </a>
-                  </Button>
-                )}
-                {project.liveUrl && (
-                  <Button variant="default" size="sm" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View live demo of ${project.title}`}>
-                      <ExternalLinkIcon className="mr-2 h-4 w-4" /> Live Demo
-                    </a>
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
-          );
-        })}
-      </div>
-    </SectionContainer>
+    <div className="container mx-auto px-4 py-8">
+      <SectionContainer title="My Projects" subtitle="A Glimpse into My Work">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => {
+            const projectSchema = {
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": project.title,
+              "description": project.description,
+              "image": project.imageUrl,
+              "url": project.liveUrl || project.githubUrl,
+              "author": {
+                "@type": "Person",
+                "name": "Bernard Fiagbenu"
+              },
+              "keywords": project.tags.join(', ')
+            };
+            return (
+              <Card key={index} className="flex flex-col overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+                  key={`project-schema-${index}`}
+                />
+                <CardHeader>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <CardTitle className="font-headline text-2xl text-primary mb-2">{project.title}</CardTitle>
+                  <CardDescription className="font-body text-muted-foreground mb-4">{project.description}</CardDescription>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded-full font-body">{tag}</span>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-end space-x-2 p-4 bg-muted/30">
+                  {project.githubUrl && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>
+                        <GithubIcon className="mr-2 h-4 w-4" /> GitHub
+                      </a>
+                    </Button>
+                  )}
+                  {project.liveUrl && (
+                    <Button variant="default" size="sm" asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View live demo of ${project.title}`}>
+                        <ExternalLinkIcon className="mr-2 h-4 w-4" /> Live Demo
+                      </a>
+                    </Button>
+                  )}
+                </CardFooter>
+              </Card>
+            );
+          })}
+        </div>
+      </SectionContainer>
+    </div>
   );
 }

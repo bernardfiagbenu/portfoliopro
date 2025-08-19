@@ -43,45 +43,36 @@ const sections = [
 
 export default function HomePage() {
   return (
-    // This div is constrained by `container mx-auto` from layout.tsx.
-    // It becomes the viewport for the background video on this page.
-    // Added relative positioning, rounded corners, overflow hidden, and a shadow for a contained look.
-    <div className="relative flex flex-col items-center text-center py-8 md:py-16 rounded-lg overflow-hidden shadow-xl">
+    <div className="relative flex flex-col items-center justify-center text-center w-full min-h-screen">
       {/* Video Background */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="fixed inset-0 w-full h-full object-cover z-0"
         poster="https://placehold.co/1280x720.png"
         data-ai-hint="tech motion"
       >
-        {/*
-          IMPORTANT: Replace this src with the path to your actual video file.
-          For example, if you place 'your-video.mp4' in your 'public/videos/' folder,
-          the src would be "/videos/your-video.mp4".
-          Alternatively, you can use a URL to an externally hosted video.
-        */}
- <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>
+        <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>
         Your browser does not support the video tag.
       </video>
 
       {/* Overlay for text readability */}
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
-      {/* Content Layer - must be relative and have a higher z-index */}
-      <div className="relative z-20 p-4"> {/* Added padding to content layer to prevent touching edges if needed */}
+      {/* Content Layer */}
+      <div className="relative z-20 p-4 container mx-auto">
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-white animate-fadeInUp">
- Welcome to Portfolio Pro
+          Welcome to Portfolio Pro
         </h1>
         <p
-          className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl animate-fadeInUp"
+          className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl mx-auto animate-fadeInUp"
           style={{ animationDelay: '0.2s' }}
         >
           I'm Bernard Fiagbenu, a Computer Scientist. Explore my work and get to know my passion for technology and building innovative software solutions.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto">
           {sections.map((section, index) => (
             <AnimatedCard
               key={section.title}

@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -99,29 +100,31 @@ const skillCategories: SkillCategory[] = [
 
 export default function SkillsPage() {
   return (
-    <SectionContainer title="My Skills" subtitle="A Showcase of My Computer Science Expertise">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {skillCategories.map((category) => (
-          <section key={category.name} aria-labelledby={`skill-category-${category.name.toLowerCase().replace(/\s+/g, '-')}`}>
-            <Card className="hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
-              <CardHeader className="flex flex-row items-center space-x-3 pb-3">
-                <category.icon className="w-8 h-8 text-primary" aria-hidden="true" />
-                <CardTitle id={`skill-category-${category.name.toLowerCase().replace(/\s+/g, '-')}`} className="font-headline text-xl text-primary">{category.name}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow pt-0">
-                <ul className="space-y-1.5 font-body">
-                  {category.skills.map((skill) => (
-                    <li key={skill} className="text-muted-foreground text-sm flex items-start">
-                      <span className="text-primary mr-2 mt-1">&#8227;</span> {/* Bullet point */}
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </section>
-        ))}
-      </div>
-    </SectionContainer>
+    <div className="container mx-auto px-4 py-8">
+      <SectionContainer title="My Skills" subtitle="A Showcase of My Computer Science Expertise">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category) => (
+            <section key={category.name} aria-labelledby={`skill-category-${category.name.toLowerCase().replace(/\s+/g, '-')}`}>
+              <Card className="hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+                <CardHeader className="flex flex-row items-center space-x-3 pb-3">
+                  <category.icon className="w-8 h-8 text-primary" aria-hidden="true" />
+                  <CardTitle id={`skill-category-${category.name.toLowerCase().replace(/\s+/g, '-')}`} className="font-headline text-xl text-primary">{category.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow pt-0">
+                  <ul className="space-y-1.5 font-body">
+                    {category.skills.map((skill) => (
+                      <li key={skill} className="text-muted-foreground text-sm flex items-start">
+                        <span className="text-primary mr-2 mt-1">&#8227;</span> {/* Bullet point */}
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </section>
+          ))}
+        </div>
+      </SectionContainer>
+    </div>
   );
 }

@@ -151,130 +151,132 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="flex justify-center items-center py-12">
-        <div id="recaptcha-container"></div>
-        {isVerifying ? (
-             <Card className="w-full max-w-md">
+    <div className="container mx-auto px-4 py-8">
+        <div className="flex justify-center items-center py-12">
+            <div id="recaptcha-container"></div>
+            {isVerifying ? (
+                <Card className="w-full max-w-md">
+                    <CardHeader>
+                        <CardTitle>Verify Phone Number</CardTitle>
+                        <CardDescription>Enter the 6-digit code sent to your phone.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <form onSubmit={verifyCodeForm.handleSubmit(onVerifyCode)} className="space-y-4">
+                            <div>
+                                <Label htmlFor="code">Verification Code</Label>
+                                <Input id="code" type="text" {...verifyCodeForm.register('code')} />
+                                {verifyCodeForm.formState.errors.code && <p className="text-destructive text-sm mt-1">{verifyCodeForm.formState.errors.code.message}</p>}
+                            </div>
+                            <Button type="submit" className="w-full" disabled={verifyCodeForm.formState.isSubmitting}>
+                                {verifyCodeForm.formState.isSubmitting ? 'Verifying...' : 'Verify'}
+                            </Button>
+                        </form>
+                    </CardContent>
+                </Card>
+            ) : (
+        <Tabs defaultValue="signup" className="w-full max-w-md">
+            <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="signup">Sign Up</TabsTrigger>
+            <TabsTrigger value="login">Login</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="signup">
+            <Card>
                 <CardHeader>
-                    <CardTitle>Verify Phone Number</CardTitle>
-                    <CardDescription>Enter the 6-digit code sent to your phone.</CardDescription>
+                <CardTitle>Sign Up</CardTitle>
+                <CardDescription>Create a new account to get started.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <form onSubmit={verifyCodeForm.handleSubmit(onVerifyCode)} className="space-y-4">
-                        <div>
-                            <Label htmlFor="code">Verification Code</Label>
-                            <Input id="code" type="text" {...verifyCodeForm.register('code')} />
-                            {verifyCodeForm.formState.errors.code && <p className="text-destructive text-sm mt-1">{verifyCodeForm.formState.errors.code.message}</p>}
-                        </div>
-                        <Button type="submit" className="w-full" disabled={verifyCodeForm.formState.isSubmitting}>
-                            {verifyCodeForm.formState.isSubmitting ? 'Verifying...' : 'Verify'}
+                <form onSubmit={signUpForm.handleSubmit(onSignUp)} className="space-y-4">
+                    <div>
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input id="name" type="text" {...signUpForm.register('name')} />
+                    {signUpForm.formState.errors.name && <p className="text-destructive text-sm mt-1">{signUpForm.formState.errors.name.message}</p>}
+                    </div>
+                    <div>
+                    <Label htmlFor="phone-signup">Phone Number (with country code)</Label>
+                    <Input id="phone-signup" type="tel" {...signUpForm.register('phone')} />
+                    {signUpForm.formState.errors.phone && <p className="text-destructive text-sm mt-1">{signUpForm.formState.errors.phone.message}</p>}
+                    </div>
+                    <div>
+                    <Label htmlFor="password-signup">Password</Label>
+                    <Input id="password-signup" type="password" {...signUpForm.register('password')} />
+                    {signUpForm.formState.errors.password && <p className="text-destructive text-sm mt-1">{signUpForm.formState.errors.password.message}</p>}
+                    </div>
+                    <Button type="submit" className="w-full" disabled={signUpForm.formState.isSubmitting}>
+                    {signUpForm.formState.isSubmitting ? 'Sending Code...' : 'Send Verification Code'}
+                    </Button>
+                </form>
+                {!isMobile && (
+                    <>
+                    <div className="my-4 flex items-center">
+                        <div className="flex-grow border-t border-muted-foreground"></div>
+                        <span className="mx-2 text-xs uppercase text-muted-foreground">OR</span>
+                        <div className="flex-grow border-t border-muted-foreground"></div>
+                    </div>
+                    <div className="space-y-2">
+                        <Button variant="outline" className="w-full" onClick={() => handleSocialLogin(googleProvider)}>
+                            <GoogleIcon className="mr-2" />
+                            Sign Up with Google
                         </Button>
-                    </form>
+                        <Button variant="outline" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Apple login is under development." })}>
+                            <AppleIcon className="mr-2" />
+                            Sign Up with Apple
+                        </Button>
+                    </div>
+                    </>
+                )}
                 </CardContent>
             </Card>
-        ) : (
-      <Tabs defaultValue="signup" className="w-full max-w-md">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="signup">Sign Up</TabsTrigger>
-          <TabsTrigger value="login">Login</TabsTrigger>
-        </TabsList>
+            </TabsContent>
 
-        <TabsContent value="signup">
-          <Card>
-            <CardHeader>
-              <CardTitle>Sign Up</CardTitle>
-              <CardDescription>Create a new account to get started.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={signUpForm.handleSubmit(onSignUp)} className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" type="text" {...signUpForm.register('name')} />
-                  {signUpForm.formState.errors.name && <p className="text-destructive text-sm mt-1">{signUpForm.formState.errors.name.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="phone-signup">Phone Number (with country code)</Label>
-                  <Input id="phone-signup" type="tel" {...signUpForm.register('phone')} />
-                  {signUpForm.formState.errors.phone && <p className="text-destructive text-sm mt-1">{signUpForm.formState.errors.phone.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="password-signup">Password</Label>
-                  <Input id="password-signup" type="password" {...signUpForm.register('password')} />
-                   {signUpForm.formState.errors.password && <p className="text-destructive text-sm mt-1">{signUpForm.formState.errors.password.message}</p>}
-                </div>
-                <Button type="submit" className="w-full" disabled={signUpForm.formState.isSubmitting}>
-                   {signUpForm.formState.isSubmitting ? 'Sending Code...' : 'Send Verification Code'}
-                </Button>
-              </form>
-               {!isMobile && (
-                <>
-                  <div className="my-4 flex items-center">
-                    <div className="flex-grow border-t border-muted-foreground"></div>
-                    <span className="mx-2 text-xs uppercase text-muted-foreground">OR</span>
-                    <div className="flex-grow border-t border-muted-foreground"></div>
-                  </div>
-                  <div className="space-y-2">
-                     <Button variant="outline" className="w-full" onClick={() => handleSocialLogin(googleProvider)}>
-                        <GoogleIcon className="mr-2" />
-                        Sign Up with Google
-                     </Button>
-                     <Button variant="outline" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Apple login is under development." })}>
-                        <AppleIcon className="mr-2" />
-                        Sign Up with Apple
-                     </Button>
-                  </div>
-                </>
-              )}
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="login">
-          <Card>
-            <CardHeader>
-              <CardTitle>Login</CardTitle>
-              <CardDescription>Access your account.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={loginForm.handleSubmit(onLogin)} className="space-y-4">
-                <div>
-                  <Label htmlFor="phone-login">Phone Number</Label>
-                  <Input id="phone-login" type="tel" {...loginForm.register('phone')} />
-                  {loginForm.formState.errors.phone && <p className="text-destructive text-sm mt-1">{loginForm.formState.errors.phone.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="password-login">Password</Label>
-                  <Input id="password-login" type="password" {...loginForm.register('password')} />
-                  {loginForm.formState.errors.password && <p className="text-destructive text-sm mt-1">{loginForm.formState.errors.password.message}</p>}
-                </div>
-                <Button type="submit" className="w-full" disabled={loginForm.formState.isSubmitting}>
-                    {loginForm.formState.isSubmitting ? 'Logging In...' : 'Login'}
-                </Button>
-              </form>
-              {!isMobile && (
-                <>
-                  <div className="my-4 flex items-center">
-                    <div className="flex-grow border-t border-muted-foreground"></div>
-                    <span className="mx-2 text-xs uppercase text-muted-foreground">OR</span>
-                    <div className="flex-grow border-t border-muted-foreground"></div>
-                  </div>
-                  <div className="space-y-2">
-                     <Button variant="outline" className="w-full" onClick={() => handleSocialLogin(googleProvider)}>
-                        <GoogleIcon className="mr-2" />
-                        Login with Google
-                     </Button>
-                     <Button variant="outline" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Apple login is under development." })}>
-                        <AppleIcon className="mr-2" />
-                        Login with Apple
-                     </Button>
-                  </div>
-                </>
-              )}
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
-        )}
+            <TabsContent value="login">
+            <Card>
+                <CardHeader>
+                <CardTitle>Login</CardTitle>
+                <CardDescription>Access your account.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                <form onSubmit={loginForm.handleSubmit(onLogin)} className="space-y-4">
+                    <div>
+                    <Label htmlFor="phone-login">Phone Number</Label>
+                    <Input id="phone-login" type="tel" {...loginForm.register('phone')} />
+                    {loginForm.formState.errors.phone && <p className="text-destructive text-sm mt-1">{loginForm.formState.errors.phone.message}</p>}
+                    </div>
+                    <div>
+                    <Label htmlFor="password-login">Password</Label>
+                    <Input id="password-login" type="password" {...loginForm.register('password')} />
+                    {loginForm.formState.errors.password && <p className="text-destructive text-sm mt-1">{loginForm.formState.errors.password.message}</p>}
+                    </div>
+                    <Button type="submit" className="w-full" disabled={loginForm.formState.isSubmitting}>
+                        {loginForm.formState.isSubmitting ? 'Logging In...' : 'Login'}
+                    </Button>
+                </form>
+                {!isMobile && (
+                    <>
+                    <div className="my-4 flex items-center">
+                        <div className="flex-grow border-t border-muted-foreground"></div>
+                        <span className="mx-2 text-xs uppercase text-muted-foreground">OR</span>
+                        <div className="flex-grow border-t border-muted-foreground"></div>
+                    </div>
+                    <div className="space-y-2">
+                        <Button variant="outline" className="w-full" onClick={() => handleSocialLogin(googleProvider)}>
+                            <GoogleIcon className="mr-2" />
+                            Login with Google
+                        </Button>
+                        <Button variant="outline" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Apple login is under development." })}>
+                            <AppleIcon className="mr-2" />
+                            Login with Apple
+                        </Button>
+                    </div>
+                    </>
+                )}
+                </CardContent>
+            </Card>
+            </TabsContent>
+        </Tabs>
+            )}
+        </div>
     </div>
   );
 }
