@@ -1,11 +1,12 @@
 
 'use client';
 import Link from 'next/link';
-import { CodeXmlIcon, User, LogIn } from 'lucide-react';
+import { CodeXmlIcon, LogIn } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Button } from '../ui/button';
 import { useUser } from '@/context/UserContext';
+import { UserNav } from '@/components/layout/UserNav';
 
 
 export default function Header() {
@@ -30,12 +31,16 @@ export default function Header() {
             <li><Link href="/contact" className="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary/50 pb-1">Contact</Link></li>
           </ul>
           <div className="flex items-center gap-2">
-             <Link href={user ? "/profile" : "/auth"}>
-                <Button variant="outline" size="sm">
-                  {user ? <User className="mr-2 h-4 w-4" /> : <LogIn className="mr-2 h-4 w-4" />}
-                  {user ? 'Profile' : 'Login'}
-                </Button>
-              </Link>
+             {user ? (
+                <UserNav />
+             ) : (
+                <Link href="/auth">
+                    <Button variant="outline" size="sm">
+                        <LogIn className="mr-2 h-4 w-4" />
+                        Login
+                    </Button>
+                </Link>
+             )}
           </div>
           <ThemeToggle />
         </nav>
@@ -43,4 +48,3 @@ export default function Header() {
     </header>
   );
 }
-
