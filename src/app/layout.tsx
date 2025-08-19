@@ -97,7 +97,7 @@ export default function RootLayout({
       <body className="font-body flex flex-col min-h-screen">
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem={false}
           >
           <Header />

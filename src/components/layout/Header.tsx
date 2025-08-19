@@ -16,12 +16,12 @@ export default function Header() {
         </Link>
         <nav className="mt-4 sm:mt-0 flex items-center space-x-4 sm:space-x-6 font-body">
           <ul className="flex space-x-4 sm:space-x-6">
-            <li><Link href="/about" className="hover:text-accent transition-colors">About</Link></li>
-            <li><Link href="/projects" className="hover:text-accent transition-colors">Projects</Link></li>
-            <li><Link href="/skills" className="hover:text-accent transition-colors">Skills</Link></li>
-            <li><Link href="/research" className="hover:text-accent transition-colors">Research</Link></li>
-            <li><Link href="/ai" className="hover:text-accent transition-colors">A.I.</Link></li>
-            <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+            <li><Link href="/about" className="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent-foreground/50 pb-1">About</Link></li>
+            <li><Link href="/projects" className="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent-foreground/50 pb-1">Projects</Link></li>
+            <li><Link href="/skills" className="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent-foreground/50 pb-1">Skills</Link></li>
+            <li><Link href="/research" className="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent-foreground/50 pb-1">Research</Link></li>
+            <li><Link href="/ai" className="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent-foreground/50 pb-1">A.I.</Link></li>
+            <li><Link href="/contact" className="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent-foreground/50 pb-1">Contact</Link></li>
           </ul>
           <div className="flex items-center gap-2">
              <Link href="/auth">
