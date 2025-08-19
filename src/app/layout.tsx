@@ -14,18 +14,18 @@ const faviconUrl = profileImageUrl;
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
   title: {
-    default: 'Portfolio Pro - Bernard Fiagbenu | Computer Scientist',
+    default: 'Bernard Fiagbenu | Computer Science',
     template: '%s | Bernard Fiagbenu',
   },
-  description: 'The digital portfolio of Bernard Fiagbenu, a Computer Scientist specializing in software development, web technologies, and innovative tech solutions. Explore projects, skills, and research insights.',
-  keywords: ['Bernard Fiagbenu', 'Computer Scientist', 'Software Developer', 'Web Developer', 'Next.js Developer', 'React Developer', 'Portfolio', 'Tech Projects', 'Software Engineering', 'Full-Stack Developer'],
+  description: 'The digital portfolio of Bernard Fiagbenu, a Computer Science student specializing in software development, web technologies, and innovative tech solutions. Explore projects, skills, and research insights.',
+  keywords: ['Bernard Fiagbenu', 'Computer Science', 'Software Developer', 'Web Developer', 'Next.js Developer', 'React Developer', 'Portfolio', 'Tech Projects', 'Software Engineering', 'Full-Stack Developer'],
   authors: [{ name: 'Bernard Fiagbenu', url: siteUrl || undefined }],
   creator: 'Bernard Fiagbenu',
   openGraph: {
-    title: 'Portfolio Pro - Bernard Fiagbenu',
-    description: 'Digital portfolio of Bernard Fiagbenu, UI Software Engineer and Computer Scientist.',
+    title: 'Bernard Fiagbenu | Computer Science',
+    description: 'Digital portfolio of Bernard Fiagbenu, Computer Science Student and Software Engineer.',
     url: siteUrl || undefined,
-    siteName: 'Portfolio Pro',
+    siteName: 'Bernard Fiagbenu Portfolio',
     images: [
       {
         url: profileImageUrl,
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio Pro - Bernard Fiagbenu',
-    description: 'Digital portfolio of Bernard Fiagbenu, Computer Scientist.',
+    title: 'Bernard Fiagbenu | Computer Science',
+    description: 'Digital portfolio of Bernard Fiagbenu, Computer Science.',
     creator: '@FiagbenuBe14283',
     images: [profileImageUrl],
   },
@@ -68,7 +68,7 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Portfolio Pro - Bernard Fiagbenu",
+    "name": "Bernard Fiagbenu | Portfolio",
     "url": siteUrl || undefined,
     "potentialAction": siteUrl ? {
       "@type": "SearchAction",
