@@ -24,7 +24,7 @@ export default function HeaderNav() {
     const renderLink = (link: { href: string; label: string; }) => (
         <Link 
             href={link.href} 
-            className="px-3 py-2 text-sm rounded-md transition-colors border border-transparent hover:border-primary dark:hover:border-foreground hover:text-primary"
+            className="px-3 py-2 text-sm rounded-md transition-colors border border-transparent hover:border-primary dark:hover:border-foreground hover:text-primary dark:hover:bg-accent dark:hover:text-accent-foreground"
         >
             {link.label}
         </Link>
