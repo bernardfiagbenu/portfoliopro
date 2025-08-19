@@ -99,7 +99,7 @@ export default function RootLayout({
         <UserProvider>
             <ThemeProvider
                 attribute="class"
-                defaultTheme="light"
+                defaultTheme="dark"
                 enableSystem={false}
             >
             <Header />
@@ -114,4 +114,3 @@ export default function RootLayout({
     </html>
   );
 }
-
