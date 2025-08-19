@@ -20,7 +20,17 @@ export default function HeaderNav() {
         setIsClient(true);
     }, []);
 
-    // Render a placeholder or nothing on the server and initial client render
+    // Helper function to render links with consistent styling
+    const renderLink = (link: { href: string; label: string; }) => (
+        <Link 
+            href={link.href} 
+            className="px-3 py-2 text-sm rounded-md transition-colors border border-transparent hover:border-primary dark:hover:border-foreground hover:text-primary"
+        >
+            {link.label}
+        </Link>
+    );
+
+    // Render placeholders on the server to avoid hydration mismatch
     if (!isClient) {
         return (
             <ul className="flex space-x-1 sm:space-x-2">
@@ -39,9 +49,7 @@ export default function HeaderNav() {
         <ul className="flex space-x-1 sm:space-x-2">
             {navLinks.map(link => (
                 <li key={link.href}>
-                    <Link href={link.href} className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">
-                        {link.label}
-                    </Link>
+                    {renderLink(link)}
                 </li>
             ))}
         </ul>
