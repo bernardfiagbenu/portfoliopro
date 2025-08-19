@@ -27,9 +27,6 @@ export default function Header() {
              <Link href="/auth">
                 <Button variant="secondary" size="sm">Login</Button>
               </Link>
-              <Link href="/auth">
-                <Button variant="default" size="sm">Sign Up</Button>
-              </Link>
           </div>
           <ThemeToggle />
         </nav>
