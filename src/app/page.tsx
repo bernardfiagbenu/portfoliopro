@@ -1,6 +1,7 @@
 
 import AnimatedCard from '@/components/ui/AnimatedCard';
 import { UserCircle, Briefcase, FlaskConical, Wrench, Mail, BrainCircuit } from 'lucide-react';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 const sections = [
   {
@@ -43,7 +44,7 @@ const sections = [
 
 export default function HomePage() {
   return (
-    <div className="relative flex flex-col items-center justify-center text-center w-full min-h-screen">
+    <div className="relative flex flex-col items-center justify-center text-center w-full min-h-screen overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
@@ -57,6 +58,9 @@ export default function HomePage() {
         <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>
         Your browser does not support the video tag.
       </video>
+
+      {/* Particle Animation */}
+      <ParticleBackground />
 
       {/* Overlay for text readability */}
       <div className="fixed inset-0 z-10 bg-black/70 dark:bg-black/80"></div>
