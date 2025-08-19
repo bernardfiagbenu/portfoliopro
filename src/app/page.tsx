@@ -59,7 +59,7 @@ export default function HomePage() {
       </video>
 
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-black/70 z-10"></div>
+      <div className="fixed inset-0 z-10 bg-black/70 dark:bg-black/80"></div>
 
       {/* Content Layer */}
       <div className="relative z-20 p-4 container mx-auto">
