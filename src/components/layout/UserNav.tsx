@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -67,27 +66,6 @@ export function UserNav() {
             </div>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-           <div className="grid grid-cols-2 gap-2 p-2">
-                <div className="text-center">
-                    <p className="text-xs text-muted-foreground">Rank</p>
-                    <p className="font-bold text-lg text-primary">#1</p>
-                </div>
-                 <div className="text-center">
-                    <p className="text-xs text-muted-foreground">Total Score</p>
-                    <p className="font-bold text-lg text-green-500">25</p>
-                </div>
-                 <div className="text-center">
-                    <p className="text-xs text-muted-foreground">Quizzes Taken</p>
-                    <p className="font-bold text-lg text-purple-500">9</p>
-                </div>
-                 <div className="text-center">
-                    <p className="text-xs text-muted-foreground">Avg Time</p>
-                    <p className="font-bold text-lg text-orange-500">3s</p>
-                </div>
-           </div>
-        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
           <LogOut className="mr-2 h-4 w-4" />
