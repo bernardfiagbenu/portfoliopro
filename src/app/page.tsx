@@ -64,13 +64,13 @@ export default function HomePage() {
       {/* Content Layer */}
       <div className="relative z-20 p-4 container mx-auto">
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-white animate-fadeInUp">
-          Welcome to Portfolio Pro
+          Bernard Fiagbenu
         </h1>
         <p
           className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl mx-auto animate-fadeInUp"
           style={{ animationDelay: '0.2s' }}
         >
-          I'm Bernard Fiagbenu, a Computer Scientist. Explore my work and get to know my passion for technology and building innovative software solutions.
+          I'm a Computer Science student, exploring my work and passion for technology and building innovative software solutions.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto">
           {sections.map((section, index) => (

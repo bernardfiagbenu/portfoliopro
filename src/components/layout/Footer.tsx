@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-card text-card-foreground py-8 border-t">
       <div className="container mx-auto px-4 text-center">
@@ -18,7 +17,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-sm font-body">
-          &copy; {currentYear} Bernard Fiagbenu. All rights reserved.
+          &copy; 2025 Bernard Fiagbenu. All rights reserved.
           <Link href="/privacy-policy" className="ml-2 text-muted-foreground hover:text-primary transition-colors">
             Privacy Policy
           </Link>
