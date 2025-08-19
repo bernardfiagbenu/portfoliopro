@@ -2,11 +2,11 @@
 'use client';
 import Link from 'next/link';
 import { CodeXmlIcon, LogIn } from 'lucide-react';
-
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Button } from '../ui/button';
 import { useUser } from '@/context/UserContext';
 import { UserNav } from '@/components/layout/UserNav';
+import HeaderNav from './HeaderNav';
 
 
 export default function Header() {
@@ -22,14 +22,7 @@ export default function Header() {
           </div>
         </Link>
         <nav className="mt-4 sm:mt-0 flex items-center space-x-2 sm:space-x-4 font-body">
-          <ul className="flex space-x-1 sm:space-x-2">
-            <li><Link href="/about" className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">About</Link></li>
-            <li><Link href="/projects" className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">Projects</Link></li>
-            <li><Link href="/skills" className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">Skills</Link></li>
-            <li><Link href="/research" className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">Research</Link></li>
-            <li><Link href="/ai" className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">A.I.</Link></li>
-            <li><Link href="/contact" className="px-3 py-2 text-sm rounded-md hover:text-primary transition-colors dark:border dark:border-transparent dark:hover:border-input dark:hover:bg-accent">Contact</Link></li>
-          </ul>
+          <HeaderNav />
           <div className="flex items-center gap-2">
              {user ? (
                 <UserNav />
