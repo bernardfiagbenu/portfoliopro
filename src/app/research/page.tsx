@@ -51,7 +51,7 @@ const researchItems = [
     description: 'Engineering functional systems at the molecular scale, promising revolutionary materials and devices.',
     date: 'Ongoing Exploration',
     tags: ['Nanotech', 'Materials', 'Future Tech'],
-    link: '#',
+    link: '/research/molecular-nanotechnology',
   },
   {
     id: 'fusion-energy',
