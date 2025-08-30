@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { LightbulbIcon, BookOpenIcon, LinkIcon } from 'lucide-react';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Research & Tech Insights by Bernard Fiagbenu',
@@ -361,19 +360,8 @@ export default function ResearchPage() {
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
                   key={`research-schema-${item.id}`}
                 />
-                <article className="md:flex">
-                  <div className="md:w-1/3 relative h-48 md:h-auto">
-                    <Image 
-                      src={item.imageUrl} 
-                      alt={`${item.title} - Research Visual`} 
-                      fill 
-                      className="object-cover" 
-                      data-ai-hint={item.aiHint}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                      priority={index < 3} // Prioritize loading images for the first few items
-                    />
-                  </div>
-                  <div className="md:w-2/3">
+                <article>
+                  <div>
                     <CardHeader>
                       <div className="flex items-center mb-2">
                         <LightbulbIcon className="w-6 h-6 text-accent mr-3" aria-hidden="true" />
