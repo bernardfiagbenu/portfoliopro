@@ -43,7 +43,7 @@ const researchItems = [
     description: 'Developing direct communication pathways between an enhanced or wired brain and an external device.',
     date: 'Ongoing Exploration',
     tags: ['BCI', 'Neuroscience', 'Future Tech'],
-    link: '#',
+    link: '/research/brain-computer-interfaces',
   },
   {
     id: 'nanotech',
