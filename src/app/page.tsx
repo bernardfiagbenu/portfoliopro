@@ -1,7 +1,17 @@
 
+'use client';
+
 import AnimatedCard from '@/components/ui/AnimatedCard';
 import { UserCircle, Briefcase, FlaskConical, Wrench, Mail, BrainCircuit } from 'lucide-react';
-import ParticleBackground from '@/components/ui/ParticleBackground';
+import dynamic from 'next/dynamic';
+import { homePageSketch } from '@/components/p5/HomePageSketch';
+
+// Dynamically import the P5Sketch component to ensure it's client-side only
+const P5Sketch = dynamic(() => import('@/components/ui/P5Sketch'), {
+  ssr: false,
+  loading: () => <div className="fixed inset-0 w-full h-full bg-background z-0" />,
+});
+
 
 const sections = [
   {
@@ -45,22 +55,8 @@ const sections = [
 export default function HomePage() {
   return (
     <div className="relative flex flex-col items-center justify-center text-center w-full min-h-screen overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0"
-        poster="https://placehold.co/1280x720.png"
-        data-ai-hint="tech motion"
-      >
-        <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" data-ai-hint="abstract tech animation"/>
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Particle Animation */}
-      <ParticleBackground />
+      {/* P5.js Animation Background */}
+      <P5Sketch sketch={homePageSketch} className="fixed inset-0 w-full h-full z-0" />
 
       {/* Overlay for text readability */}
       <div className="fixed inset-0 z-10 bg-black/70 dark:bg-black/80"></div>
