@@ -163,7 +163,7 @@ const researchItems = [
     description: 'Researching materials that can change their physical properties based on user input or environmental stimuli.',
     date: 'Ongoing Exploration',
     tags: ['Materials', 'Robotics', 'Future Tech'],
-    link: '#',
+    link: '/research/programmable-matter',
   },
   {
     id: 'internet-of-everything',
@@ -336,5 +336,3 @@ export default function ResearchPage() {
     </div>
   );
 }
-
-    
