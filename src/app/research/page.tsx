@@ -35,7 +35,7 @@ const researchItems = [
     description: 'Investigating the potential of quantum mechanics to solve complex problems beyond the reach of classical computers.',
     date: 'Ongoing Exploration',
     tags: ['Quantum', 'Computing', 'Future Tech'],
-    link: '#',
+    link: '/research/quantum-computing',
   },
   {
     id: 'bcis',
