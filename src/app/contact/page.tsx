@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-2xl font-headline font-semibold text-primary mb-6">Contact Information</h2>
-            <p className="font-body text-lg text-muted-foreground mb-6">
+            <p className="font-body text-lg text-foreground mb-6">
               I'm always excited to discuss new projects, creative ideas, or opportunities to be part of something innovative. Feel free to reach out to me through any of the following channels, or use the contact form.
             </p>
             <div className="space-y-4">

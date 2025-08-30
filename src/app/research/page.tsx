@@ -268,7 +268,7 @@ export default function ResearchPage() {
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Research & Insights" subtitle="Exploring the Frontiers of Technology and Design">
         <div className="space-y-8">
-          {researchItems.map((item, index) => {
+          {researchItems.map((item) => {
             const articleSchema = {
               "@context": "https://schema.org",
               "@type": "TechArticle", 

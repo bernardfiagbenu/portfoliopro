@@ -12,12 +12,12 @@ import HeaderNav from './HeaderNav';
 export default function Header() {
   const { user } = useUser();
   return (
-    <header className="bg-background text-foreground shadow-md sticky top-0 z-50">
+    <header className="bg-background/80 text-foreground shadow-md sticky top-0 z-50 backdrop-blur-md">
       <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
         <Link href="/" className="flex items-center gap-2 text-2xl font-headline hover:text-primary transition-colors">
-          <CodeXmlIcon className="w-8 h-8 text-primary dark:text-primary-foreground" />
+          <CodeXmlIcon className="w-8 h-8 text-primary" />
           <div>
-            <span className="font-bold">Bernard Fiagbenu</span>
+            <span className="font-bold text-foreground">Bernard Fiagbenu</span>
             <p className="text-xs text-muted-foreground font-body">Computer Science</p>
           </div>
         </Link>

@@ -65,13 +65,13 @@ export default function AboutPage() {
             </div>
             <article className="text-left md:text-left">
               <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
-              <p className="font-body text-lg mb-4 text-pretty">
+              <p className="font-body text-lg text-foreground mb-4 text-pretty">
                 Hello! I'm a passionate Computer Scientist with a deep interest in the theoretical underpinnings of computing and future technology. My journey into the world of technology began with a profound curiosity for how complex systems operate, which quickly evolved into a passion for building innovative software solutions.
               </p>
-              <p className="font-body text-lg mb-4">
+              <p className="font-body text-lg text-foreground mb-4">
                 I thrive in collaborative environments, leveraging my understanding of core computer science concepts and my software development skills to bring ideas to life. My focus is on creating robust and efficient systems built on a solid foundation of computer science principles. I am particularly fascinated by the intersection of theoretical computer science and practical application in shaping the future of technology.
               </p>
-              <p className="font-body text-lg mb-6">
+              <p className="font-body text-lg text-foreground mb-6">
                 When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and continuously learning to stay at the forefront of this ever-evolving field.
               </p>
             </article>

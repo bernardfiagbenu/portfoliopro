@@ -74,7 +74,7 @@ export default function AiPage() {
                     <CardDescription className="font-body text-muted-foreground mb-4">{project.description}</CardDescription>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
-                        <span key={tag} className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded-full font-body">{tag}</span>
+                        <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
                       ))}
                     </div>
                   </CardContent>
