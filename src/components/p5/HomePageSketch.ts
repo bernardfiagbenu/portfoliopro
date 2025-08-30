@@ -4,11 +4,27 @@ import type p5 from 'p5';
 /**
  * Defines a p5.js sketch for an interactive particle background.
  * Particles float around and connect to nearby particles and the user's mouse.
+ * Adapts to light and dark themes.
  * @param p - The p5 instance.
  */
 export const homePageSketch = (p: p5) => {
   let particles: Particle[] = [];
   const particleCount = () => Math.floor((p.width * p.height) / 15000);
+  let isDarkMode = false;
+  let particleColor: p5.Color;
+  let lineColor: p5.Color;
+
+  // Function to set colors based on the current theme
+  const setThemeColors = () => {
+    isDarkMode = window.document.documentElement.classList.contains('dark');
+    if (isDarkMode) {
+      particleColor = p.color(255, 255, 255, 200); // White particles
+      lineColor = p.color(255, 255, 255);       // White lines
+    } else {
+      particleColor = p.color(0, 0, 0, 200);     // Black particles
+      lineColor = p.color(0, 0, 0);           // Black lines
+    }
+  };
 
   class Particle {
     x: number;
@@ -34,7 +50,7 @@ export const homePageSketch = (p: p5) => {
 
     draw() {
       p.noStroke();
-      p.fill('rgba(255, 255, 255, 0.8)');
+      p.fill(particleColor);
       p.circle(this.x, this.y, this.size);
     }
   }
@@ -53,28 +69,44 @@ export const homePageSketch = (p: p5) => {
         const distance = p.dist(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
         if (distance < 120) {
           const opacity = p.map(distance, 0, 120, 0.8, 0);
-          p.stroke(`rgba(255, 255, 255, ${opacity})`);
+          lineColor.setAlpha(opacity * 255);
+          p.stroke(lineColor);
           p.line(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
         }
       }
       
       // Connect to mouse
-      const mouseDistance = p.dist(particles[i].x, particles[i].y, p.mouseX, p.mouseY);
-      if (mouseDistance < 200) {
-        const opacity = p.map(mouseDistance, 0, 200, 0.6, 0);
-        p.stroke(`rgba(255, 255, 255, ${opacity})`);
-        p.line(particles[i].x, particles[i].y, p.mouseX, p.mouseY);
+      if (p.mouseX > 0 && p.mouseX < p.width && p.mouseY > 0 && p.mouseY < p.height) {
+        const mouseDistance = p.dist(particles[i].x, particles[i].y, p.mouseX, p.mouseY);
+        if (mouseDistance < 200) {
+          const opacity = p.map(mouseDistance, 0, 200, 0.6, 0);
+          lineColor.setAlpha(opacity * 255);
+          p.stroke(lineColor);
+          p.line(particles[i].x, particles[i].y, p.mouseX, p.mouseY);
+        }
       }
     }
   };
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
+    setThemeColors();
     createParticles();
+
+    // Use a MutationObserver to watch for theme changes on the <html> element
+    const observer = new MutationObserver((mutationsList) => {
+      for(const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          setThemeColors();
+        }
+      }
+    });
+
+    observer.observe(window.document.documentElement, { attributes: true });
   };
 
   p.draw = () => {
-    p.background(0, 0); // Transparent background
+    p.clear(); // Use clear() instead of background() for a transparent canvas
     particles.forEach(particle => {
       particle.update();
       particle.draw();
