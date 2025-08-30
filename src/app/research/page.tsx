@@ -155,7 +155,7 @@ const researchItems = [
     description: 'Developing technologies to capture carbon dioxide directly from the atmosphere to mitigate climate change.',
     date: 'Ongoing Exploration',
     tags: ['Climate', 'Carbon Capture', 'Future Tech'],
-    link: '#',
+    link: '/research/direct-air-capture',
   },
   {
     id: 'programmable-matter',
@@ -336,3 +336,5 @@ export default function ResearchPage() {
     </div>
   );
 }
+
+    
