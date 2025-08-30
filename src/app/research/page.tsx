@@ -313,10 +313,12 @@ export default function ResearchPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                       <Link href={item.link} passHref legacyBehavior>
-                        <a className="text-primary hover:text-accent font-semibold font-body flex items-center" aria-label={`Learn more about ${item.title}`}>
-                            {item.link.startsWith('/research') ? 'Read Article' : 'Explore Topic'} <LinkIcon className="ml-2 w-4 h-4" />
-                        </a>
+                       <Link 
+                          href={item.link} 
+                          className="text-primary hover:text-accent font-semibold font-body flex items-center" 
+                          aria-label={`Learn more about ${item.title}`}
+                        >
+                          {item.link.startsWith('/research') ? 'Read Article' : 'Explore Topic'} <LinkIcon className="ml-2 w-4 h-4" />
                        </Link>
                     </CardFooter>
                 </article>
