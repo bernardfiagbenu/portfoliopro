@@ -27,7 +27,7 @@ const researchItems = [
     description: 'Exploring the frontiers of machine intelligence aiming to perform any intellectual task that a human being can.',
     date: 'Ongoing Exploration',
     tags: ['AI', 'AGI', 'Future Tech'],
-    link: '#', 
+    link: '/research/artificial-general-intelligence', 
   },
   {
     id: 'quantum-computing',
@@ -318,7 +318,7 @@ export default function ResearchPage() {
                           className="text-primary hover:text-accent font-semibold font-body flex items-center" 
                           aria-label={`Learn more about ${item.title}`}
                         >
-                          {item.link.startsWith('/research') ? 'Read Article' : 'Explore Topic'} <LinkIcon className="ml-2 w-4 h-4" />
+                          {item.link.startsWith('/research/') ? 'Read Article' : 'Explore Topic'} <LinkIcon className="ml-2 w-4 h-4" />
                        </Link>
                     </CardFooter>
                 </article>
