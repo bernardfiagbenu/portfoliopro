@@ -17,16 +17,8 @@ import { PortfolioChatInputSchema, type PortfolioChatInput } from './chat-types'
 
 // The main function that will be called from the frontend.
 export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
-  const {stream, response} = await portfolioChatFlow(input);
-
-  // For this implementation, we will consume the stream on the server
-  // and return the full response at once.
-  let fullResponse = '';
-  for await (const chunk of stream) {
-    fullResponse += chunk;
-  }
-  await response;
-  return fullResponse;
+  const response = await portfolioChatFlow(input);
+  return response;
 }
 
 const prompt = ai.definePrompt({
@@ -75,14 +67,12 @@ const portfolioChatFlow = ai.defineFlow(
     name: 'portfolioChatFlow',
     inputSchema: PortfolioChatInputSchema,
     outputSchema: z.string(),
-    stream: true,
   },
   async (input) => {
-    const {stream} = await ai.generate({
+    const response = await ai.generate({
       prompt: prompt.prompt,
       input: input,
-      stream: true,
     });
-    return { stream, response: Promise.resolve() };
+    return response.text;
   }
 );

@@ -23,7 +23,7 @@ export type GenerateCaptionInput = z.infer<typeof GenerateCaptionInputSchema>;
 
 
 export async function generateCaption(input: GenerateCaptionInput): Promise<string> {
-    const {text} = await captionFlow(input);
+    const text = await captionFlow(input);
     return text;
 }
 
@@ -35,12 +35,12 @@ const captionFlow = ai.defineFlow(
     outputSchema: z.string(),
   },
   async (input) => {
-    const {text} = await ai.generate({
+    const response = await ai.generate({
         prompt: [
             {text: 'Describe this image in a concise and engaging way for a portfolio website.'},
             {media: {url: input.photoDataUri}}
         ],
     });
-    return text;
+    return response.text;
   }
 );
