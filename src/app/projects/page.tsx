@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Projects by Bernard Fiagbenu',
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: 'Social Impact Challenge',
-    description: 'Your challenge is to create a solution that responds to a defined social problem. This could be a working prototype, a white paper, a policy brief, a startup or project proposal, a data analysis, or another innovative format. Technical solutions are welcome (such as AI-powered tools, web or mobile apps, platforms that improve access to public resources, or data-driven systems for better decision-making) but non-technical submissions with strong research, strategy, or policy design are equally encouraged.',
+    description: 'An AI-powered idea generator that responds to a defined social problem by brainstorming solutions in various formats, from tech prototypes to policy briefs. Try the live demo!',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Social Impact', 'Innovation', 'Policy', 'AI', 'Data Analysis', 'Problem Solving'],
+    tags: ['Social Impact', 'GenAI', 'Innovation', 'Problem Solving', 'Next.js'],
     githubUrl: null,
-    liveUrl: null,
+    liveUrl: '/projects/social-impact-challenge',
     aiHint: 'social impact solution'
   },
   {
@@ -59,6 +60,38 @@ const projects = [
  }
 ];
 
+const ProjectLinkWrapper = ({ liveUrl, children }: { liveUrl: string | null, children: React.ReactNode }) => {
+  if (liveUrl && liveUrl.startsWith('/')) {
+    return <Link href={liveUrl}>{children}</Link>;
+  }
+  return <>{children}</>;
+};
+
+const ActionButton = ({ url, label, icon: Icon, isInternal }: { url: string, label: string, icon: React.ElementType, isInternal?: boolean }) => {
+  const commonProps = {
+    children: (
+      <>
+        <Icon className="mr-2 h-4 w-4" /> {label}
+      </>
+    ),
+  };
+
+  if (isInternal) {
+    return (
+      <Button variant="default" size="sm" asChild>
+        <Link href={url} {...commonProps} />
+      </Button>
+    );
+  }
+
+  return (
+    <Button variant="default" size="sm" asChild>
+      <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`View live demo of project`} {...commonProps} />
+    </Button>
+  );
+};
+
+
 export default function ProjectsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
@@ -85,28 +118,30 @@ export default function ProjectsPage() {
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
                   key={`project-schema-${index}`}
                 />
-                <CardHeader>
-                  <div className="aspect-video relative w-full rounded-t-md overflow-hidden">
-                      <Image
-                        src={project.imageUrl}
-                        alt={`${project.title} - Project Screenshot`}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={project.aiHint}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        priority={index < 2}
-                      />
+                <ProjectLinkWrapper liveUrl={project.liveUrl}>
+                  <CardHeader>
+                    <div className="aspect-video relative w-full rounded-t-md overflow-hidden">
+                        <Image
+                          src={project.imageUrl}
+                          alt={`${project.title} - Project Screenshot`}
+                          fill
+                          className="object-cover"
+                          data-ai-hint={project.aiHint}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          priority={index < 2}
+                        />
+                      </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <CardTitle className="font-headline text-2xl text-primary mb-2">{project.title}</CardTitle>
+                    <CardDescription className="font-body text-muted-foreground mb-4">{project.description}</CardDescription>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
+                      ))}
                     </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardTitle className="font-headline text-2xl text-primary mb-2">{project.title}</CardTitle>
-                  <CardDescription className="font-body text-muted-foreground mb-4">{project.description}</CardDescription>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
-                    ))}
-                  </div>
-                </CardContent>
+                  </CardContent>
+                </ProjectLinkWrapper>
                 <CardFooter className="flex justify-end space-x-2 p-4 bg-muted/30">
                   {project.githubUrl && (
                     <Button variant="outline" size="sm" asChild>
@@ -116,11 +151,12 @@ export default function ProjectsPage() {
                     </Button>
                   )}
                   {project.liveUrl && (
-                    <Button variant="default" size="sm" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View live demo of ${project.title}`}>
-                        <ExternalLinkIcon className="mr-2 h-4 w-4" /> Live Demo
-                      </a>
-                    </Button>
+                     <ActionButton 
+                        url={project.liveUrl}
+                        label="Live Demo"
+                        icon={ExternalLinkIcon}
+                        isInternal={project.liveUrl.startsWith('/')}
+                     />
                   )}
                 </CardFooter>
               </Card>
