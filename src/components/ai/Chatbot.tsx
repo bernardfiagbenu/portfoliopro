@@ -48,10 +48,27 @@ export default function Chatbot() {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    toast({
-        title: "Coming Soon!",
-        description: "This feature is under development. Kindly wait.",
-    });
+    const userMessage: Message = { id: nanoid(), role: 'user', content: input };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const response = await portfolioChat({ message: input });
+      const assistantMessage: Message = { id: nanoid(), role: 'assistant', content: response };
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error("Error calling portfolioChat flow:", error);
+      toast({
+        variant: "destructive",
+        title: "Oh no! Something went wrong.",
+        description: "There was an issue communicating with the AI assistant. Please try again later.",
+      });
+       // Optional: remove the user's message if the call fails
+       setMessages(prev => prev.filter(m => m.id !== userMessage.id));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
