@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: 'Social Impact Challenge',
+    description: 'A challenge to create an innovative solution—technical or policy-based—that responds to a defined social problem. Submissions can range from AI tools and apps to policy briefs and startup proposals.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Social Impact', 'Innovation', 'Policy', 'AI', 'Data Analysis', 'Problem Solving'],
+    githubUrl: null,
+    liveUrl: null,
+    aiHint: 'social impact'
+  },
+  {
     title: 'Stress Manager App',
     description: 'A web application designed to help users manage stress through various techniques and resources. Built with modern web technologies to promote well-being.',
     imageUrl: 'https://media.licdn.com/dms/image/v2/D4E22AQEiE7nA8hp7mA/feedshare-shrink_800/B4EZd4bzOmHsAo-/0/1750072245167?e=1752710400&v=beta&t=4gZhtXwZOF9GqMJ-LuUAKUo_8Nm6ijn9pcGs7tS7DlU',
