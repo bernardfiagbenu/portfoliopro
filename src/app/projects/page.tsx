@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: 'Social Impact Challenge',
-    description: 'A challenge to create an innovative solution—technical or policy-based—that responds to a defined social problem. Submissions can range from AI tools and apps to policy briefs and startup proposals.',
+    description: 'Your challenge is to create a solution that responds to a defined social problem. This could be a working prototype, a white paper, a policy brief, a startup or project proposal, a data analysis, or another innovative format. Technical solutions are welcome (such as AI-powered tools, web or mobile apps, platforms that improve access to public resources, or data-driven systems for better decision-making) but non-technical submissions with strong research, strategy, or policy design are equally encouraged.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Social Impact', 'Innovation', 'Policy', 'AI', 'Data Analysis', 'Problem Solving'],
     githubUrl: null,
     liveUrl: null,
-    aiHint: 'social impact'
+    aiHint: 'social impact solution'
   },
   {
     title: 'Stress Manager App',
