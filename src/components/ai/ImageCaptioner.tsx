@@ -56,10 +56,22 @@ export default function ImageCaptioner() {
         return;
     }
 
-     toast({
-        title: "Coming Soon!",
-        description: "This feature is under development. Kindly wait.",
-    });
+    setIsLoading(true);
+    setCaption('');
+
+    try {
+        const response = await generateCaption({ photoDataUri: imageData });
+        setCaption(response);
+    } catch (error) {
+        console.error("Error generating caption:", error);
+        toast({
+            variant: "destructive",
+            title: "Captioning Failed",
+            description: "Could not generate a caption for the image. Please try again.",
+        });
+    } finally {
+        setIsLoading(false);
+    }
   };
 
   return (
