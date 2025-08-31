@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: 'Global GHG Emissions Tracker',
+    description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data from various sectors and countries, demonstrating data visualization and reporting concepts for climate action.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Climate Action', 'Data Viz', 'GIS', 'Next.js', 'React'],
+    githubUrl: null,
+    liveUrl: '/projects/ghg-emissions-tracker',
+    aiHint: 'climate data dashboard'
+  },
+  {
     title: 'Social Impact Challenge',
     description: 'An AI-powered idea generator that responds to a defined social problem by brainstorming solutions in various formats, from tech prototypes to policy briefs. Try the live demo!',
     imageUrl: 'https://picsum.photos/600/400',
