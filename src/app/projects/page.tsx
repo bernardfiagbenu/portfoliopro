@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: 'Climate Policy Simulator',
+    description: 'An AI-powered tool to simulate and analyze the potential economic, social, and environmental impacts of various climate policies. Provides high-level insights for decision-makers.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Climate Policy', 'GenAI', 'Simulation', 'Decision Support', 'Next.js'],
+    githubUrl: null,
+    liveUrl: '/projects/policy-simulator',
+    aiHint: 'climate policy dashboard'
+  },
+  {
     title: 'Global GHG Emissions Tracker',
     description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data from various sectors and countries, demonstrating data visualization and reporting concepts for climate action.',
     imageUrl: 'https://picsum.photos/600/400',
