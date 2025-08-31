@@ -27,6 +27,14 @@ export async function generateCaption(input: GenerateCaptionInput): Promise<stri
     return text;
 }
 
+const prompt = ai.definePrompt({
+  name: 'captionPrompt',
+  input: {schema: GenerateCaptionInputSchema},
+  prompt: [
+    {text: 'Describe this image in a concise and engaging way for a portfolio website.'},
+    {media: {url: '{{{photoDataUri}}}'}},
+  ],
+});
 
 const captionFlow = ai.defineFlow(
   {
@@ -36,10 +44,8 @@ const captionFlow = ai.defineFlow(
   },
   async (input) => {
     const response = await ai.generate({
-        prompt: [
-            {text: 'Describe this image in a concise and engaging way for a portfolio website.'},
-            {media: {url: input.photoDataUri}}
-        ],
+        prompt: prompt.prompt,
+        input
     });
     return response.text;
   }
