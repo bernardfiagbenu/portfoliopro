@@ -4,7 +4,8 @@
 import { useState } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { BrainstormInputSchema, brainstormSolutions, type BrainstormInput, type BrainstormOutput } from '@/ai/flows/solution-brainstorm-flow';
+import { brainstormSolutions } from '@/ai/flows/solution-brainstorm-flow';
+import { BrainstormInputSchema, type BrainstormInput, type BrainstormOutput } from '@/ai/flows/social-impact-types';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
