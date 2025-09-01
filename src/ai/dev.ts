@@ -6,3 +6,4 @@ import './flows/caption-flow';
 import './flows/solution-brainstorm-flow';
 import './flows/policy-simulator-flow';
 import './flows/learning-path-flow';
+import './flows/online-safety-scenario-flow';

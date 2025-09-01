@@ -12,6 +12,15 @@ export const metadata: Metadata = {
 };
 
 const projects = [
+   {
+    title: 'Interactive Online Safety Scenarios',
+    description: 'An AI-powered educational tool that generates realistic online scenarios (like cyberbullying or scams) to help users practice safe and responsible digital citizenship.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['EdTech', 'AI', 'Online Safety', 'Gamification', 'Next.js'],
+    githubUrl: null,
+    liveUrl: '/projects/online-safety-scenarios',
+    aiHint: 'online safety education'
+  },
   {
     title: 'World Population Trends Dashboard',
     description: 'An interactive data dashboard visualizing global population projections, aging trends, and life expectancy based on the latest UN data. Highlights key demographic shifts.',
