@@ -182,14 +182,6 @@ const researchItems = [
     link: '#',
   },
   {
-    id: 'ai-teachers',
-    title: 'AI Teachers and Personalized Education',
-    description: 'Leveraging AI to create adaptive and personalized learning experiences for students of all ages.',
-    date: 'Ongoing Exploration',
-    tags: ['AI', 'Education', 'EdTech', 'Future Tech'],
-    link: '#',
-  },
-  {
     id: 'mind-uploading',
     title: 'Mind Uploading & Digital Consciousness',
     description: 'Exploring the theoretical and technological possibilities of transferring human consciousness to a digital substrate.',

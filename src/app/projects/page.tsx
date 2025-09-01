@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: 'Personalized Learning Path Generator',
+    description: 'An AI-powered tool that creates custom, week-by-week learning plans for any topic. Enter a subject and get a structured curriculum to guide your studies.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['EdTech', 'GenAI', 'Personalized Learning', 'Next.js', 'AI'],
+    githubUrl: null,
+    liveUrl: '/projects/learning-path-generator',
+    aiHint: 'personalized education interface'
+  },
+  {
     title: 'Climate Policy Simulator',
     description: 'An AI-powered tool to simulate and analyze the potential economic, social, and environmental impacts of various climate policies. Provides high-level insights for decision-makers.',
     imageUrl: 'https://picsum.photos/600/400',
