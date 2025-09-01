@@ -142,14 +142,6 @@ const researchItems = [
     link: '#',
   },
   {
-    id: 'geoengineering',
-    title: 'Geoengineering & Climate Tech',
-    description: "Exploring large-scale interventions in Earth's climate system to counteract climate change, alongside other climate technologies.",
-    date: 'Ongoing Exploration',
-    tags: ['Climate', 'Geoengineering', 'Future Tech'],
-    link: '#',
-  },
-  {
     id: 'direct-air-capture',
     title: 'Direct Air Capture (DAC)',
     description: 'Developing technologies to capture carbon dioxide directly from the atmosphere to mitigate climate change.',
