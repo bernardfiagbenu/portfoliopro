@@ -59,7 +59,7 @@ const researchItems = [
     description: 'Pursuing clean, virtually limitless energy by replicating the nuclear fusion process that powers the sun.',
     date: 'Ongoing Exploration',
     tags: ['Energy', 'Fusion', 'Future Tech'],
-    link: '#',
+    link: '/research/fusion-energy',
   },
    {
     id: 'autonomous-vehicles',
