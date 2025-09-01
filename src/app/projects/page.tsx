@@ -41,7 +41,7 @@ const projects = [
     aiHint: 'climate data dashboard'
   },
   {
-    title: 'Social Impact Challenge',
+    title: 'Social Impact Idea Generator',
     description: 'An AI-powered idea generator that responds to a defined social problem by brainstorming solutions in various formats, from tech prototypes to policy briefs. Try the live demo!',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Social Impact', 'GenAI', 'Innovation', 'Problem Solving', 'Next.js'],
