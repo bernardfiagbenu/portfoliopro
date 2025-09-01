@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: 'HIV/AIDS Interactive Data Dashboard',
+    description: 'A data visualization dashboard that presents key statistics and trends about the global HIV/AIDS epidemic, based on data from UNAIDS. It highlights treatment gaps, gender inequalities, and funding challenges.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Data Viz', 'Health Tech', 'UN Goals', 'Next.js', 'Recharts'],
+    githubUrl: null,
+    liveUrl: '/projects/hiv-aids-dashboard',
+    aiHint: 'health data dashboard'
+  },
+  {
     title: 'Personalized Learning Path Generator',
     description: 'An AI-powered tool that creates custom, week-by-week learning plans for any topic. Enter a subject and get a structured curriculum to guide your studies.',
     imageUrl: 'https://picsum.photos/600/400',
@@ -145,7 +154,7 @@ export default function ProjectsPage() {
                   key={`project-schema-${index}`}
                 />
                 <ProjectLinkWrapper liveUrl={project.liveUrl}>
-                  <CardHeader>
+                   <CardHeader>
                     <CardTitle className="font-headline text-2xl text-primary mb-2 group-hover:text-accent transition-colors">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
