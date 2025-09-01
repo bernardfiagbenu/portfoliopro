@@ -53,16 +53,6 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-8">
         <SectionContainer title="About Me" subtitle="My Journey in Tech">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            <div className="flex-shrink-0">
-              <Avatar className="w-40 h-40 border-4 border-primary shadow-lg">
-                <AvatarImage 
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4" 
-                  alt="Bernard Fiagbenu - Profile Photo" 
-                  data-ai-hint="professional portrait" 
-                />
-                <AvatarFallback>BF</AvatarFallback>
-              </Avatar>
-            </div>
             <article className="text-left md:text-left">
               <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
               <p className="font-body text-lg text-foreground mb-4 text-pretty">
