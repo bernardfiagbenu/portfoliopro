@@ -11,17 +11,17 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Lightbulb, Wand2 } from 'lucide-react';
+import { Loader2, Lightbulb, Wand2, Bot, CaseUpper, FileText, Users, AreaChart, Rocket } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Balancer from 'react-wrap-balancer';
 
 const formatToIcon: Record<string, React.ReactNode> = {
-    'AI-Powered Tool': <Wand2 className="h-5 w-5" />,
-    'Web or Mobile App': <Wand2 className="h-5 w-5" />,
-    'Policy Brief': <Wand2 className="h-5 w-5" />,
-    'Community Project': <Wand2 className="h-5 w-5" />,
-    'Data Analysis Report': <Wand2 className="h-5 w-5" />,
-    'Startup Proposal': <Wand2 className="h-5 w-5" />,
+    'AI-Powered Tool': <Bot className="h-5 w-5" />,
+    'Web or Mobile App': <Rocket className="h-5 w-5" />,
+    'Policy Brief': <FileText className="h-5 w-5" />,
+    'Community Project': <Users className="h-5 w-5" />,
+    'Data Analysis Report': <AreaChart className="h-5 w-5" />,
+    'Startup Proposal': <CaseUpper className="h-5 w-5" />,
 };
 
 export default function SocialImpactChallengePage() {
