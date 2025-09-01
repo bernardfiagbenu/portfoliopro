@@ -93,7 +93,7 @@ export default function OnlineSafetyPage() {
                 )}
                 
                 {scenario && (
-                    <Card className="max-w-3xl mx-auto animate-fade-in-up">
+                    <Card className="max-w-3xl mx-auto animate-fadeInUp">
                         <CardHeader>
                              <CardTitle className="flex items-center gap-2">
                                 <AlertOctagon className="h-6 w-6 text-primary"/>
