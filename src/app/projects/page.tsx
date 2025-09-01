@@ -2,7 +2,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -89,9 +88,9 @@ const projects = [
 
 const ProjectLinkWrapper = ({ liveUrl, children }: { liveUrl: string | null, children: React.ReactNode }) => {
   if (liveUrl && liveUrl.startsWith('/')) {
-    return <Link href={liveUrl}>{children}</Link>;
+    return <Link href={liveUrl} className="group block h-full">{children}</Link>;
   }
-  return <>{children}</>;
+  return <div className="group block h-full">{children}</div>;
 };
 
 const ActionButton = ({ url, label, icon: Icon, isInternal }: { url: string, label: string, icon: React.ElementType, isInternal?: boolean }) => {
@@ -147,20 +146,9 @@ export default function ProjectsPage() {
                 />
                 <ProjectLinkWrapper liveUrl={project.liveUrl}>
                   <CardHeader>
-                    <div className="aspect-video relative w-full rounded-t-md overflow-hidden">
-                        <Image
-                          src={project.imageUrl}
-                          alt={`${project.title} - Project Screenshot`}
-                          fill
-                          className="object-cover"
-                          data-ai-hint={project.aiHint}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          priority={index < 2}
-                        />
-                      </div>
+                    <CardTitle className="font-headline text-2xl text-primary mb-2 group-hover:text-accent transition-colors">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <CardTitle className="font-headline text-2xl text-primary mb-2">{project.title}</CardTitle>
                     <CardDescription className="font-body text-muted-foreground mb-4">{project.description}</CardDescription>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
@@ -169,7 +157,7 @@ export default function ProjectsPage() {
                     </div>
                   </CardContent>
                 </ProjectLinkWrapper>
-                <CardFooter className="flex justify-end space-x-2 p-4 bg-muted/30">
+                <CardFooter className="flex justify-end space-x-2 p-4 bg-muted/30 mt-auto">
                   {project.githubUrl && (
                     <Button variant="outline" size="sm" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>
