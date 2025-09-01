@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: 'World Population Trends Dashboard',
+    description: 'An interactive data dashboard visualizing global population projections, aging trends, and life expectancy based on the latest UN data. Highlights key demographic shifts.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Data Viz', 'Demographics', 'UN Data', 'Next.js', 'Recharts'],
+    githubUrl: null,
+    liveUrl: '/projects/world-population-dashboard',
+    aiHint: 'population data dashboard'
+  },
+  {
     title: 'HIV/AIDS Interactive Data Dashboard',
     description: 'A data visualization dashboard that presents key statistics and trends about the global HIV/AIDS epidemic, based on data from UNAIDS. It highlights treatment gaps, gender inequalities, and funding challenges.',
     imageUrl: 'https://picsum.photos/600/400',
@@ -191,3 +200,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
