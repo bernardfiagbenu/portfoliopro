@@ -39,6 +39,10 @@ export default function PolicySimulatorPage() {
 
     const form = useForm<PolicyInput>({
         resolver: zodResolver(PolicyInputSchema),
+        defaultValues: {
+            policy: '',
+            context: ''
+        }
     });
 
     const onSubmit: SubmitHandler<PolicyInput> = async (data) => {
@@ -60,9 +64,10 @@ export default function PolicySimulatorPage() {
     };
 
     const chartData = simulationResult ? [
-        { name: 'Emissions', value: simulationResult.metrics.emissionsReduction, fill: 'hsl(var(--chart-1))' },
-        { name: 'GDP', value: simulationResult.metrics.gdpImpact, fill: 'hsl(var(--chart-2))'  },
-        { name: 'Equity', value: (simulationResult.metrics.socialEquity - 5) * 2, fill: 'hsl(var(--chart-3))' }, // Scale for viz
+        { name: 'Emissions', value: simulationResult.metrics.emissionsReduction, fill: 'hsl(var(--primary))' },
+        { name: 'GDP', value: simulationResult.metrics.gdpImpact, fill: 'hsl(var(--accent))'  },
+        // Scale equity (1-10) to a percentage range for visualization purposes, e.g., mapping it to -20 to 20
+        { name: 'Equity', value: (simulationResult.metrics.socialEquity - 5.5) * 4, fill: 'hsl(var(--secondary))' },
     ] : [];
 
     return (
@@ -146,10 +151,10 @@ export default function PolicySimulatorPage() {
                                             <Tooltip
                                                 formatter={(value, name) => {
                                                     if (name === 'Equity') {
-                                                        const originalValue = (value / 2) + 5;
+                                                        const originalValue = simulationResult.metrics.socialEquity;
                                                         return [`${originalValue.toFixed(1)}/10`, 'Equity Score'];
                                                     }
-                                                    return [`${value}% Change`, name === 'Emissions' ? 'Emissions Reduction' : 'GDP Impact'];
+                                                    return [`${Number(value).toFixed(1)}% Change`, name === 'Emissions' ? 'Emissions Reduction' : 'GDP Impact'];
                                                 }}
                                                 cursor={{ fill: 'hsla(var(--muted), 0.5)' }}
                                             />

@@ -7,9 +7,11 @@ import {z} from 'zod';
 export const PolicyInputSchema = z.object({
   policy: z
     .string()
+    .min(1, 'Please select a policy.')
     .describe('The climate policy to be simulated.'),
   context: z
     .string()
+    .min(1, 'Please select a context.')
     .describe('The economic context in which the policy is implemented.'),
 });
 export type PolicyInput = z.infer<typeof PolicyInputSchema>;
