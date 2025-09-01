@@ -1,4 +1,3 @@
-
 /**
  * @fileOverview Shared types for the social impact brainstorming flow.
  */
