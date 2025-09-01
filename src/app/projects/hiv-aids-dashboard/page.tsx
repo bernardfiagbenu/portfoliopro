@@ -5,7 +5,7 @@ import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar, LineChart, Line, CartesianGrid, Legend } from 'recharts';
 import { hivAidsData, type HivAidsData } from './data';
-import { Users, Droplets, TrendingUp, AlertTriangle, Target, HeartOff, Female, Info } from 'lucide-react';
+import { Users, Droplets, TrendingUp, AlertTriangle, Target, HeartOff, PersonStanding, Info } from 'lucide-react';
 
 const formatNumber = (num: number): string => {
     if (num >= 1_000_000_000) return `${(num / 1_000_000_000).toFixed(1)}B`;
@@ -113,7 +113,7 @@ export default function HivAidsDashboardPage() {
 
                      <Card>
                         <CardHeader>
-                            <CardTitle className="flex items-center gap-2"><Female/>Gender Disparities</CardTitle>
+                            <CardTitle className="flex items-center gap-2"><PersonStanding/>Gender Disparities</CardTitle>
                              <CardDescription>Women and girls are disproportionately affected.</CardDescription>
                         </CardHeader>
                         <CardContent className="text-center">
