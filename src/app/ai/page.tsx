@@ -13,14 +13,10 @@ export default function AiPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="A.I. Playground" subtitle="Experiments with Generative AI">
-        <div className="mb-12">
+        <div className="space-y-12">
           <Chatbot />
-        </div>
-
-        <div className="mb-12">
           <ImageCaptioner />
         </div>
-        
       </SectionContainer>
     </div>
   );
