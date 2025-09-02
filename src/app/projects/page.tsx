@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
+import { GithubIcon, ExternalLinkIcon, AppWindow } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 const projects = [
    {
+    title: 'Project Demos & Prototypes',
+    description: 'A collection of rapid-prototype applications demonstrating various functionalities, from data dashboards to inventory trackers. A showcase of versatile and quick development.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Prototyping', 'Dashboards', 'UI/UX', 'Data Viz', 'Next.js'],
+    githubUrl: null,
+    liveUrl: '/projects/demos',
+    aiHint: 'app prototypes grid'
+  },
+  {
     title: 'Interactive Online Safety Scenarios',
     description: 'An AI-powered educational tool that generates realistic online scenarios (like cyberbullying or scams) to help users practice safe and responsible digital citizenship.',
     imageUrl: 'https://picsum.photos/600/400',
@@ -195,8 +204,8 @@ export default function ProjectsPage() {
                   {project.liveUrl && (
                      <ActionButton 
                         url={project.liveUrl}
-                        label="Live Demo"
-                        icon={ExternalLinkIcon}
+                        label={project.liveUrl.startsWith('/') ? 'View Demo' : 'Live Demo'}
+                        icon={project.liveUrl.startsWith('/') ? AppWindow : ExternalLinkIcon}
                         isInternal={project.liveUrl.startsWith('/')}
                      />
                   )}

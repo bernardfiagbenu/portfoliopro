@@ -2,7 +2,7 @@
 'use client';
 
 import AnimatedCard from '@/components/ui/AnimatedCard';
-import { UserCircle, Briefcase, FlaskConical, Wrench, Mail, BrainCircuit } from 'lucide-react';
+import { UserCircle, Briefcase, FlaskConical, Wrench, Mail, BrainCircuit, AppWindow } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { homePageSketch } from '@/components/p5/HomePageSketch';
 
@@ -31,6 +31,12 @@ const sections = [
     description: 'Interact with AI-powered tools and see my experiments with generative models.',
     icon: BrainCircuit,
     href: '/ai',
+  },
+  {
+    title: 'Project Demos',
+    description: 'View a collection of rapid-prototype applications demonstrating various functionalities.',
+    icon: AppWindow,
+    href: '/projects/demos',
   },
   {
     title: 'Skills',
