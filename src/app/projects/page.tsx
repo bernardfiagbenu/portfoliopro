@@ -46,7 +46,7 @@ const projects = [
     tags: ['EdTech', 'AI', 'Online Safety', 'Gamification', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/online-safety-scenarios',
-aiHint: 'online safety education'
+    aiHint: 'online safety education'
   },
   {
     title: 'World Population Trends Dashboard',
