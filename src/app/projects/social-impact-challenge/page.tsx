@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -75,7 +74,7 @@ export default function SocialImpactChallengePage() {
                                     id="problemDescription"
                                     rows={5}
                                     placeholder="For example: 'In many urban areas, low-income families lack access to fresh, affordable produce, leading to poor nutrition and health problems...'"
-                                    {...form.register('problemDescription')}
+                                    {...register('problemDescription')}
                                 />
                                 {form.formState.errors.problemDescription && (
                                     <p className="text-sm text-destructive mt-1">
