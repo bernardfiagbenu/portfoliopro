@@ -12,6 +12,15 @@ export const metadata: Metadata = {
 };
 
 const projects = [
+  {
+    title: 'Urban Insights Dashboard',
+    description: 'An interactive dashboard for visualizing urban settlement data, including population, housing, infrastructure, climate risks, and inequality scores for major cities.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Data Viz', 'Urban Planning', 'React', 'Firebase', 'p5.js'],
+    githubUrl: null,
+    liveUrl: '/projects/urban-insights',
+    aiHint: 'city data dashboard'
+  },
    {
     title: 'Health Tech Prototypes',
     description: 'A collection of rapid-prototype applications demonstrating various functionalities, from data dashboards to inventory trackers. A showcase of versatile and quick development.',
@@ -28,7 +37,7 @@ const projects = [
     tags: ['EdTech', 'AI', 'Online Safety', 'Gamification', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/online-safety-scenarios',
-    aiHint: 'online safety education'
+aiHint: 'online safety education'
   },
   {
     title: 'World Population Trends Dashboard',
@@ -37,7 +46,7 @@ const projects = [
     tags: ['Data Viz', 'Demographics', 'UN Data', 'Next.js', 'Recharts'],
     githubUrl: null,
     liveUrl: '/projects/world-population-dashboard',
-    aiHint: 'population data dashboard'
+aiHint: 'population data dashboard'
   },
   {
     title: 'HIV/AIDS Interactive Data Dashboard',
@@ -46,7 +55,7 @@ const projects = [
     tags: ['Data Viz', 'Health Tech', 'UN Goals', 'Next.js', 'Recharts'],
     githubUrl: null,
     liveUrl: '/projects/hiv-aids-dashboard',
-    aiHint: 'health data dashboard'
+aiHint: 'health data dashboard'
   },
   {
     title: 'Personalized Learning Path Generator',
@@ -55,7 +64,7 @@ const projects = [
     tags: ['EdTech', 'GenAI', 'Personalized Learning', 'Next.js', 'AI'],
     githubUrl: null,
     liveUrl: '/projects/learning-path-generator',
-    aiHint: 'personalized education interface'
+aiHint: 'personalized education interface'
   },
   {
     title: 'Climate Policy Simulator',
@@ -64,7 +73,7 @@ const projects = [
     tags: ['Climate Policy', 'GenAI', 'Simulation', 'Decision Support', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/policy-simulator',
-    aiHint: 'climate policy dashboard'
+aiHint: 'climate policy dashboard'
   },
   {
     title: 'Urban Resilience Planner',
@@ -73,7 +82,7 @@ const projects = [
     tags: ['Climate Action', 'Data Viz', 'GIS', 'Next.js', 'React'],
     githubUrl: null,
     liveUrl: '/projects/ghg-emissions-tracker',
-    aiHint: 'climate data dashboard'
+aiHint: 'climate data dashboard'
   },
   {
     title: 'Social Impact Idea Generator',
@@ -82,7 +91,7 @@ const projects = [
     tags: ['Social Impact', 'GenAI', 'Innovation', 'Problem Solving', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/social-impact-challenge',
-    aiHint: 'social impact solution'
+aiHint: 'social impact solution'
   },
   {
     title: 'Stress Manager App',
