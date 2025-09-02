@@ -12,6 +12,15 @@ export const metadata: Metadata = {
 };
 
 const projects = [
+   {
+    title: 'Mental Wellbeing Compass',
+    description: 'A privacy-first demo app offering mental health screening (PHQ-9), resources, and self-help tools. Inspired by UN/WHO guidance to provide accessible mental health information.',
+    imageUrl: 'https://picsum.photos/600/400',
+    tags: ['Health Tech', 'Mental Health', 'Screening Tools', 'React', 'Next.js'],
+    githubUrl: null,
+    liveUrl: '/projects/mental-wellbeing-compass',
+    aiHint: 'mental health app interface'
+  },
   {
     title: 'Urban Insights Dashboard',
     description: 'An interactive dashboard for visualizing urban settlement data, including population, housing, infrastructure, climate risks, and inequality scores for major cities.',
