@@ -24,7 +24,7 @@ export const urbanInsightsSketch = (p: p5) => {
 
     constructor() {
       this.pos = p.createVector(p.random(p.width), p.random(p.height));
-      this.vel = p5.Vector.random2D();
+      this.vel = (p.constructor as typeof p5).Vector.random2D();
       this.acc = p.createVector();
       this.color = p.color(255, 255, 255, p.random(150, 200));
     }
@@ -153,7 +153,7 @@ export const urbanInsightsSketch = (p: p5) => {
   p.mouseClicked = () => {
     if (p.mouseX > 0 && p.mouseX < p.width && p.mouseY > 0 && p.mouseY < p.height) {
         particles.forEach(pt => {
-            const force = p5.Vector.random2D();
+            const force = (p.constructor as typeof p5).Vector.random2D();
             force.mult(p.random(5, 10));
             pt.applyForce(force);
         });
