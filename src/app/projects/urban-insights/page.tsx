@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2, Download, Building2, Droplet, Sun, Zap, Users, BarChart2, TrendingUp, ShieldAlert, Scale } from 'lucide-react';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { cities, cityData, type CityData } from './data';
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
+import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, PieChart, Pie, Cell, CartesianGrid } from 'recharts';
 import { Progress } from '@/components/ui/progress';
 
 // Dynamically import the P5Sketch component to ensure it's client-side only
