@@ -91,8 +91,15 @@ export default function LearningPathGeneratorPage() {
                     </CardContent>
                 </Card>
 
+                {isLoading && (
+                    <div className="mt-12 text-center">
+                         <Loader2 className="h-12 w-12 animate-spin text-primary mx-auto" />
+                        <p className="mt-4 text-muted-foreground">Crafting your custom curriculum...</p>
+                    </div>
+                )}
+
                 {learningPath && (
-                    <div className="mt-12">
+                    <div className="mt-12 animate-fadeInUp">
                         <h2 className="text-3xl font-headline font-bold text-primary mb-2 text-center">
                             Your 4-Week Plan to Master <span className="capitalize">"{submittedTopic}"</span>
                         </h2>
