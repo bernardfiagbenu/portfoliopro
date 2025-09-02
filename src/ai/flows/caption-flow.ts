@@ -46,8 +46,7 @@ const captionFlow = ai.defineFlow(
   async (input) => {
     const response = await ai.generate({
         model: 'googleai/gemini-1.5-flash-latest',
-        prompt: prompt.prompt,
-        input
+        prompt: await prompt(input),
     });
     return response.text;
   }
