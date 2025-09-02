@@ -43,7 +43,7 @@ export default function GhgEmissionsTrackerPage() {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <SectionContainer title="Global GHG Emissions Tracker" subtitle="Visualize greenhouse gas emissions data by country and sector">
+            <SectionContainer title="Urban Resilience Planner" subtitle="Visualize greenhouse gas emissions data by country and sector">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Controls */}
                     <Card className="md:col-span-1">

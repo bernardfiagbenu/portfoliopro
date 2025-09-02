@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const projects = [
    {
-    title: 'Project Demos & Prototypes',
+    title: 'Health Tech Prototypes',
     description: 'A collection of rapid-prototype applications demonstrating various functionalities, from data dashboards to inventory trackers. A showcase of versatile and quick development.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Prototyping', 'Dashboards', 'UI/UX', 'Data Viz', 'Next.js'],
@@ -67,7 +67,7 @@ const projects = [
     aiHint: 'climate policy dashboard'
   },
   {
-    title: 'Global GHG Emissions Tracker',
+    title: 'Urban Resilience Planner',
     description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data from various sectors and countries, demonstrating data visualization and reporting concepts for climate action.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Climate Action', 'Data Viz', 'GIS', 'Next.js', 'React'],

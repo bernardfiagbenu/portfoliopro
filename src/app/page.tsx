@@ -33,7 +33,7 @@ const sections = [
     href: '/ai',
   },
   {
-    title: 'Project Demos',
+    title: 'Health Tech Prototypes',
     description: 'View a collection of rapid-prototype applications demonstrating various functionalities.',
     icon: AppWindow,
     href: '/projects/demos',
