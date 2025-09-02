@@ -125,8 +125,15 @@ export default function PolicySimulatorPage() {
                     </CardContent>
                 </Card>
 
+                {isLoading && (
+                     <div className="mt-12 text-center">
+                         <Loader2 className="h-12 w-12 animate-spin text-primary mx-auto" />
+                        <p className="mt-4 text-muted-foreground">Analyzing policy impacts...</p>
+                    </div>
+                )}
+
                 {simulationResult && (
-                    <div className="mt-12">
+                    <div className="mt-12 animate-fadeInUp">
                         <h2 className="text-3xl font-headline font-bold text-primary mb-6 text-center">Simulation Results</h2>
                         <Card className="mb-6">
                             <CardHeader>
@@ -201,3 +208,5 @@ export default function PolicySimulatorPage() {
         </div>
     );
 }
+
+    
