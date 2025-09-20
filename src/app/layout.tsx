@@ -12,13 +12,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4"; 
 
 // Generate an SVG favicon with initials "BF"
-const faviconSvg = `
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <rect width="100" height="100" rx="20" fill="#4a00e0" />
-    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="50" fill="white" font-family="sans-serif" font-weight="bold">BF</text>
-  </svg>
-`;
-const faviconUrl = `data:image/svg+xml;base64,${btoa(faviconSvg)}`;
+const faviconUrl = "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3crect width='100' height='100' rx='20' fill='%234a00e0'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'%3eBF%3c/text%3e%3c/svg%3e";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
