@@ -2,7 +2,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
 const navLinks = [
     { href: '/about', label: 'About' },
@@ -14,12 +13,7 @@ const navLinks = [
 ];
 
 export default function HeaderNav() {
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
+    
     // Helper function to render links with consistent styling
     const renderLink = (link: { href: string; label: string; }) => (
         <Link 
@@ -30,23 +24,8 @@ export default function HeaderNav() {
         </Link>
     );
 
-    // Render placeholders on the server to avoid hydration mismatch
-    if (!isClient) {
-        return (
-            <ul className="flex space-x-1 sm:space-x-2">
-                {navLinks.map(link => (
-                    <li key={link.href}>
-                        <span className="px-3 py-2 text-sm rounded-md text-transparent">
-                            {link.label}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-        );
-    }
-    
     return (
-        <ul className="flex space-x-1 sm:space-x-2">
+        <ul className="hidden md:flex space-x-1 sm:space-x-2">
             {navLinks.map(link => (
                 <li key={link.href}>
                     {renderLink(link)}
@@ -55,5 +34,3 @@ export default function HeaderNav() {
         </ul>
     );
 }
-
-    
