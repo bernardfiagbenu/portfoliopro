@@ -15,7 +15,8 @@ import {
   CloudIcon, 
   PaletteIcon, 
   CalculatorIcon, 
-  UsersIcon 
+  UsersIcon,
+  Presentation
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -90,6 +91,11 @@ const skillCategories: SkillCategory[] = [
     name: 'Mathematical Foundations',
     icon: CalculatorIcon,
     skills: ['Discrete Mathematics', 'Calculus', 'Linear Algebra', 'Statistics & Probability'],
+  },
+   {
+    name: 'Teaching & Mentorship',
+    icon: Presentation,
+    skills: ['Curriculum Development', 'Technical Instruction', 'Mentoring Junior Developers', 'Workshop Facilitation', 'Public Speaking'],
   },
   {
     name: 'Soft Skills & Project Management',

@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <br />
                 University of the People (Pasadena, California)
                 <br />
-                Expected Graduation: 2025 | GPA: 3.06
+                Graduated in 2025 | GPA: 3.06
               </p>
             </section>
             <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
