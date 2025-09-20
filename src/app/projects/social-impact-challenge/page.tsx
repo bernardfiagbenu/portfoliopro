@@ -74,7 +74,7 @@ export default function SocialImpactChallengePage() {
                                     id="problemDescription"
                                     rows={5}
                                     placeholder="For example: 'In many urban areas, low-income families lack access to fresh, affordable produce, leading to poor nutrition and health problems...'"
-                                    {...register('problemDescription')}
+                                    {...form.register('problemDescription')}
                                 />
                                 {form.formState.errors.problemDescription && (
                                     <p className="text-sm text-destructive mt-1">

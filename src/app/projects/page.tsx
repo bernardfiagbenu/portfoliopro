@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -100,7 +99,7 @@ aiHint: 'climate data dashboard'
     tags: ['Social Impact', 'GenAI', 'Innovation', 'Problem Solving', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/social-impact-challenge',
-aiHint: 'social impact solution'
+    aiHint: 'social impact solution'
   },
   {
     title: 'Stress Manager App',
