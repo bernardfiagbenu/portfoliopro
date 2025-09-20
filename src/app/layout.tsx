@@ -8,9 +8,17 @@ import { ThemeProvider } from 'next-themes';
 import { UserProvider } from '@/context/UserContext';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-// Using the LinkedIn profile picture for both OG image and favicon for consistency
+// Using the LinkedIn profile picture for OG image
 const profileImageUrl = "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4"; 
-const faviconUrl = profileImageUrl;
+
+// Generate an SVG favicon with initials "BF"
+const faviconSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" rx="20" fill="#4a00e0" />
+    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="50" fill="white" font-family="sans-serif" font-weight="bold">BF</text>
+  </svg>
+`;
+const faviconUrl = `data:image/svg+xml;base64,${btoa(faviconSvg)}`;
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : null,
@@ -89,7 +97,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-        <link rel="icon" href={faviconUrl} type="image/png" sizes="any" />
+        <link rel="icon" href={faviconUrl} type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
@@ -114,5 +122,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
