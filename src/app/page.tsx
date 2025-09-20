@@ -1,8 +1,11 @@
 
 'use client';
 
-import AnimatedCard from '@/components/ui/AnimatedCard';
-import { UserCircle, Briefcase, FlaskConical, Wrench, Mail, BrainCircuit, AppWindow } from 'lucide-react';
+import type { Metadata } from 'next';
+import SectionContainer from '@/components/ui/SectionContainer';
+import Image from 'next/image';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Briefcase, GraduationCap, Lightbulb } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { homePageSketch } from '@/components/p5/HomePageSketch';
 
@@ -12,84 +15,85 @@ const P5Sketch = dynamic(() => import('@/components/ui/P5Sketch'), {
   loading: () => <div className="fixed inset-0 w-full h-full bg-background z-0" />,
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
-const sections = [
-  {
-    title: 'About Me',
-    description: 'Discover my background, passion for technology, and journey as a computer scientist.',
-    icon: UserCircle,
-    href: '/about',
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bernard Fiagbenu",
+  "url": siteUrl ? `${siteUrl}/` : '/',
+  "image": "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4",
+  "jobTitle": "Computer Science Graduate",
+  "description": "Passionate about Computer Science with a deep interest in theoretical computing and future technology. Focuses on creating robust and efficient systems.",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of the People",
+    "location": "Pasadena, California"
   },
-  {
-    title: 'Projects',
-    description: 'Explore a selection of my work, showcasing my skills in software development and problem-solving.',
-    icon: Briefcase,
-    href: '/projects',
+  "knowsAbout": ["Software Development", "Computer Science", "Web Technologies", "AI", "Machine Learning"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Software Development Industry" 
   },
-   {
-    title: 'A.I. Playground',
-    description: 'Interact with AI-powered tools and see my experiments with generative models.',
-    icon: BrainCircuit,
-    href: '/ai',
-  },
-  {
-    title: 'Health Tech Prototypes',
-    description: 'View a collection of rapid-prototype applications demonstrating various functionalities.',
-    icon: AppWindow,
-    href: '/projects/demos',
-  },
-  {
-    title: 'Skills',
-    description: 'A comprehensive overview of my technical skills, tools, and technologies I master.',
-    icon: Wrench,
-    href: '/skills',
-  },
-  {
-    title: 'Research & Insights',
-    description: 'Delve into my research interests, articles, and insights on current tech trends.',
-    icon: FlaskConical,
-    href: '/research',
-  },
-  {
-    title: 'Contact',
-    description: 'Get in touch with me for collaborations, opportunities, or any inquiries.',
-    icon: Mail,
-    href: '/contact',
-  },
-];
+  "sameAs": [
+    "https://github.com/bernardfiagbenu",
+    "https://www.linkedin.com/in/bernard-fiagbenu-26b50b19a/",
+    "https://x.com/FiagbenuBe14283"
+  ]
+};
 
-export default function HomePage() {
+export default function AboutPage() {
   return (
-    <div className="relative flex flex-col items-center justify-center text-center w-full min-h-screen overflow-hidden">
-      {/* P5.js Animation Background */}
+    <div className="relative overflow-hidden">
       <P5Sketch sketch={homePageSketch} className="fixed inset-0 w-full h-full z-0" />
+      <div className="fixed inset-0 z-10 bg-background/80 dark:bg-background/90 backdrop-blur-sm"></div>
 
-      {/* Overlay for text readability */}
-      <div className="fixed inset-0 z-10 bg-black/60 dark:bg-black/75"></div>
-
-      {/* Content Layer */}
-      <div className="relative z-20 p-4 container mx-auto">
-        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-white animate-fadeInUp">
-          Bernard Fiagbenu
-        </h1>
-        <p
-          className="text-lg md:text-xl text-white mb-12 max-w-2xl mx-auto animate-fadeInUp"
-          style={{ animationDelay: '0.2s' }}
-        >
-          I'm a Computer Science student, exploring my work and passion for technology and building innovative artificial intelligence software systems through classical and quantum computers.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto">
-          {sections.map((section, index) => (
-            <AnimatedCard
-              key={section.title}
-              title={section.title}
-              description={section.description}
-              icon={section.icon}
-              href={section.href}
-              delay={index * 100 + 300} // Stagger animation
-            />
-          ))}
-        </div>
+      <div className="relative z-20 container mx-auto px-4 py-8">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          key="person-schema"
+        ></script>
+        
+        <SectionContainer title="About Me" subtitle="My Journey in Tech">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <article className="text-left md:text-left">
+              <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
+              <p className="font-body text-lg text-foreground mb-4 text-pretty">
+                Hello! I'm a passionate Computer Scientist with a deep interest in the theoretical underpinnings of computing and future technology. My journey into the world of technology began with a profound curiosity for how complex systems operate, which quickly evolved into a passion for building innovative software solutions.
+              </p>
+              <p className="font-body text-lg text-foreground mb-4">
+                I thrive in collaborative environments, leveraging my understanding of core computer science concepts and my software development skills to bring ideas to life. My focus is on creating robust and efficient systems built on a solid foundation of computer science principles. I am particularly fascinated by the intersection of theoretical computer science and practical application in shaping the future of technology.
+              </p>
+              <p className="font-body text-lg text-foreground mb-6">
+                When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and continuously learning to stay at the forefront of this ever-evolving field.
+              </p>
+            </article>
+          </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
+              <GraduationCap className="w-12 h-12 text-accent mb-3" aria-hidden="true" />
+              <h3 className="text-xl font-headline font-semibold text-primary mb-2">Education</h3>
+              <p className="font-body text-center text-muted-foreground">
+                Bachelor of Science in Computer Science
+                <br />
+                University of the People (Pasadena, California)
+                <br />
+                Expected Graduation: 2025 | GPA: 3.06
+              </p>
+            </section>
+            <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
+              <Briefcase className="w-12 h-12 text-accent mb-3" aria-hidden="true" />
+              <h3 className="text-xl font-headline font-semibold text-primary mb-2">Experience</h3>
+              <p className="font-body text-center text-muted-foreground">5+ years in Software Development<br/>Experienced in various computer science and software engineering roles.</p>
+            </section>
+            <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
+              <Lightbulb className="w-12 h-12 text-accent mb-3" aria-hidden="true" />
+              <h3 className="text-xl font-headline font-semibold text-primary mb-2">Philosophy</h3>
+              <p className="font-body text-center text-muted-foreground">"Simplicity is the ultimate sophistication." - Leonardo da Vinci. I strive for clarity and impact in design and code.</p>
+            </section>
+          </div>
+        </SectionContainer>
       </div>
     </div>
   );
