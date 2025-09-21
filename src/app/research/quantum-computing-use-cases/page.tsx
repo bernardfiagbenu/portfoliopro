@@ -1,5 +1,5 @@
 
-import type { Metadata } from 'next.js';
+import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 
 export const metadata: Metadata = {
