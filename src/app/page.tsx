@@ -1,4 +1,3 @@
-
 'use client';
 
 import type { Metadata } from 'next';
@@ -23,17 +22,17 @@ const personSchema = {
   "name": "Bernard Fiagbenu",
   "url": siteUrl ? `${siteUrl}/` : '/',
   "image": "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4",
-  "jobTitle": "Computer Science Graduate",
-  "description": "Passionate about Computer Science with a deep interest in theoretical computing and future technology. Focuses on creating robust and efficient systems.",
+  "jobTitle": "Computer Science Innovator",
+  "description": "A Computer Scientist and leader dedicated to applying foundational principles and future technologies to solve critical challenges in Ghana and Africa.",
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "University of the People",
     "location": "Pasadena, California"
   },
-  "knowsAbout": ["Software Development", "Computer Science", "Web Technologies", "AI", "Machine Learning"],
+  "knowsAbout": ["Software Development", "Computer Science", "Web Technologies", "AI", "Machine Learning", "Innovation for Africa"],
   "worksFor": {
     "@type": "Organization",
-    "name": "Software Development Industry" 
+    "name": "Technology & Innovation for Development" 
   },
   "sameAs": [
     "https://github.com/bernardfiagbenu",
@@ -55,18 +54,18 @@ export default function AboutPage() {
           key="person-schema"
         ></script>
         
-        <SectionContainer title="About Me" subtitle="My Journey in Tech">
+        <SectionContainer title="About Me" subtitle="Innovating for Ghana and Africa">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             <article className="text-left md:text-left">
               <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
               <p className="font-body text-lg text-foreground mb-4 text-pretty">
-                Hello! I'm a passionate Computer Scientist with a deep interest in the theoretical underpinnings of computing and future technology. My journey into the world of technology began with a profound curiosity for how complex systems operate, which quickly evolved into a passion for building innovative software solutions.
+                Hello! I am a Computer Scientist and innovator driven by a mission: to harness the power of technology to solve critical challenges in Ghana and across the African continent. My work is rooted in the belief that a deep understanding of theoretical computer science is the key to unlocking practical, high-impact solutions.
               </p>
               <p className="font-body text-lg text-foreground mb-4">
-                I thrive in collaborative environments, leveraging my understanding of core computer science concepts and my software development skills to bring ideas to life. My focus is on creating robust and efficient systems built on a solid foundation of computer science principles. I am particularly fascinated by the intersection of theoretical computer science and practical application in shaping the future of technology.
+                As a leader, I focus on transforming complex theories into tangible innovations. Whether it's designing AI for agriculture, developing low-cost healthcare diagnostics, or conceptualizing next-generation energy grids, my goal is to build robust, efficient, and scalable systems that are tailored to the unique economic and social landscape of our region. I am passionate about creating a future where technology empowers local communities and positions Africa as a hub for global innovation.
               </p>
               <p className="font-body text-lg text-foreground mb-6">
-                When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and continuously learning to stay at the forefront of this ever-evolving field.
+                This portfolio showcases my journey and my vision. It's a collection of projects and research dedicated to this cause—building a more prosperous and sustainable future for Ghana and Africa, one technological leap at a time.
               </p>
             </article>
           </div>
