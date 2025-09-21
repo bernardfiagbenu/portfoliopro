@@ -1,5 +1,5 @@
 
-import type { Metadata } from 'next';
+import type { Metadata } from 'next.js';
 import SectionContainer from '@/components/ui/SectionContainer';
 
 export const metadata: Metadata = {
@@ -15,42 +15,34 @@ export default function QuantumComputingUseCasesPage() {
           
           <h2>Overview</h2>
           <p>
-            Quantum computers promise breakthroughs in simulation and optimization that are highly relevant to Ghana's economic development. By focusing on near-term, hybrid quantum-classical applications, Ghana can begin to tackle complex challenges in key sectors. Below is a survey of use cases tailored to the nation's specific needs, highlighting relevant quantum algorithms (e.g., <strong>VQE</strong> for materials, <strong>QAOA</strong> for logistics) and their potential impact.
+            Quantum computers, by leveraging the principles of quantum mechanics, can solve certain classes of problems that are intractable for even the most powerful classical supercomputers. For Ghana, a nation undergoing rapid economic and social transformation, the strategic application of quantum computing could unlock unprecedented opportunities. This analysis moves beyond theoretical possibilities to identify concrete, high-impact use cases across key sectors of the Ghanaian economy. The focus is on problems where quantum's unique ability in optimization, simulation, and machine learning can provide a decisive advantage.
           </p>
 
-          <h3>Healthcare &amp; Pharmaceuticals</h3>
+          <h3>Healthcare & Pharmaceuticals</h3>
           <ul>
-              <li><strong>Drug Discovery for Local Diseases:</strong> Quantum computers can simulate molecules to design new drugs. This is crucial for tackling diseases prevalent in Ghana, like malaria, tuberculosis, and Buruli ulcer. Using VQE, researchers could model how drugs bind to proteins from these pathogens, accelerating the discovery of more effective, low-cost treatments.</li>
-              <li><strong>Genomic Analysis of Ghanaian Populations:</strong> Genetic diversity in Ghana is significant. Quantum machine learning could analyze complex genomic datasets to understand disease resistance (e.g., to malaria) and predisposition (e.g., to sickle cell anemia) in Ghanaian populations, paving the way for true precision medicine.</li>
-              <li><strong>Optimizing Vaccine Distribution:</strong> The logistical challenge of distributing vaccines across Ghana's regions is immense. Quantum optimization algorithms (QAOA) could be used to model and optimize supply chains for vaccines and other critical medicines, ensuring they reach remote communities efficiently.</li>
+              <li><strong>Molecular Simulation for Drug Discovery:</strong> This is the most promising near-term application. Quantum computers can accurately simulate molecular interactions. A key application for Ghana would be to design novel anti-malarial drugs that can overcome existing parasite resistance. Using the Variational Quantum Eigensolver (VQE) algorithm, researchers could model the binding energy of candidate drug molecules to target proteins in the *Plasmodium falciparum* parasite, dramatically accelerating the discovery process.</li>
+              <li><strong>Personalized Medicine via Quantum Machine Learning:</strong> Ghana has one of the world's most genetically diverse populations. Classical machine learning struggles to find patterns in such complex genomic data. Quantum machine learning (QML) algorithms could analyze population-level genomic data from Ghana to identify complex genetic markers for diseases like sickle cell anemia or hypertension, leading to truly personalized risk assessment and treatment strategies.</li>
           </ul>
 
-          <h3>Finance &amp; Banking</h3>
+          <h3>Finance & Economics</h3>
           <ul>
-            <li><strong>Financial Inclusion & Credit Scoring:</strong> Many Ghanaians lack formal credit histories. Quantum machine learning could create more equitable credit scoring models by identifying complex patterns in alternative data sources (like mobile money usage), helping to expand access to capital for small businesses and individuals in Ghana.</li>
-            <li><strong>Optimizing Mobile Money Networks:</strong> Mobile money is the backbone of the Ghanaian economy. Quantum algorithms could optimize the liquidity management and network security of these massive, distributed financial systems.</li>
-            <li><strong>Post-Quantum Cryptography for FinTech:</strong> As a leader in mobile finance, Ghana has a vested interest in security. The country's FinTech innovators can lead the way in adopting post-quantum cryptography to secure the next generation of financial services.</li>
+            <li><strong>Portfolio Optimization for Pension Funds:</strong> Ghana's pension funds and financial institutions need to manage complex investment portfolios. This is a combinatorial optimization problem. Quantum algorithms like QAOA or VQE can find optimal asset allocations that maximize returns for a given level of risk, far more effectively than classical Monte Carlo simulations, especially as the number of assets grows.</li>
+            <li><strong>Credit Scoring for Financial Inclusion:</strong> A significant portion of the Ghanaian population is unbanked and lacks a formal credit history. QML could create more sophisticated and equitable credit scoring models by analyzing alternative data (e.g., mobile money transactions, utility payments) to identify creditworthy individuals and small businesses, boosting financial inclusion.</li>
+            <li><strong>Adoption of Post-Quantum Cryptography:</strong> With Ghana's leadership in digital and mobile finance (e.g., MoMo), securing this infrastructure against future quantum attacks is critical. A proactive national strategy to transition to post-quantum cryptography (PQC) standards would protect Ghana's digital economy and position it as a leader in cybersecurity.</li>
           </ul>
 
-          <h3>Supply Chain &amp; Logistics</h3>
+          <h3>Agriculture & Climate Science</h3>
           <ul>
-            <li><strong>Cocoa Supply Chain Optimization:</strong> This is a critical use case for Ghana. As detailed in the main research article, QAOA can be used to optimize the collection of cocoa beans from thousands of smallholder farms, reducing spoilage and increasing farmer income.</li>
-            <li><strong>Port and Urban Logistics:</strong> For the bustling port of Tema, quantum annealing or QAOA could optimize the scheduling of ships, trucks, and container movements, drastically reducing congestion and improving trade efficiency for Ghana and its neighbors.</li>
-            <li><strong>Mining and Resource Logistics:</strong> Optimizing the extraction and transportation of resources like gold and bauxite is a massive computational problem. Quantum algorithms could help schedule mining operations and plan rail and road transport to minimize costs and environmental impact.</li>
+            <li><strong>Catalyst Design for Green Fertilizer Production:</strong> The Haber-Bosch process for producing ammonia-based fertilizers is extremely energy-intensive. Quantum chemistry simulations can help discover new catalysts that enable fertilizer production at lower temperatures and pressures. For Ghana, where agriculture is a cornerstone of the economy, this would mean cheaper, locally-produced "green" fertilizer, reducing import dependency and environmental impact.</li>
+            <li><strong>Supply Chain Optimization:</strong> As detailed in the primary research proposal, optimizing the logistics of the cocoa, cashew, or shea butter supply chains is a perfect problem for quantum optimization algorithms. QAOA could solve the complex vehicle routing problems, minimizing spoilage and maximizing profits for Ghanaian farmers.</li>
+            <li><strong>Enhanced Climate Modeling:</strong> Quantum computers can simulate complex climate systems. This would enable more accurate, localized climate models for Ghana, predicting changes in rainfall patterns (vital for the hydroelectric Akosombo Dam) and forecasting extreme weather events, which is critical for a nation vulnerable to climate change.</li>
           </ul>
 
-          <h3>Energy &amp; Materials Science</h3>
+          <h3>Energy & Mining</h3>
           <ul>
-            <li><strong>Designing New Solar Materials:</strong> Ghana has excellent solar resources. Quantum chemistry simulations (using VQE) could help design cheaper, more efficient, and more durable photovoltaic materials that are better suited to the Ghanaian climate.</li>
-            <li><strong>Green Fertilizer Production:</strong> The process for making fertilizer is very energy-intensive. Quantum computers could help discover new catalysts that allow for the production of "green" fertilizer at lower temperatures, a massive boon for Ghana's agricultural sector.</li>
-            <li><strong>Power Grid Optimization:</strong> As Ghana expands its energy grid and incorporates more renewables like the Bui Dam and solar farms, quantum optimization could be used to ensure grid stability and efficient load balancing, reducing the frequency of power outages ('dumsor').</li>
-          </ul>
-
-          <h3>Climate Science &amp; Agriculture</h3>
-          <ul>
-            <li><strong>Improved Weather & Climate Modeling:</strong> More accurate, hyper-local weather forecasting for Ghana, powered by quantum simulation, would be transformative for the country's rain-fed agriculture, helping farmers decide when to plant and harvest.</li>
-            <li><strong>Water Resource Management:</strong> Quantum optimization could be used to model and manage shared water resources, such as the Volta River basin, ensuring equitable and sustainable distribution for power generation, agriculture, and public use.</li>
-            <li><strong>Carbon Capture Materials:</strong> QC can help design new materials for Direct Air Capture technologies, as discussed in the dedicated research article. This could enable Ghana to build new industries around carbon removal.</li>
+            <li><strong>Power Grid Optimization and Stability:</strong> As Ghana integrates more renewable energy sources into its national grid, maintaining stability is a major challenge. Quantum optimization can be used to solve the "unit commitment" problem: determining which power plants to run at what times to meet demand at the lowest cost, while ensuring grid stability. This could help mitigate "dumsor" (power outages).</li>
+            li><strong>Discovery of New Materials for Batteries:</strong> Quantum simulation can accelerate the discovery of new materials for more efficient and cheaper batteries. For Ghana, this could enable large-scale energy storage solutions to complement its solar and hydro resources, ensuring a stable, 24/7 power supply.</li>
+            <li><strong>Mining Exploration and Optimization:</strong> Quantum machine learning could analyze geological survey data to more accurately predict the locations of mineral deposits like gold, bauxite, or lithium. Furthermore, quantum optimization could be used to plan mining operations to maximize yield while minimizing environmental impact.</li>
           </ul>
 
         </div>

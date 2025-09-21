@@ -10,37 +10,40 @@ export const metadata: Metadata = {
 export default function AgiPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Artificial General Intelligence (AGI) in the Ghanaian Context" subtitle="A Master’s-Level Research Perspective on AGI for Ghana">
+      <SectionContainer title="Artificial General Intelligence (AGI) for Ghanaian Development" subtitle="A PhD-Level Research Proposal on Data-Efficient and Causal AGI">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
+          <h3>Abstract</h3>
           <p>
-            <strong>Artificial General Intelligence (AGI)</strong> in a Ghanaian context aims to create adaptive problem-solving systems to address nation-specific challenges like agricultural productivity, healthcare access, and resource management. While global AGI research focuses on broad capabilities, a focused agenda for Ghana must prioritize robust, low-resource, and interpretable systems. Large-scale models show promise but often fail when applied to local contexts due to data scarcity and linguistic diversity (e.g., Twi, Ewe, Ga). A master's-level project should aim to bridge this gap by focusing on AGI for sustainable development in Ghana.
+            The pursuit of <strong>Artificial General Intelligence (AGI)</strong> must be contextualized to address the world's most pressing problems. This PhD research proposal outlines a framework for developing AGI systems specifically tailored to Ghana's unique developmental challenges, focusing on agriculture and public health. We argue against the monolithic, data-hungry models emerging from the Global North and instead propose a path toward a more robust, data-efficient, and causally-aware AGI. This work will focus on creating systems that can reason under uncertainty with sparse, multilingual, and multimodal data—the reality of many domains in Ghana.
           </p>
 
-          <h3>Key Challenges for AGI in Ghana</h3>
+          <h3>Key Research Questions for AGI in Ghana</h3>
           <ol>
-            <li><strong>Data Scarcity and Bias:</strong> Lack of large, high-quality datasets for Ghanaian languages, agriculture, and health, leading to biased or ineffective models.</li>
-            <li><strong>Infrastructure Constraints:</strong> Limited computational resources and internet connectivity in many regions, requiring highly efficient and offline-capable AI systems.</li>
-            <li><strong>Contextual Misalignment:</strong> Models trained on Western data often misunderstand local socio-economic and environmental nuances, from Ghanaian farming practices to urban dynamics in Accra.</li>
-            <li><strong>Safety and Alignment:</strong> Ensuring AGI systems are aligned with local community values and do not exacerbate existing inequalities.</li>
+            <li><strong>Data-Efficient Learning:</strong> How can we build versatile AI models that learn effectively from small, fragmented, and noisy datasets, such as agricultural data from smallholder farms in Ghana or clinical notes in multiple local languages? This requires a move beyond big data paradigms to focus on transfer learning, few-shot learning, and meta-learning.</li>
+            <li><strong>Causal Reasoning:</strong> To be truly useful, an AGI must not only find correlations but understand cause and effect. How can we build a system that can reason causally—for instance, to determine not just that a crop is failing, but *why* it is failing (e.g., soil deficiency vs. pest vs. water stress) and recommend the most effective intervention?</li>
+            <li><strong>Robustness and Interpretability:</strong> How can we ensure that AI systems are robust and trustworthy when deployed in complex, real-world Ghanaian environments? This involves developing interpretable models whose decision-making processes can be understood and verified by local experts, from agronomists to healthcare workers.</li>
+            <li><strong>Value Alignment and Co-Design:</strong> How do we ensure that AGI systems are aligned with the socio-cultural values of Ghanaian communities? This research will employ participatory co-design methodologies, working directly with end-users in Ghana to define problems and validate solutions, avoiding the pitfalls of "techno-solutionism."</li>
           </ol>
 
-          <h3>A Feasible Master’s Project for Ghana</h3>
+          <h3>Proposed PhD Research: A Causal AGI Agent for Cocoa Farming in Ghana</h3>
           <p>
-            Build a modular AGI agent for Ghanaian cocoa farming, a cornerstone of the nation's economy. The agent would combine: (a) a vision transformer pre-trained on satellite imagery and ground-level photos to detect signs of disease (like swollen shoot virus) and nutrient deficiency, (b) a causal reasoning module to recommend interventions based on local soil data and weather patterns, and (c) an NLP front-end that communicates advice to farmers in Twi or simple English via SMS.
+            This thesis will focus on the design, implementation, and evaluation of a modular, causal AGI agent to support Ghanaian cocoa farmers. The system will integrate three core components:
           </p>
+          <ul>
+            <li><strong>A Perception Module:</strong> A vision transformer (ViT) pre-trained on diverse agricultural datasets and fine-tuned on a locally-curated dataset of cocoa plant imagery (satellite, drone, and ground-level). This module will be optimized for few-shot identification of diseases (e.g., Cacao Swollen Shoot Virus), pests, and nutrient deficiencies.</li>
+            <li><strong>A Causal Inference Engine:</strong> A structural causal model (SCM) built as a directed acyclic graph (DAG), incorporating expert knowledge from Ghanaian agronomists and soil scientists. This module will take inputs from the perception module and other data sources (weather, soil type) to infer the probable causes of crop stress.</li>
+            <li><strong>A Language Module:</strong> A lightweight, distilled large language model (LLM) fine-tuned to communicate actionable advice to farmers in both simple English and Twi via a basic SMS or voice interface. The model will be trained to provide explanations for its recommendations, enhancing trust and user understanding.</li>
+          </ul>
+
+          <h3>Methodology & Evaluation</h3>
           <p>
-            <strong>Methods:</strong> Use transfer learning from global agricultural datasets, but fine-tune with a smaller, locally-curated dataset from Ghanaian agricultural institutes. The causal module would be a graph-based model incorporating expert knowledge from local agronomists. The NLP component would use a lightweight, distilled transformer model.
+            The research will employ a multi-stage methodology. Initially, the components will be developed and tested in simulation. The core of the thesis will be a field study conducted in partnership with the Cocoa Research Institute of Ghana (CRIG). The system's performance will be evaluated against a human expert baseline on metrics of diagnostic accuracy, intervention effectiveness, and data efficiency. Crucially, a qualitative evaluation will be conducted with a cohort of Ghanaian farmers to assess the system's usability, trustworthiness, and practical value.
           </p>
 
-          <h3>Experiments & Evaluation</h3>
+          <h3>Broader Impact for Ghana and Africa</h3>
           <p>
-            The project would be evaluated on its ability to accurately diagnose crop issues with limited data (few-shot learning). Its recommendations would be compared against those of human experts. A key metric would be the system's ability to function under simulated low-bandwidth conditions. A pilot study with a small group of farmers in the Ashanti or Western Region of Ghana would provide crucial real-world feedback.
-          </p>
-
-          <h3>Ethics and Societal Implications for Ghana</h3>
-          <p>
-            AGI research in Ghana must be participatory, involving local communities to define problems and validate solutions. It must prioritize data sovereignty, ensuring that data collected in Ghana benefits Ghanaians. This project would explicitly address the risk of creating dependency on foreign technology by focusing on building local capacity and open-sourcing the core models and tools. The goal is not just to build a tool, but to create a template for community-aligned AGI for sustainable agriculture across Ghana and West Africa.
+            This research aims to establish a new paradigm for AGI development—one that is problem-driven, context-aware, and built on principles of data sovereignty and local empowerment. By open-sourcing the models and methodologies, this work will provide a blueprint for creating similar AGI systems for other critical sectors in Ghana and across Africa, from public health surveillance to natural resource management. It is a step toward a future where the most advanced technologies are designed by and for the communities they are meant to serve.
           </p>
 
         </div>
@@ -48,3 +51,4 @@ export default function AgiPage() {
     </div>
   );
 }
+

@@ -1,5 +1,5 @@
 
-import type { Metadata } from 'next';
+import type { Metadata } from 'next.js';
 import SectionContainer from '@/components/ui/SectionContainer';
 
 export const metadata: Metadata = {
@@ -10,40 +10,39 @@ export const metadata: Metadata = {
 export default function QuantumComputingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Quantum Computing for Ghanaian Development" subtitle="A Master’s-Level Research Perspective for Ghana">
+      <SectionContainer title="Applied Quantum Computing for Ghanaian Industry" subtitle="A PhD-Level Proposal on Hybrid Quantum-Classical Optimization">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
+          <h3>Abstract</h3>
           <p>
-            <strong>Quantum computing</strong> presents a unique opportunity for Ghana to leapfrog traditional technological development cycles. While the field is still emerging, its potential to solve complex optimization, simulation, and machine learning problems could be transformative for key sectors of the Ghanaian economy, from finance to natural resource management. A master's project in this area should focus on applying near-term (NISQ) quantum algorithms to problems of specific relevance to Ghana, using cloud-based quantum computers.
+            While fault-tolerant quantum computers are still on the horizon, the current era of Noisy Intermediate-Scale Quantum (NISQ) devices offers a unique opportunity for nations like Ghana to engage with and benefit from the quantum revolution. This PhD research proposal outlines a framework for applying hybrid quantum-classical algorithms to solve combinatorial optimization problems that are critical to Ghana's key economic sectors. The research will focus on developing and benchmarking quantum-enhanced solutions for logistics and finance, demonstrating the potential for "quantum advantage" on problems of national importance and helping to build a quantum-ready workforce in Ghana.
           </p>
 
-          <h3>Principal Gaps for Quantum in Ghana</h3>
+          <h3>Key Research Questions for Quantum in Ghana</h3>
           <ol>
-            <li><strong>Access and Expertise:</strong> There is a significant gap in quantum computing skills and access to hardware. Research must leverage cloud platforms and focus on building a community of Ghanaian quantum developers.</li>
-            <li><strong>Problem Formulation:</strong> Identifying which of Ghana's challenges are "quantum-ready" is a critical first step. Many problems in logistics, finance, and materials are a good fit, but require specific formulation.</li>
-            <li><strong>Data Integration:</strong> Quantum algorithms need data. Integrating real-world data from Ghanaian contexts into quantum machine learning or optimization workflows is a non-trivial challenge.</li>
+            <li><strong>Problem-to-Hamiltonian Mapping:</strong> What are the most effective methods to map real-world optimization problems from Ghanaian industry (e.g., cocoa supply chain, mobile money liquidity) into the mathematical formulations (Ising Hamiltonians) required by quantum algorithms like QAOA and VQE?</li>
+            <li><strong>Performance on NISQ Hardware:</strong> How does the performance of hybrid quantum algorithms, when executed on today's noisy quantum computers, compare to state-of-the-art classical heuristics for problems of a scale and complexity relevant to Ghana? This involves rigorous benchmarking and noise-mitigation techniques.</li>
+            <li><strong>Data-Driven Quantum Optimization:</strong> How can we effectively integrate real-time, classical data streams into a quantum optimization workflow? For instance, how can a quantum logistics model adapt to changing road conditions or crop yields in Ghana?</li>
+            <li><strong>Quantum Software Abstraction:</strong> How can we build a software layer that abstracts the complexity of the underlying quantum hardware, enabling Ghanaian domain experts (e.g., logistics managers, financial analysts) to benefit from quantum optimization without needing to be quantum physicists?</li>
           </ol>
 
-          <h3>Project Focus: Optimizing Ghana's Cocoa Supply Chain</h3>
+          <h3>Proposed PhD Research: Quantum Optimization for Ghana's Cocoa Supply Chain</h3>
           <p>
-            A compelling master's project would be to develop a hybrid quantum-classical algorithm to optimize the logistics of Ghana's cocoa supply chain. Cocoa is vital to Ghana's economy, but inefficiencies in collecting beans from thousands of smallholder farms and transporting them to ports lead to significant costs and spoilage. This is a classic Vehicle Routing Problem, which is notoriously hard for classical computers to solve at scale.
+            The primary focus of this thesis will be the development and rigorous analysis of a hybrid quantum-classical solution for the Vehicle Routing Problem (VRP) within Ghana's cocoa supply chain. This problem is of immense economic significance and is known to be NP-hard, making it an ideal candidate for exploring potential quantum advantage.
           </p>
           <p>
-            <strong>Methods:</strong> The project would use the Quantum Approximate Optimization Algorithm (QAOA), a near-term algorithm well-suited for such problems. The workflow would be:
-            1. Model a simplified version of the cocoa supply chain in a specific region of Ghana as a graph, with nodes representing farms and depots.
-            2. Use a classical computer to pre-process the problem and define the cost function (e.g., minimizing travel distance and time).
-            3. Use a quantum computer (via a cloud service like IBM Quantum) to run the QAOA algorithm to find an optimal or near-optimal solution for the routing.
-            4. Analyze the quantum result and compare its quality and speed against purely classical solvers.
+            <strong>Methods:</strong>
           </p>
+          <ul>
+            <li><strong>Problem Modeling:</strong> In collaboration with industry partners (e.g., a Licensed Buying Company), model a sub-region of Ghana's cocoa network as a graph. The objective will be to minimize a complex cost function including travel distance, fuel costs, and time-dependent constraints related to crop collection deadlines.</li>
+            <li><strong>Algorithm Implementation:</strong> Implement the Quantum Approximate Optimization Algorithm (QAOA) to solve this problem. This will involve designing the problem Hamiltonian and the variational quantum circuit. A key part of the research will be to develop novel mixing operators for QAOA that are more efficient for constrained optimization problems.</li>
+            <li><strong>Execution on Cloud Quantum Computers:</strong> The algorithm will be executed on publicly available, cloud-based quantum computers (e.g., from IBM, Rigetti, or IonQ) via their software development kits (e.g., Qiskit).</li>
+            <li><strong>Benchmarking and Noise Mitigation:</strong> The performance of the QAOA solution will be compared against leading classical solvers (e.g., Gurobi) and metaheuristics. Advanced error mitigation techniques will be applied to improve the quality of results from the noisy quantum hardware.</li>
+          </ul>
 
-          <h3>Evaluation & Tools</h3>
+          <h3>Expected Outcomes and Impact for Ghana</h3>
           <p>
-            The project would be evaluated on the quality of the solution found by the quantum algorithm (e.g., total distance traveled) compared to classical heuristics. The primary tools would be Python-based quantum libraries like Qiskit to design the circuits and interact with cloud-based quantum hardware. Real or realistic data on farm locations in a specific district of Ghana would make the project highly relevant.
-          </p>
-          
-          <h3>Impact and Vision</h3>
-          <p>
-            A successful project would serve as a powerful demonstration of how quantum computing can be applied to solve real-world problems in Ghanaian agriculture and logistics. It would also produce a valuable learning resource and a template for other Ghanaian researchers to follow. The long-term vision is to build a "quantum advantage" for Ghanaian industries, creating a new generation of high-tech solutions for local challenges, driven by local talent.
+            This research will provide one of the first concrete benchmarks for the application of quantum computing to a real-world logistics problem in Africa. A successful project will result in: (1) A high-quality, open-source software library for modeling Ghanaian supply chain problems for quantum computers. (2) A rigorous assessment of the current state of "quantum advantage" for this problem class. (3) A training framework and case study that can be used to build a quantum computing curriculum at Ghanaian universities. By tackling a problem of national importance, this work will serve as a catalyst, demonstrating to both government and industry in Ghana that the quantum future is not something to wait for, but something to actively build.
           </p>
 
         </div>

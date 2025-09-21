@@ -1,5 +1,5 @@
 
-import type { Metadata } from 'next';
+import type { Metadata } from 'next.js';
 import SectionContainer from '@/components/ui/SectionContainer';
 
 export const metadata: Metadata = {
@@ -10,38 +10,39 @@ export const metadata: Metadata = {
 export default function ProgrammableMatterPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Programmable Matter for Ghanaian Infrastructure" subtitle="A Master’s-Level Research Perspective for Ghana">
+      <SectionContainer title="Programmable Matter for Resilient Infrastructure in Ghana" subtitle="A PhD-Level Proposal on Self-Healing, Low-Cost Composites">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
-          <h3>Technical Background & Motivation for Ghana</h3>
+          <h3>Abstract</h3>
           <p>
-            <strong>Programmable matter</strong>—materials that can change their physical properties on demand—holds immense potential for addressing Ghana's infrastructure challenges. Instead of static structures, imagine roads that can repair their own potholes, buildings that can adapt their insulation based on the weather, or portable, reconfigurable shelters for disaster relief. For a nation with a significant infrastructure gap and a need for resilient, low-cost solutions, programmable matter is not a luxury but a strategic technology for sustainable development.
+            Ghana's path to development is critically dependent on building robust and cost-effective infrastructure. However, harsh environmental conditions and limited maintenance budgets pose significant challenges to the longevity of roads, buildings, and water systems. This PhD proposal explores the frontier of <strong>programmable matter</strong> to create a new class of low-cost, self-healing composite materials specifically designed for the Ghanaian context. The research will focus on developing a material that can autonomously repair damage, drastically reducing lifecycle maintenance costs and improving the resilience of critical infrastructure, particularly in rural and underserved areas of Ghana.
           </p>
 
-          <h3>Key Technical Gaps for a Ghanaian Context</h3>
+          <h3>Key Research Questions for Programmable Matter in Ghana</h3>
           <ul>
-            <li><strong>Low-Cost and Local Materials:</strong> Research is needed to move beyond expensive, lab-grade materials to create programmable systems using locally sourced Ghanaian materials (e.g., laterite soils, recycled plastics).</li>
-            <li><strong>Energy Efficiency:</strong> Systems must be low-power and ideally powered by ambient energy sources like solar, as they will often be deployed in off-grid areas of Ghana.</li>
-            <li><strong>Robustness and Durability:</strong> The materials must be able to withstand harsh environmental conditions, including intense sun, high humidity, and heavy rainfall, which are common in Ghana.</li>
-            <li><strong>Simplicity of Control:</strong> Control systems must be simple and intuitive, allowing for reprogramming without requiring advanced technical expertise.</li>
+            <li><strong>Material Composition from Local Resources:</strong> How can we create a durable composite matrix using primarily locally sourced and waste materials from Ghana? This involves investigating the use of lateritic soils, recycled plastics (like PET from water sachets), and natural fibers (like coconut coir) as the bulk components.</li>
+            <li><strong>Micro-encapsulation of Healing Agents:</strong> What is the most effective method to create stable microcapsules containing a healing agent that can be dispersed within this composite matrix? The research will focus on bio-based polymers as healing agents and develop encapsulation techniques that can be scaled up at low cost.</li>
+            <li><strong>Triggering and Healing Efficiency:</strong> How can the healing mechanism be optimized for the Ghanaian environment? The project will explore passive triggering mechanisms, where cracks are induced by mechanical stress, and evaluate the healing efficiency (i.e., the percentage of mechanical strength recovered) under cyclic loading and high-humidity conditions.</li>
+            <li><strong>Lifecycle and Economic Analysis:</strong> What is the techno-economic feasibility of this material compared to traditional materials like asphalt or concrete for a typical use case like a rural road in Ghana? This involves a full lifecycle cost analysis, factoring in reduced maintenance.</li>
           </ul>
 
-          <h3>A Feasible Master’s Project for Ghana</h3>
+          <h3>Proposed PhD Research: A Self-Healing Laterite-Polymer Composite</h3>
           <p>
-            This project would focus on developing a low-cost, self-healing composite material for rural road surfacing in Ghana. The goal is to create a material that can repair minor cracks and potholes automatically, reducing maintenance costs and improving connectivity for rural communities, for instance in the agricultural regions.
+            The central hypothesis of this thesis is that a self-healing composite can be created by embedding microcapsules of a reactive, bio-based monomer into a matrix of polymer-stabilized laterite soil.
           </p>
           <p>
-            <strong>Methods:</strong> The project would involve embedding microcapsules containing a healing agent (e.g., a bio-based polymer) into a durable, low-cost matrix (like a composite of laterite and recycled plastic). When a crack forms in the road surface, it ruptures the microcapsules, releasing the healing agent which then polymerizes and seals the damage. The research would focus on optimizing the capsule design and the healing chemistry to be triggered by environmental factors like sunlight or moisture, common in Ghana.
+            <strong>Methods:</strong>
           </p>
+          <ul>
+            <li><strong>Matrix Formulation:</strong> Characterize different types of laterite soils from various regions of Ghana. Develop a formulation that blends this soil with processed recycled plastic to create a durable, water-resistant matrix. The mechanical properties (compressive strength, flexural strength) will be optimized.</li>
+            <li><strong>Microcapsule Synthesis:</strong> Develop a scalable method (e.g., interfacial polymerization) to create microcapsules with a robust shell that protects a liquid healing agent. The healing agent could be a bio-resin derived from local plant sources.</li>
+            <li><strong>Composite Fabrication & Testing:</strong> Fabricate composite samples with varying concentrations of microcapsules. These samples will be subjected to mechanical stress to induce micro-cracks. The healing process will be observed using microscopy and the recovery of mechanical properties will be quantified using a universal testing machine.</li>
+            <li><strong>Durability and Environmental Testing:</strong> The healed samples will be exposed to accelerated weathering tests that simulate Ghanaian conditions (UV radiation, high humidity, thermal cycling) to assess the long-term stability of the repaired material.</li>
+          </ul>
 
-          <h3>Evaluation & Metrics</h3>
+          <h3>Expected Outcomes and Impact for Ghana</h3>
           <p>
-            The material would be evaluated on several key metrics: healing efficiency (what percentage of a crack's strength is restored), activation time (how quickly it heals), durability (how many healing cycles it can undergo), and cost-per-square-meter compared to traditional asphalt or gravel. Lab tests would involve creating samples, intentionally cracking them, and measuring their mechanical properties. A small-scale field test on a footpath in Ghana could demonstrate its real-world viability.
-          </p>
-          
-          <h3>Ethics & Sustainability</h3>
-          <p>
-            The primary ethical consideration is ensuring the materials used are non-toxic and environmentally safe. The project would prioritize using bio-based or recycled components. The long-term vision is to create a decentralized manufacturing model where local communities in Ghana can produce and deploy these smart materials themselves, fostering local enterprise and creating truly sustainable infrastructure. This shifts the paradigm from importing expensive solutions to empowering local innovation.
+            This research will produce a proof-of-concept for a new category of intelligent, sustainable construction material. It would be one of the first attempts to design programmable matter specifically for the challenges of a developing nation. A successful project would not only offer a direct solution for improving infrastructure in Ghana but would also create a new, high-value use for recycled plastic waste and local soils. By focusing on low-cost and local manufacturing, this research paves the way for a decentralized industry where communities in Ghana can produce their own advanced construction materials. This represents a paradigm shift from importing expensive infrastructure solutions to fostering indigenous, sustainable innovation.
           </p>
 
         </div>
