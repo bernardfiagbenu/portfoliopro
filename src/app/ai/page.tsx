@@ -2,7 +2,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
 import Chatbot from '@/components/ai/Chatbot';
-import ImageCaptioner from '@/components/ai/ImageCaptioner';
 
 export const metadata: Metadata = {
   title: 'A.I. Playground by Bernard Fiagbenu',
@@ -15,7 +14,6 @@ export default function AiPage() {
       <SectionContainer title="A.I. Playground" subtitle="Experiments with Generative AI">
         <div className="space-y-12">
           <Chatbot />
-          <ImageCaptioner />
         </div>
       </SectionContainer>
     </div>
