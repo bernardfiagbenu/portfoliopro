@@ -154,7 +154,7 @@ tags: ['Food Tech', 'Sustainability', 'Ghana'],
     title: 'Programmable Matter for Ghanaian Infrastructure',
     description: 'Researching self-healing and adaptive materials to build resilient, low-cost infrastructure like roads and shelters in Ghana.',
     date: 'Ongoing Exploration',
-    tags: ['Materials', 'Infrastructure', 'Ghana', 'Ghana'],
+    tags: ['Materials', 'Infrastructure', 'Ghana'],
     link: '/research/programmable-matter',
   },
   {
@@ -291,8 +291,8 @@ export default function ResearchPage() {
                     <CardContent>
                       <p className="font-body text-foreground mb-4">{item.description}</p>
                       <div className="flex flex-wrap gap-2">
-                        {item.tags.map(tag => (
-                          <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
+                        {item.tags.map((tag, index) => (
+                          <span key={`${tag}-${index}`} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full font-body">{tag}</span>
                         ))}
                       </div>
                     </CardContent>
