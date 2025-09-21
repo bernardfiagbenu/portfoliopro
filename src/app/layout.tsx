@@ -104,12 +104,14 @@ export default function RootLayout({
                 defaultTheme="dark"
                 enableSystem={false}
             >
-            <Header />
-            <main className="flex-grow">
-                {children}
-            </main>
-            <Footer />
-            <Toaster />
+              <div className="flex flex-col flex-grow">
+                <Header />
+                <main className="flex-grow">
+                    {children}
+                </main>
+                <Footer />
+              </div>
+              <Toaster />
             </ThemeProvider>
         </UserProvider>
       </body>
