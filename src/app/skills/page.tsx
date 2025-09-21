@@ -16,7 +16,8 @@ import {
   PaletteIcon, 
   CalculatorIcon, 
   UsersIcon,
-  Presentation
+  Presentation,
+  Crown
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -96,6 +97,11 @@ const skillCategories: SkillCategory[] = [
     name: 'Teaching & Mentorship',
     icon: Presentation,
     skills: ['Curriculum Development', 'Technical Instruction', 'Mentoring Junior Developers', 'Workshop Facilitation', 'Public Speaking'],
+  },
+  {
+    name: 'Leadership & Management',
+    icon: Crown,
+    skills: ['Team Leadership', 'Strategic Planning', 'Project Coordination', 'Decision Making', 'Conflict Resolution', 'Risk Management'],
   },
   {
     name: 'Soft Skills & Project Management',
