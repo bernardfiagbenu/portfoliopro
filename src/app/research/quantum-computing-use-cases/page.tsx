@@ -41,7 +41,7 @@ export default function QuantumComputingUseCasesPage() {
           <h3>Energy & Mining</h3>
           <ul>
             <li><strong>Power Grid Optimization and Stability:</strong> As Ghana integrates more renewable energy sources into its national grid, maintaining stability is a major challenge. Quantum optimization can be used to solve the "unit commitment" problem: determining which power plants to run at what times to meet demand at the lowest cost, while ensuring grid stability. This could help mitigate "dumsor" (power outages).</li>
-            li><strong>Discovery of New Materials for Batteries:</strong> Quantum simulation can accelerate the discovery of new materials for more efficient and cheaper batteries. For Ghana, this could enable large-scale energy storage solutions to complement its solar and hydro resources, ensuring a stable, 24/7 power supply.</li>
+            <li><strong>Discovery of New Materials for Batteries:</strong> Quantum simulation can accelerate the discovery of new materials for more efficient and cheaper batteries. For Ghana, this could enable large-scale energy storage solutions to complement its solar and hydro resources, ensuring a stable, 24/7 power supply.</li>
             <li><strong>Mining Exploration and Optimization:</strong> Quantum machine learning could analyze geological survey data to more accurately predict the locations of mineral deposits like gold, bauxite, or lithium. Furthermore, quantum optimization could be used to plan mining operations to maximize yield while minimizing environmental impact.</li>
           </ul>
 
