@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { Metadata } from 'next';
@@ -43,7 +44,7 @@ const personSchema = {
 
 export default function AboutPage() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="overflow-hidden">
       <P5Sketch sketch={homePageSketch} className="fixed inset-0 w-full h-full z-0" />
       <div className="fixed inset-0 z-10 bg-background/80 dark:bg-background/90 backdrop-blur-sm"></div>
 
