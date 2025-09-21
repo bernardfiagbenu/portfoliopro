@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const projects = [
    {
     title: 'Mental Wellbeing Compass',
-    description: 'A privacy-first demo app offering mental health screening (PHQ-9), resources, and self-help tools. Inspired by UN/WHO guidance to provide accessible mental health information.',
+    description: 'A privacy-first demo app offering mental health screening (PHQ-9) and resources, inspired by UN/WHO guidance to provide accessible mental health information for regions like Ghana and Africa.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Health Tech', 'Mental Health', 'Screening Tools', 'React', 'Next.js'],
     githubUrl: null,
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: 'Urban Insights Dashboard',
-    description: 'An interactive dashboard for visualizing urban settlement data, including population, housing, infrastructure, climate risks, and inequality scores for major cities.',
+    description: 'An interactive dashboard for visualizing urban data for major African cities, including population, infrastructure, and climate risks, to support sustainable urban planning in Africa.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Data Viz', 'Urban Planning', 'React', 'Firebase', 'p5.js'],
     githubUrl: null,
@@ -30,8 +30,8 @@ const projects = [
     aiHint: 'city data dashboard'
   },
    {
-    title: 'Health Tech Prototypes',
-    description: 'A collection of rapid-prototype applications demonstrating various functionalities, from data dashboards to inventory trackers. A showcase of versatile and quick development.',
+    title: 'Health Tech Prototypes for Africa',
+    description: 'A collection of rapid-prototype health applications, from data dashboards to emergency supply trackers, designed to address healthcare challenges in Ghana and Africa.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Prototyping', 'Dashboards', 'UI/UX', 'Data Viz', 'Next.js'],
     githubUrl: null,
@@ -39,8 +39,8 @@ const projects = [
     aiHint: 'app prototypes grid'
   },
   {
-    title: 'Interactive Online Safety Scenarios',
-    description: 'An AI-powered educational tool that generates realistic online scenarios (like cyberbullying or scams) to help users practice safe and responsible digital citizenship.',
+    title: 'Interactive Online Safety Scenarios for Africa',
+    description: 'An AI-powered educational tool that generates realistic online scenarios (like scams) to help improve digital literacy for Africa\'s fast-growing population of internet users.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['EdTech', 'AI', 'Online Safety', 'Gamification', 'Next.js'],
     githubUrl: null,
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     title: 'World Population Trends Dashboard',
-    description: 'An interactive data dashboard visualizing global population projections, aging trends, and life expectancy based on the latest UN data. Highlights key demographic shifts.',
+    description: 'An interactive dashboard visualizing UN population data. It highlights key demographic shifts, providing insights for development planning in Africa and globally.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Data Viz', 'Demographics', 'UN Data', 'Next.js', 'Recharts'],
     githubUrl: null,
@@ -57,8 +57,8 @@ const projects = [
 aiHint: 'population data dashboard'
   },
   {
-    title: 'HIV/AIDS Interactive Data Dashboard',
-    description: 'A data visualization dashboard that presents key statistics and trends about the global HIV/AIDS epidemic, based on data from UNAIDS. It highlights treatment gaps, gender inequalities, and funding challenges.',
+    title: 'HIV/AIDS Interactive Data Dashboard for Africa',
+    description: 'A data dashboard presenting key statistics on the HIV/AIDS epidemic in Africa from UNAIDS, highlighting treatment gaps, gender inequalities, and funding challenges.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Data Viz', 'Health Tech', 'UN Goals', 'Next.js', 'Recharts'],
     githubUrl: null,
@@ -66,8 +66,8 @@ aiHint: 'population data dashboard'
 aiHint: 'health data dashboard'
   },
   {
-    title: 'Personalized Learning Path Generator',
-    description: 'An AI-powered tool that creates custom, week-by-week learning plans for any topic. Enter a subject and get a structured curriculum to guide your studies.',
+    title: 'Personalized Learning Path Generator for Africa',
+    description: 'An AI-powered tool that creates custom learning plans on any topic, designed to help bridge educational gaps and promote skill development in Ghana and across Africa.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['EdTech', 'GenAI', 'Personalized Learning', 'Next.js', 'AI'],
     githubUrl: null,
@@ -75,8 +75,8 @@ aiHint: 'health data dashboard'
 aiHint: 'personalized education interface'
   },
   {
-    title: 'Climate Policy Simulator',
-    description: 'An AI-powered tool to simulate and analyze the potential economic, social, and environmental impacts of various climate policies. Provides high-level insights for decision-makers.',
+    title: 'Climate Policy Simulator for Africa',
+    description: 'An AI tool to simulate the impacts of climate policies, providing insights for decision-makers in African nations to support sustainable development goals.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Climate Policy', 'GenAI', 'Simulation', 'Decision Support', 'Next.js'],
     githubUrl: null,
@@ -84,8 +84,8 @@ aiHint: 'personalized education interface'
 aiHint: 'climate policy dashboard'
   },
   {
-    title: 'Urban Resilience Planner',
-    description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data from various sectors and countries, demonstrating data visualization and reporting concepts for climate action.',
+    title: 'Urban Resilience Planner for Africa',
+    description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data, demonstrating data visualization concepts for climate action in African cities.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Climate Action', 'Data Viz', 'GIS', 'Next.js', 'React'],
     githubUrl: null,
@@ -93,8 +93,8 @@ aiHint: 'climate policy dashboard'
 aiHint: 'climate data dashboard'
   },
   {
-    title: 'Social Impact Idea Generator',
-    description: 'An AI-powered idea generator that responds to a defined social problem by brainstorming solutions in various formats, from tech prototypes to policy briefs. Try the live demo!',
+    title: 'Social Impact Idea Generator for Africa',
+    description: 'An AI tool that brainstorms solutions for social problems in Africa. It proposes ideas from tech prototypes to policy briefs, with a live demo to try.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Social Impact', 'GenAI', 'Innovation', 'Problem Solving', 'Next.js'],
     githubUrl: null,
