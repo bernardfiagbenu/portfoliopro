@@ -36,7 +36,7 @@ export default function QuantumComputingPage() {
           <ul>
             <li><strong>Agricultural Supply Chain Optimization:</strong> This is a critical use case for Ghana and many other African nations. As detailed in the main research article, QAOA can be used to optimize the collection of crops like cocoa, coffee, or cashews from thousands of smallholder farms, reducing spoilage and increasing farmer income.</li>
             <li><strong>Port and Urban Logistics:</strong> For bustling ports like Tema in Ghana or Durban in South Africa, quantum annealing or QAOA could optimize the scheduling of ships, trucks, and container movements, drastically reducing congestion and improving trade efficiency.</li>
-            -  <strong>Mining and Resource Logistics:</strong> Optimizing the extraction and transportation of natural resources is a massive computational problem. Quantum algorithms could help schedule mining operations and plan rail and road transport to minimize costs and environmental impact.</li>
+            <li><strong>Mining and Resource Logistics:</strong> Optimizing the extraction and transportation of natural resources is a massive computational problem. Quantum algorithms could help schedule mining operations and plan rail and road transport to minimize costs and environmental impact.</li>
           </ul>
 
           <h3>Energy &amp; Materials Science</h3>
