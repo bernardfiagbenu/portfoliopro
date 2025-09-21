@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 export default function AgiPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Artificial General Intelligence (AGI) in the African Context" subtitle="A Master’s-Level Research Perspective on AGI for Ghana and Africa">
+      <SectionContainer title="Artificial General Intelligence (AGI) in the Ghanaian Context" subtitle="A Master’s-Level Research Perspective on AGI for Ghana">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <p>
-            <strong>Artificial General Intelligence (AGI)</strong> in an African context aims to create adaptive problem-solving systems to address continent-specific challenges like agricultural productivity, healthcare access, and resource management. While global AGI research focuses on broad capabilities, a focused agenda for Africa must prioritize robust, low-resource, and interpretable systems. Large-scale models show promise but often fail when applied to local contexts due to data scarcity and linguistic diversity (e.g., Twi, Swahili). A master's-level project should aim to bridge this gap by focusing on AGI for sustainable development.
+            <strong>Artificial General Intelligence (AGI)</strong> in a Ghanaian context aims to create adaptive problem-solving systems to address nation-specific challenges like agricultural productivity, healthcare access, and resource management. While global AGI research focuses on broad capabilities, a focused agenda for Ghana must prioritize robust, low-resource, and interpretable systems. Large-scale models show promise but often fail when applied to local contexts due to data scarcity and linguistic diversity (e.g., Twi, Ewe, Ga). A master's-level project should aim to bridge this gap by focusing on AGI for sustainable development in Ghana.
           </p>
 
-          <h3>Key Challenges for AGI in Africa</h3>
+          <h3>Key Challenges for AGI in Ghana</h3>
           <ol>
-            <li><strong>Data Scarcity and Bias:</strong> Lack of large, high-quality datasets for African languages, agriculture, and health, leading to biased or ineffective models.</li>
+            <li><strong>Data Scarcity and Bias:</strong> Lack of large, high-quality datasets for Ghanaian languages, agriculture, and health, leading to biased or ineffective models.</li>
             <li><strong>Infrastructure Constraints:</strong> Limited computational resources and internet connectivity in many regions, requiring highly efficient and offline-capable AI systems.</li>
-            <li><strong>Contextual Misalignment:</strong> Models trained on Western data often misunderstand local socio-economic and environmental nuances, from Ghanaian farming practices to urban dynamics in Lagos.</li>
+            <li><strong>Contextual Misalignment:</strong> Models trained on Western data often misunderstand local socio-economic and environmental nuances, from Ghanaian farming practices to urban dynamics in Accra.</li>
             <li><strong>Safety and Alignment:</strong> Ensuring AGI systems are aligned with local community values and do not exacerbate existing inequalities.</li>
           </ol>
 
@@ -38,9 +38,9 @@ export default function AgiPage() {
             The project would be evaluated on its ability to accurately diagnose crop issues with limited data (few-shot learning). Its recommendations would be compared against those of human experts. A key metric would be the system's ability to function under simulated low-bandwidth conditions. A pilot study with a small group of farmers in the Ashanti or Western Region of Ghana would provide crucial real-world feedback.
           </p>
 
-          <h3>Ethics and Societal Implications for Africa</h3>
+          <h3>Ethics and Societal Implications for Ghana</h3>
           <p>
-            AGI research in Africa must be participatory, involving local communities to define problems and validate solutions. It must prioritize data sovereignty, ensuring that data collected in Africa benefits Africans. This project would explicitly address the risk of creating dependency on foreign technology by focusing on building local capacity and open-sourcing the core models and tools. The goal is not just to build a tool, but to create a template for community-aligned AGI for sustainable agriculture across West Africa.
+            AGI research in Ghana must be participatory, involving local communities to define problems and validate solutions. It must prioritize data sovereignty, ensuring that data collected in Ghana benefits Ghanaians. This project would explicitly address the risk of creating dependency on foreign technology by focusing on building local capacity and open-sourcing the core models and tools. The goal is not just to build a tool, but to create a template for community-aligned AGI for sustainable agriculture across Ghana and West Africa.
           </p>
 
         </div>

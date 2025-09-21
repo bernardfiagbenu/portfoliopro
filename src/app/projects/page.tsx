@@ -12,44 +12,44 @@ export const metadata: Metadata = {
 
 const projects = [
    {
-    title: 'Mental Wellbeing Compass',
-    description: 'A privacy-first demo app offering mental health screening (PHQ-9) and resources, inspired by UN/WHO guidance to provide accessible mental health information for regions like Ghana and Africa.',
+    title: 'Mental Wellbeing Compass for Ghana',
+    description: 'A privacy-first demo app offering mental health screening (PHQ-9) and resources, inspired by UN/WHO guidance to provide accessible mental health information specifically for Ghana.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Health Tech', 'Mental Health', 'Screening Tools', 'React', 'Next.js'],
+    tags: ['Health Tech', 'Mental Health', 'Ghana', 'React', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/mental-wellbeing-compass',
     aiHint: 'mental health app interface'
   },
   {
-    title: 'Urban Insights Dashboard',
-    description: 'An interactive dashboard for visualizing urban data for major African cities, including population, infrastructure, and climate risks, to support sustainable urban planning in Africa.',
+    title: 'Urban Insights Dashboard for Accra',
+    description: 'An interactive dashboard for visualizing urban data for Accra, including population, infrastructure, and climate risks, to support sustainable urban planning in Ghana.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Data Viz', 'Urban Planning', 'React', 'Firebase', 'p5.js'],
+    tags: ['Data Viz', 'Urban Planning', 'Accra', 'Firebase', 'p5.js'],
     githubUrl: null,
     liveUrl: '/projects/urban-insights',
     aiHint: 'city data dashboard'
   },
    {
-    title: 'Health Tech Prototypes for Africa',
-    description: 'A collection of rapid-prototype health applications, from data dashboards to emergency supply trackers, designed to address healthcare challenges in Ghana and Africa.',
+    title: 'Health Tech Prototypes for Ghana',
+    description: 'A collection of rapid-prototype health applications, from data dashboards to emergency supply trackers, designed to address healthcare challenges in Ghana.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Prototyping', 'Dashboards', 'UI/UX', 'Data Viz', 'Next.js'],
+    tags: ['Prototyping', 'Dashboards', 'Ghana', 'Data Viz', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/demos',
     aiHint: 'app prototypes grid'
   },
   {
-    title: 'Interactive Online Safety Scenarios for Africa',
-    description: 'An AI-powered educational tool that generates realistic online scenarios (like scams) to help improve digital literacy for Africa\'s fast-growing population of internet users.',
+    title: 'Interactive Online Safety Scenarios for Ghana',
+    description: 'An AI-powered educational tool that generates realistic online scenarios (like scams) to help improve digital literacy for Ghana\'s fast-growing population of internet users.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['EdTech', 'AI', 'Online Safety', 'Gamification', 'Next.js'],
+    tags: ['EdTech', 'AI', 'Online Safety', 'Ghana', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/online-safety-scenarios',
     aiHint: 'online safety education'
   },
   {
     title: 'World Population Trends Dashboard',
-    description: 'An interactive dashboard visualizing UN population data. It highlights key demographic shifts, providing insights for development planning in Africa and globally.',
+    description: 'An interactive dashboard visualizing UN population data. It highlights key demographic shifts, providing insights for development planning in Ghana and globally.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Data Viz', 'Demographics', 'UN Data', 'Next.js', 'Recharts'],
     githubUrl: null,
@@ -57,46 +57,46 @@ const projects = [
 aiHint: 'population data dashboard'
   },
   {
-    title: 'HIV/AIDS Interactive Data Dashboard for Africa',
-    description: 'A data dashboard presenting key statistics on the HIV/AIDS epidemic in Africa from UNAIDS, highlighting treatment gaps, gender inequalities, and funding challenges.',
+    title: 'HIV/AIDS Interactive Data Dashboard for Ghana',
+    description: 'A data dashboard presenting key statistics on the HIV/AIDS epidemic in Ghana from UNAIDS, highlighting treatment gaps, gender inequalities, and funding challenges.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Data Viz', 'Health Tech', 'UN Goals', 'Next.js', 'Recharts'],
+    tags: ['Data Viz', 'Health Tech', 'Ghana', 'Next.js', 'Recharts'],
     githubUrl: null,
     liveUrl: '/projects/hiv-aids-dashboard',
 aiHint: 'health data dashboard'
   },
   {
-    title: 'Personalized Learning Path Generator for Africa',
-    description: 'An AI-powered tool that creates custom learning plans on any topic, designed to help bridge educational gaps and promote skill development in Ghana and across Africa.',
+    title: 'Personalized Learning Path Generator for Ghana',
+    description: 'An AI-powered tool that creates custom learning plans on any topic, designed to help bridge educational gaps and promote skill development in Ghana.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['EdTech', 'GenAI', 'Personalized Learning', 'Next.js', 'AI'],
+    tags: ['EdTech', 'GenAI', 'Personalized Learning', 'Ghana', 'AI'],
     githubUrl: null,
     liveUrl: '/projects/learning-path-generator',
 aiHint: 'personalized education interface'
   },
   {
-    title: 'Climate Policy Simulator for Africa',
-    description: 'An AI tool to simulate the impacts of climate policies, providing insights for decision-makers in African nations to support sustainable development goals.',
+    title: 'Climate Policy Simulator for Ghana',
+    description: 'An AI tool to simulate the impacts of climate policies, providing insights for decision-makers in Ghana to support sustainable development goals.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Climate Policy', 'GenAI', 'Simulation', 'Decision Support', 'Next.js'],
+    tags: ['Climate Policy', 'GenAI', 'Simulation', 'Ghana', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/policy-simulator',
 aiHint: 'climate policy dashboard'
   },
   {
-    title: 'Urban Resilience Planner for Africa',
-    description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data, demonstrating data visualization concepts for climate action in African cities.',
+    title: 'Urban Resilience Planner for Accra',
+    description: 'An interactive dashboard to monitor and analyze greenhouse gas emissions data, demonstrating data visualization concepts for climate action in Ghanaian cities like Accra.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Climate Action', 'Data Viz', 'GIS', 'Next.js', 'React'],
+    tags: ['Climate Action', 'Data Viz', 'GIS', 'Accra', 'React'],
     githubUrl: null,
     liveUrl: '/projects/ghg-emissions-tracker',
 aiHint: 'climate data dashboard'
   },
   {
-    title: 'Social Impact Idea Generator for Africa',
-    description: 'An AI tool that brainstorms solutions for social problems in Africa. It proposes ideas from tech prototypes to policy briefs, with a live demo to try.',
+    title: 'Social Impact Idea Generator for Ghana',
+    description: 'An AI tool that brainstorms solutions for social problems in Ghana. It proposes ideas from tech prototypes to policy briefs, with a live demo to try.',
     imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Social Impact', 'GenAI', 'Innovation', 'Problem Solving', 'Next.js'],
+    tags: ['Social Impact', 'GenAI', 'Innovation', 'Ghana', 'Next.js'],
     githubUrl: null,
     liveUrl: '/projects/social-impact-challenge',
     aiHint: 'social impact solution'
