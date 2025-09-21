@@ -10,39 +10,37 @@ export const metadata: Metadata = {
 export default function AgiPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Artificial General Intelligence (AGI)" subtitle="A Master’s-Level Research Perspective">
+      <SectionContainer title="Artificial General Intelligence (AGI) in the African Context" subtitle="A Master’s-Level Research Perspective on AGI for Ghana and Africa">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <p>
-            <strong>Artificial General Intelligence (AGI)</strong> aims to create systems capable of robust, adaptive problem solving across a broad spectrum of tasks at or beyond human-level competence. Contemporary advances—large-scale pretraining, attention-based architectures, and reinforcement learning—demonstrate powerful domain-specific competencies and surprising emergent behavior, but fall short of flexible generalization, long-term planning, causal understanding, and safe deployment. A research agenda for a master’s-level project must bridge representation learning, causal reasoning, memory systems, and evaluation frameworks that meaningfully measure cross-domain generality.
+            <strong>Artificial General Intelligence (AGI)</strong> in an African context aims to create adaptive problem-solving systems to address continent-specific challenges like agricultural productivity, healthcare access, and resource management. While global AGI research focuses on broad capabilities, a focused agenda for Africa must prioritize robust, low-resource, and interpretable systems. Large-scale models show promise but often fail when applied to local contexts due to data scarcity and linguistic diversity (e.g., Twi, Swahili). A master's-level project should aim to bridge this gap by focusing on AGI for sustainable development.
           </p>
 
-          <h3>Key Challenges</h3>
+          <h3>Key Challenges for AGI in Africa</h3>
           <ol>
-            <li><strong>Representational mismatch</strong> between subsymbolic neural representations and symbolic, composable structures needed for systematic reasoning.</li>
-            <li><strong>Catastrophic forgetting</strong> and inefficient transfer in continual learning settings.</li>
-            <li>Lack of rigorous benchmarks and metrics for <strong>“general competence”</strong> across modalities and real-world affordances.</li>
-            <li><strong>Safety and alignment:</strong> how to ensure generalization doesn’t produce harmful or misaligned behaviors under distribution shift.</li>
+            <li><strong>Data Scarcity and Bias:</strong> Lack of large, high-quality datasets for African languages, agriculture, and health, leading to biased or ineffective models.</li>
+            <li><strong>Infrastructure Constraints:</strong> Limited computational resources and internet connectivity in many regions, requiring highly efficient and offline-capable AI systems.</li>
+            <li><strong>Contextual Misalignment:</strong> Models trained on Western data often misunderstand local socio-economic and environmental nuances, from Ghanaian farming practices to urban dynamics in Lagos.</li>
+            <li><strong>Safety and Alignment:</strong> Ensuring AGI systems are aligned with local community values and do not exacerbate existing inequalities.</li>
           </ol>
 
-          <h3>Concrete Research Directions</h3>
+          <h3>A Feasible Master’s Project for Ghana</h3>
           <p>
-            Design modular hybrid architectures that explicitly expose causal variables and symbolic manipulators to a neural core; invent curricula that optimize transfer from simulated algorithmic tasks to real-world perception–action tasks; develop continual meta-learners with episodic memory that maintain skills while acquiring new ones; create a “generalization suite” of tasks (language, vision, control, planning) with principled holdouts for zero-shot tests.
+            Build a modular AGI agent for Ghanaian cocoa farming, a cornerstone of the nation's economy. The agent would combine: (a) a vision transformer pre-trained on satellite imagery and ground-level photos to detect signs of disease (like swollen shoot virus) and nutrient deficiency, (b) a causal reasoning module to recommend interventions based on local soil data and weather patterns, and (c) an NLP front-end that communicates advice to farmers in Twi or simple English via SMS.
+          </p>
+          <p>
+            <strong>Methods:</strong> Use transfer learning from global agricultural datasets, but fine-tune with a smaller, locally-curated dataset from Ghanaian agricultural institutes. The causal module would be a graph-based model incorporating expert knowledge from local agronomists. The NLP component would use a lightweight, distilled transformer model.
           </p>
 
-          <h3>A Feasible Master’s Project</h3>
+          <h3>Experiments & Evaluation</h3>
           <p>
-            Build a modular agent combining (a) a pre-trained transformer backbone for perception and language, (b) a graph-based causal module for explicit cause–effect inference, and (c) an episodic memory store for one-shot policy adaptation. Train with multi-task self-supervised objectives followed by meta-RL fine-tuning on a suite (MiniGrid, ProcGen variants, synthetic algorithmic tasks, and a small robotic-simulation control task). Key methods: contrastive and causal representation learning, MAML-style meta-learning, replay buffers with selective consolidation, and modular attention routing between modules. Evaluation metrics: episodes-to-threshold (sample efficiency), transfer success rate on held-out domains, catastrophic forgetting index, and a causal-consistency score that measures model’s internal explanations against known causal graphs.
+            The project would be evaluated on its ability to accurately diagnose crop issues with limited data (few-shot learning). Its recommendations would be compared against those of human experts. A key metric would be the system's ability to function under simulated low-bandwidth conditions. A pilot study with a small group of farmers in the Ashanti or Western Region of Ghana would provide crucial real-world feedback.
           </p>
 
-          <h3>Experiments</h3>
+          <h3>Ethics and Societal Implications for Africa</h3>
           <p>
-            Ablation of the causal module’s contribution to zero-shot transfer, curriculum comparison (random vs. difficulty-graded), and human-in-the-loop alignment tests (preference-based shaping of reward). Use open-source simulation (Gym/ProcGen/MiniGrid), PyTorch, and optionally a small real-world task via a low-cost robot arm for proof-of-concept.
-          </p>
-
-          <h3>Ethics and Societal Implications</h3>
-          <p>
-            AGI research must have explicit alignment and safety tests, red-team evaluations, and conservative release policies. Projects should emphasize interpretability (traceable module outputs) and include robust failure-mode analysis. Discuss the risks of capability misestimation and propose governance measures, such as staged disclosure and collaboration with safety researchers. Success would be demonstrated by reproducible improvement in cross-domain transfer and clear, interpretable module outputs — not by hyperbolic claims of general intelligence.
+            AGI research in Africa must be participatory, involving local communities to define problems and validate solutions. It must prioritize data sovereignty, ensuring that data collected in Africa benefits Africans. This project would explicitly address the risk of creating dependency on foreign technology by focusing on building local capacity and open-sourcing the core models and tools. The goal is not just to build a tool, but to create a template for community-aligned AGI for sustainable agriculture across West Africa.
           </p>
 
         </div>

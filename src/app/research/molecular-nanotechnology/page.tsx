@@ -10,49 +10,37 @@ export const metadata: Metadata = {
 export default function MolecularNanotechnologyPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Molecular Nanotechnology" subtitle="A Master’s-Level Research Perspective">
+      <SectionContainer title="Molecular Nanotechnology for African Challenges" subtitle="A Master’s-Level Research Perspective for Ghana and Africa">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <p>
-            <strong>Molecular nanotechnology</strong> seeks to engineer molecular-scale devices and assemblies (DNA origami, molecular machines, protein-based devices) to perform mechanical, sensing, or catalytic functions. Advances in design tools (sequence-to-structure prediction), coarse-grained simulation, and DNA-based self-assembly have enabled complex programmable shapes, but yield, robustness, and reliable function in non-ideal environments remain the barriers to practical application.
+            <strong>Molecular nanotechnology</strong>, the engineering of systems at the molecular scale, offers groundbreaking solutions for Africa's most pressing challenges in healthcare, agriculture, and water purification. While often seen as high-tech and expensive, approaches like DNA origami and protein-based devices can be adapted to create low-cost, field-deployable diagnostics and treatments. A master's project in this area should focus on robust, affordable applications tailored to the needs of communities in Ghana and across the continent.
           </p>
 
-          <h3>Technical Challenges</h3>
+          <h3>Technical Challenges in the African Context</h3>
           <ol>
-            <li><strong>Design-to-yield gap:</strong> sequences predicted to form target structures often fail in wet-lab conditions.</li>
-            <li><strong>Environmental sensitivity:</strong> ionic strength, temperature, contaminants.</li>
-            <li><strong>Engineering dynamic behavior</strong> (switches, walkers) with reliable kinetics.</li>
-            <li><strong>Limited computational design tools</strong> that couple sequence, structure, and assembly pathway prediction.</li>
+            <li><strong>Cost and Scalability:</strong> Developing manufacturing processes for molecular devices that do not rely on expensive equipment and reagents.</li>
+            <li><strong>Environmental Robustness:</strong> Devices must remain functional and stable in high temperatures and humidity, without requiring a cold chain for transport and storage.</li>
+            <li><strong>Field-Deployability:</strong> Creating systems that provide a clear, easy-to-read output without needing a laboratory or highly trained technicians. For example, a color change instead of a fluorescence reader.</li>
+            <li><strong>Local Manufacturing:</strong> Exploring the use of local biological resources or simplified synthesis methods to enable local production.</li>
           </ol>
 
-          <h3>Project Idea</h3>
+          <h3>A Feasible Master's Project for Ghana</h3>
           <p>
-            A computational and experimental pipeline to optimize DNA-origami mechanical switches with high yield under realistic buffer conditions. The project combines coarse-grained molecular dynamics (oxDNA), sequence optimization, and (if available) small-scale wet-lab validation (gel electrophoresis, AFM/TEM).
+            Develop a DNA-based nanosensor for the rapid, low-cost detection of a pathogen relevant to Ghana, such as the parasite causing Schistosomiasis (bilharzia) in water sources or a virus affecting cassava plants. This project would focus on creating a robust sensor that can be used in the field.
+          </p>
+          <p>
+            <strong>Methods:</strong> The project would involve designing a "DNA nanoswitch." In the absence of the target pathogen's DNA/RNA, the switch is "off." In its presence, a specific binding event triggers a conformational change in the DNA structure, turning the switch "on." This "on" state could, for example, activate an enzyme that produces a visible color change on a simple paper strip. The design would be optimized for stability at ambient Ghanaian temperatures using computational tools like oxDNA.
           </p>
 
-          <h3>Methods</h3>
+          <h3>Experimental Design & Evaluation</h3>
           <p>
-            Build an initial library of candidate designs for a bistable switch (two conformation states). Use simulation to estimate energetic stability and switching barriers under variable ionic and temperature profiles. Develop a reinforcement-learning (RL) or Bayesian optimization loop where proposed sequence modifications are scored by predicted yield and switching kinetics in simulation. When possible, validate top candidates in vitro and iterate: measure yield via gel/AFM, quantify switching behavior under chemical stimuli, and compare to simulation predictions.
+            The project would first use simulations to design a thermally stable and sensitive nanoswitch. The top candidates would then be synthesized and tested in a lab setting (potentially in collaboration with a research institution like the Noguchi Memorial Institute for Medical Research in Ghana). The key metrics for evaluation would be: sensitivity (the lowest concentration of pathogen DNA it can detect), specificity (it doesn't react to other organisms), and stability (how long it lasts at 30-35°C). The ultimate test would be its performance with real water or plant samples from the field.
           </p>
 
-          <h3>Metrics</h3>
+          <h3>Ethics & Impact</h3>
           <p>
-            Predicted vs. observed yield, switching fidelity (fraction of molecules responding), switching speed, energetic barriers, and robustness across buffer conditions. The research should quantify failure modes and propose design heuristics that generalize (e.g., staple design patterns, staple redundancy strategies).
-          </p>
-          
-          <h3>Tools and Resources</h3>
-          <p>
-            oxDNA/oxDNA2 simulations, Python-based optimization wrappers, access to wet-lab facilities for small-scale validation (collaboration with a DNA nanotech group), microscopy (AFM/TEM) for structural readout, and gel electrophoresis for yield estimation.
-          </p>
-
-          <h3>Impact</h3>
-          <p>
-            This project aims to close the simulation-to-lab loop, delivering reproducible design heuristics for molecular machines. Achieving robust switches that operate under realistic conditions opens routes for drug delivery triggers, smart materials, and sensing.
-          </p>
-
-          <h3>Ethics & Safety</h3>
-          <p>
-            Follow biosafety protocols; avoid pathogen work. Consider dual-use risks when proposing programmable devices and include safeguards: open methodology for benign applications, and discussion of oversight. Ensure transparent reporting of limitations and reproducibility artifacts.
+            The impact of such a tool could be immense, enabling community health workers or farmers to perform rapid tests without sending samples to a central lab, saving time and lives. Ethically, the project must ensure that the technology is truly accessible and affordable, not just a proof-of-concept. The goal is to create an open-source platform technology that can be adapted for different diseases or agricultural pests, empowering local scientists and communities to develop their own diagnostic solutions.
           </p>
 
         </div>

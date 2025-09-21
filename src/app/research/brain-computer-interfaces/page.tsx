@@ -10,49 +10,42 @@ export const metadata: Metadata = {
 export default function BciPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Brain-Computer Interfaces (BCIs)" subtitle="A Master’s-Level Research Perspective">
+      <SectionContainer title="Brain-Computer Interfaces (BCIs) for African Healthcare" subtitle="A Master’s-Level Research Perspective for Ghana and Africa">
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <p>
-            <strong>Brain-Computer Interfaces (BCIs)</strong> decode neural signals (EEG, MEG, ECoG, intracortical arrays) for control or stimulation. The field balances high-bandwidth invasive systems that offer excellent signal quality with non-invasive modalities (EEG/fNIRS) that are safer but lower-bandwidth and noisier. A master’s project should target improving robustness, generalization across subjects, or closed-loop rehabilitation strategies that adapt stimulation/feedback to ongoing neural state.
+            <strong>Brain-Computer Interfaces (BCIs)</strong> offer transformative potential for healthcare in Africa, particularly in addressing neurological disorders like stroke—a leading cause of disability on the continent. The challenge lies in developing BCIs that are affordable, robust, and require minimal specialist oversight. While high-tech invasive BCIs are prominent in global research, a master’s project for a Ghanaian or African context should focus on accessible, non-invasive EEG-based systems for neurorehabilitation and assistive communication.
           </p>
 
-          <h3>Core Technical Issues</h3>
+          <h3>Core Technical Issues for an African Context</h3>
           <ol>
-            <li>High noise and artifacts in non-invasive signals.</li>
-            <li>Inter-subject variability requiring extensive calibration.</li>
-            <li>Latency and feedback-loop stability in closed-loop systems.</li>
-            <li>Privacy and ethical concerns about neural data.</li>
+            <li><strong>Cost and Accessibility:</strong> High-density EEG systems are expensive and impractical for widespread use in many African healthcare settings.</li>
+            <li><strong>Robustness to Environment:</strong> Devices must function reliably in environments with unstable power grids and high humidity, and be resilient to artifacts from movement or non-ideal conditions.</li>
+            <li><strong>Lack of Diverse Neural Data:</strong> Most BCI algorithms are trained on data from individuals of European descent, which may not generalize well to African populations due to genetic and environmental variations.</li>
+            <li><strong>Limited Local Expertise:</strong> There is a need for systems that require minimal calibration and can be operated by community health workers, not just neurologists.</li>
           </ol>
 
-          <h3>Possible Project</h3>
+          <h3>A Feasible Master's Project for Ghana</h3>
           <p>
-            Develop a self-supervised pretraining pipeline for EEG that improves cross-subject motor intention decoding with minimal labeled data. Approach: compile large unlabeled EEG corpora (public BCI Competition data, PhysioNet) and design time-series contrastive objectives (temporal contrastive predictive coding, masked-signal modeling) to learn robust features. Fine-tune these features on small labeled datasets for motor tasks. Integrate adaptive domain-adaptation methods (domain adversarial training, prototypical networks) to reduce calibration required for new users.
+            Develop a low-cost, EEG-based BCI system for post-stroke motor rehabilitation that can be deployed in regional hospitals in Ghana. The project would focus on creating a self-supervised pre-training pipeline that improves cross-subject motor imagery decoding, drastically reducing the need for lengthy, expert-led calibration sessions for each new patient.
           </p>
-
-          <h3>Experimental Design</h3>
           <p>
-            Pretrain on mixed sources (motor imagery, resting state, movement tasks), then evaluate transfer on held-out subjects and novel tasks. Metrics: classification accuracy, information transfer rate (ITR), time-to-calibration (minutes until target accuracy), and robustness to movement artifacts (simulate with added noise and muscle EMG contamination). Compare to standard baselines (CSP + SVM, CNN temporal models).
-          </p>
-
-          <h3>Closed-Loop Extension</h3>
-          <p>
-             Test a simulated closed-loop where decoded intent triggers visual/haptic feedback, then measure adaptation in neural signals and performance improvements. For translational impact, design protocols respecting IRB constraints and include pilot user studies (healthy volunteers) before any clinical deployment.
+            <strong>Methods:</strong> Use open-source, low-cost EEG hardware (e.g., OpenBCI). Compile a dataset of unlabeled EEG data from African volunteers to pre-train a robust feature extractor using contrastive learning. This model would then be fine-tuned with a small amount of labeled data from a new stroke patient. The system would provide real-time visual feedback (e.g., moving a virtual hand on a simple tablet) to guide the patient's rehabilitation exercises.
           </p>
           
-          <h3>Resource Needs</h3>
+          <h3>Experimental Design & Evaluation</h3>
           <p>
-            EEG cap (32–64 channels), acquisition rig, compute for deep time-series models, and IRB access if collecting new human data. Software: MNE, PyTorch/TensorFlow, time-series augmentation libraries.
+            The system would be evaluated based on its accuracy in decoding motor intent compared to traditional methods, and critically, its "time-to-usability"—how quickly a new patient can start using the system effectively. A pilot study could be run in collaboration with a physiotherapy department, for instance at the Korle-Bu Teaching Hospital in Accra, to gather feedback from therapists and patients.
+          </p>
+
+          <h3>Resource Needs & Partnerships</h3>
+          <p>
+            This would require collaboration with local hospitals and universities (like the University of Ghana). Access to patients for data collection would need ethical approval from a local institutional review board (IRB). The hardware is relatively affordable, and the computational work can be done on standard university servers.
           </p>
 
           <h3>Ethical Considerations</h3>
           <p>
-            Preserve participant privacy (de-identification, encryption), ensure informed consent with explicit explanation of data uses, provide opt-out and clear safety mechanisms for closed-loop interventions. Avoid claims beyond demonstrated capabilities (e.g., mind-reading). Include a data governance plan that limits usage and enables participant control.
-          </p>
-
-          <h3>Success Criteria</h3>
-          <p>
-            Reduction in calibration time by X% (quantified), cross-subject accuracy improvement vs. baseline, and clear reproducible code/data splits. The work can serve as a foundation for BCI prosthetics or assistive controllers, provided careful clinical partnership and safety protocols.
+            The project must prioritize patient privacy and informed consent, clearly explaining that the device is a rehabilitative tool, not a "mind-reading" device. Data governance must ensure that neural data is stored securely and used for the benefit of the community. The ultimate goal is to create an open-source platform that can be adapted and deployed across the continent, empowering local healthcare innovation.
           </p>
 
         </div>
