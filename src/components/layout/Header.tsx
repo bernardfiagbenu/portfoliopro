@@ -10,6 +10,8 @@ import HeaderNav from './HeaderNav';
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { useState } from 'react';
@@ -66,6 +68,9 @@ export default function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[250px]">
+                    <SheetHeader>
+                        <SheetTitle className="sr-only">Main Navigation</SheetTitle>
+                    </SheetHeader>
                     <nav className="flex flex-col space-y-4 pt-8">
                          {navLinks.map(link => (
                             <Link 
