@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Synthetic Biology for Ghanaian Challenges - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function SyntheticBiologyPage() {
+  const pageUrl = "/research/synthetic-biology";
+  const pageTitle = "Synthetic Biology for Ghanaian Challenges";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Synthetic Biology for Ghanaian Challenges" subtitle="A PhD-Level Proposal on Engineering Biology for Local Solutions">
@@ -40,7 +44,8 @@ export default function SyntheticBiologyPage() {
           <p>
             This research would be a foundational step towards building a decentralized biomanufacturing infrastructure in Ghana and across Africa. A successful project would demonstrate that complex biological products, from diagnostics to therapeutics like insulin or antibodies, can be produced locally and on-demand, shattering the dependence on fragile and expensive global supply chains. This "biological point-of-care" model could transform how Ghana responds to disease outbreaks, manages public health, and even develops new bio-based materials and agricultural products. It would foster a new generation of Ghanaian bioengineers and create the foundation for a sovereign bio-economy.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

@@ -1,6 +1,6 @@
-
-import type { Metadata } from 'next.ecom';
+import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Fusion Energy and Ghana\'s Future - Research',
@@ -8,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function FusionEnergyPage() {
+  const pageUrl = "/research/fusion-energy";
+  const pageTitle = "Fusion Energy and Africa's Leapfrog Opportunity";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Fusion Energy and Africa's Leapfrog Opportunity" subtitle="A PhD-Level Perspective on Ghana's Role in Next-Generation Energy">
@@ -43,7 +46,8 @@ export default function FusionEnergyPage() {
           <p>
             Engaging with fusion energy research is a long-term, generational investment for Ghana. It is about more than just electricity; it is about building a high-tech, knowledge-based economy and securing a prosperous, sustainable future for the continent. By focusing on high-impact, niche research areas, Ghana can move from being a spectator in the global energy transition to a key player, helping to unlock the power of the stars for the benefit of all humanity. This is the definition of a developmental leapfrog.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

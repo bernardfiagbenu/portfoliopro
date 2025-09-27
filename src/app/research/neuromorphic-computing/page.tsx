@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Neuromorphic Computing for Low-Power AI in Ghana - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function NeuromorphicPage() {
+  const pageUrl = "/research/neuromorphic-computing";
+  const pageTitle = "Neuromorphic Computing for Low-Power AI in Ghana";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Neuromorphic Computing for Low-Power AI in Ghana" subtitle="A PhD-Level Proposal on Brain-Inspired Edge AI">
@@ -40,7 +44,8 @@ export default function NeuromorphicPage() {
           <p>
             This research will pioneer the application of neuromorphic computing to solve a critical problem in African agriculture. A successful project would demonstrate a new paradigm for AI at the edge: intelligent, autonomous sensors that can operate for months or years on a small solar panel and battery. This "deploy-and-forget" capability could be revolutionary for a wide range of applications in Ghana and across Africa, from wildlife poaching detection and environmental monitoring to remote patient health tracking. By building expertise in this next-generation AI hardware, Ghana can position itself to leapfrog traditional, energy-intensive AI infrastructure and become a leader in sustainable, brain-inspired computing.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

@@ -1,6 +1,6 @@
-
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Direct Air Capture (DAC) - Research',
@@ -8,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function DirectAirCapturePage() {
+  const pageUrl = "/research/direct-air-capture";
+  const pageTitle = "Direct Air Capture (DAC) for Ghana's Energy and Climate Strategy";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Direct Air Capture (DAC) for Ghana's Energy and Climate Strategy" subtitle="A PhD-Level Proposal on Systems Integration and Techno-Economic Analysis">
@@ -45,6 +48,7 @@ export default function DirectAirCapturePage() {
             This research will produce a sophisticated, open-source tool for designing and operating renewable-powered DAC plants in Ghana and other similar regions in Africa. It will provide the first detailed, data-driven analysis of DAC's feasibility in West Africa, creating a roadmap for investment and policy-making. By identifying pathways for using local materials and creating new value chains, this work will frame carbon removal not as a cost but as an engine for sustainable industrial development in Ghana. The project will address the ethical dimensions by including a framework for community benefit-sharing and ensuring that DAC is pursued as a complement to, not a replacement for, aggressive emissions reduction.
           </p>
 
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

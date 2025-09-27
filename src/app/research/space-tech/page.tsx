@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Space Technologies for Ghanaian Development - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function SpaceTechPage() {
+  const pageUrl = "/research/space-tech";
+  const pageTitle = "Space Technologies for Ghanaian Development";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Space Technologies for Ghanaian Development" subtitle="A PhD-Level Proposal on Satellite Data and AI for Resource Management">
@@ -40,7 +44,8 @@ export default function SpaceTechPage() {
           <p>
             This research will provide Ghanaian authorities with a powerful, low-cost, and scalable tool to combat a major environmental and economic threat. By automating the analysis of freely available satellite data, it democratizes access to advanced environmental monitoring. The methodologies and open-source platform developed could be readily adapted to address other critical challenges across Africa, such as tracking desertification in the Sahel, monitoring urban sprawl in rapidly growing cities, or assessing crop health to predict and prevent food shortages. It empowers African nations to use space assets for their own sovereign resource management and sustainable development goals.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

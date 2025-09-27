@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Internet of Everything (IoE) for Development - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function IoEPage() {
+  const pageUrl = "/research/internet-of-everything";
+  const pageTitle = "The Internet of Everything (IoE) for African Smart Cities";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="The Internet of Everything (IoE) for African Smart Cities" subtitle="A PhD-Level Proposal on a Unified Data Framework for Accra">
@@ -40,7 +44,8 @@ export default function IoEPage() {
           <p>
             This research would provide a strategic blueprint for how African cities can build their own smart city platforms, avoiding monolithic, proprietary systems from foreign vendors. A successful project would demonstrate a path to data-driven urban management that is secure, private, and scalable. The open-source ontology and federated learning framework could be adapted for any city on the continent and for other domains beyond transport, such as public health surveillance, energy grid management, and emergency response. It would position Ghana as a leader in people-centric smart city design, building digital infrastructure that is as foundational for the 21st century as roads and electricity were for the 20th.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

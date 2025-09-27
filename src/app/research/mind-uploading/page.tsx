@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Mind Uploading & Digital Consciousness - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function MindUploadingPage() {
+  const pageUrl = "/research/mind-uploading";
+  const pageTitle = "Mind Uploading & Digital Consciousness";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Mind Uploading & Digital Consciousness" subtitle="A PhD-Level Proposal on Computational Connectomics">
@@ -40,7 +44,8 @@ export default function MindUploadingPage() {
           <p>
             While this is fundamental, "blue-sky" research, its implications are enormous. Understanding the principles of neural computation is the bedrock of next-generation AI. The highly efficient, low-power learning algorithms discovered through this research could be deployed on neuromorphic hardware to solve real-world problems in Ghana, from medical diagnosis to climate modeling, without needing massive data centers. Furthermore, a deeper understanding of brain function will be essential for developing treatments for neurological and mental health disorders, which are a growing burden in Africa. By participating in this foundational research, Ghanaian scientists can contribute to a global effort that may ultimately unlock the secrets of the mind itself and lead to artificial intelligence that is as efficient and flexible as the human brain.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

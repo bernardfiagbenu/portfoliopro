@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Solid-State Batteries & Energy Storage - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function SolidStateBatteriesPage() {
+  const pageUrl = "/research/solid-state-batteries";
+  const pageTitle = "Solid-State Batteries for Energy Sovereignty in Ghana";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Solid-State Batteries for Energy Sovereignty in Ghana" subtitle="A PhD-Level Proposal on Next-Generation Energy Storage">
@@ -40,7 +44,8 @@ export default function SolidStateBatteriesPage() {
           <p>
             This fundamental materials science research could have transformative economic and strategic consequences. A successful project would create valuable intellectual property for Ghana in the booming energy storage sector. It would demonstrate a pathway to manufacturing next-generation batteries using local resources, reducing import dependency and creating a high-value domestic industry. By focusing on a technology that is inherently safer and more energy-dense than lithium-ion, this research would position Ghana to leapfrog the current battery paradigm and become a key player in the future of energy storage, a critical technology for unlocking the full potential of Africa's vast renewable energy resources.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

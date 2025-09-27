@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Button } from '@/components/ui/button';
 import { GithubIcon, ExternalLinkIcon, AppWindow } from 'lucide-react';
 import Link from 'next/link';
-import ShareButton from '@/components/projects/ShareButton';
 
 export const metadata: Metadata = {
   title: 'Projects by Bernard Fiagbenu',
@@ -173,8 +172,6 @@ const ActionButton = ({ url, label, icon: Icon, isInternal }: { url: string, lab
 
 
 export default function ProjectsPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
-
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="My Projects" subtitle="A Glimpse into My Work">
@@ -193,9 +190,6 @@ export default function ProjectsPage() {
               },
               "keywords": project.tags.join(', ')
             };
-            const absoluteUrl = project.liveUrl 
-              ? project.liveUrl.startsWith('/') ? `${siteUrl}${project.liveUrl}` : project.liveUrl
-              : project.githubUrl || '';
             return (
               <Card key={index} className="flex flex-col overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
                 <script
@@ -217,7 +211,6 @@ export default function ProjectsPage() {
                   </CardContent>
                 </ProjectLinkWrapper>
                 <CardFooter className="flex justify-end space-x-2 p-4 bg-muted/30 mt-auto">
-                   {absoluteUrl && <ShareButton url={absoluteUrl} title={project.title} />}
                   {project.githubUrl && (
                     <Button variant="outline" size="sm" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>

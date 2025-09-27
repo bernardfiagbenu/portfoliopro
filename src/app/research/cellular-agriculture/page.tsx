@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Cellular Agriculture for Food Security in Ghana - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function CellularAgriculturePage() {
+  const pageUrl = "/research/cellular-agriculture";
+  const pageTitle = "Cellular Agriculture for Food Security in Ghana";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Cellular Agriculture for Food Security in Ghana" subtitle="A PhD-Level Proposal on Sustainable Protein Production">
@@ -40,7 +44,8 @@ export default function CellularAgriculturePage() {
           <p>
             This research aims to create a new paradigm for food production in Africa. A successful project would provide a blueprint for a circular and sustainable food system where agricultural "waste" is upcycled into high-value protein. This could drastically reduce land and water use, lower greenhouse gas emissions from livestock, and provide a stable, locally-controlled source of protein, insulated from climate shocks and global supply chain disruptions. By pioneering low-cost, open-source methods, Ghana can become a leader in a technology that is poised to redefine the future of food, ensuring that Africa is not just a consumer but a key innovator in the protein transition.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

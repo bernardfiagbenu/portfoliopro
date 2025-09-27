@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Vertical Farming for Urban Ghana - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function VerticalFarmingPage() {
+  const pageUrl = "/research/vertical-farming";
+  const pageTitle = "Vertical Farming for Urban Ghana";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Vertical Farming for Urban Ghana" subtitle="A PhD-Level Proposal on Resilient Urban Food Systems">
@@ -40,7 +44,8 @@ export default function VerticalFarmingPage() {
           <p>
             This research aims to develop a practical, sustainable, and economically viable blueprint for urban agriculture in West Africa. A successful project would demonstrate a model of vertical farming that is not dependent on high-tech imports or massive energy inputs. It would empower urban communities in Ghana to produce their own fresh, nutritious food, creating jobs, reducing food miles, and building a more resilient urban food system. By open-sourcing the designs and operational data, this work can catalyze the adoption of climate-smart urban agriculture across rapidly growing cities on the African continent.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

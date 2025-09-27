@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
+import ArticleFooter from '@/components/research/ArticleFooter';
 
 export const metadata: Metadata = {
   title: 'Cryonics & Revival Technology - Research',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function CryonicsPage() {
+  const pageUrl = "/research/cryonics";
+  const pageTitle = "The Science of Cryopreservation";
+
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="The Science of Cryopreservation" subtitle="A PhD-Level Proposal on Mitigating Ice Crystal Damage">
@@ -40,7 +44,8 @@ export default function CryonicsPage() {
           <p>
             While human cryopreservation is a speculative and distant goal, the core technologies being developed have profound near-term applications for healthcare in Ghana and Africa. Mastering vitrification is the key to the long-term banking of organs for transplantation, a field that is still in its infancy on the continent. A breakthrough that allows for the successful vitrification and rewarming of a human kidney, for example, would revolutionize transplant medicine globally. Furthermore, the cryopreservation of tissues, stem cells, and reproductive cells is critical for both modern medicine and for the conservation of endangered African animal species. This fundamental research in cryobiology would provide a Ghanaian scientist with world-class expertise in a field that is essential for advanced biotechnology and medicine. It would build local capacity to develop and manage bio-banks, a critical piece of infrastructure for 21st-century healthcare and conservation.
           </p>
-
+          
+          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>
