@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Synthetic Biology for Ghanaian Challenges - Research',
-  description: 'A PhD-level proposal on using synthetic biology to create low-cost, locally produced solutions for healthcare and environmental challenges in Ghana.',
+  description: 'A Masters in Computer Science proposal on using synthetic biology to create low-cost, locally produced solutions for healthcare and environmental challenges in Ghana.',
+  openGraph: {
+    title: 'Synthetic Biology for Ghanaian Challenges - Research',
+    description: 'A Masters in Computer Science proposal on using synthetic biology to create low-cost, locally produced solutions for healthcare and environmental challenges in Ghana.',
+    url: '/research/synthetic-biology',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Synthetic biology DNA concept',
+      },
+    ],
+  },
 };
 
 export default function SyntheticBiologyPage() {
@@ -13,13 +27,13 @@ export default function SyntheticBiologyPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Synthetic Biology for Ghanaian Challenges" subtitle="A PhD-Level Proposal on Engineering Biology for Local Solutions">
+      <SectionContainer title="Synthetic Biology for Ghanaian Challenges" subtitle="A Masters in Computer Science Proposal on Engineering Biology for Local Solutions">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            <strong>Synthetic biology</strong>—the engineering of biological systems for useful purposes—has the potential to decentralize the production of medicines, diagnostics, and materials, making them more accessible and affordable. This is a particularly powerful proposition for Ghana, which relies heavily on imports for these critical goods. This PhD proposal outlines a research plan to develop a cell-free synthetic biology platform for the on-demand, local production of a medically important protein. The case study will focus on producing a stable, low-cost diagnostic reagent for a disease endemic to Ghana, demonstrating a pathway to building a self-sufficient biomanufacturing capability.
+            <strong>Synthetic biology</strong>—the engineering of biological systems for useful purposes—has the potential to decentralize the production of medicines, diagnostics, and materials, making them more accessible and affordable. This is a particularly powerful proposition for Ghana, which relies heavily on imports for these critical goods. This Masters in Computer Science proposal outlines a research plan to develop a cell-free synthetic biology platform for the on-demand, local production of a medically important protein. The case study will focus on producing a stable, low-cost diagnostic reagent for a disease endemic to Ghana, demonstrating a pathway to building a self-sufficient biomanufacturing capability.
           </p>
 
           <h3>Key Research Questions for SynBio in Ghana</h3>
@@ -30,7 +44,7 @@ export default function SyntheticBiologyPage() {
             <li><strong>Application and Validation:</strong> As a proof-of-concept, can this cell-free system be used to produce a diagnostic enzyme (e.g., a specific luciferase or peroxidase) that can be integrated into a paper-based test for a pathogen like *Schistosoma haematobium*?</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Field-Ready Cell-Free Diagnostic Production Kit</h3>
+          <h3>Proposed Masters in Computer Science Research: A Field-Ready Cell-Free Diagnostic Production Kit</h3>
           <p>
             The core of this research is to develop a "just-add-water" kit for producing a diagnostic protein. The kit would contain a freeze-dried pellet of the cell-free extract and the DNA blueprint for the target protein.
           </p>

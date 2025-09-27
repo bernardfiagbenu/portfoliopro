@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Cryonics & Revival Technology - Research',
-  description: 'A PhD-level proposal on the science of cryopreservation, focusing on vitrification and nanotechnology-based repair.',
+  description: 'A Masters in Computer Science proposal on the science of cryopreservation, focusing on vitrification and nanotechnology-based repair.',
+  openGraph: {
+    title: 'Cryonics & Revival Technology - Research',
+    description: 'A Masters in Computer Science proposal on the science of cryopreservation, focusing on vitrification and nanotechnology-based repair.',
+    url: '/research/cryonics',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cryopreservation concept art',
+      },
+    ],
+  },
 };
 
 export default function CryonicsPage() {
@@ -13,13 +27,13 @@ export default function CryonicsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="The Science of Cryopreservation" subtitle="A PhD-Level Proposal on Mitigating Ice Crystal Damage">
+      <SectionContainer title="The Science of Cryopreservation" subtitle="A Masters in Computer Science Proposal on Mitigating Ice Crystal Damage">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            <strong>Cryonics</strong> is the practice of preserving legally deceased humans or animals at cryogenic temperatures with the hope that future medical technology will be able to revive them. The single greatest technical obstacle to successful cryopreservation is the damage caused by ice crystal formation, which destroys delicate cellular structures. The current state-of-the-art solution is <strong>vitrification</strong>, a process that uses high concentrations of cryoprotectant agents to cool biological tissue into a glass-like, amorphous state, avoiding ice formation entirely. This PhD proposal focuses on a critical challenge in vitrification: reducing the chemical toxicity of the cryoprotectant agents, which are themselves harmful to cells. The research will investigate the use of novel "ice-binding" nanoparticles as a synergistic cryoprotectant, aiming to achieve successful vitrification with much lower, less toxic concentrations of conventional agents.
+            <strong>Cryonics</strong> is the practice of preserving legally deceased humans or animals at cryogenic temperatures with the hope that future medical technology will be able to revive them. The single greatest technical obstacle to successful cryopreservation is the damage caused by ice crystal formation, which destroys delicate cellular structures. The current state-of-the-art solution is <strong>vitrification</strong>, a process that uses high concentrations of cryoprotectant agents to cool biological tissue into a glass-like, amorphous state, avoiding ice formation entirely. This Masters in Computer Science proposal focuses on a critical challenge in vitrification: reducing the chemical toxicity of the cryoprotectant agents, which are themselves harmful to cells. The research will investigate the use of novel "ice-binding" nanoparticles as a synergistic cryoprotectant, aiming to achieve successful vitrification with much lower, less toxic concentrations of conventional agents.
           </p>
 
           <h3>Key Research Questions in Vitrification Science</h3>
@@ -30,7 +44,7 @@ export default function CryonicsPage() {
             <li><strong>Warming and Devitrification:</strong> A key challenge is preventing ice crystal formation during rewarming (a process called devitrification). How effective are these nanoparticles at preventing devitrification during rapid rewarming protocols?</li>
           </ol>
 
-          <h3>Proposed PhD Research: Nanoparticle-Enhanced Vitrification</h3>
+          <h3>Proposed Masters in Computer Science Research: Nanoparticle-Enhanced Vitrification</h3>
           <p>
             This thesis will focus on the synthesis, characterization, and testing of a new class of cryoprotectant additives.
           </p>

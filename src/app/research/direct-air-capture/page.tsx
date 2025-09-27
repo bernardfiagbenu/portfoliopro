@@ -5,6 +5,20 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 export const metadata: Metadata = {
   title: 'Direct Air Capture (DAC) - Research',
   description: 'A deep dive into Direct Air Capture (DAC), exploring its challenges, research directions, and ethical implications.',
+  openGraph: {
+    title: 'Direct Air Capture (DAC) - Research',
+    description: 'A deep dive into Direct Air Capture (DAC), exploring its challenges, research directions, and ethical implications.',
+    url: '/research/direct-air-capture',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Direct Air Capture facility illustration',
+      },
+    ],
+  },
 };
 
 export default function DirectAirCapturePage() {
@@ -13,13 +27,13 @@ export default function DirectAirCapturePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Direct Air Capture (DAC) for Ghana's Energy and Climate Strategy" subtitle="A PhD-Level Proposal on Systems Integration and Techno-Economic Analysis">
+      <SectionContainer title="Direct Air Capture (DAC) for Ghana's Energy and Climate Strategy" subtitle="A Masters in Computer Science Proposal on Systems Integration and Techno-Economic Analysis">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            <strong>Direct Air Capture (DAC)</strong> is an essential technology for achieving global net-zero emissions. For Ghana, a nation committed to climate action under the Paris Agreement yet poised for significant economic growth, DAC presents a strategic opportunity to pioneer a carbon-neutral or even carbon-negative development pathway. This PhD research proposal outlines a techno-economic and systems-level analysis for deploying DAC in Ghana, focusing on the critical challenge of integrating DAC with the nation's abundant but intermittent solar energy resources. The aim is to develop a decision-making framework for the optimal design and operation of a solar-powered DAC facility in a Ghanaian context.
+            <strong>Direct Air Capture (DAC)</strong> is an essential technology for achieving global net-zero emissions. For Ghana, a nation committed to climate action under the Paris Agreement yet poised for significant economic growth, DAC presents a strategic opportunity to pioneer a carbon-neutral or even carbon-negative development pathway. This Masters in Computer Science research proposal outlines a techno-economic and systems-level analysis for deploying DAC in Ghana, focusing on the critical challenge of integrating DAC with the nation's abundant but intermittent solar energy resources. The aim is to develop a decision-making framework for the optimal design and operation of a solar-powered DAC facility in a Ghanaian context.
           </p>
 
           <h3>Key Research Questions for DAC in Ghana</h3>
@@ -30,7 +44,7 @@ export default function DirectAirCapturePage() {
             <li><strong>CO₂ Utilization and Sequestration:</strong> What are the most viable pathways for the captured CO₂? This proposal will analyze the potential for geological sequestration in offshore basins (like the Tano Basin) versus its utilization in products like "green" concrete or synthetic fuels, creating a value chain within Ghana.</li>
           </ul>
 
-          <h3>Proposed PhD Research: Model-Predictive Control for a Solar-Powered DAC Plant</h3>
+          <h3>Proposed Masters in Computer Science Research: Model-Predictive Control for a Solar-Powered DAC Plant</h3>
           <p>
             The core of this thesis will be the development of a dynamic, multi-objective optimization model for a solid-sorbent DAC plant powered by a dedicated solar farm and battery energy storage system (BESS).
           </p>

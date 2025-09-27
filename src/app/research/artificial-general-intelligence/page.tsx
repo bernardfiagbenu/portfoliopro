@@ -5,6 +5,20 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 export const metadata: Metadata = {
   title: 'Artificial General Intelligence (AGI) - Research',
   description: 'A deep dive into Artificial General Intelligence (AGI), exploring its challenges, research directions, and ethical implications.',
+  openGraph: {
+    title: 'Artificial General Intelligence (AGI) - Research',
+    description: 'A deep dive into Artificial General Intelligence (AGI), exploring its challenges, research directions, and ethical implications.',
+    url: '/research/artificial-general-intelligence',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Abstract AI brain illustration',
+      },
+    ],
+  },
 };
 
 export default function AgiPage() {
@@ -13,13 +27,13 @@ export default function AgiPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Artificial General Intelligence (AGI) for Ghanaian Development" subtitle="A PhD-Level Research Proposal on Data-Efficient and Causal AGI">
+      <SectionContainer title="Artificial General Intelligence (AGI) for Ghanaian Development" subtitle="A Masters in Computer Science Research Proposal on Data-Efficient and Causal AGI">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            The pursuit of <strong>Artificial General Intelligence (AGI)</strong> must be contextualized to address the world's most pressing problems. This PhD research proposal outlines a framework for developing AGI systems specifically tailored to Ghana's unique developmental challenges, focusing on agriculture and public health. We argue against the monolithic, data-hungry models emerging from the Global North and instead propose a path toward a more robust, data-efficient, and causally-aware AGI. This work will focus on creating systems that can reason under uncertainty with sparse, multilingual, and multimodal data—the reality of many domains in Ghana.
+            The pursuit of <strong>Artificial General Intelligence (AGI)</strong> must be contextualized to address the world's most pressing problems. This Masters in Computer Science research proposal outlines a framework for developing AGI systems specifically tailored to Ghana's unique developmental challenges, focusing on agriculture and public health. We argue against the monolithic, data-hungry models emerging from the Global North and instead propose a path toward a more robust, data-efficient, and causally-aware AGI. This work will focus on creating systems that can reason under uncertainty with sparse, multilingual, and multimodal data—the reality of many domains in Ghana.
           </p>
 
           <h3>Key Research Questions for AGI in Ghana</h3>
@@ -30,7 +44,7 @@ export default function AgiPage() {
             <li><strong>Value Alignment and Co-Design:</strong> How do we ensure that AGI systems are aligned with the socio-cultural values of Ghanaian communities? This research will employ participatory co-design methodologies, working directly with end-users in Ghana to define problems and validate solutions, avoiding the pitfalls of "techno-solutionism."</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Causal AGI Agent for Cocoa Farming in Ghana</h3>
+          <h3>Proposed Masters in Computer Science Research: A Causal AGI Agent for Cocoa Farming in Ghana</h3>
           <p>
             This thesis will focus on the design, implementation, and evaluation of a modular, causal AGI agent to support Ghanaian cocoa farmers. The system will integrate three core components:
           </p>

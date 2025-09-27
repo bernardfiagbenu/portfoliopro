@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Internet of Everything (IoE) for Development - Research',
-  description: 'A PhD-level proposal exploring the application of IoE to create intelligent, interconnected systems for challenges in Ghana and Africa.',
+  description: 'A Masters in Computer Science proposal exploring the application of IoE to create intelligent, interconnected systems for challenges in Ghana and Africa.',
+  openGraph: {
+    title: 'Internet of Everything (IoE) for Development - Research',
+    description: 'A Masters in Computer Science proposal exploring the application of IoE to create intelligent, interconnected systems for challenges in Ghana and Africa.',
+    url: '/research/internet-of-everything',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Internet of Everything connected city concept',
+      },
+    ],
+  },
 };
 
 export default function IoEPage() {
@@ -13,13 +27,13 @@ export default function IoEPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="The Internet of Everything (IoE) for African Smart Cities" subtitle="A PhD-Level Proposal on a Unified Data Framework for Accra">
+      <SectionContainer title="The Internet of Everything (IoE) for African Smart Cities" subtitle="A Masters in Computer Science Proposal on a Unified Data Framework for Accra">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            The concept of the <strong>Internet of Everything (IoE)</strong> extends beyond IoT by intelligently connecting people, processes, data, and things. For a rapidly urbanizing city like Accra, IoE presents an opportunity to leapfrog legacy infrastructure and build a truly responsive, efficient, and resilient urban environment. However, this requires a unified framework to manage the immense and heterogeneous data streams. This PhD proposal focuses on designing a scalable, decentralized data architecture for a city-wide IoE platform in Accra. The research will address the core challenges of data interoperability, security, and privacy, using a critical use case: integrated traffic and public transport management.
+            The concept of the <strong>Internet of Everything (IoE)</strong> extends beyond IoT by intelligently connecting people, processes, data, and things. For a rapidly urbanizing city like Accra, IoE presents an opportunity to leapfrog legacy infrastructure and build a truly responsive, efficient, and resilient urban environment. However, this requires a unified framework to manage the immense and heterogeneous data streams. This Masters in Computer Science proposal focuses on designing a scalable, decentralized data architecture for a city-wide IoE platform in Accra. The research will address the core challenges of data interoperability, security, and privacy, using a critical use case: integrated traffic and public transport management.
           </p>
 
           <h3>Key Research Questions for IoE in Ghana</h3>
@@ -30,7 +44,7 @@ export default function IoEPage() {
             <li><strong>Incentive Mechanisms for Data Sharing:</strong> How can we incentivize private entities (like ride-sharing companies) and citizens to contribute data to the city platform? This involves exploring micropayment systems or tokenization models.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Federated IoE Platform for Accra's Mobility</h3>
+          <h3>Proposed Masters in Computer Science Research: A Federated IoE Platform for Accra's Mobility</h3>
           <p>
             The core of this research is to build and simulate a decentralized platform for managing urban mobility in Accra.
           </p>

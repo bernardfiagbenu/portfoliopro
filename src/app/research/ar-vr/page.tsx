@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'AR/VR for Education and Training in Ghana - Research',
-  description: 'A PhD-level proposal on using accessible AR and VR to bridge educational gaps in Ghana, focusing on vocational and medical training.',
+  description: 'A Masters in Computer Science proposal on using accessible AR and VR to bridge educational gaps in Ghana, focusing on vocational and medical training.',
+  openGraph: {
+    title: 'AR/VR for Education and Training in Ghana - Research',
+    description: 'A Masters in Computer Science proposal on using accessible AR and VR to bridge educational gaps in Ghana, focusing on vocational and medical training.',
+    url: '/research/ar-vr',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AR/VR in an educational setting',
+      },
+    ],
+  },
 };
 
 export default function ArVrPage() {
@@ -13,13 +27,13 @@ export default function ArVrPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="AR/VR for Education and Training in Ghana" subtitle="A PhD-Level Proposal on Accessible Immersive Learning">
+      <SectionContainer title="AR/VR for Education and Training in Ghana" subtitle="A Masters in Computer Science Proposal on Accessible Immersive Learning">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Practical, hands-on training is a major challenge in Ghana's education system, especially in vocational fields and healthcare where physical equipment is scarce and expensive. This PhD proposal investigates how <strong>Augmented Reality (AR) and Virtual Reality (VR)</strong>, deployed on low-cost, accessible hardware like smartphones, can bridge this gap. The research focuses on creating and evaluating an AR-based training module for a specific, high-demand skill in Ghana—automotive maintenance—to measure its effectiveness against traditional learning methods and establish a framework for creating scalable immersive educational content.
+            Practical, hands-on training is a major challenge in Ghana's education system, especially in vocational fields and healthcare where physical equipment is scarce and expensive. This Masters in Computer Science proposal investigates how <strong>Augmented Reality (AR) and Virtual Reality (VR)</strong>, deployed on low-cost, accessible hardware like smartphones, can bridge this gap. The research focuses on creating and evaluating an AR-based training module for a specific, high-demand skill in Ghana—automotive maintenance—to measure its effectiveness against traditional learning methods and establish a framework for creating scalable immersive educational content.
           </p>
 
           <h3>Key Research Questions for Immersive Education in Ghana</h3>
@@ -30,7 +44,7 @@ export default function ArVrPage() {
             <li><strong>Measuring Cognitive Load and Engagement:</strong> Does AR-based learning increase student engagement and motivation without imposing an excessive cognitive load that could hinder learning?</li>
           </ol>
 
-          <h3>Proposed PhD Research: An AR-Powered Automotive Training System</h3>
+          <h3>Proposed Masters in Computer Science Research: An AR-Powered Automotive Training System</h3>
           <p>
             The core of this research is to develop and test an AR application that overlays digital instructions and 3D models onto a real-world car engine, guiding students through common maintenance procedures (e.g., changing oil, replacing spark plugs).
           </p>

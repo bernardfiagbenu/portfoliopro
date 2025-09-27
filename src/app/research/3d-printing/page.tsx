@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: '3D Printing for Local Manufacturing in Ghana - Research',
-  description: 'A PhD-level proposal on leveraging 3D printing with recycled materials to create a decentralized manufacturing ecosystem in Ghana.',
+  description: 'A Masters in Computer Science proposal on leveraging 3D printing with recycled materials to create a decentralized manufacturing ecosystem in Ghana.',
+  openGraph: {
+    title: '3D Printing for Local Manufacturing in Ghana - Research',
+    description: 'A Masters in Computer Science proposal on leveraging 3D printing with recycled materials to create a decentralized manufacturing ecosystem in Ghana.',
+    url: '/research/3d-printing',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: '3D Printing and Manufacturing',
+      },
+    ],
+  },
 };
 
 export default function ThreeDPrintingPage() {
@@ -13,13 +27,13 @@ export default function ThreeDPrintingPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="3D Printing for Local Manufacturing in Ghana" subtitle="A PhD-Level Proposal on Creating a Circular Economy with Additive Manufacturing">
+      <SectionContainer title="3D Printing for Local Manufacturing in Ghana" subtitle="A Masters in Computer Science Proposal on Creating a Circular Economy with Additive Manufacturing">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Supply chain fragility and the high cost of imported goods, from medical devices to machinery spare parts, are significant barriers to development in Ghana. This PhD proposal explores how <strong>3D printing (additive manufacturing)</strong>, when combined with a circular economy model, can address this challenge by creating a decentralized manufacturing ecosystem. The research focuses on developing a robust, open-source system for converting local plastic waste—specifically PET from water bottles and HDPE from containers—into high-quality 3D printing filament, and then using this filament to produce items of high local value, such as custom-fit prosthetics and essential agricultural equipment parts.
+            Supply chain fragility and the high cost of imported goods, from medical devices to machinery spare parts, are significant barriers to development in Ghana. This Masters in Computer Science proposal explores how <strong>3D printing (additive manufacturing)</strong>, when combined with a circular economy model, can address this challenge by creating a decentralized manufacturing ecosystem. The research focuses on developing a robust, open-source system for converting local plastic waste—specifically PET from water bottles and HDPE from containers—into high-quality 3D printing filament, and then using this filament to produce items of high local value, such as custom-fit prosthetics and essential agricultural equipment parts.
           </p>
 
           <h3>Key Research Questions for 3D Printing in Ghana</h3>
@@ -30,7 +44,7 @@ export default function ThreeDPrintingPage() {
             <li><strong>Techno-Economic and Social Viability:</strong> What is the business case for a micro-factory model where local entrepreneurs in Ghana operate these waste-to-product systems? This involves analyzing operational costs, potential revenues, and the social impact on local employment and environmental cleanup.</li>
           </ol>
 
-          <h3>Proposed PhD Research: An Open-Source Recycled Filament Production System</h3>
+          <h3>Proposed Masters in Computer Science Research: An Open-Source Recycled Filament Production System</h3>
           <p>
             The core of this research is the design, fabrication, and testing of a complete, end-to-end, open-source system for turning plastic waste into useful 3D-printed objects.
           </p>

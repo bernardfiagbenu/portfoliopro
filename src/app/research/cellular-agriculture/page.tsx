@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Cellular Agriculture for Food Security in Ghana - Research',
-  description: 'A PhD-level proposal on developing low-cost, scalable cellular agriculture techniques to improve food security and sustainability in Ghana.',
+  description: 'A Masters in Computer Science proposal on developing low-cost, scalable cellular agriculture techniques to improve food security and sustainability in Ghana.',
+  openGraph: {
+    title: 'Cellular Agriculture for Food Security in Ghana - Research',
+    description: 'A Masters in Computer Science proposal on developing low-cost, scalable cellular agriculture techniques to improve food security and sustainability in Ghana.',
+    url: '/research/cellular-agriculture',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Lab-grown meat in a petri dish',
+      },
+    ],
+  },
 };
 
 export default function CellularAgriculturePage() {
@@ -13,13 +27,13 @@ export default function CellularAgriculturePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Cellular Agriculture for Food Security in Ghana" subtitle="A PhD-Level Proposal on Sustainable Protein Production">
+      <SectionContainer title="Cellular Agriculture for Food Security in Ghana" subtitle="A Masters in Computer Science Proposal on Sustainable Protein Production">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Protein deficiency and the environmental strain of conventional livestock farming are pressing issues for food security in Ghana. <strong>Cellular agriculture</strong>, the production of animal products from cell cultures, offers a transformative solution, but its high cost and technical complexity are major barriers. This PhD proposal outlines a research strategy to develop a low-cost, decentralized platform for producing cultured meat, focusing on a locally relevant species like poultry. The research will tackle the single biggest cost driver: the growth medium, by investigating the use of agricultural byproducts available in Ghana as a nutrient source, aiming to create a sustainable and economically viable model for local protein production.
+            Protein deficiency and the environmental strain of conventional livestock farming are pressing issues for food security in Ghana. <strong>Cellular agriculture</strong>, the production of animal products from cell cultures, offers a transformative solution, but its high cost and technical complexity are major barriers. This Masters in Computer Science proposal outlines a research strategy to develop a low-cost, decentralized platform for producing cultured meat, focusing on a locally relevant species like poultry. The research will tackle the single biggest cost driver: the growth medium, by investigating the use of agricultural byproducts available in Ghana as a nutrient source, aiming to create a sustainable and economically viable model for local protein production.
           </p>
 
           <h3>Key Research Questions for Cellular Agriculture in Ghana</h3>
@@ -30,7 +44,7 @@ export default function CellularAgriculturePage() {
             <li><strong>Consumer Acceptance and Sensory Analysis:</strong> What are the cultural and sensory factors that will influence the acceptance of cultured meat by Ghanaian consumers? This involves conducting sensory panels and consumer surveys in Ghana to guide product development.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Circular Model for Cultured Poultry</h3>
+          <h3>Proposed Masters in Computer Science Research: A Circular Model for Cultured Poultry</h3>
           <p>
             This thesis will focus on developing an integrated system for producing cultured chicken, from sourcing local nutrients to final product analysis.
           </p>

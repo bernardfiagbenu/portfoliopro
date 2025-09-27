@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Solid-State Batteries & Energy Storage - Research',
-  description: 'A PhD-level proposal on developing next-generation solid-state batteries using locally sourced materials for use in Ghana.',
+  description: 'A Masters in Computer Science proposal on developing next-generation solid-state batteries using locally sourced materials for use in Ghana.',
+  openGraph: {
+    title: 'Solid-State Batteries & Energy Storage - Research',
+    description: 'A Masters in Computer Science proposal on developing next-generation solid-state batteries using locally sourced materials for use in Ghana.',
+    url: '/research/solid-state-batteries',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Solid-state battery schematic',
+      },
+    ],
+  },
 };
 
 export default function SolidStateBatteriesPage() {
@@ -13,13 +27,13 @@ export default function SolidStateBatteriesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Solid-State Batteries for Energy Sovereignty in Ghana" subtitle="A PhD-Level Proposal on Next-Generation Energy Storage">
+      <SectionContainer title="Solid-State Batteries for Energy Sovereignty in Ghana" subtitle="A Masters in Computer Science Proposal on Next-Generation Energy Storage">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Reliable energy storage is the key bottleneck limiting the expansion of renewable energy in Ghana. While lithium-ion batteries are the current standard, they face challenges of cost, safety, and reliance on imported critical minerals. <strong>Solid-state batteries</strong>, which replace the flammable liquid electrolyte with a solid material, promise higher energy density and improved safety. This PhD proposal focuses on a strategic and locally-relevant challenge: developing a novel solid-state electrolyte using materials that are abundant in Ghana and the West African region, aiming to create a foundation for a domestic battery manufacturing ecosystem.
+            Reliable energy storage is the key bottleneck limiting the expansion of renewable energy in Ghana. While lithium-ion batteries are the current standard, they face challenges of cost, safety, and reliance on imported critical minerals. <strong>Solid-state batteries</strong>, which replace the flammable liquid electrolyte with a solid material, promise higher energy density and improved safety. This Masters in Computer Science proposal focuses on a strategic and locally-relevant challenge: developing a novel solid-state electrolyte using materials that are abundant in Ghana and the West African region, aiming to create a foundation for a domestic battery manufacturing ecosystem.
           </p>
 
           <h3>Key Research Questions for Solid-State Batteries in Ghana</h3>
@@ -30,7 +44,7 @@ export default function SolidStateBatteriesPage() {
             <li><strong>Performance under Tropical Conditions:</strong> How does the performance (e.g., conductivity, cycle life) of the novel solid-state battery change under the high temperature and humidity conditions typical of Ghana?</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Manganese-Based Solid Electrolyte</h3>
+          <h3>Proposed Masters in Computer Science Research: A Manganese-Based Solid Electrolyte</h3>
           <p>
             The core of this research is the synthesis and characterization of a new solid electrolyte based on a manganese-oxide framework, leveraging Ghana's position as a major manganese producer.
           </p>

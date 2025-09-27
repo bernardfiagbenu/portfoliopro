@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Artificial Life & Protocells - Research',
-  description: 'A PhD-level proposal on creating synthetic life forms to understand the origins of life and engineer novel biological systems.',
+  description: 'A Masters in Computer Science proposal on creating synthetic life forms to understand the origins of life and engineer novel biological systems.',
+  openGraph: {
+    title: 'Artificial Life & Protocells - Research',
+    description: 'A Masters in Computer Science proposal on creating synthetic life forms to understand the origins of life and engineer novel biological systems.',
+    url: '/research/artificial-life',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Abstract simulation of protocells',
+      },
+    ],
+  },
 };
 
 export default function ArtificialLifePage() {
@@ -13,13 +27,13 @@ export default function ArtificialLifePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Artificial Life and Protocells" subtitle="A PhD-Level Proposal on Simulating the Origins of Life">
+      <SectionContainer title="Artificial Life and Protocells" subtitle="A Masters in Computer Science Proposal on Simulating the Origins of Life">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            The transition from non-living chemistry to life is one of the greatest unsolved mysteries in science. <strong>Artificial Life (A-Life)</strong> seeks to understand this transition by creating life-like systems "from scratch" in software, hardware, or wetware. This PhD proposal outlines a computational research program to investigate the emergence of metabolism and information storage—two key hallmarks of life—in a simulated "primordial soup." The goal is to develop a new A-Life simulation framework where simple, autocatalytic chemical networks can spontaneously evolve to become self-replicating entities (protocells) that store information about their environment.
+            The transition from non-living chemistry to life is one of the greatest unsolved mysteries in science. <strong>Artificial Life (A-Life)</strong> seeks to understand this transition by creating life-like systems "from scratch" in software, hardware, or wetware. This Masters in Computer Science proposal outlines a computational research program to investigate the emergence of metabolism and information storage—two key hallmarks of life—in a simulated "primordial soup." The goal is to develop a new A-Life simulation framework where simple, autocatalytic chemical networks can spontaneously evolve to become self-replicating entities (protocells) that store information about their environment.
           </p>
 
           <h3>Key Research Questions in Origins of Life Simulation</h3>
@@ -30,7 +44,7 @@ export default function ArtificialLifePage() {
             <li><strong>The Role of Compartmentalization:</strong> How does enclosing a chemical network within a simple boundary (a "membrane") change its evolutionary trajectory? The research will investigate how the formation of protocells affects the stability and evolvability of the emergent life forms.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A "Digital Primordial Soup" Simulation</h3>
+          <h3>Proposed Masters in Computer Science Research: A "Digital Primordial Soup" Simulation</h3>
           <p>
             This thesis will involve the design and implementation of a large-scale computational chemistry simulation.
           </p>
@@ -43,7 +57,7 @@ export default function ArtificialLifePage() {
 
           <h3>Impact for Ghana and Africa</h3>
           <p>
-            Understanding the origin of life is a fundamental scientific pursuit that expands human knowledge. For Ghana, engaging in such frontier science is a mark of intellectual leadership. However, the practical implications are also significant. The simulation frameworks and analysis techniques developed in this PhD could be directly applied to more immediate problems. For instance, the models of complex chemical networks could be used to design new industrial catalysts or to understand the complex metabolic interactions within the human gut microbiome. The algorithms for analyzing emergent systems could be used in fields from ecology to economics. This research would provide a Ghanaian scientist with world-class expertise in complex systems modeling, a skill that is critically needed to tackle interconnected challenges like public health, climate change, and economic development. It would demonstrate that the deepest questions about our origins can be explored from Africa, contributing to global scientific knowledge while building local intellectual capital.
+            Understanding the origin of life is a fundamental scientific pursuit that expands human knowledge. For Ghana, engaging in such frontier science is a mark of intellectual leadership. However, the practical implications are also significant. The simulation frameworks and analysis techniques developed in this research could be directly applied to more immediate problems. For instance, the models of complex chemical networks could be used to design new industrial catalysts or to understand the complex metabolic interactions within the human gut microbiome. The algorithms for analyzing emergent systems could be used in fields from ecology to economics. This research would provide a Ghanaian scientist with world-class expertise in complex systems modeling, a skill that is critically needed to tackle interconnected challenges like public health, climate change, and economic development. It would demonstrate that the deepest questions about our origins can be explored from Africa, contributing to global scientific knowledge while building local intellectual capital.
           </p>
           
         </div>

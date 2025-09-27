@@ -5,6 +5,20 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 export const metadata: Metadata = {
   title: 'Quantum Computing - Research',
   description: 'A deep dive into Quantum Computing, exploring its challenges, research directions, and ethical implications.',
+  openGraph: {
+    title: 'Quantum Computing - Research',
+    description: 'A deep dive into Quantum Computing, exploring its challenges, research directions, and ethical implications.',
+    url: '/research/quantum-computing',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Quantum circuit illustration',
+      },
+    ],
+  },
 };
 
 export default function QuantumComputingPage() {
@@ -13,13 +27,13 @@ export default function QuantumComputingPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Applied Quantum Computing for Ghanaian Industry" subtitle="A PhD-Level Proposal on Hybrid Quantum-Classical Optimization">
+      <SectionContainer title="Applied Quantum Computing for Ghanaian Industry" subtitle="A Masters in Computer Science Proposal on Hybrid Quantum-Classical Optimization">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            While fault-tolerant quantum computers are still on the horizon, the current era of Noisy Intermediate-Scale Quantum (NISQ) devices offers a unique opportunity for nations like Ghana to engage with and benefit from the quantum revolution. This PhD research proposal outlines a framework for applying hybrid quantum-classical algorithms to solve combinatorial optimization problems that are critical to Ghana's key economic sectors. The research will focus on developing and benchmarking quantum-enhanced solutions for logistics and finance, demonstrating the potential for "quantum advantage" on problems of national importance and helping to build a quantum-ready workforce in Ghana.
+            While fault-tolerant quantum computers are still on the horizon, the current era of Noisy Intermediate-Scale Quantum (NISQ) devices offers a unique opportunity for nations like Ghana to engage with and benefit from the quantum revolution. This Masters in Computer Science research proposal outlines a framework for applying hybrid quantum-classical algorithms to solve combinatorial optimization problems that are critical to Ghana's key economic sectors. The research will focus on developing and benchmarking quantum-enhanced solutions for logistics and finance, demonstrating the potential for "quantum advantage" on problems of national importance and helping to build a quantum-ready workforce in Ghana.
           </p>
 
           <h3>Key Research Questions for Quantum in Ghana</h3>
@@ -30,7 +44,7 @@ export default function QuantumComputingPage() {
             <li><strong>Quantum Software Abstraction:</strong> How can we build a software layer that abstracts the complexity of the underlying quantum hardware, enabling Ghanaian domain experts (e.g., logistics managers, financial analysts) to benefit from quantum optimization without needing to be quantum physicists?</li>
           </ol>
 
-          <h3>Proposed PhD Research: Quantum Optimization for Ghana's Cocoa Supply Chain</h3>
+          <h3>Proposed Masters in Computer Science Research: Quantum Optimization for Ghana's Cocoa Supply Chain</h3>
           <p>
             The primary focus of this thesis will be the development and rigorous analysis of a hybrid quantum-classical solution for the Vehicle Routing Problem (VRP) within Ghana's cocoa supply chain. This problem is of immense economic significance and is known to be NP-hard, making it an ideal candidate for exploring potential quantum advantage.
           </p>

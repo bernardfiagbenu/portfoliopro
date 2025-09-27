@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Satellite Internet for Ghana - Research',
-  description: 'A PhD-level proposal on developing resilient, decentralized mesh networks to extend satellite internet coverage in rural Ghana.',
+  description: 'A Masters in Computer Science proposal on developing resilient, decentralized mesh networks to extend satellite internet coverage in rural Ghana.',
+  openGraph: {
+    title: 'Satellite Internet for Ghana - Research',
+    description: 'A Masters in Computer Science proposal on developing resilient, decentralized mesh networks to extend satellite internet coverage in rural Ghana.',
+    url: '/research/satellite-internet',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Satellite internet dish and rural village',
+      },
+    ],
+  },
 };
 
 export default function SatelliteInternetPage() {
@@ -13,13 +27,13 @@ export default function SatelliteInternetPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Satellite Internet and Community Mesh Networks for Rural Ghana" subtitle="A PhD-Level Proposal on Bridging the Last-Mile Connectivity Gap">
+      <SectionContainer title="Satellite Internet and Community Mesh Networks for Rural Ghana" subtitle="A Masters in Computer Science Proposal on Bridging the Last-Mile Connectivity Gap">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Low Earth Orbit (LEO) <strong>satellite internet</strong> constellations like Starlink offer the promise of high-speed internet access for previously unconnected areas. However, the cost of a single user terminal is still too high for most individuals in rural Ghana, and a single dish cannot cover an entire community. This PhD proposal addresses this "last-mile" challenge by focusing on the design and optimization of a low-cost, decentralized wireless <strong>mesh network</strong>. The goal is to create a system where a single satellite terminal can provide reliable internet access to an entire village or community, using a robust, self-healing network of low-power radio nodes.
+            Low Earth Orbit (LEO) <strong>satellite internet</strong> constellations like Starlink offer the promise of high-speed internet access for previously unconnected areas. However, the cost of a single user terminal is still too high for most individuals in rural Ghana, and a single dish cannot cover an entire community. This Masters in Computer Science proposal addresses this "last-mile" challenge by focusing on the design and optimization of a low-cost, decentralized wireless <strong>mesh network</strong>. The goal is to create a system where a single satellite terminal can provide reliable internet access to an entire village or community, using a robust, self-healing network of low-power radio nodes.
           </p>
 
           <h3>Key Research Questions for Community Networks in Ghana</h3>
@@ -30,7 +44,7 @@ export default function SatelliteInternetPage() {
             <li><strong>Techno-Economic and Social Model:</strong> What is a sustainable business model for a community-owned and operated network? This involves designing a pre-paid voucher system or a subscription model that is affordable for local users and generates enough revenue to maintain the network.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Self-Optimizing Mesh Network Protocol</h3>
+          <h3>Proposed Masters in Computer Science Research: A Self-Optimizing Mesh Network Protocol</h3>
           <p>
             The core of this research is to develop and field-test a new routing protocol and management system for community mesh networks connected to a satellite backhaul.
           </p>

@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Anti-Aging & Biological Reversal - Research',
-  description: 'A PhD-level proposal on identifying novel anti-aging interventions by studying the genomics of longevity.',
+  description: 'A Masters in Computer Science proposal on identifying novel anti-aging interventions by studying the genomics of longevity.',
+  openGraph: {
+    title: 'Anti-Aging & Biological Reversal - Research',
+    description: 'A Masters in Computer Science proposal on identifying novel anti-aging interventions by studying the genomics of longevity.',
+    url: '/research/anti-aging',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Genomics and Anti-Aging Technology',
+      },
+    ],
+  },
 };
 
 export default function AntiAgingPage() {
@@ -13,13 +27,13 @@ export default function AntiAgingPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Computational Genomics of Longevity and Healthy Aging" subtitle="A PhD-Level Proposal on Identifying Novel Anti-Aging Interventions">
+      <SectionContainer title="Computational Genomics of Longevity and Healthy Aging" subtitle="A Masters in Computer Science Proposal on Identifying Novel Anti-Aging Interventions">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Aging is the primary risk factor for most chronic diseases, including heart disease, cancer, and neurodegeneration. Instead of tackling these diseases one by one, a more powerful approach is to target the underlying biological aging process itself. This PhD proposal outlines a computational and systems biology approach to identify and validate novel therapeutic targets for extending healthspan (the period of life spent in good health). The research will focus on integrating multi-omics data (genomics, transcriptomics, proteomics) from diverse species and human cohorts to build a predictive model of aging and identify key molecular pathways that can be targeted for intervention.
+            Aging is the primary risk factor for most chronic diseases, including heart disease, cancer, and neurodegeneration. Instead of tackling these diseases one by one, a more powerful approach is to target the underlying biological aging process itself. This Masters in Computer Science proposal outlines a computational and systems biology approach to identify and validate novel therapeutic targets for extending healthspan (the period of life spent in good health). The research will focus on integrating multi-omics data (genomics, transcriptomics, proteomics) from diverse species and human cohorts to build a predictive model of aging and identify key molecular pathways that can be targeted for intervention.
           </p>
 
           <h3>Key Research Questions in Geroscience</h3>
@@ -30,7 +44,7 @@ export default function AntiAgingPage() {
             <li><strong>In-Silico Drug Screening:</strong> Can we use the identified causal pathways to computationally screen for existing FDA-approved drugs that could be repurposed as geroprotectors (drugs that slow aging)?</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Multi-Omic Aging Clock and Drug Discovery Platform</h3>
+          <h3>Proposed Masters in Computer Science Research: A Multi-Omic Aging Clock and Drug Discovery Platform</h3>
           <p>
             This thesis will focus on building a computational pipeline to discover and prioritize anti-aging interventions.
           </p>

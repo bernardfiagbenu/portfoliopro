@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Warp Drives & Faster-Than-Light Travel - Research',
-  description: 'A PhD-level proposal exploring the theoretical physics and potential experimental signatures of warp drive spacetimes.',
+  description: 'A Masters in Computer Science proposal exploring the theoretical physics and potential experimental signatures of warp drive spacetimes.',
+  openGraph: {
+    title: 'Warp Drives & Faster-Than-Light Travel - Research',
+    description: 'A Masters in Computer Science proposal exploring the theoretical physics and potential experimental signatures of warp drive spacetimes.',
+    url: '/research/warp-drives',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Warp drive concept art',
+      },
+    ],
+  },
 };
 
 export default function WarpDrivesPage() {
@@ -13,13 +27,13 @@ export default function WarpDrivesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Warp Drives & Faster-Than-Light Travel" subtitle="A PhD-Level Proposal in Theoretical and Observational Physics">
+      <SectionContainer title="Warp Drives & Faster-Than-Light Travel" subtitle="A Masters in Computer Science Proposal in Theoretical and Observational Physics">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            The concept of a "warp drive"—a means of achieving faster-than-light (FTL) travel by manipulating spacetime itself—is a staple of science fiction, but it also has a basis in theoretical physics through solutions to Einstein's field equations, such as the Alcubierre metric. These solutions, however, require "exotic matter" with negative energy density, which is not known to exist. This PhD proposal outlines a two-pronged theoretical research program. First, it will explore new, physically plausible warp drive solutions that minimize or eliminate the need for exotic matter. Second, it will investigate the potential observational signatures that a warp drive, if used by an advanced civilization, might produce, providing a new avenue for the Search for Extraterrestrial Intelligence (SETI).
+            The concept of a "warp drive"—a means of achieving faster-than-light (FTL) travel by manipulating spacetime itself—is a staple of science fiction, but it also has a basis in theoretical physics through solutions to Einstein's field equations, such as the Alcubierre metric. These solutions, however, require "exotic matter" with negative energy density, which is not known to exist. This Masters in Computer Science proposal outlines a two-pronged theoretical research program. First, it will explore new, physically plausible warp drive solutions that minimize or eliminate the need for exotic matter. Second, it will investigate the potential observational signatures that a warp drive, if used by an advanced civilization, might produce, providing a new avenue for the Search for Extraterrestrial Intelligence (SETI).
           </p>
 
           <h3>Key Research Questions in FTL Spacetime Metrics</h3>
@@ -30,7 +44,7 @@ export default function WarpDrivesPage() {
             <li><strong>Observational Signatures at the Destination:</strong> What would be the observable signature of a starship arriving or departing a solar system using a warp drive? This involves modeling the gravitational lensing and Doppler shifts that would be seen by a distant observer as a ship rapidly appears or disappears.</li>
           </ol>
 
-          <h3>Proposed PhD Research: New Metrics and Observational Vetting</h3>
+          <h3>Proposed Masters in Computer Science Research: New Metrics and Observational Vetting</h3>
           <p>
             This thesis will be purely theoretical, involving analytical and computational methods in general relativity.
           </p>
@@ -43,7 +57,7 @@ export default function WarpDrivesPage() {
 
           <h3>Impact for Ghana and Africa</h3>
           <p>
-            While FTL travel is highly speculative, it represents the kind of bold, frontier thinking that can inspire a nation and a continent. This type of fundamental physics research is a powerful statement of intellectual ambition. For Ghana, a nation with a growing interest in space science and astronomy (e.g., through the Ghana Space Science and Technology Institute), engaging in this level of theoretical physics is a strategic goal. It demonstrates a capacity for abstract, mathematical reasoning at the highest level. This PhD project would not require expensive laboratories, but rather a powerful computer and a brilliant mind. The skills developed—in general relativity, computational physics, and advanced mathematics—are at the pinnacle of scientific training and are highly transferable. A Ghanaian researcher publishing groundbreaking work in this area would be a powerful role model, proving that African minds can contribute to humanity's most audacious and far-reaching scientific dreams.
+            While FTL travel is highly speculative, it represents the kind of bold, frontier thinking that can inspire a nation and a continent. This type of fundamental physics research is a powerful statement of intellectual ambition. For Ghana, a nation with a growing interest in space science and astronomy (e.g., through the Ghana Space Science and Technology Institute), engaging in this level of theoretical physics is a strategic goal. It demonstrates a capacity for abstract, mathematical reasoning at the highest level. This research would not require expensive laboratories, but rather a powerful computer and a brilliant mind. The skills developed—in general relativity, computational physics, and advanced mathematics—are at the pinnacle of scientific training and are highly transferable. A Ghanaian researcher publishing groundbreaking work in this area would be a powerful role model, proving that African minds can contribute to humanity's most audacious and far-reaching scientific dreams.
           </p>
           
         </div>

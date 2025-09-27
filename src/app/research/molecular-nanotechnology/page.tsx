@@ -5,6 +5,20 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 export const metadata: Metadata = {
   title: 'Molecular Nanotechnology - Research',
   description: 'A deep dive into Molecular Nanotechnology, exploring its challenges, research directions, and ethical implications.',
+  openGraph: {
+    title: 'Molecular Nanotechnology - Research',
+    description: 'A deep dive into Molecular Nanotechnology, exploring its challenges, research directions, and ethical implications.',
+    url: '/research/molecular-nanotechnology',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Abstract nanotechnology illustration',
+      },
+    ],
+  },
 };
 
 export default function MolecularNanotechnologyPage() {
@@ -13,13 +27,13 @@ export default function MolecularNanotechnologyPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Molecular Nanotechnology for Point-of-Care Diagnostics in Ghana" subtitle="A PhD-Level Proposal on Environmentally Robust Nanosensors">
+      <SectionContainer title="Molecular Nanotechnology for Point-of-Care Diagnostics in Ghana" subtitle="A Masters in Computer Science Proposal on Environmentally Robust Nanosensors">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            <strong>Molecular nanotechnology</strong> offers the potential to create sophisticated diagnostic tools that are low-cost, rapid, and require no external power or complex instrumentation. This is a perfect technological profile for addressing healthcare challenges in rural and remote areas of Ghana. This PhD research proposal focuses on the rational design and synthesis of DNA-based nanosensors for the point-of-care detection of pathogens endemic to Ghana, such as the parasites causing Schistosomiasis or the virus responsible for Buruli ulcer. The central research challenge is to engineer these molecular devices for high stability and sensitivity in the demanding environmental conditions of a tropical climate.
+            <strong>Molecular nanotechnology</strong> offers the potential to create sophisticated diagnostic tools that are low-cost, rapid, and require no external power or complex instrumentation. This is a perfect technological profile for addressing healthcare challenges in rural and remote areas of Ghana. This Masters in Computer Science research proposal focuses on the rational design and synthesis of DNA-based nanosensors for the point-of-care detection of pathogens endemic to Ghana, such as the parasites causing Schistosomiasis or the virus responsible for Buruli ulcer. The central research challenge is to engineer these molecular devices for high stability and sensitivity in the demanding environmental conditions of a tropical climate.
           </p>
 
           <h3>Key Research Questions for Nanotechnology in Ghana</h3>
@@ -30,7 +44,7 @@ export default function MolecularNanotechnologyPage() {
             <li><strong>Local Production and Scalability:</strong> Can the key biological components (e.g., DNA strands, enzymes) be produced or sourced affordably within Ghana, creating a pathway for sustainable local manufacturing?</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Thermally-Stable DNA Nanoswitch for Pathogen Detection</h3>
+          <h3>Proposed Masters in Computer Science Research: A Thermally-Stable DNA Nanoswitch for Pathogen Detection</h3>
           <p>
             The core of this thesis is the design and validation of a "DNA nanoswitch"—a dynamic DNA nanostructure that undergoes a large conformational change upon binding to a target nucleic acid sequence. This change will trigger a readable output. The novelty lies in the focus on extreme environmental robustness.
           </p>

@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Morphological Freedom & Human Augmentation - Research',
-  description: 'A PhD-level proposal exploring the ethical and technical dimensions of human augmentation and morphological freedom.',
+  description: 'A Masters in Computer Science proposal exploring the ethical and technical dimensions of human augmentation and morphological freedom.',
+  openGraph: {
+    title: 'Morphological Freedom & Human Augmentation - Research',
+    description: 'A Masters in Computer Science proposal exploring the ethical and technical dimensions of human augmentation and morphological freedom.',
+    url: '/research/morphological-freedom',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Abstract concept of human augmentation',
+      },
+    ],
+  },
 };
 
 export default function MorphologicalFreedomPage() {
@@ -13,13 +27,13 @@ export default function MorphologicalFreedomPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Morphological Freedom and Human Augmentation" subtitle="A PhD-Level Proposal on the Ethics and Governance of Augmentation Technologies">
+      <SectionContainer title="Morphological Freedom and Human Augmentation" subtitle="A Masters in Computer Science Proposal on the Ethics and Governance of Augmentation Technologies">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Advances in biotechnology, cybernetics, and AI are rapidly moving from the realm of therapy to that of enhancement, raising the prospect of <strong>morphological freedom</strong>: the right to modify one's own body and mind. This has profound ethical, social, and political implications. This PhD proposal outlines a research agenda in the philosophy of technology and public policy to develop a governance framework for human augmentation technologies, with a specific focus on ensuring equitable access and preventing the exacerbation of social inequality, particularly from the perspective of developing nations like Ghana.
+            Advances in biotechnology, cybernetics, and AI are rapidly moving from the realm of therapy to that of enhancement, raising the prospect of <strong>morphological freedom</strong>: the right to modify one's own body and mind. This has profound ethical, social, and political implications. This Masters in Computer Science proposal outlines a research agenda in the philosophy of technology and public policy to develop a governance framework for human augmentation technologies, with a specific focus on ensuring equitable access and preventing the exacerbation of social inequality, particularly from the perspective of developing nations like Ghana.
           </p>
 
           <h3>Key Research Questions in the Governance of Human Augmentation</h3>
@@ -30,7 +44,7 @@ export default function MorphologicalFreedomPage() {
             <li><strong>A Governance Framework for an African Context:</strong> How can international governance models for emerging technologies be adapted to reflect the unique cultural values, ethical perspectives, and developmental priorities of African nations like Ghana? This involves moving beyond a purely Western-centric ethical debate.</li>
           </ol>
 
-          <h3>Proposed PhD Research: An Ethical Framework for Augmentation in a Global Context</h3>
+          <h3>Proposed Masters in Computer Science Research: An Ethical Framework for Augmentation in a Global Context</h3>
           <p>
             This thesis will be a work of political philosophy and technology policy, not experimental science. It will construct a novel ethical framework for the governance of human enhancement.
           </p>

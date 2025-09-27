@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Mind Uploading & Digital Consciousness - Research',
-  description: 'A PhD-level proposal exploring the theoretical and computational neuroscience foundations of mind uploading.',
+  description: 'A Masters in Computer Science proposal exploring the theoretical and computational neuroscience foundations of mind uploading.',
+  openGraph: {
+    title: 'Mind Uploading & Digital Consciousness - Research',
+    description: 'A Masters in Computer Science proposal exploring the theoretical and computational neuroscience foundations of mind uploading.',
+    url: '/research/mind-uploading',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Abstract concept of mind uploading',
+      },
+    ],
+  },
 };
 
 export default function MindUploadingPage() {
@@ -13,13 +27,13 @@ export default function MindUploadingPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Mind Uploading & Digital Consciousness" subtitle="A PhD-Level Proposal on Computational Connectomics">
+      <SectionContainer title="Mind Uploading & Digital Consciousness" subtitle="A Masters in Computer Science Proposal on Computational Connectomics">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            <strong>Mind uploading</strong>, or whole-brain emulation, remains one of the most profound and speculative goals of neuroscience and AI. The central hypothesis is that a faithful digital replica of a brain's neural network—its connectome—would be sufficient to instantiate its consciousness. This PhD proposal sidesteps the philosophical debate and focuses on a critical, unanswered computational question: what is the minimal level of biological detail required for a functionally accurate brain simulation? The research will develop a multi-scale modeling framework to simulate a small, well-understood neural circuit (e.g., from the C. elegans worm or a rodent hippocampus) at different levels of abstraction and quantify the "functional distance" between these simulations.
+            <strong>Mind uploading</strong>, or whole-brain emulation, remains one of the most profound and speculative goals of neuroscience and AI. The central hypothesis is that a faithful digital replica of a brain's neural network—its connectome—would be sufficient to instantiate its consciousness. This Masters in Computer Science proposal sidesteps the philosophical debate and focuses on a critical, unanswered computational question: what is the minimal level of biological detail required for a functionally accurate brain simulation? The research will develop a multi-scale modeling framework to simulate a small, well-understood neural circuit (e.g., from the C. elegans worm or a rodent hippocampus) at different levels of abstraction and quantify the "functional distance" between these simulations.
           </p>
 
           <h3>Key Research Questions in Whole-Brain Emulation</h3>
@@ -30,7 +44,7 @@ export default function MindUploadingPage() {
             <li><strong>Computational Tractability:</strong> What is the computational cost (in terms of processing power and memory) associated with each level of simulation detail? This will help map out the hardware requirements for scaling up from small circuits to whole brains.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Multi-Scale Model of the Hippocampal Place Cell Network</h3>
+          <h3>Proposed Masters in Computer Science Research: A Multi-Scale Model of the Hippocampal Place Cell Network</h3>
           <p>
             This thesis will focus on simulating the network of "place cells" in the hippocampus, a circuit critical for spatial memory and one that is relatively well-understood.
           </p>

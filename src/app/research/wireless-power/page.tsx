@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Wireless Power at Scale - Research',
-  description: 'A PhD-level proposal on developing efficient, long-range wireless power transmission for applications in Ghana.',
+  description: 'A Masters in Computer Science proposal on developing efficient, long-range wireless power transmission for applications in Ghana.',
+  openGraph: {
+    title: 'Wireless Power at Scale - Research',
+    description: 'A Masters in Computer Science proposal on developing efficient, long-range wireless power transmission for applications in Ghana.',
+    url: '/research/wireless-power',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Wireless power transmission concept',
+      },
+    ],
+  },
 };
 
 export default function WirelessPowerPage() {
@@ -13,13 +27,13 @@ export default function WirelessPowerPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Wireless Power Transmission for Rural Ghana" subtitle="A PhD-Level Proposal on Resonant Beamforming for Off-Grid Applications">
+      <SectionContainer title="Wireless Power Transmission for Rural Ghana" subtitle="A Masters in Computer Science Proposal on Resonant Beamforming for Off-Grid Applications">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Extending the electrical grid to remote and rural areas of Ghana is economically challenging and logistically complex. <strong>Wireless power transmission (WPT)</strong> offers a radical alternative for powering low-power devices and sensors in these off-grid locations. While near-field WPT (like Qi chargers) is common, long-range WPT remains inefficient. This PhD proposal focuses on developing a highly efficient, long-range WPT system using microwave beamforming and metamaterial-based rectifying antennas ("rectennas"). The goal is to create a system that can safely and efficiently power multiple devices within a small village or on a farm from a central, solar-powered transmitter.
+            Extending the electrical grid to remote and rural areas of Ghana is economically challenging and logistically complex. <strong>Wireless power transmission (WPT)</strong> offers a radical alternative for powering low-power devices and sensors in these off-grid locations. While near-field WPT (like Qi chargers) is common, long-range WPT remains inefficient. This Masters in Computer Science proposal focuses on developing a highly efficient, long-range WPT system using microwave beamforming and metamaterial-based rectifying antennas ("rectennas"). The goal is to create a system that can safely and efficiently power multiple devices within a small village or on a farm from a central, solar-powered transmitter.
           </p>
 
           <h3>Key Research Questions in Long-Range WPT for Ghana</h3>
@@ -30,7 +44,7 @@ export default function WirelessPowerPage() {
             <li><strong>System-Level Efficiency:</strong> What is the end-to-end efficiency of the entire system, from the DC power at the solar panel to the DC power delivered to the device? This involves optimizing the efficiency of the transmitter, the beamforming algorithm, and the rectenna.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Multi-Device Resonant Beamforming System</h3>
+          <h3>Proposed Masters in Computer Science Research: A Multi-Device Resonant Beamforming System</h3>
           <p>
             The core of this research is to build and test a prototype WPT system capable of powering several devices at a range of tens of meters.
           </p>

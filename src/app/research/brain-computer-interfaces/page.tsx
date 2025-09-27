@@ -5,6 +5,20 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 export const metadata: Metadata = {
   title: 'Brain-Computer Interfaces (BCIs) - Research',
   description: 'A deep dive into Brain-Computer Interfaces (BCIs), exploring challenges, research directions, and ethical implications.',
+  openGraph: {
+    title: 'Brain-Computer Interfaces (BCIs) - Research',
+    description: 'A deep dive into Brain-Computer Interfaces (BCIs), exploring challenges, research directions, and ethical implications.',
+    url: '/research/brain-computer-interfaces',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Illustration of brain and computer interface',
+      },
+    ],
+  },
 };
 
 export default function BciPage() {
@@ -13,13 +27,13 @@ export default function BciPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Brain-Computer Interfaces (BCIs) for Neurorehabilitation in Ghana" subtitle="A PhD-Level Research Proposal on Robust and Accessible Neural Decoding">
+      <SectionContainer title="Brain-Computer Interfaces (BCIs) for Neurorehabilitation in Ghana" subtitle="A Masters in Computer Science Research Proposal on Robust and Accessible Neural Decoding">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            <strong>Brain-Computer Interfaces (BCIs)</strong> hold immense promise for restoring function in patients with neurological disorders. However, the high cost, extensive calibration, and fragility of current systems make them largely inaccessible in resource-constrained settings like Ghana. Stroke, a leading cause of long-term disability in Ghana, requires effective and affordable rehabilitation solutions. This PhD proposal outlines a research agenda to develop a low-cost, robust, non-invasive BCI system for post-stroke motor rehabilitation, centered on a novel neural decoding paradigm that is resilient to the noise and data-shift inherent in real-world clinical applications in Ghana.
+            <strong>Brain-Computer Interfaces (BCIs)</strong> hold immense promise for restoring function in patients with neurological disorders. However, the high cost, extensive calibration, and fragility of current systems make them largely inaccessible in resource-constrained settings like Ghana. Stroke, a leading cause of long-term disability in Ghana, requires effective and affordable rehabilitation solutions. This Masters in Computer Science proposal outlines a research agenda to develop a low-cost, robust, non-invasive BCI system for post-stroke motor rehabilitation, centered on a novel neural decoding paradigm that is resilient to the noise and data-shift inherent in real-world clinical applications in Ghana.
           </p>
 
           <h3>Key Research Questions for BCIs in Ghana</h3>
@@ -30,7 +44,7 @@ export default function BciPage() {
             <li><strong>Clinical Viability and Usability:</strong> How can we design a BCI system that is not just technically functional but also usable and motivating for patients and therapists in a typical Ghanaian physiotherapy department?</li>
           </ol>
 
-          <h3>Proposed PhD Research: Self-Supervised Learning for a Zero-Calibration Motor Imagery BCI</h3>
+          <h3>Proposed Masters in Computer Science Research: Self-Supervised Learning for a Zero-Calibration Motor Imagery BCI</h3>
           <p>
             The core of this thesis is to develop and validate a self-supervised learning framework for pre-training a deep neural network that can extract robust, subject-invariant features from raw EEG signals. This pre-trained model would serve as a universal feature extractor, allowing a new BCI user to achieve high performance with zero or minimal calibration.
           </p>

@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Space Technologies for Ghanaian Development - Research',
-  description: 'A PhD-level proposal on using satellite remote sensing and machine learning for sustainable development in Ghana.',
+  description: 'A Masters in Computer Science proposal on using satellite remote sensing and machine learning for sustainable development in Ghana.',
+  openGraph: {
+    title: 'Space Technologies for Ghanaian Development - Research',
+    description: 'A Masters in Computer Science proposal on using satellite remote sensing and machine learning for sustainable development in Ghana.',
+    url: '/research/space-tech',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Satellite image of Ghana',
+      },
+    ],
+  },
 };
 
 export default function SpaceTechPage() {
@@ -13,13 +27,13 @@ export default function SpaceTechPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Space Technologies for Ghanaian Development" subtitle="A PhD-Level Proposal on Satellite Data and AI for Resource Management">
+      <SectionContainer title="Space Technologies for Ghanaian Development" subtitle="A Masters in Computer Science Proposal on Satellite Data and AI for Resource Management">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Effective management of natural resources is paramount for Ghana's sustainable development. <strong>Space technologies</strong>, particularly Earth Observation (EO) satellites, provide a powerful, macro-level view to monitor agriculture, water resources, and the impacts of illegal mining ("galamsey"). This PhD proposal outlines a research agenda to develop a machine learning framework that fuses multi-spectral satellite imagery from publicly available sources (like Sentinel-2 and Landsat) with ground-truth data to create high-resolution, actionable maps for Ghanaian policymakers. The research will focus on a critical case study: detecting and monitoring the extent of galamsey activities and their impact on water bodies and forest cover in Ghana.
+            Effective management of natural resources is paramount for Ghana's sustainable development. <strong>Space technologies</strong>, particularly Earth Observation (EO) satellites, provide a powerful, macro-level view to monitor agriculture, water resources, and the impacts of illegal mining ("galamsey"). This Masters in Computer Science proposal outlines a research agenda to develop a machine learning framework that fuses multi-spectral satellite imagery from publicly available sources (like Sentinel-2 and Landsat) with ground-truth data to create high-resolution, actionable maps for Ghanaian policymakers. The research will focus on a critical case study: detecting and monitoring the extent of galamsey activities and their impact on water bodies and forest cover in Ghana.
           </p>
 
           <h3>Key Research Questions for Space Tech in Ghana</h3>
@@ -30,7 +44,7 @@ export default function SpaceTechPage() {
             <li><strong>Model Validation and Deployment:</strong> How can the AI model be validated at scale with limited on-the-ground resources? What is the most effective way to disseminate the findings—for example, via an interactive web dashboard—to stakeholders like the Environmental Protection Agency (EPA) of Ghana and local district assemblies?</li>
           </ol>
 
-          <h3>Proposed PhD Research: An AI-Powered Galamsey Monitoring Platform</h3>
+          <h3>Proposed Masters in Computer Science Research: An AI-Powered Galamsey Monitoring Platform</h3>
           <p>
             The core of this research is to build, train, and validate a deep learning model for the automated detection of illegal mining activities and their environmental impact from satellite data.
           </p>

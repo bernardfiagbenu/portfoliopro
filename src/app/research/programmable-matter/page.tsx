@@ -5,6 +5,20 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 export const metadata: Metadata = {
   title: 'Programmable Matter - Research',
   description: 'A deep dive into Programmable Matter, exploring its challenges, research directions, and ethical implications.',
+  openGraph: {
+    title: 'Programmable Matter - Research',
+    description: 'A deep dive into Programmable Matter, exploring its challenges, research directions, and ethical implications.',
+    url: '/research/programmable-matter',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Programmable matter concept art',
+      },
+    ],
+  },
 };
 
 export default function ProgrammableMatterPage() {
@@ -13,13 +27,13 @@ export default function ProgrammableMatterPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Programmable Matter for Resilient Infrastructure in Ghana" subtitle="A PhD-Level Proposal on Self-Healing, Low-Cost Composites">
+      <SectionContainer title="Programmable Matter for Resilient Infrastructure in Ghana" subtitle="A Masters in Computer Science Proposal on Self-Healing, Low-Cost Composites">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Ghana's path to development is critically dependent on building robust and cost-effective infrastructure. However, harsh environmental conditions and limited maintenance budgets pose significant challenges to the longevity of roads, buildings, and water systems. This PhD proposal explores the frontier of <strong>programmable matter</strong> to create a new class of low-cost, self-healing composite materials specifically designed for the Ghanaian context. The research will focus on developing a material that can autonomously repair damage, drastically reducing lifecycle maintenance costs and improving the resilience of critical infrastructure, particularly in rural and underserved areas of Ghana.
+            Ghana's path to development is critically dependent on building robust and cost-effective infrastructure. However, harsh environmental conditions and limited maintenance budgets pose significant challenges to the longevity of roads, buildings, and water systems. This Masters in Computer Science proposal explores the frontier of <strong>programmable matter</strong> to create a new class of low-cost, self-healing composite materials specifically designed for the Ghanaian context. The research will focus on developing a material that can autonomously repair damage, drastically reducing lifecycle maintenance costs and improving the resilience of critical infrastructure, particularly in rural and underserved areas of Ghana.
           </p>
 
           <h3>Key Research Questions for Programmable Matter in Ghana</h3>
@@ -30,7 +44,7 @@ export default function ProgrammableMatterPage() {
             <li><strong>Lifecycle and Economic Analysis:</strong> What is the techno-economic feasibility of this material compared to traditional materials like asphalt or concrete for a typical use case like a rural road in Ghana? This involves a full lifecycle cost analysis, factoring in reduced maintenance.</li>
           </ul>
 
-          <h3>Proposed PhD Research: A Self-Healing Laterite-Polymer Composite</h3>
+          <h3>Proposed Masters in Computer Science Research: A Self-Healing Laterite-Polymer Composite</h3>
           <p>
             The central hypothesis of this thesis is that a self-healing composite can be created by embedding microcapsules of a reactive, bio-based monomer into a matrix of polymer-stabilized laterite soil.
           </p>

@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Xenobots (Living Robots) - Research',
-  description: 'A PhD-level proposal exploring the fundamental principles of synthetic morphology and its potential applications.',
+  description: 'A Masters in Computer Science proposal exploring the fundamental principles of synthetic morphology and its potential applications.',
+  openGraph: {
+    title: 'Xenobots (Living Robots) - Research',
+    description: 'A Masters in Computer Science proposal exploring the fundamental principles of synthetic morphology and its potential applications.',
+    url: '/research/xenobots',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Xenobots concept art',
+      },
+    ],
+  },
 };
 
 export default function XenobotsPage() {
@@ -13,13 +27,13 @@ export default function XenobotsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Xenobots (Living Robots) and Synthetic Morphology" subtitle="A PhD-Level Proposal on the Principles of Biological Construction">
+      <SectionContainer title="Xenobots (Living Robots) and Synthetic Morphology" subtitle="A Masters in Computer Science Proposal on the Principles of Biological Construction">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            The fields of developmental biology and robotics are converging on a profound question: can we design and build completely novel, living machines from biological parts? The creation of "Xenobots"—multicellular, autonomous agents assembled from frog stem cells—has opened the door to <strong>synthetic morphology</strong>. This PhD proposal outlines a fundamental research agenda to explore the principles that govern how cells cooperate to build complex structures. Instead of focusing on a specific application, this research aims to develop a computational framework for predicting and directing multicellular self-assembly, using Xenobots as a model system. The long-term vision is to establish a "biological compiler" that can translate a desired form or function into a set of initial cellular conditions.
+            The fields of developmental biology and robotics are converging on a profound question: can we design and build completely novel, living machines from biological parts? The creation of "Xenobots"—multicellular, autonomous agents assembled from frog stem cells—has opened the door to <strong>synthetic morphology</strong>. This Masters in Computer Science proposal outlines a fundamental research agenda to explore the principles that govern how cells cooperate to build complex structures. Instead of focusing on a specific application, this research aims to develop a computational framework for predicting and directing multicellular self-assembly, using Xenobots as a model system. The long-term vision is to establish a "biological compiler" that can translate a desired form or function into a set of initial cellular conditions.
           </p>
 
           <h3>Key Research Questions in Synthetic Morphology</h3>
@@ -30,7 +44,7 @@ export default function XenobotsPage() {
             <li><strong>Controlling Collective Behavior:</strong> How can we externally guide the behavior of these living robots? This could involve using light (optogenetics) or chemical gradients to direct their movement or to switch their collective behaviors on and off.</li>
           </ol>
 
-          <h3>Proposed PhD Research: An AI-Driven Platform for Xenobot Design</h3>
+          <h3>Proposed Masters in Computer Science Research: An AI-Driven Platform for Xenobot Design</h3>
           <p>
             This thesis will focus on building a closed-loop "design-build-test" platform for creating functional Xenobots.
           </p>

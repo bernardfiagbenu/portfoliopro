@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Vertical Farming for Urban Ghana - Research',
-  description: 'A PhD-level proposal on developing cost-effective and resource-efficient vertical farming systems for Ghanaian cities.',
+  description: 'A Masters in Computer Science proposal on developing cost-effective and resource-efficient vertical farming systems for Ghanaian cities.',
+  openGraph: {
+    title: 'Vertical Farming for Urban Ghana - Research',
+    description: 'A Masters in Computer Science proposal on developing cost-effective and resource-efficient vertical farming systems for Ghanaian cities.',
+    url: '/research/vertical-farming',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Modern vertical farm with leafy greens',
+      },
+    ],
+  },
 };
 
 export default function VerticalFarmingPage() {
@@ -13,13 +27,13 @@ export default function VerticalFarmingPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Vertical Farming for Urban Ghana" subtitle="A PhD-Level Proposal on Resilient Urban Food Systems">
+      <SectionContainer title="Vertical Farming for Urban Ghana" subtitle="A Masters in Computer Science Proposal on Resilient Urban Food Systems">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            Rapid urbanization in Ghana is straining food supply chains, increasing food miles, and limiting access to fresh produce for city dwellers. <strong>Vertical farming</strong> offers a solution by enabling food production within urban centers, but conventional high-tech models are often too expensive and energy-intensive for the Ghanaian context. This PhD proposal focuses on designing and testing a hybrid, low-energy vertical farming system that is optimized for the climate and resources of a city like Accra. The research will focus on minimizing electricity consumption by maximizing natural sunlight and developing a closed-loop aquaponics system that uses locally sourced fish and reduces the need for chemical fertilizers.
+            Rapid urbanization in Ghana is straining food supply chains, increasing food miles, and limiting access to fresh produce for city dwellers. <strong>Vertical farming</strong> offers a solution by enabling food production within urban centers, but conventional high-tech models are often too expensive and energy-intensive for the Ghanaian context. This Masters in Computer Science proposal focuses on designing and testing a hybrid, low-energy vertical farming system that is optimized for the climate and resources of a city like Accra. The research will focus on minimizing electricity consumption by maximizing natural sunlight and developing a closed-loop aquaponics system that uses locally sourced fish and reduces the need for chemical fertilizers.
           </p>
 
           <h3>Key Research Questions for Vertical Farming in Ghana</h3>
@@ -30,7 +44,7 @@ export default function VerticalFarmingPage() {
             <li><strong>Techno-Economic Feasibility:</strong> What is the economic viability of this hybrid vertical farming model for a small-scale urban entrepreneur in Accra? This involves a detailed analysis of setup costs, operational expenses (energy, water, fish feed), and potential revenue from crop sales.</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Hybrid Sunlight-Aquaponics Vertical Farm</h3>
+          <h3>Proposed Masters in Computer Science Research: A Hybrid Sunlight-Aquaponics Vertical Farm</h3>
           <p>
             The core of this research is to build and operate a prototype vertical farm in Accra to gather real-world performance data.
           </p>

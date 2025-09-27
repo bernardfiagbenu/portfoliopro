@@ -4,7 +4,21 @@ import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Neuromorphic Computing for Low-Power AI in Ghana - Research',
-  description: 'A PhD-level proposal on developing brain-inspired AI hardware for off-grid applications in Ghana.',
+  description: 'A Masters in Computer Science proposal on developing brain-inspired AI hardware for off-grid applications in Ghana.',
+  openGraph: {
+    title: 'Neuromorphic Computing for Low-Power AI in Ghana - Research',
+    description: 'A Masters in Computer Science proposal on developing brain-inspired AI hardware for off-grid applications in Ghana.',
+    url: '/research/neuromorphic-computing',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.bernard.com/placeholder-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Neuromorphic chip and brain illustration',
+      },
+    ],
+  },
 };
 
 export default function NeuromorphicPage() {
@@ -13,13 +27,13 @@ export default function NeuromorphicPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <SectionContainer title="Neuromorphic Computing for Low-Power AI in Ghana" subtitle="A PhD-Level Proposal on Brain-Inspired Edge AI">
+      <SectionContainer title="Neuromorphic Computing for Low-Power AI in Ghana" subtitle="A Masters in Computer Science Proposal on Brain-Inspired Edge AI">
         <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
           <p>
-            The high energy consumption of conventional AI models is a major barrier to their widespread deployment in energy-constrained environments, such as off-grid rural areas in Ghana. <strong>Neuromorphic computing</strong>, which draws inspiration from the brain's architecture to build highly efficient hardware, offers a radical solution. This PhD proposal focuses on the development and application of a neuromorphic system for a critical edge computing task in Ghana: the real-time, on-device diagnosis of crop disease from leaf images using a spiking neural network (SNN). The research aims to demonstrate an order-of-magnitude reduction in power consumption compared to traditional AI on a GPU or TPU, enabling continuous, solar-powered monitoring in the field.
+            The high energy consumption of conventional AI models is a major barrier to their widespread deployment in energy-constrained environments, such as off-grid rural areas in Ghana. <strong>Neuromorphic computing</strong>, which draws inspiration from the brain's architecture to build highly efficient hardware, offers a radical solution. This Masters in Computer Science proposal focuses on the development and application of a neuromorphic system for a critical edge computing task in Ghana: the real-time, on-device diagnosis of crop disease from leaf images using a spiking neural network (SNN). The research aims to demonstrate an order-of-magnitude reduction in power consumption compared to traditional AI on a GPU or TPU, enabling continuous, solar-powered monitoring in the field.
           </p>
 
           <h3>Key Research Questions for Neuromorphic AI in Ghana</h3>
@@ -30,7 +44,7 @@ export default function NeuromorphicPage() {
             <li><strong>Field Deployment and Robustness:</strong> How robust is a neuromorphic system to real-world conditions in a Ghanaian farm, including variable lighting, camera movement, and different stages of crop growth?</li>
           </ol>
 
-          <h3>Proposed PhD Research: A Neuromorphic Cassava Disease Detector</h3>
+          <h3>Proposed Masters in Computer Science Research: A Neuromorphic Cassava Disease Detector</h3>
           <p>
             This thesis will focus on building a complete, low-power system for identifying Cassava Mosaic Disease and Cassava Brown Streak Disease, two major threats to food security in Ghana.
           </p>
