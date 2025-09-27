@@ -1,12 +1,12 @@
 import { LinkedinIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-interface ArticleFooterProps {
+interface ArticleHeaderProps {
   articleUrl: string;
   articleTitle: string;
 }
 
-export default function ArticleFooter({ articleUrl, articleTitle }: ArticleFooterProps) {
+export default function ArticleHeader({ articleUrl, articleTitle }: ArticleHeaderProps) {
   const author = "Bernard Fiagbenu";
   // Using a dynamic date for "last updated" feel
   const publicationDate = new Date().toLocaleDateString('en-US', {
@@ -20,7 +20,7 @@ export default function ArticleFooter({ articleUrl, articleTitle }: ArticleFoote
   const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullArticleUrl)}`;
 
   return (
-    <div className="mt-12 pt-8 border-t border-dashed">
+    <div className="mb-8 pb-4 border-b border-dashed">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="text-sm text-muted-foreground text-center sm:text-left">
           <p>By <span className="font-semibold text-foreground">{author}</span></p>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Anti-Aging & Biological Reversal - Research',
@@ -14,6 +14,7 @@ export default function AntiAgingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Computational Genomics of Longevity and Healthy Aging" subtitle="A PhD-Level Proposal on Identifying Novel Anti-Aging Interventions">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function AntiAgingPage() {
             Africa is projected to experience the fastest growth in its elderly population of any continent. This will lead to a massive increase in the burden of age-related chronic diseases. This research is directly relevant to this challenge. While the computational work is universal, the developed aging clock could be fine-tuned and validated on data from Ghanaian populations to understand the specific drivers of aging in an African context. More importantly, by identifying low-cost, existing drugs that can be repurposed to promote healthy aging, this research offers a pragmatic and affordable strategy for Ghana to improve the healthspan of its citizens. It would shift the medical paradigm from treating individual diseases late in life to preventing them by targeting the aging process itself, a strategy that is both more effective and more economically sustainable for a developing healthcare system.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

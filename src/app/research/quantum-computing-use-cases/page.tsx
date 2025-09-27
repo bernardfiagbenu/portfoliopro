@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Quantum Computing: Future Use Cases Across Industries',
@@ -14,6 +14,7 @@ export default function QuantumComputingUseCasesPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Quantum Computing: Future Use Cases for Ghana" subtitle="A Deep Dive into Cross-Industry Applications for the Nation">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h2>Overview</h2>
@@ -48,7 +49,6 @@ export default function QuantumComputingUseCasesPage() {
               <li><strong>Mining Exploration and Optimization:</strong> Quantum machine learning could analyze geological survey data to more accurately predict the locations of mineral deposits like gold, bauxite, or lithium. Furthermore, quantum optimization could be used to plan mining operations to maximize yield while minimizing environmental impact.</li>
           </ul>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

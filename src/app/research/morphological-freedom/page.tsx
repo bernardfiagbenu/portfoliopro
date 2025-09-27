@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Morphological Freedom & Human Augmentation - Research',
@@ -14,6 +14,7 @@ export default function MorphologicalFreedomPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Morphological Freedom and Human Augmentation" subtitle="A PhD-Level Proposal on the Ethics and Governance of Augmentation Technologies">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function MorphologicalFreedomPage() {
             These technologies are being developed almost exclusively in the Global North, with little consideration for their impact on the rest of the world. This research is a vital intervention. It would position a Ghanaian thinker at the forefront of one of the 21st century's most important ethical debates. By developing a framework that prioritizes equity and reflects African values, this work can help shape the global conversation, ensuring that when these powerful technologies arrive, they do not create a new form of "biological colonialism." It would provide Ghanaian and other African policymakers with the conceptual tools to regulate human augmentation in a way that aligns with their developmental goals and strengthens social cohesion, rather than fracturing it.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

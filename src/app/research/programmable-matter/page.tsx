@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Programmable Matter - Research',
@@ -14,6 +14,7 @@ export default function ProgrammableMatterPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Programmable Matter for Resilient Infrastructure in Ghana" subtitle="A PhD-Level Proposal on Self-Healing, Low-Cost Composites">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -48,7 +49,6 @@ export default function ProgrammableMatterPage() {
             This research will produce a proof-of-concept for a new category of intelligent, sustainable construction material. It would be one of the first attempts to design programmable matter specifically for the challenges of a developing nation. A successful project would not only offer a direct solution for improving infrastructure in Ghana but would also create a new, high-value use for recycled plastic waste and local soils. By focusing on low-cost and local manufacturing, this research paves the way for a decentralized industry where communities in Ghana can produce their own advanced construction materials. This represents a paradigm shift from importing expensive infrastructure solutions to fostering indigenous, sustainable innovation.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

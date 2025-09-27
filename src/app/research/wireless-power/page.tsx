@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Wireless Power at Scale - Research',
@@ -14,6 +14,7 @@ export default function WirelessPowerPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Wireless Power Transmission for Rural Ghana" subtitle="A PhD-Level Proposal on Resonant Beamforming for Off-Grid Applications">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function WirelessPowerPage() {
             This research could unlock a new way of delivering power to the "last hundred meters" in Africa. A successful WPT system would eliminate the need for charging cables, disposable batteries, and individual solar panels for a vast range of low-power devices. This could revolutionize applications in agriculture (powering sensor networks for irrigation), healthcare (powering remote health monitors), and education (charging low-cost tablets in rural schools). By developing expertise in this frontier technology, Ghana could become a leader in designing and manufacturing WPT systems tailored for the unique challenges and opportunities of the African market, creating a new, high-tech industry and accelerating digital inclusion.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Satellite Internet for Ghana - Research',
@@ -14,6 +14,7 @@ export default function SatelliteInternetPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Satellite Internet and Community Mesh Networks for Rural Ghana" subtitle="A PhD-Level Proposal on Bridging the Last-Mile Connectivity Gap">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function SatelliteInternetPage() {
             This research addresses the most critical barrier to digital inclusion in Africa: affordable last-mile access. A successful project would produce an open-source, replicable blueprint for how communities can build and manage their own internet infrastructure. This would be a powerful alternative to waiting for large telecom companies to expand their services. It would empower villages, schools, and clinics across Ghana and the continent with the connectivity needed for modern education, healthcare, and commerce. By fostering a model of decentralized, community-owned infrastructure, this research provides a pathway to a more equitable and resilient digital future for Africa.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Autonomous Vehicles for Ghanaian Logistics - Research',
@@ -14,6 +14,7 @@ export default function AutonomousVehiclesPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Autonomous Vehicles for Ghanaian Logistics" subtitle="A PhD-Level Proposal on Resilient and Low-Cost Autonomous Systems">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function AutonomousVehiclesPage() {
             A successful outcome will provide a blueprint for affordable, resilient autonomous logistics systems that can be deployed across Africa. This technology could revolutionize healthcare delivery, connect smallholder farmers to larger markets, and create a new high-tech industry in Ghana focused on robotics and AI. By focusing on low-cost, vision-based navigation, this research bypasses the need for expensive satellite infrastructure, making the solution scalable and locally maintainable.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

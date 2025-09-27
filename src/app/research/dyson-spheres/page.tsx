@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Dyson Spheres & Stellar Energy - Research',
@@ -14,6 +14,7 @@ export default function DysonSpheresPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="The Search for Extraterrestrial Megastructures (Dyson Spheres)" subtitle="A PhD-Level Proposal on Observational Technosignatures">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function DysonSpheresPage() {
             The search for technosignatures is a search for our place in the cosmos. While abstract, it is a deeply inspiring scientific question that can galvanize interest in STEM fields. For Ghana, which has a rich history of astronomy and recently launched its first satellite, engaging in this type of data-intensive, "big science" is a strategic move. This PhD project requires no new hardware; it leverages public data and computational tools. It would demonstrate that Ghanaian researchers can participate at the cutting edge of astrophysics and data science. A successful project would not only produce high-impact scientific publications but would also create a powerful educational outreach platform. Imagine Ghanaian students being involved in the search for alien megastructures—it would be a profound inspiration for the next generation of scientists, engineers, and dreamers, proving that the biggest questions in the universe can be tackled from anywhere on Earth, including Accra.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

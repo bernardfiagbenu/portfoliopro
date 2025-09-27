@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Molecular Nanotechnology - Research',
@@ -14,6 +14,7 @@ export default function MolecularNanotechnologyPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Molecular Nanotechnology for Point-of-Care Diagnostics in Ghana" subtitle="A PhD-Level Proposal on Environmentally Robust Nanosensors">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -53,7 +54,6 @@ export default function MolecularNanotechnologyPage() {
             A successful project would deliver a platform technology for creating a new class of ultra-low-cost, instrument-free diagnostic tools. By focusing on diseases that disproportionately affect communities in Ghana, this research ensures that the cutting-edge of nanotechnology is directed toward solving problems of local relevance. The open-source nature of the design will enable other researchers to adapt the platform for different targets, from agricultural pathogens to other infectious diseases, building a foundation for a self-sufficient biotech ecosystem in Ghana.
           </p>
 
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

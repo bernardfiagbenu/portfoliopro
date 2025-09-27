@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'AR/VR for Education and Training in Ghana - Research',
@@ -14,6 +14,7 @@ export default function ArVrPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="AR/VR for Education and Training in Ghana" subtitle="A PhD-Level Proposal on Accessible Immersive Learning">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function ArVrPage() {
             This research aims to provide a data-driven validation of AR as a transformative, low-cost tool for vocational education in Africa. A successful project would produce an open-source framework and a set of best practices for developing and deploying AR training solutions on the continent. It could be adapted for a wide range of fields, from nursing and surgical training to equipment operation and repair, democratizing access to high-quality, hands-on education and accelerating skill development for Ghana's youthful population.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'CRISPR for Ghanaian Agriculture and Health - Research',
@@ -14,6 +14,7 @@ export default function CrisprPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="CRISPR for Ghanaian Agriculture and Health" subtitle="A PhD-Level Proposal on Gene-Editing for Local Challenges">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function CrisprPage() {
             This research would represent a landmark achievement for Ghanaian science, demonstrating local capacity to harness one of the 21st century's most powerful technologies. A successful project would not only produce a cowpea variety with the potential to significantly improve food security and farmer incomes in Ghana, but it would also establish the protocols, expertise, and ethical groundwork for a national biotechnology strategy. By focusing on a staple food crop and open-sourcing the findings, this work ensures that the benefits of gene-editing are directed toward public good, providing a powerful alternative to reliance on proprietary, foreign-owned seed technologies.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

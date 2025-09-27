@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Brain-Computer Interfaces (BCIs) - Research',
@@ -14,6 +14,7 @@ export default function BciPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Brain-Computer Interfaces (BCIs) for Neurorehabilitation in Ghana" subtitle="A PhD-Level Research Proposal on Robust and Accessible Neural Decoding">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -48,7 +49,6 @@ export default function BciPage() {
             This research is expected to produce a novel, robust decoding algorithm that significantly lowers the barrier to entry for clinical BCI use. A successful project would demonstrate a cost-effective and scalable neurorehabilitation tool that is specifically validated for a Ghanaian population. By open-sourcing the models, dataset, and system design, this work will empower other researchers in Africa to build upon this foundation, fostering a local ecosystem of BCI innovation. Ethically, the project will adhere to strict protocols for patient consent and data privacy, ensuring that this sensitive neural data is used for the benefit of the community from which it was gathered.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

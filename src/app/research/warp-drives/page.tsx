@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Warp Drives & Faster-Than-Light Travel - Research',
@@ -14,6 +14,7 @@ export default function WarpDrivesPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Warp Drives & Faster-Than-Light Travel" subtitle="A PhD-Level Proposal in Theoretical and Observational Physics">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function WarpDrivesPage() {
             While FTL travel is highly speculative, it represents the kind of bold, frontier thinking that can inspire a nation and a continent. This type of fundamental physics research is a powerful statement of intellectual ambition. For Ghana, a nation with a growing interest in space science and astronomy (e.g., through the Ghana Space Science and Technology Institute), engaging in this level of theoretical physics is a strategic goal. It demonstrates a capacity for abstract, mathematical reasoning at the highest level. This PhD project would not require expensive laboratories, but rather a powerful computer and a brilliant mind. The skills developed—in general relativity, computational physics, and advanced mathematics—are at the pinnacle of scientific training and are highly transferable. A Ghanaian researcher publishing groundbreaking work in this area would be a powerful role model, proving that African minds can contribute to humanity's most audacious and far-reaching scientific dreams.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

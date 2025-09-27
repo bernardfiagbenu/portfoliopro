@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: '3D Printing for Local Manufacturing in Ghana - Research',
@@ -14,6 +14,7 @@ export default function ThreeDPrintingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="3D Printing for Local Manufacturing in Ghana" subtitle="A PhD-Level Proposal on Creating a Circular Economy with Additive Manufacturing">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function ThreeDPrintingPage() {
             This research aims to create a practical, replicable model for "sovereign manufacturing," empowering local communities in Ghana and across Africa to turn a pervasive environmental problem (plastic waste) into a resource for economic development. A successful project would not only reduce reliance on foreign supply chains but also foster a new generation of Ghanaian engineers, designers, and entrepreneurs. It would provide a tangible pathway to a circular economy, creating green jobs and delivering essential products in a way that is both sustainable and locally owned.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

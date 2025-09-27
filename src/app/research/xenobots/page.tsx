@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Xenobots (Living Robots) - Research',
@@ -14,6 +14,7 @@ export default function XenobotsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Xenobots (Living Robots) and Synthetic Morphology" subtitle="A PhD-Level Proposal on the Principles of Biological Construction">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function XenobotsPage() {
             While fundamental in nature, this research has profound long-term implications. Understanding the principles of biological construction could lead to revolutionary advances in regenerative medicine, such as instructing cells to repair damaged organs or regrow limbs. In an African context, this could one day lead to treatments for conditions like severe burns or diabetic ulcers. More broadly, mastering biological construction could enable the creation of "living machines" for environmental cleanup (e.g., collecting microplastics from waterways like the Volta River) or targeted drug delivery in the body. By engaging in this frontier research, Ghana can become a hub for a completely new field of technology, one that blurs the line between the living and the artificial, and which may hold the key to solving some of humanity's most complex challenges.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

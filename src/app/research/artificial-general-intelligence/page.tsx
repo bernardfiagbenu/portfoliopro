@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Artificial General Intelligence (AGI) - Research',
@@ -14,6 +14,7 @@ export default function AgiPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Artificial General Intelligence (AGI) for Ghanaian Development" subtitle="A PhD-Level Research Proposal on Data-Efficient and Causal AGI">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -49,7 +50,6 @@ export default function AgiPage() {
             This research aims to establish a new paradigm for AGI development—one that is problem-driven, context-aware, and built on principles of data sovereignty and local empowerment. By open-sourcing the models and methodologies, this work will provide a blueprint for creating similar AGI systems for other critical sectors in Ghana and across Africa, from public health surveillance to natural resource management. It is a step toward a future where the most advanced technologies are designed by and for the communities they are meant to serve.
           </p>
 
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

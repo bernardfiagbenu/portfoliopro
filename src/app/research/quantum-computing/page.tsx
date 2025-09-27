@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Quantum Computing - Research',
@@ -14,6 +14,7 @@ export default function QuantumComputingPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Applied Quantum Computing for Ghanaian Industry" subtitle="A PhD-Level Proposal on Hybrid Quantum-Classical Optimization">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -48,7 +49,6 @@ export default function QuantumComputingPage() {
             This research will provide one of the first concrete benchmarks for the application of quantum computing to a real-world logistics problem in Africa. A successful project will result in: (1) A high-quality, open-source software library for modeling Ghanaian supply chain problems for quantum computers. (2) A rigorous assessment of the current state of "quantum advantage" for this problem class. (3) A training framework and case study that can be used to build a quantum computing curriculum at Ghanaian universities. By tackling a problem of national importance, this work will serve as a catalyst, demonstrating to both government and industry in Ghana that the quantum future is not something to wait for, but something to actively build.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>

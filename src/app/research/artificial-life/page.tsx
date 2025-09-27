@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import SectionContainer from '@/components/ui/SectionContainer';
-import ArticleFooter from '@/components/research/ArticleFooter';
+import ArticleHeader from '@/components/research/ArticleHeader';
 
 export const metadata: Metadata = {
   title: 'Artificial Life & Protocells - Research',
@@ -14,6 +14,7 @@ export default function ArtificialLifePage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <SectionContainer title="Artificial Life and Protocells" subtitle="A PhD-Level Proposal on Simulating the Origins of Life">
+        <ArticleHeader articleUrl={pageUrl} articleTitle={pageTitle} />
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto font-body text-foreground">
           
           <h3>Abstract</h3>
@@ -45,7 +46,6 @@ export default function ArtificialLifePage() {
             Understanding the origin of life is a fundamental scientific pursuit that expands human knowledge. For Ghana, engaging in such frontier science is a mark of intellectual leadership. However, the practical implications are also significant. The simulation frameworks and analysis techniques developed in this PhD could be directly applied to more immediate problems. For instance, the models of complex chemical networks could be used to design new industrial catalysts or to understand the complex metabolic interactions within the human gut microbiome. The algorithms for analyzing emergent systems could be used in fields from ecology to economics. This research would provide a Ghanaian scientist with world-class expertise in complex systems modeling, a skill that is critically needed to tackle interconnected challenges like public health, climate change, and economic development. It would demonstrate that the deepest questions about our origins can be explored from Africa, contributing to global scientific knowledge while building local intellectual capital.
           </p>
           
-          <ArticleFooter articleUrl={pageUrl} articleTitle={pageTitle} />
         </div>
       </SectionContainer>
     </div>
