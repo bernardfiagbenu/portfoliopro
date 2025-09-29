@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview An AI flow for simulating the impact of climate policies.
@@ -28,7 +27,7 @@ const prompt = ai.definePrompt({
   name: 'policySimulatorPrompt',
   input: {schema: PolicyInputSchema},
   output: {schema: PolicyOutputSchema},
-  model: 'googleai/gemini-1.5-flash-001',
+  model: 'googleai/gemini-pro',
   prompt: `You are an expert climate policy analyst and economist.
 Your task is to provide a high-level, structured simulation of the impacts of a specific climate policy within a given economic context.
 
