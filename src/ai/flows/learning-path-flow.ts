@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview An AI flow for generating personalized learning paths.
@@ -26,7 +27,7 @@ const prompt = ai.definePrompt({
   name: 'learningPathPrompt',
   input: {schema: LearningPathInputSchema},
   output: {schema: LearningPathOutputSchema},
-  model: 'googleai/gemini-1.5-flash-latest',
+  model: 'googleai/gemini-1.5-flash-001',
   prompt: `You are an expert curriculum designer and AI learning assistant.
 Your task is to create a comprehensive, structured, 4-week learning path for a given topic.
 
