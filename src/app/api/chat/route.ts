@@ -1,10 +1,8 @@
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GoogleGenerativeAIStream, StreamingTextResponse, Message } from 'ai';
+import { google } from '@ai-sdk/google';
+import { streamText } from 'ai';
+import { NextRequest, NextResponse } from 'next/server';
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
-
-// IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
 
 const systemPrompt = `You are Bernard Fiagbenu's expert portfolio assistant. Your name is "Portfolio Pro".
@@ -41,33 +39,24 @@ Artificial General Intelligence (AGI), Quantum Computing, Brain-Computer Interfa
 Based on the context above, answer the following question.
 `;
 
-// Helper function to format messages for the Google Generative AI SDK
-const formatMessagesForGoogleAI = (messages: Message[]) => {
-  return messages.map(message => ({
-    role: message.role === 'assistant' ? 'model' : 'user', // Map 'assistant' to 'model'
-    parts: [{ text: message.content }],
-  }));
-};
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const { messages }: { messages: Message[] } = await req.json();
+    const { messages } = await req.json();
     
-    // Format the incoming messages from the 'ai' package to the format expected by the Google AI SDK
-    const formattedMessages = formatMessagesForGoogleAI(messages);
+    const result = await streamText({
+      model: google('gemini-2.5-flash'),
+      messages: [{role: 'system', content: systemPrompt}, ...messages],
+    });
 
-    const result = await genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' })
-      .generateContentStream({
-        contents: [{ role: 'user', parts: [{ text: systemPrompt }] }, ...formattedMessages],
-      });
-
-    // Convert the response into a friendly text-stream
-    const stream = GoogleGenerativeAIStream(result);
-
-    // Respond with the stream
-    return new StreamingTextResponse(stream);
+    return result.toAIStreamResponse({
+      headers: {
+        'Transfer-Encoding': 'chunked',
+        'Connection': 'keep-alive',
+        'Cache-Control': 'no-cache',
+      },
+    });
   } catch (error: any) {
-    // Enhanced logging to expose the real server error
     console.error('Full AI Stream Error:', {
       message: error.message,
       stack: error.stack,
@@ -75,16 +64,12 @@ export async function POST(req: Request) {
       cause: error.cause,
     });
     
-    // Return a detailed error message as JSON
-    return new Response(
-      JSON.stringify({ 
-        error: 'AI response failed', 
-        details: error.toString() // Send full error string to client for debugging
-      }),
+    return NextResponse.json(
       { 
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
-      }
+        error: 'AI response failed', 
+        details: error.message || 'Unknown error – check server logs' 
+      },
+      { status: 500 }
     );
   }
 }
