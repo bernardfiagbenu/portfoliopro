@@ -51,7 +51,8 @@ Based on the context above, answer the following question.
 export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
   if (!apiKey) {
     console.error("GEMINI_API_KEY is not set.");
-    return "The AI assistant is not configured correctly. The API key is missing.";
+    // This error will be caught by the client and displayed.
+    throw new Error("The AI assistant is not configured correctly. The API key is missing.");
   }
   
   try {
