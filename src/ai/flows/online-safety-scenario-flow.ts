@@ -26,7 +26,7 @@ const prompt = ai.definePrompt({
   name: 'safetyScenarioPrompt',
   input: {schema: SafetyScenarioInputSchema},
   output: {schema: SafetyScenarioOutputSchema},
-  model: 'googleai/gemini-1.5-flash-001',
+  model: 'googleai/gemini-pro',
   prompt: `You are an expert in online safety and digital literacy for young people.
 Your task is to create a realistic, educational, and age-appropriate interactive scenario based on a given topic.
 

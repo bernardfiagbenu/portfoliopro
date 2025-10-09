@@ -26,7 +26,7 @@ const prompt = ai.definePrompt({
   name: 'solutionBrainstormPrompt',
   input: {schema: BrainstormInputSchema},
   output: {schema: BrainstormOutputSchema},
-  model: 'googleai/gemini-1.5-flash-001',
+  model: 'googleai/gemini-pro',
   prompt: `You are an expert social impact strategist and creative technologist.
 Your task is to brainstorm innovative solutions for a given social problem.
 

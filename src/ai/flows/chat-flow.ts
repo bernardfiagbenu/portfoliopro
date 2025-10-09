@@ -23,7 +23,7 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
 const prompt = ai.definePrompt({
   name: 'portfolioChatPrompt',
   input: {schema: PortfolioChatInputSchema},
-  model: 'googleai/gemini-1.5-flash-001',
+  model: 'googleai/gemini-pro',
   prompt: `You are Bernard Fiagbenu's expert portfolio assistant. Your name is "Portfolio Pro".
 Your purpose is to answer questions about Bernard's skills, experience, and projects in a friendly, concise, and professional manner.
 Do not answer questions that are not related to Bernard's portfolio.
