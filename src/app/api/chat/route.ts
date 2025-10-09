@@ -43,19 +43,19 @@ Based on the context above, answer the following question.
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages } = await req.json();
+    const { messages }: { messages: CoreMessage[] } = await req.json();
 
     const result = await streamText({
-      model: google('gemini-2.5-flash-001'), // Stable, streaming-supported ID
+      model: google('gemini-2.5-flash'), // Exact stable ID – supports streaming/tools
       messages: [
         { role: 'system', content: systemPrompt },
-        ...(messages as CoreMessage[]),
+        ...messages,
       ],
       tools: {
         getPortfolio: {
           description: 'Fetch portfolio item details',
           parameters: z.object({ id: z.string() }),
-          execute: async ({ id }) => ({ name: 'Sample Item', details: 'Streaming with 2.5 Flash' }),
+          execute: async ({ id }) => ({ name: 'Sample Item', details: 'Streaming fixed with 2.5 Flash' }),
         },
       },
       maxSteps: 5,
@@ -78,8 +78,8 @@ export async function POST(req: NextRequest) {
     console.error('Google API Error:', {
       message: error.message,
       code: error.code || 'N/A',
-      modelAttempted: 'gemini-2.5-flash-001',
-      details: error.cause?.message || 'Verify with ListModels curl',
+      model: 'gemini-2.5-flash',
+      details: error.cause?.message || 'Run ListModels curl for your account',
     });
     return NextResponse.json(
       { error: 'AI response failed', details: error.message || 'Not Found' },
