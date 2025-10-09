@@ -44,9 +44,15 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
     
+    // The user's prompt is the last message in the array.
+    const lastMessage = messages[messages.length - 1];
+    
+    // Construct the final prompt with the system instructions.
+    const fullPrompt = `${systemPrompt}\n\nUser Question: ${lastMessage.content}`;
+
     const result = await streamText({
       model: google('gemini-2.5-flash'),
-      messages: [{role: 'system', content: systemPrompt}, ...messages],
+      prompt: fullPrompt,
     });
 
     return result.toAIStreamResponse({
