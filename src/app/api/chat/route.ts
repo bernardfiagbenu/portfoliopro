@@ -44,16 +44,36 @@ Based on the context above, answer the following question.
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
-    
-    // The user's prompt is the last message in the array.
-    const lastMessage = messages[messages.length - 1];
-    
-    // Construct the final prompt with the system instructions.
-    const fullPrompt = `${systemPrompt}\n\nUser Question: ${lastMessage.content}`;
+
+    // Map messages to the format expected by the Google Generative AI SDK
+    const history = messages.slice(0, -1).map((message: { role: string; content: string; }) => ({
+        role: message.role,
+        parts: [{ text: message.content }]
+    }));
+
+    const userQuestion = messages[messages.length - 1].content;
 
     const result = await streamText({
-      model: google('gemini-2.0-flash'), // Streaming-compatible stable model
-      prompt: fullPrompt,
+      model: google('gemini-2.5-flash-001'), // Stable, streaming-supported ID
+      system: systemPrompt,
+      messages: [
+        ...history,
+        { role: 'user', content: userQuestion }
+      ],
+      tools: {
+        getPortfolio: {
+          description: 'Fetch portfolio item details',
+          parameters: z.object({ id: z.string() }),
+          execute: async ({ id }) => ({ name: 'Sample Item', details: 'Streaming with 2.5 Flash' }),
+        },
+      },
+      maxSteps: 5,
+      providerOptions: {
+        google: {
+          apiVersion: 'v1beta',
+          generationConfig: { temperature: 0.7 },
+        },
+      },
     });
 
     return result.toAIStreamResponse({
@@ -64,18 +84,14 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (error: any) {
-    console.error('Full AI Stream Error:', {
+    console.error('Google API Error:', {
       message: error.message,
-      stack: error.stack,
-      name: error.name,
-      cause: error.cause,
+      code: error.code || 'N/A',
+      modelAttempted: 'gemini-2.5-flash-001',
+      details: error.cause?.message || 'Verify with ListModels curl',
     });
-    
     return NextResponse.json(
-      { 
-        error: 'AI response failed', 
-        details: error.message || 'Unknown error – check server logs' 
-      },
+      { error: 'AI response failed', details: error.message || 'Not Found' },
       { status: 500 }
     );
   }
