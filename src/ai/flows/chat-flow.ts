@@ -51,7 +51,7 @@ Based on the context above, answer the following question.
 export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
   if (!apiKey) {
     console.error("GEMINI_API_KEY is not set.");
-    return "Sorry, the AI assistant is not configured correctly. The API key is missing.";
+    return "The AI assistant is not configured correctly. The API key is missing.";
   }
   
   try {
@@ -71,6 +71,7 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
       ]
     });
 
+    // Start a new chat session for each request to keep it stateless from the server's perspective
     const chat = model.startChat({
         history: [
             {
@@ -93,6 +94,7 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
 
   } catch (error) {
     console.error("Gemini API error in portfolioChat:", error);
-    return "Sorry, I encountered an error while generating a response. The technical team has been notified.";
+    // Re-throw the error so the client can handle it, without the custom message.
+    throw new Error("Failed to get a response from the AI assistant.");
   }
 }
