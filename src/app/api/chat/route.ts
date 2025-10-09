@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
     const fullPrompt = `${systemPrompt}\n\nUser Question: ${lastMessage.content}`;
 
     const result = await streamText({
-      model: google('gemini-2.5-flash'),
+      model: google('gemini-pro'),
       prompt: fullPrompt,
     });
 
