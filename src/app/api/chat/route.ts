@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     // Format the incoming messages from the 'ai' package to the format expected by the Google AI SDK
     const formattedMessages = formatMessagesForGoogleAI(messages);
 
-    const result = await genAI.getGenerativeModel({ model: 'gemini-pro' })
+    const result = await genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' })
       .generateContentStream({
         contents: [{ role: 'user', parts: [{ text: systemPrompt }] }, ...formattedMessages],
       });
