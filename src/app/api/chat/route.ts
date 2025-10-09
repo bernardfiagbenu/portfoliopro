@@ -55,8 +55,25 @@ export async function POST(req: Request) {
 
     // Respond with the stream
     return new StreamingTextResponse(stream);
-  } catch (error) {
-    console.error('AI Stream Error:', error);
-    return new Response('AI response failed—check logs and retry.', { status: 500 });
+  } catch (error: any) {
+    // Enhanced logging to expose the real server error
+    console.error('Full AI Stream Error:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name,
+      cause: error.cause,
+    });
+    
+    // Return a detailed error message as JSON
+    return new Response(
+      JSON.stringify({ 
+        error: 'AI response failed', 
+        details: error.message || 'Unknown error – check server logs' 
+      }),
+      { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
   }
 }

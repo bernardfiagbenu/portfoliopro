@@ -2,17 +2,19 @@
 'use client';
 
 import { useChat } from 'ai/react';
-import { User, Bot, Send } from 'lucide-react';
+import { User, Bot, Send, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Balancer from 'react-wrap-balancer';
 import { useToast } from "@/hooks/use-toast";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Chatbot() {
   const { toast } = useToast();
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+  const [chatError, setChatError] = useState<string | null>(null);
+
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error, setMessages } = useChat({
     api: '/api/chat',
     initialMessages: [
         {
@@ -21,8 +23,14 @@ export default function Chatbot() {
             content: "Hello! I'm Portfolio Pro, your personal guide to Bernard Fiagbenu's work. Ask me anything about his skills, projects, or experience.",
         }
     ],
-    onError: (err) => {
+    onError: async (err) => {
       console.error('Chat Error:', err);
+      try {
+        const errorBody = await err.response.json();
+        setChatError(errorBody.details || err.message);
+      } catch {
+        setChatError(err.message || "An unknown error occurred. Please check the logs.");
+      }
       toast({
         variant: "destructive",
         title: "Oh no! Something went wrong.",
@@ -39,6 +47,29 @@ export default function Chatbot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setChatError(null); // Clear previous errors on new submission
+    handleSubmit(e);
+  };
+
+  const handleRetry = () => {
+    setChatError(null);
+    const userMessages = messages.filter(m => m.role === 'user');
+    const lastUserMessage = userMessages[userMessages.length - 1];
+    if (lastUserMessage) {
+        // Remove the last user message and any failed assistant response to retry
+        setMessages(messages.slice(0, messages.indexOf(lastUserMessage)));
+        handleSubmit(new Event('submit') as any, {
+            options: {
+                body: {
+                    messages: [...messages.slice(0, messages.indexOf(lastUserMessage)), lastUserMessage]
+                }
+            }
+        });
+    }
+  };
+
 
   return (
     <div className="flex flex-col h-[600px] w-full max-w-3xl mx-auto rounded-lg border shadow-lg">
@@ -87,10 +118,24 @@ export default function Chatbot() {
             </div>
           </div>
         )}
+        {chatError && (
+             <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg text-destructive text-sm">
+                <div className="flex items-start gap-3">
+                    <AlertTriangle className="h-5 w-5 mt-1" />
+                    <div>
+                        <p className="font-bold">AI Assistant Error</p>
+                        <p className="mt-1">{chatError}</p>
+                        <Button variant="destructive" size="sm" onClick={handleRetry} className="mt-3">
+                            Retry Last Message
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        )}
         <div ref={messagesEndRef} />
       </div>
       <div className="p-4 border-t">
-        <form onSubmit={handleSubmit} className="w-full flex items-center gap-2">
+        <form onSubmit={handleFormSubmit} className="w-full flex items-center gap-2">
           <Textarea
             value={input}
             onChange={handleInputChange}
@@ -101,8 +146,7 @@ export default function Chatbot() {
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
-                const fakeEvent = { preventDefault: () => {} } as React.FormEvent<HTMLFormElement>;
-                handleSubmit(fakeEvent);
+                handleFormSubmit(e as any);
               }
             }}
           />
