@@ -9,10 +9,17 @@
  * - portfolioChat - The main function that processes user messages.
  */
 
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, ChatSession } from "@google/generative-ai";
 import { type PortfolioChatInput } from './chat-types';
 
 const apiKey = process.env.GEMINI_API_KEY;
+
+if (!apiKey) {
+  console.error("GEMINI_API_KEY is not set.");
+  // This will prevent the app from even starting if the key is missing.
+  // A better approach for production might be to handle this more gracefully.
+  throw new Error("AI API Key is not configured. Please set the GEMINI_API_KEY environment variable.");
+}
 
 const systemPrompt = `You are Bernard Fiagbenu's expert portfolio assistant. Your name is "Portfolio Pro".
 Your purpose is to answer questions about Bernard's skills, experience, and projects in a friendly, concise, and professional manner.
@@ -48,40 +55,40 @@ Artificial General Intelligence (AGI), Quantum Computing, Brain-Computer Interfa
 Based on the context above, answer the following question.
 `;
 
-export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
-  if (!apiKey) {
-    console.error("GEMINI_API_KEY is not set.");
-    // This error will be caught by the client and displayed.
-    throw new Error("The AI assistant is not configured correctly. The API key is missing.");
-  }
-  
-  try {
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-pro",
-      systemInstruction: systemPrompt,
-      safetySettings: [
-        {
-          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-          threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        },
-        {
-          category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-          threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        },
-      ]
-    });
+const genAI = new GoogleGenerativeAI(apiKey);
+const model = genAI.getGenerativeModel({
+  model: "gemini-pro",
+  systemInstruction: systemPrompt,
+  safetySettings: [
+    {
+      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+    },
+    {
+      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+    },
+  ]
+});
 
-    // Start a new chat session for each request to keep it stateless from the server's perspective
+// We initialize the chat session here, outside the function, to maintain conversation history.
+// However, for a stateless server function, it's better to start a new chat each time.
+// The previous implementation was correct in its statelessness but failed in execution.
+// Let's refine it to be stateless but correctly structured.
+
+export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
+  try {
+    // Start a new chat session for each request to keep it stateless from the server's perspective.
+    // This is the most robust approach for Next.js Server Actions.
     const chat = model.startChat({
         history: [
-            {
+             {
                 role: "user",
-                parts: [{ text: "Hello, introduce yourself." }],
+                parts: [{ text: "Hello, introduce yourself briefly." }],
             },
             {
                 role: "model",
-                parts: [{ text: "Understood. I am Portfolio Pro, Bernard Fiagbenu's expert portfolio assistant. I will answer questions based on the provided context in a friendly, concise, and professional manner."}]
+                parts: [{ text: "Understood. I am Portfolio Pro, Bernard Fiagbenu's expert portfolio assistant. I will answer questions based on the provided context."}]
             }
         ],
         generationConfig: {
@@ -95,7 +102,7 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
 
   } catch (error) {
     console.error("Gemini API error in portfolioChat:", error);
-    // Re-throw the error so the client can handle it, without the custom message.
-    throw new Error("Failed to get a response from the AI assistant.");
+    // This error will be caught by the client and displayed in a toast.
+    throw new Error("Failed to get a response from the AI assistant. Please check the server logs for more details.");
   }
 }
