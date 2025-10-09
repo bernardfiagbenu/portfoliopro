@@ -2,6 +2,7 @@
 import { google } from '@ai-sdk/google';
 import { streamText } from 'ai';
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 
 export const runtime = 'edge';
 
@@ -51,7 +52,7 @@ export async function POST(req: NextRequest) {
     const fullPrompt = `${systemPrompt}\n\nUser Question: ${lastMessage.content}`;
 
     const result = await streamText({
-      model: google('gemini-pro'),
+      model: google('gemini-2.0-flash'), // Streaming-compatible stable model
       prompt: fullPrompt,
     });
 
