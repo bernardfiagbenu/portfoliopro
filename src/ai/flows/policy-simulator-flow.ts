@@ -2,20 +2,28 @@
 /**
  * @fileOverview An AI flow for simulating the impact of climate policies.
  */
-import { generate, googleAI } from 'genkit/ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import {
   PolicyOutputSchema,
   type PolicyInput,
   type PolicyOutput,
 } from './policy-simulator-types';
 
+const apiKey = process.env.GEMINI_API_KEY;
+
 export async function simulatePolicy(
   input: PolicyInput
 ): Promise<PolicyOutput> {
+  if (!apiKey) {
+    throw new Error("GEMINI_API_KEY is not set.");
+  }
+  
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({
+    model: "gemini-pro",
+  });
 
-  const llmResponse = await generate({
-    model: googleAI('gemini-pro'),
-    prompt: `You are an expert climate policy analyst and economist.
+  const prompt = `You are an expert climate policy analyst and economist.
 Your task is to provide a high-level, structured simulation of the impacts of a specific climate policy within a given economic context.
 
 The user will provide:
@@ -30,15 +38,19 @@ Based on this input, you must generate a simulated analysis covering the followi
 
 Policy: ${input.policy}
 Economic Context: ${input.context}
-`,
-    output: {
-        schema: PolicyOutputSchema,
-    },
-  });
 
-  const output = llmResponse.output();
-  if (!output) {
+Respond with a valid JSON object that conforms to this Zod schema:
+${JSON.stringify(PolicyOutputSchema.shape)}
+`;
+
+  try {
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    return PolicyOutputSchema.parse(json);
+  } catch (error) {
+    console.error("Error generating policy simulation:", error);
     throw new Error('Failed to generate policy simulation.');
   }
-  return output;
 }

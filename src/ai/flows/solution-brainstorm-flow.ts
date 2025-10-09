@@ -2,20 +2,28 @@
 /**
  * @fileOverview An AI flow for brainstorming solutions to social problems.
  */
-
-import { generate, googleAI } from 'genkit/ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import {
   BrainstormOutputSchema,
   type BrainstormInput,
   type BrainstormOutput,
 } from './social-impact-types';
 
+const apiKey = process.env.GEMINI_API_KEY;
+
 export async function brainstormSolutions(
   input: BrainstormInput
 ): Promise<BrainstormOutput> {
-  const llmResponse = await generate({
-    model: googleAI('gemini-pro'),
-    prompt: `You are an expert social impact strategist and creative technologist.
+  if (!apiKey) {
+    throw new Error("GEMINI_API_KEY is not set.");
+  }
+  
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({
+    model: "gemini-pro",
+  });
+
+  const prompt = `You are an expert social impact strategist and creative technologist.
 Your task is to brainstorm innovative solutions for a given social problem.
 
 The user will provide a description of a social problem. Based on this, you must generate a diverse list of 3-5 concrete solution ideas.
@@ -23,15 +31,19 @@ The solutions should cover a range of formats: technical prototypes, policy sugg
 For each idea, provide a clear title, a description of the concept and its potential impact, and a few actionable first steps.
 
 Problem Description: ${input.problemDescription}
-`,
-    output: {
-      schema: BrainstormOutputSchema,
-    },
-  });
 
-  const output = llmResponse.output();
-  if (!output) {
+Respond with a valid JSON object that conforms to this Zod schema:
+${JSON.stringify(BrainstormOutputSchema.shape)}
+`;
+
+  try {
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    return BrainstormOutputSchema.parse(json);
+  } catch (error) {
+    console.error("Error brainstorming solutions:", error);
     throw new Error('Failed to generate solutions.');
   }
-  return output;
 }

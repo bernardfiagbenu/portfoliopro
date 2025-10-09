@@ -2,19 +2,28 @@
 /**
  * @fileOverview An AI flow for generating interactive online safety scenarios.
  */
-import { generate, googleAI } from 'genkit/ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import {
   SafetyScenarioOutputSchema,
   type SafetyScenarioInput,
   type SafetyScenarioOutput,
 } from './online-safety-types';
 
+const apiKey = process.env.GEMINI_API_KEY;
+
 export async function generateSafetyScenario(
   input: SafetyScenarioInput
 ): Promise<SafetyScenarioOutput> {
-  const llmResponse = await generate({
-    model: googleAI('gemini-pro'),
-    prompt: `You are an expert in online safety and digital literacy for young people.
+  if (!apiKey) {
+    throw new Error("GEMINI_API_KEY is not set.");
+  }
+
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({
+    model: "gemini-pro",
+  });
+
+  const prompt = `You are an expert in online safety and digital literacy for young people.
 Your task is to create a realistic, educational, and age-appropriate interactive scenario based on a given topic.
 
 The user will select a topic (e.g., Cyberbullying, Online Scams, Disinformation). Based on this, you must generate:
@@ -25,15 +34,19 @@ The user will select a topic (e.g., Cyberbullying, Online Scams, Disinformation)
 The tone should be supportive and educational, not alarming or preachy.
 
 Topic for the scenario: ${input.topic}
-`,
-    output: {
-      schema: SafetyScenarioOutputSchema,
-    },
-  });
 
-  const output = llmResponse.output();
-  if (!output) {
+Respond with a valid JSON object that conforms to this Zod schema:
+${JSON.stringify(SafetyScenarioOutputSchema.shape)}
+`;
+  
+  try {
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    return SafetyScenarioOutputSchema.parse(json);
+  } catch (error) {
+    console.error("Error generating safety scenario:", error);
     throw new Error('Failed to generate an online safety scenario.');
   }
-  return output;
 }
