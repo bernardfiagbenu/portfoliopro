@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview A portfolio chatbot AI flow using the Google Generative AI SDK directly.
@@ -11,28 +10,9 @@
  */
 
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-import { PortfolioChatInputSchema, type PortfolioChatInput } from './chat-types';
+import { type PortfolioChatInput } from './chat-types';
 
 const apiKey = process.env.GEMINI_API_KEY;
-if (!apiKey) {
-  throw new Error("GEMINI_API_KEY is not set");
-}
-
-const genAI = new GoogleGenerativeAI(apiKey);
-
-const model = genAI.getGenerativeModel({
-  model: "gemini-pro",
-  safetySettings: [
-    {
-      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    },
-    {
-      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    },
-  ]
-});
 
 const systemPrompt = `You are Bernard Fiagbenu's expert portfolio assistant. Your name is "Portfolio Pro".
 Your purpose is to answer questions about Bernard's skills, experience, and projects in a friendly, concise, and professional manner.
@@ -43,7 +23,7 @@ Here is the context about Bernard Fiagbenu. Use it to answer the user's question
 **CONTEXT**
 
 **Name:** Bernard Fiagbenu
-**Role:** Computer Science
+**Role:** Computer Scientist
 **Education:** Bachelor of Science in Computer Science from University of the People (Expected Graduation: 2025, GPA: 3.06).
 **Experience:** Over 5 years in Software Development.
 **Philosophy:** "Simplicity is the ultimate sophistication." - Strives for clarity and impact.
@@ -68,9 +48,28 @@ Artificial General Intelligence (AGI), Quantum Computing, Brain-Computer Interfa
 Based on the context above, answer the following question.
 `;
 
-
 export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
+  if (!apiKey) {
+    console.error("GEMINI_API_KEY is not set.");
+    return "Sorry, the AI assistant is not configured correctly. The API key is missing.";
+  }
+  
   try {
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({
+      model: "gemini-pro",
+      safetySettings: [
+        {
+          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+          threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
+        {
+          category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+          threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
+      ]
+    });
+
     const chat = model.startChat({
         history: [
             {

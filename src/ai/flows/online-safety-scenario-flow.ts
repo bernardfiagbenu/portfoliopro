@@ -1,16 +1,9 @@
 'use server';
 /**
  * @fileOverview An AI flow for generating interactive online safety scenarios.
- *
- * This flow creates educational scenarios about online risks, providing users
- * with choices and feedback to promote digital literacy and safety.
- *
- * - generateSafetyScenario - The main function to call the flow.
  */
-
-import {ai} from '@/ai/genkit';
+import { generate, googleAI } from 'genkit/ai';
 import {
-  SafetyScenarioInputSchema,
   SafetyScenarioOutputSchema,
   type SafetyScenarioInput,
   type SafetyScenarioOutput,
@@ -19,15 +12,9 @@ import {
 export async function generateSafetyScenario(
   input: SafetyScenarioInput
 ): Promise<SafetyScenarioOutput> {
-  return await safetyScenarioFlow(input);
-}
-
-const prompt = ai.definePrompt({
-  name: 'safetyScenarioPrompt',
-  input: {schema: SafetyScenarioInputSchema},
-  output: {schema: SafetyScenarioOutputSchema},
-  model: 'googleai/gemini-pro',
-  prompt: `You are an expert in online safety and digital literacy for young people.
+  const llmResponse = await generate({
+    model: googleAI('gemini-pro'),
+    prompt: `You are an expert in online safety and digital literacy for young people.
 Your task is to create a realistic, educational, and age-appropriate interactive scenario based on a given topic.
 
 The user will select a topic (e.g., Cyberbullying, Online Scams, Disinformation). Based on this, you must generate:
@@ -37,21 +24,16 @@ The user will select a topic (e.g., Cyberbullying, Online Scams, Disinformation)
 
 The tone should be supportive and educational, not alarming or preachy.
 
-Topic for the scenario: {{{topic}}}
+Topic for the scenario: ${input.topic}
 `,
-});
+    output: {
+      schema: SafetyScenarioOutputSchema,
+    },
+  });
 
-const safetyScenarioFlow = ai.defineFlow(
-  {
-    name: 'safetyScenarioFlow',
-    inputSchema: SafetyScenarioInputSchema,
-    outputSchema: SafetyScenarioOutputSchema,
-  },
-  async (input) => {
-    const {output} = await prompt(input);
-    if (!output) {
-      throw new Error('Failed to generate an online safety scenario.');
-    }
-    return output;
+  const output = llmResponse.output();
+  if (!output) {
+    throw new Error('Failed to generate an online safety scenario.');
   }
-);
+  return output;
+}

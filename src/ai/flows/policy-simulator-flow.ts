@@ -1,17 +1,9 @@
 'use server';
 /**
  * @fileOverview An AI flow for simulating the impact of climate policies.
- *
- * This file defines a Genkit flow that takes a climate policy and an
- * economic context as input, and generates a structured analysis of its
- * potential impacts on emissions, economy, and social equity.
- *
- * - simulatePolicy - The main function to call the flow.
  */
-
-import {ai} from '@/ai/genkit';
+import { generate, googleAI } from 'genkit/ai';
 import {
-  PolicyInputSchema,
   PolicyOutputSchema,
   type PolicyInput,
   type PolicyOutput,
@@ -20,15 +12,10 @@ import {
 export async function simulatePolicy(
   input: PolicyInput
 ): Promise<PolicyOutput> {
-  return await policySimulatorFlow(input);
-}
 
-const prompt = ai.definePrompt({
-  name: 'policySimulatorPrompt',
-  input: {schema: PolicyInputSchema},
-  output: {schema: PolicyOutputSchema},
-  model: 'googleai/gemini-pro',
-  prompt: `You are an expert climate policy analyst and economist.
+  const llmResponse = await generate({
+    model: googleAI('gemini-pro'),
+    prompt: `You are an expert climate policy analyst and economist.
 Your task is to provide a high-level, structured simulation of the impacts of a specific climate policy within a given economic context.
 
 The user will provide:
@@ -41,22 +28,17 @@ Based on this input, you must generate a simulated analysis covering the followi
 - A qualitative breakdown of the pros and cons.
 - A list of key considerations and potential risks.
 
-Policy: {{{policy}}}
-Economic Context: {{{context}}}
+Policy: ${input.policy}
+Economic Context: ${input.context}
 `,
-});
+    output: {
+        schema: PolicyOutputSchema,
+    },
+  });
 
-const policySimulatorFlow = ai.defineFlow(
-  {
-    name: 'policySimulatorFlow',
-    inputSchema: PolicyInputSchema,
-    outputSchema: PolicyOutputSchema,
-  },
-  async (input) => {
-    const {output} = await prompt(input);
-    if (!output) {
-      throw new Error('Failed to generate policy simulation.');
-    }
-    return output;
+  const output = llmResponse.output();
+  if (!output) {
+    throw new Error('Failed to generate policy simulation.');
   }
-);
+  return output;
+}
