@@ -1,4 +1,3 @@
-
 import { google } from '@ai-sdk/google';
 import { streamText, type CoreMessage } from 'ai';
 import { NextRequest, NextResponse } from 'next/server';
@@ -46,7 +45,7 @@ export async function POST(req: NextRequest) {
     const { messages }: { messages: CoreMessage[] } = await req.json();
 
     const result = await streamText({
-      model: google('gemini-2.5-flash'), // Exact stable ID – supports streaming/tools
+      model: google('gemini-2.5-flash'), // Updated: Use stable Gemini 2.5 Flash model
       messages: [
         { role: 'system', content: systemPrompt },
         ...messages,
