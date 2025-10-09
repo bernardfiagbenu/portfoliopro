@@ -21,6 +21,9 @@ export async function generateSafetyScenario(
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: "gemini-pro",
+    generationConfig: {
+        responseMimeType: "application/json",
+    }
   });
 
   const prompt = `You are an expert in online safety and digital literacy for young people.
@@ -43,7 +46,7 @@ ${JSON.stringify(SafetyScenarioOutputSchema.shape)}
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    const json = JSON.parse(text);
     return SafetyScenarioOutputSchema.parse(json);
   } catch (error) {
     console.error("Error generating safety scenario:", error);

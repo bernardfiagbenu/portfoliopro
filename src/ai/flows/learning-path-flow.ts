@@ -22,6 +22,9 @@ export async function generateLearningPath(
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: "gemini-pro",
+    generationConfig: {
+        responseMimeType: "application/json",
+    }
   });
   
   const prompt = `You are an expert curriculum designer and AI learning assistant.
@@ -44,7 +47,7 @@ ${JSON.stringify(LearningPathOutputSchema.shape)}
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    const json = JSON.parse(text);
     // Validate with Zod before returning
     return LearningPathOutputSchema.parse(json);
   } catch (error) {

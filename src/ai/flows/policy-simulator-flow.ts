@@ -21,6 +21,9 @@ export async function simulatePolicy(
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: "gemini-pro",
+    generationConfig: {
+        responseMimeType: "application/json",
+    }
   });
 
   const prompt = `You are an expert climate policy analyst and economist.
@@ -47,7 +50,7 @@ ${JSON.stringify(PolicyOutputSchema.shape)}
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    const json = JSON.parse(text);
     return PolicyOutputSchema.parse(json);
   } catch (error) {
     console.error("Error generating policy simulation:", error);

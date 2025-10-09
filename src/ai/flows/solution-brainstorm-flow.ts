@@ -21,6 +21,9 @@ export async function brainstormSolutions(
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: "gemini-pro",
+    generationConfig: {
+        responseMimeType: "application/json",
+    }
   });
 
   const prompt = `You are an expert social impact strategist and creative technologist.
@@ -40,7 +43,7 @@ ${JSON.stringify(BrainstormOutputSchema.shape)}
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    const json = JSON.parse(text.replace(/```json/g, "").replace(/```/g, ""));
+    const json = JSON.parse(text);
     return BrainstormOutputSchema.parse(json);
   } catch (error) {
     console.error("Error brainstorming solutions:", error);
