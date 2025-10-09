@@ -1,30 +1,40 @@
+
 'use server';
 /**
- * @fileOverview A portfolio chatbot AI flow using Genkit.
+ * @fileOverview A portfolio chatbot AI flow using the Google Generative AI SDK directly.
  *
- * This file defines a Genkit flow that acts as a portfolio assistant.
+ * This file defines a function that acts as a portfolio assistant.
  * It's designed to answer questions about Bernard Fiagbenu's skills,
  * projects, and professional background based on a provided context.
  *
  * - portfolioChat - The main function that processes user messages.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'zod';
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 import { PortfolioChatInputSchema, type PortfolioChatInput } from './chat-types';
 
-
-// The main function that will be called from the frontend.
-export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
-  const response = await portfolioChatFlow(input);
-  return response;
+const apiKey = process.env.GEMINI_API_KEY;
+if (!apiKey) {
+  throw new Error("GEMINI_API_KEY is not set");
 }
 
-const prompt = ai.definePrompt({
-  name: 'portfolioChatPrompt',
-  input: {schema: PortfolioChatInputSchema},
-  model: 'googleai/gemini-pro',
-  prompt: `You are Bernard Fiagbenu's expert portfolio assistant. Your name is "Portfolio Pro".
+const genAI = new GoogleGenerativeAI(apiKey);
+
+const model = genAI.getGenerativeModel({
+  model: "gemini-pro",
+  safetySettings: [
+    {
+      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+    },
+    {
+      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+    },
+  ]
+});
+
+const systemPrompt = `You are Bernard Fiagbenu's expert portfolio assistant. Your name is "Portfolio Pro".
 Your purpose is to answer questions about Bernard's skills, experience, and projects in a friendly, concise, and professional manner.
 Do not answer questions that are not related to Bernard's portfolio.
 Here is the context about Bernard Fiagbenu. Use it to answer the user's questions.
@@ -56,20 +66,33 @@ Artificial General Intelligence (AGI), Quantum Computing, Brain-Computer Interfa
 ---
 
 Based on the context above, answer the following question.
+`;
 
-**User's Question:** {{{message}}}
-`,
-});
 
-// Defines the Genkit flow with streaming output.
-const portfolioChatFlow = ai.defineFlow(
-  {
-    name: 'portfolioChatFlow',
-    inputSchema: PortfolioChatInputSchema,
-    outputSchema: z.string(),
-  },
-  async (input) => {
-    const response = await prompt(input);
-    return response.text;
+export async function portfolioChat(input: PortfolioChatInput): Promise<string> {
+  try {
+    const chat = model.startChat({
+        history: [
+            {
+                role: "user",
+                parts: [{ text: systemPrompt }],
+            },
+            {
+                role: "model",
+                parts: [{ text: "Understood. I am Portfolio Pro, Bernard Fiagbenu's expert portfolio assistant. I will answer questions based on the provided context in a friendly, concise, and professional manner."}]
+            }
+        ],
+        generationConfig: {
+            maxOutputTokens: 1000,
+        }
+    });
+
+    const result = await chat.sendMessage(input.message);
+    const response = result.response;
+    return response.text();
+
+  } catch (error) {
+    console.error("Gemini API error in portfolioChat:", error);
+    return "Sorry, I encountered an error while generating a response. The technical team has been notified.";
   }
-);
+}
