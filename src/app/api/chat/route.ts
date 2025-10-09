@@ -1,6 +1,6 @@
 
 import { google } from '@ai-sdk/google';
-import { streamText } from 'ai';
+import { streamText, type CoreMessage } from 'ai';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
@@ -45,20 +45,11 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    // Map messages to the format expected by the Google Generative AI SDK
-    const history = messages.slice(0, -1).map((message: { role: string; content: string; }) => ({
-        role: message.role,
-        parts: [{ text: message.content }]
-    }));
-
-    const userQuestion = messages[messages.length - 1].content;
-
     const result = await streamText({
       model: google('gemini-2.5-flash-001'), // Stable, streaming-supported ID
-      system: systemPrompt,
       messages: [
-        ...history,
-        { role: 'user', content: userQuestion }
+        { role: 'system', content: systemPrompt },
+        ...(messages as CoreMessage[]),
       ],
       tools: {
         getPortfolio: {
