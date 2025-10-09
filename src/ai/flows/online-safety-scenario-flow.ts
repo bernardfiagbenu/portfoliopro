@@ -19,13 +19,7 @@ export async function generateSafetyScenario(
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
-    generationConfig: {
-        responseMimeType: "application/json",
-    }
-  });
-
+  
   const prompt = `You are an expert in online safety and digital literacy for young people.
 Your task is to create a realistic, educational, and age-appropriate interactive scenario based on a given topic.
 
@@ -38,11 +32,17 @@ The tone should be supportive and educational, not alarming or preachy.
 
 Topic for the scenario: ${input.topic}
 
-Respond with a valid JSON object that conforms to this Zod schema:
+Respond ONLY with a valid JSON object that conforms to this Zod schema:
 ${JSON.stringify(SafetyScenarioOutputSchema.shape)}
 `;
   
   try {
+    const model = genAI.getGenerativeModel({
+      model: "gemini-pro",
+      generationConfig: {
+          responseMimeType: "application/json",
+      }
+    });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();

@@ -19,13 +19,7 @@ export async function simulatePolicy(
   }
   
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
-    generationConfig: {
-        responseMimeType: "application/json",
-    }
-  });
-
+  
   const prompt = `You are an expert climate policy analyst and economist.
 Your task is to provide a high-level, structured simulation of the impacts of a specific climate policy within a given economic context.
 
@@ -42,11 +36,17 @@ Based on this input, you must generate a simulated analysis covering the followi
 Policy: ${input.policy}
 Economic Context: ${input.context}
 
-Respond with a valid JSON object that conforms to this Zod schema:
+Respond ONLY with a valid JSON object that conforms to this Zod schema:
 ${JSON.stringify(PolicyOutputSchema.shape)}
 `;
 
   try {
+    const model = genAI.getGenerativeModel({
+      model: "gemini-pro",
+      generationConfig: {
+          responseMimeType: "application/json",
+      }
+    });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();

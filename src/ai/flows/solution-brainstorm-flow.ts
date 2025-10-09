@@ -19,12 +19,6 @@ export async function brainstormSolutions(
   }
   
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
-    generationConfig: {
-        responseMimeType: "application/json",
-    }
-  });
 
   const prompt = `You are an expert social impact strategist and creative technologist.
 Your task is to brainstorm innovative solutions for a given social problem.
@@ -35,11 +29,17 @@ For each idea, provide a clear title, a description of the concept and its poten
 
 Problem Description: ${input.problemDescription}
 
-Respond with a valid JSON object that conforms to this Zod schema:
+Respond ONLY with a valid JSON object that conforms to this Zod schema:
 ${JSON.stringify(BrainstormOutputSchema.shape)}
 `;
 
   try {
+    const model = genAI.getGenerativeModel({
+      model: "gemini-pro",
+      generationConfig: {
+          responseMimeType: "application/json",
+      }
+    });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();

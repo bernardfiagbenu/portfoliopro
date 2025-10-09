@@ -4,7 +4,6 @@
  */
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import {
-  LearningPathInputSchema,
   LearningPathOutputSchema,
   type LearningPathInput,
   type LearningPathOutput,
@@ -20,12 +19,6 @@ export async function generateLearningPath(
   }
   
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
-    generationConfig: {
-        responseMimeType: "application/json",
-    }
-  });
   
   const prompt = `You are an expert curriculum designer and AI learning assistant.
 Your task is to create a comprehensive, structured, 4-week learning path for a given topic.
@@ -39,11 +32,17 @@ Generate a plan that is suitable for a motivated beginner.
 
 Topic to learn: ${input.topic}
 
-Respond with a valid JSON object that conforms to this Zod schema:
+Respond ONLY with a valid JSON object that conforms to this Zod schema:
 ${JSON.stringify(LearningPathOutputSchema.shape)}
 `;
 
   try {
+     const model = genAI.getGenerativeModel({
+      model: "gemini-pro",
+      generationConfig: {
+          responseMimeType: "application/json",
+      }
+    });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();

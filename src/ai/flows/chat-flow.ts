@@ -58,6 +58,7 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
       model: "gemini-pro",
+      systemInstruction: systemPrompt,
       safetySettings: [
         {
           category: HarmCategory.HARM_CATEGORY_HARASSMENT,
@@ -74,7 +75,7 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
         history: [
             {
                 role: "user",
-                parts: [{ text: systemPrompt }],
+                parts: [{ text: "Hello, introduce yourself." }],
             },
             {
                 role: "model",
