@@ -1,30 +1,37 @@
+
 'use client';
 
-import { useState, useRef, useEffect, type FormEvent } from 'react';
-import { nanoid } from 'nanoid';
-import { User, Bot } from 'lucide-react';
+import { useChat } from 'ai/react';
+import { User, Bot, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Balancer from 'react-wrap-balancer';
-import { portfolioChat } from '@/ai/flows/chat-flow';
 import { useToast } from "@/hooks/use-toast";
-
-
-interface Message {
-  id: string;
-  role: 'user' | 'assistant';
-  content: string;
-}
+import { useEffect, useRef } from 'react';
 
 export default function Chatbot() {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+    api: '/api/chat',
+    initialMessages: [
+        {
+            id: 'initial-greeting',
+            role: 'assistant',
+            content: "Hello! I'm Portfolio Pro, your personal guide to Bernard Fiagbenu's work. Ask me anything about his skills, projects, or experience.",
+        }
+    ],
+    onError: (err) => {
+      console.error('Chat Error:', err);
+      toast({
+        variant: "destructive",
+        title: "Oh no! Something went wrong.",
+        description: "There was an issue communicating with the AI assistant. Please try again later.",
+      });
+    },
+  });
 
-
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -32,43 +39,6 @@ export default function Chatbot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-  
-  useEffect(() => {
-    setMessages([
-        {
-            id: nanoid(),
-            role: 'assistant',
-            content: "Hello! I'm Portfolio Pro, your personal guide to Bernard Fiagbenu's work. Ask me anything about his skills, projects, or experience.",
-        }
-    ])
-  }, []);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-
-    const userMessage: Message = { id: nanoid(), role: 'user', content: input };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
-    try {
-      const response = await portfolioChat({ message: input });
-      const assistantMessage: Message = { id: nanoid(), role: 'assistant', content: response };
-      setMessages(prev => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error("Error calling portfolioChat flow:", error);
-      toast({
-        variant: "destructive",
-        title: "Oh no! Something went wrong.",
-        description: "There was an issue communicating with the AI assistant. Please try again later.",
-      });
-       // Optional: remove the user's message if the call fails
-       setMessages(prev => prev.filter(m => m.id !== userMessage.id));
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <div className="flex flex-col h-[600px] w-full max-w-3xl mx-auto rounded-lg border shadow-lg">
@@ -123,7 +93,7 @@ export default function Chatbot() {
         <form onSubmit={handleSubmit} className="w-full flex items-center gap-2">
           <Textarea
             value={input}
-            onChange={e => setInput(e.target.value)}
+            onChange={handleInputChange}
             placeholder="e.g., What are Bernard's main programming languages?"
             className="flex-grow resize-none"
             rows={1}
@@ -131,12 +101,13 @@ export default function Chatbot() {
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
-                handleSubmit(e as any);
+                const fakeEvent = { preventDefault: () => {} } as React.FormEvent<HTMLFormElement>;
+                handleSubmit(fakeEvent);
               }
             }}
           />
           <Button type="submit" disabled={isLoading || !input.trim()}>
-            Send
+            <Send size={16} />
           </Button>
         </form>
       </div>
