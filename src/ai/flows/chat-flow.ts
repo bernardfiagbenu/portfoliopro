@@ -102,7 +102,8 @@ export async function portfolioChat(input: PortfolioChatInput): Promise<string> 
 
   } catch (error) {
     console.error("Gemini API error in portfolioChat:", error);
-    // This error will be caught by the client and displayed in a toast.
-    throw new Error("Failed to get a response from the AI assistant. Please check the server logs for more details.");
+    // Re-throw the error so the client can handle it.
+    // This prevents the application from crashing.
+    throw new Error("Failed to get a response from the AI assistant. Please check server logs.");
   }
 }
