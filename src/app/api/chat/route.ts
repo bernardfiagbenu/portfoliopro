@@ -1,6 +1,6 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GoogleGenerativeAIStream, StreamingTextResponse } from 'ai';
+import { GoogleGenerativeAIStream, StreamingTextResponse, Message } from 'ai';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -41,13 +41,24 @@ Artificial General Intelligence (AGI), Quantum Computing, Brain-Computer Interfa
 Based on the context above, answer the following question.
 `;
 
+// Helper function to format messages for the Google Generative AI SDK
+const formatMessagesForGoogleAI = (messages: Message[]) => {
+  return messages.map(message => ({
+    role: message.role === 'assistant' ? 'model' : 'user', // Map 'assistant' to 'model'
+    parts: [{ text: message.content }],
+  }));
+};
+
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json();
+    const { messages }: { messages: Message[] } = await req.json();
+    
+    // Format the incoming messages from the 'ai' package to the format expected by the Google AI SDK
+    const formattedMessages = formatMessagesForGoogleAI(messages);
 
     const result = await genAI.getGenerativeModel({ model: 'gemini-pro' })
       .generateContentStream({
-        contents: [{ role: 'user', parts: [{ text: systemPrompt }] }, ...messages],
+        contents: [{ role: 'user', parts: [{ text: systemPrompt }] }, ...formattedMessages],
       });
 
     // Convert the response into a friendly text-stream
@@ -68,7 +79,7 @@ export async function POST(req: Request) {
     return new Response(
       JSON.stringify({ 
         error: 'AI response failed', 
-        details: error.message || 'Unknown error – check server logs' 
+        details: error.toString() // Send full error string to client for debugging
       }),
       { 
         status: 500,
