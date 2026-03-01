@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
@@ -99,6 +99,10 @@ export default {
         pulse: {
           '0%, 100%': { opacity: '0.3' },
           '50%': { opacity: '1' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         }
       },
       animation: {
@@ -107,6 +111,7 @@ export default {
         'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
         'scale-up': 'scaleUp 0.3s ease-out forwards',
         'pulse': 'pulse 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
       },
     },
   },

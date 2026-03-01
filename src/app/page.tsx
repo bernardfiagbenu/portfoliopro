@@ -1,13 +1,10 @@
 
 'use client';
 
-import type { Metadata } from 'next';
-import SectionContainer from '@/components/ui/SectionContainer';
-import Image from 'next/image';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Briefcase, GraduationCap, Lightbulb } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { homePageSketch } from '@/components/p5/HomePageSketch';
+import AnimatedCard from '@/components/ui/AnimatedCard';
+import { Briefcase, Code, GraduationCap, Lightbulb, Mail, Search } from 'lucide-react';
 
 // Dynamically import the P5Sketch component to ensure it's client-side only
 const P5Sketch = dynamic(() => import('@/components/ui/P5Sketch'), {
@@ -15,85 +12,72 @@ const P5Sketch = dynamic(() => import('@/components/ui/P5Sketch'), {
   loading: () => <div className="fixed inset-0 w-full h-full bg-background z-0" />,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Bernard Fiagbenu",
-  "url": siteUrl ? `${siteUrl}/` : '/',
-  "image": "https://media.licdn.com/dms/image/v2/D4E03AQHUX2NRr94X0g/profile-displayphoto-scale_200_200/B4EZhRbogBHIAc-/0/1753712855893?e=1756339200&v=beta&t=ENNu6kVKgGex8c_GZVC_0BtHBKcW6mj4C1CIeB1fVf4",
-  "jobTitle": "Computer Science Innovator",
-  "description": "A Computer Scientist and leader dedicated to applying foundational principles and future technologies to solve critical challenges in Ghana and Africa.",
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "University of the People",
-    "location": "Pasadena, California"
+const navigationSections = [
+  {
+    title: 'About Me',
+    description: 'Learn about my background, education, and mission to innovate for Africa.',
+    icon: GraduationCap,
+    href: '/about',
+    delay: 100,
   },
-  "knowsAbout": ["Software Development", "Computer Science", "Web Technologies", "AI", "Machine Learning", "Innovation for Africa"],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Technology & Innovation for Development" 
+  {
+    title: 'Projects',
+    description: 'Explore my software development projects, technical demos, and prototypes.',
+    icon: Code,
+    href: '/projects',
+    delay: 200,
   },
-  "sameAs": [
-    "https://github.com/bernardfiagbenu",
-    "https://www.linkedin.com/in/bernard-fiagbenu-26b50b19a/",
-    "https://x.com/FiagbenuBe14283"
-  ]
-};
+  {
+    title: 'Research',
+    description: 'Insights into my technical explorations and areas of academic interest.',
+    icon: Search,
+    href: '/research',
+    delay: 300,
+  },
+  {
+    title: 'Skills',
+    description: 'A comprehensive list of my technical expertise and professional skills.',
+    icon: Lightbulb,
+    href: '/skills',
+    delay: 400,
+  },
+  {
+    title: 'Contact',
+    description: "Let's connect! Reach out for collaborations or opportunities.",
+    icon: Mail,
+    href: '/contact',
+    delay: 500,
+  },
+];
 
-export default function AboutPage() {
+export default function HomePage() {
   return (
-    <div className="overflow-hidden">
+    <div className="relative min-h-[calc(100vh-64px)] flex flex-col items-center justify-center overflow-hidden">
       <P5Sketch sketch={homePageSketch} className="fixed inset-0 w-full h-full z-0" />
-      <div className="fixed inset-0 z-10 bg-background/80 dark:bg-background/90 backdrop-blur-sm"></div>
+      <div className="fixed inset-0 z-10 bg-background/60 dark:bg-background/70 backdrop-blur-[2px]"></div>
 
-      <div className="relative z-20 container mx-auto px-4 py-8">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-          key="person-schema"
-        ></script>
-        
-        <SectionContainer title="About Me" subtitle="Innovating for Ghana and Africa">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            <article className="text-left md:text-left">
-              <h2 className="text-2xl font-headline font-semibold text-primary mb-4">Bernard Fiagbenu</h2>
-              <p className="font-body text-lg text-foreground mb-4 text-pretty">
-                Hello! I am a Computer Scientist and innovator driven by a mission: to harness the power of technology to solve critical challenges in Ghana and across the African continent. My work is rooted in the belief that a deep understanding of theoretical computer science is the key to unlocking practical, high-impact solutions.
-              </p>
-              <p className="font-body text-lg text-foreground mb-4">
-                As a leader, I focus on transforming complex theories into tangible innovations. Whether it's designing AI for agriculture, developing low-cost healthcare diagnostics, or conceptualizing next-generation energy grids, my goal is to build robust, efficient, and scalable systems that are tailored to the unique economic and social landscape of our region. I am passionate about creating a future where technology empowers local communities and positions Africa as a hub for global innovation.
-              </p>
-              <p className="font-body text-lg text-foreground mb-6">
-                This portfolio showcases my journey and my vision. It's a collection of projects and research dedicated to this cause—building a more prosperous and sustainable future for Ghana and Africa, one technological leap at a time.
-              </p>
-            </article>
-          </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
-              <GraduationCap className="w-12 h-12 text-accent mb-3" aria-hidden="true" />
-              <h3 className="text-xl font-headline font-semibold text-primary mb-2">Education</h3>
-              <p className="font-body text-center text-muted-foreground">
-                Bachelor of Science in Computer Science
-                <br />
-                University of the People (Pasadena, California)
-                <br />
-                Graduated in 2025 | GPA: 3.06
-              </p>
-            </section>
-            <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
-              <Briefcase className="w-12 h-12 text-accent mb-3" aria-hidden="true" />
-              <h3 className="text-xl font-headline font-semibold text-primary mb-2">Experience</h3>
-              <p className="font-body text-center text-muted-foreground">5+ years in Software Development<br/>Experienced in various computer science and software engineering roles.</p>
-            </section>
-            <section className="flex flex-col items-center p-6 bg-background/80 rounded-lg shadow-md">
-              <Lightbulb className="w-12 h-12 text-accent mb-3" aria-hidden="true" />
-              <h3 className="text-xl font-headline font-semibold text-primary mb-2">Philosophy</h3>
-              <p className="font-body text-center text-muted-foreground">"Simplicity is the ultimate sophistication." - Leonardo da Vinci. I strive for clarity and impact in design and code.</p>
-            </section>
-          </div>
-        </SectionContainer>
+      <div className="relative z-20 container mx-auto px-4 py-12">
+        <div className="text-center mb-16 animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold text-foreground mb-4">
+            Bernard Fiagbenu
+          </h1>
+          <p className="text-xl md:text-2xl font-body text-muted-foreground max-w-2xl mx-auto">
+            Computer Scientist & Innovator solving challenges through technology.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {navigationSections.map((section) => (
+            <AnimatedCard
+              key={section.title}
+              title={section.title}
+              description={section.description}
+              icon={section.icon}
+              href={section.href}
+              delay={section.delay}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
