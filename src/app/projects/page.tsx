@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const projects = [
-   {
+  {
     title: 'Mental Wellbeing Compass for Ghana',
     description: 'A privacy-first demo app offering mental health screening (PHQ-9) and resources, inspired by UN/WHO guidance to provide accessible mental health information specifically for Ghana.',
     imageUrl: 'https://picsum.photos/600/400',
@@ -29,7 +29,7 @@ const projects = [
     liveUrl: '/projects/urban-insights',
     aiHint: 'city data dashboard'
   },
-   {
+  {
     title: 'Health Tech Prototypes for Ghana',
     description: 'A collection of rapid-prototype health applications, from data dashboards to emergency supply trackers, designed to address healthcare challenges in Ghana.',
     imageUrl: 'https://picsum.photos/600/400',
@@ -39,22 +39,13 @@ const projects = [
     aiHint: 'app prototypes grid'
   },
   {
-    title: 'Interactive Online Safety Scenarios for Ghana',
-    description: 'An AI-powered educational tool that generates realistic online scenarios (like scams) to help improve digital literacy for Ghana\'s fast-growing population of internet users.',
-    imageUrl: 'https://picsum.photos/600/400',
-    tags: ['EdTech', 'AI', 'Online Safety', 'Ghana', 'Next.js'],
-    githubUrl: null,
-    liveUrl: '/projects/online-safety-scenarios',
-    aiHint: 'online safety education'
-  },
-  {
     title: 'World Population Trends Dashboard',
     description: 'An interactive dashboard visualizing UN population data. It highlights key demographic shifts, providing insights for development planning in Ghana and globally.',
     imageUrl: 'https://picsum.photos/600/400',
     tags: ['Data Viz', 'Demographics', 'UN Data', 'Next.js', 'Recharts'],
     githubUrl: null,
     liveUrl: '/projects/world-population-dashboard',
-aiHint: 'population data dashboard'
+    aiHint: 'population data dashboard'
   },
   {
     title: 'HIV/AIDS Interactive Data Dashboard for Ghana',
@@ -63,25 +54,7 @@ aiHint: 'population data dashboard'
     tags: ['Data Viz', 'Health Tech', 'Ghana', 'Next.js', 'Recharts'],
     githubUrl: null,
     liveUrl: '/projects/hiv-aids-dashboard',
-aiHint: 'health data dashboard'
-  },
-  {
-    title: 'Personalized Learning Path Generator for Ghana',
-    description: 'An AI-powered tool that creates custom learning plans on any topic, designed to help bridge educational gaps and promote skill development in Ghana.',
-    imageUrl: 'https://picsum.photos/600/400',
-    tags: ['EdTech', 'GenAI', 'Personalized Learning', 'Ghana', 'AI'],
-    githubUrl: null,
-    liveUrl: '/projects/learning-path-generator',
-aiHint: 'personalized education interface'
-  },
-  {
-    title: 'Climate Policy Simulator for Ghana',
-    description: 'An AI tool to simulate the impacts of climate policies, providing insights for decision-makers in Ghana to support sustainable development goals.',
-    imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Climate Policy', 'GenAI', 'Simulation', 'Ghana', 'Next.js'],
-    githubUrl: null,
-    liveUrl: '/projects/policy-simulator',
-aiHint: 'climate policy dashboard'
+    aiHint: 'health data dashboard'
   },
   {
     title: 'Urban Resilience Planner for Accra',
@@ -90,16 +63,7 @@ aiHint: 'climate policy dashboard'
     tags: ['Climate Action', 'Data Viz', 'GIS', 'Accra', 'React'],
     githubUrl: null,
     liveUrl: '/projects/ghg-emissions-tracker',
-aiHint: 'climate data dashboard'
-  },
-  {
-    title: 'Social Impact Idea Generator for Ghana',
-    description: 'An AI tool that brainstorms solutions for social problems in Ghana. It proposes ideas from tech prototypes to policy briefs, with a live demo to try.',
-    imageUrl: 'https://picsum.photos/600/400',
-    tags: ['Social Impact', 'GenAI', 'Innovation', 'Ghana', 'Next.js'],
-    githubUrl: null,
-    liveUrl: '/projects/social-impact-challenge',
-    aiHint: 'social impact solution'
+    aiHint: 'climate data dashboard'
   },
   {
     title: 'Stress Manager App',
@@ -136,7 +100,7 @@ aiHint: 'climate data dashboard'
     githubUrl: 'https://github.com/bernardfiagbenu/mordern-quiz-app',
     liveUrl: 'https://effulgent-mousse-1d069d.netlify.app/',
     aiHint: 'quiz app interface'
- }
+  }
 ];
 
 const ProjectLinkWrapper = ({ liveUrl, children }: { liveUrl: string | null, children: React.ReactNode }) => {
@@ -198,7 +162,7 @@ export default function ProjectsPage() {
                   key={`project-schema-${index}`}
                 />
                 <ProjectLinkWrapper liveUrl={project.liveUrl}>
-                   <CardHeader>
+                  <CardHeader>
                     <CardTitle className="font-headline text-2xl text-primary mb-2 group-hover:text-accent transition-colors">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
@@ -219,12 +183,12 @@ export default function ProjectsPage() {
                     </Button>
                   )}
                   {project.liveUrl && (
-                     <ActionButton 
-                        url={project.liveUrl}
-                        label={project.liveUrl.startsWith('/') ? 'View Demo' : 'Live Demo'}
-                        icon={project.liveUrl.startsWith('/') ? AppWindow : ExternalLinkIcon}
-                        isInternal={project.liveUrl.startsWith('/')}
-                     />
+                    <ActionButton
+                      url={project.liveUrl}
+                      label={project.liveUrl.startsWith('/') ? 'View Demo' : 'Live Demo'}
+                      icon={project.liveUrl.startsWith('/') ? AppWindow : ExternalLinkIcon}
+                      isInternal={project.liveUrl.startsWith('/')}
+                    />
                   )}
                 </CardFooter>
               </Card>
